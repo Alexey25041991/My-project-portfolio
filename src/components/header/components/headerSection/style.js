@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import myIconComp from './icon/comp.png';
 import myIconMap from './icon/map.png';
-import myIconClock from './icon/clock.png';
 import myIconWindow from './icon/window.png';
 import myIconBook from './icon/books.png';
 import myIconPicture from './icon/image.png';
@@ -141,16 +140,6 @@ export const IconMap = styled.div`
   position: absolute;
   top: 160px;
   left: -299px;
-`;
-
-export const IconClock = styled.div`
-  background: url(${myIconClock}) no-repeat;
-  display: flex;
-  width: 81px;
-  height: 81px;
-  position: absolute;
-  top: 114px;
-  left: 287px;
 `;
 
 export const IconBook = styled.div`

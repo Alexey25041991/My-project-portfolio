@@ -18,13 +18,14 @@ import {
   Skype,
   IconComp,
   IconMap,
-  IconClock,
   IconWindow,
   IconBook,
   IconPicture,
   IconDay,
   IconSun,
 } from './style';
+
+import Clock from './Clock';
 
 import { ReactComponent as RocketGetsiteIcon } from './icon/RocketGetsiteIcon.svg';
 import { ReactComponent as PhonesIcon } from './icon/PhonesIcon.svg';
@@ -36,7 +37,7 @@ const HeaderSection = () => (
     <HeaderSectionFon>
       <IconComp />
       <IconMap />
-      <IconClock />
+      <Clock />
       <IconDay>
         <IconWindow />
         <IconSun />
