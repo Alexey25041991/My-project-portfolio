@@ -35,7 +35,6 @@ export const AdvantagesHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
   font-size: 30px;
@@ -63,7 +62,8 @@ export const Label = styled.span`
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 20px;
 `;
 
 export const Ul = styled.ul`
