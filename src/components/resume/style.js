@@ -49,7 +49,7 @@ export const ResumeHeader = styled.h1`
   margin-bottom: 0;
 `;
 
-export const ResumeLabel = styled.h3`
+export const ResumeLabel = styled.div`
   color: #2b2a29;
   font-size: 30px;
   font-weight: 700;
@@ -103,6 +103,7 @@ export const ResumeSkills = styled.div`
   text-align: left;
   width: 400px;
   margin-bottom: 20px;
+  margin-top: -15px;
 `;
 
 export const ResumeSkillsLabel = styled.div`
