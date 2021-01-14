@@ -7,6 +7,7 @@ import Resume from '../components/resume';
 import ServicesCooperation from '../components/servicesCooperation';
 import ServiseList from '../components/serviseList';
 import Portfolio from '../components/portfolio';
+import OrderSite from '../components/orderSite';
 
 const App = () => (
   <>
@@ -17,6 +18,7 @@ const App = () => (
     <ServicesCooperation />
     <ServiseList />
     <Portfolio />
+    <OrderSite />
   </>
 );
 
