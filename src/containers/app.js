@@ -8,6 +8,7 @@ import ServicesCooperation from '../components/servicesCooperation';
 import ServiseList from '../components/serviseList';
 import Portfolio from '../components/portfolio';
 import OrderSite from '../components/orderSite';
+import Blog from '../components/blog';
 
 const App = () => (
   <>
@@ -19,6 +20,7 @@ const App = () => (
     <ServiseList />
     <Portfolio />
     <OrderSite />
+    <Blog />
   </>
 );
 
