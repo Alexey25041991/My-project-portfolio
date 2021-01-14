@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import myIconWawew from './icon/wawew.png';
-import myIconWawewb from './icon/wawewb.png';
+// import myIconWawewb from './icon/wawewb.png';
 import myIconBgcont from './icon/bgcont.png';
 import myIconWebdev from './icon/webdev.png';
 
@@ -21,14 +21,6 @@ export const PersonalWrapper = styled.div`
     margin-top: -31px;
     position: absolute;
   }
-  &::after {
-    background: url(${myIconWawewb}) center bottom repeat-x;
-    content: '';
-    width: 100%;
-    height: 28px;
-    display: flex;
-    margin-top: -5px;
-    position: absolute;
 `;
 
 export const PersonalConteiner = styled.div`

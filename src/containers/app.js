@@ -6,6 +6,7 @@ import PersonalInformation from '../components/personalInformation';
 import Resume from '../components/resume';
 import ServicesCooperation from '../components/servicesCooperation';
 import ServiseList from '../components/serviseList';
+import Portfolio from '../components/portfolio';
 
 const App = () => (
   <>
@@ -15,6 +16,7 @@ const App = () => (
     <Resume />
     <ServicesCooperation />
     <ServiseList />
+    <Portfolio />
   </>
 );
 
