@@ -8,7 +8,6 @@ import myIconStl from './icon/stl.png';
 import myIconStlh from './icon/stlh.png';
 import myIconStr from './icon/str.png';
 import myIconStrh from './icon/strh.png';
-import myIconBgport from './icon/bgport.png';
 
 export const BlogWrapper = styled.div`
   display: flex;

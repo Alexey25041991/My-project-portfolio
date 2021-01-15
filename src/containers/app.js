@@ -9,6 +9,7 @@ import ServiseList from '../components/serviseList';
 import Portfolio from '../components/portfolio';
 import OrderSite from '../components/orderSite';
 import Blog from '../components/blog';
+import Сontacts from '../components/contacts';
 
 const App = () => (
   <>
@@ -21,6 +22,7 @@ const App = () => (
     <Portfolio />
     <OrderSite />
     <Blog />
+    <Сontacts />
   </>
 );
 
