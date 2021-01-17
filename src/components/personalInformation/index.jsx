@@ -11,7 +11,7 @@ import {
 } from './style';
 
 const PersonalInformation = () => (
-  <PersonalWrapper>
+  <PersonalWrapper id="person">
     <PersonalConteiner>
       <PersonalHeader>Сайт веб-разработчика</PersonalHeader>
       <PersonalCustom>

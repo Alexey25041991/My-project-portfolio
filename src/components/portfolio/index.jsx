@@ -67,7 +67,7 @@ const getSlickList = (propsSlickList) =>
   ));
 
 const Portfolio = () => (
-  <PortfolioWrapper>
+  <PortfolioWrapper id="portfolio">
     <PortfolioConteiner>
       <PortfolioHeader>
         <PortfolioIcon />

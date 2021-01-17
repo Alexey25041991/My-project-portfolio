@@ -4,7 +4,7 @@ export const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 35px;
-  height: 192px;
+  height: 306px;
   margin-bottom: -11px;
   background: url(img/rocket.png) no-repeat;
   position: fixed;

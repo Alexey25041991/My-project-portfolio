@@ -90,4 +90,5 @@ export const Label = styled.span`
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
   margin-top: 10px;
+  white-space: nowrap;
 `;

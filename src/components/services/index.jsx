@@ -11,8 +11,8 @@ import {
 
 import { ReactComponent as ServicesIcon } from './icon/ServicesIcon.svg';
 
-const ServicesCooperation = () => (
-  <ServicesWrapper>
+const Services = () => (
+  <ServicesWrapper id="services">
     <ServicesConteiner>
       <ServicesHeader>
         <ServicesIcon />
@@ -35,4 +35,4 @@ const ServicesCooperation = () => (
   </ServicesWrapper>
 );
 
-export default ServicesCooperation;
+export default Services;

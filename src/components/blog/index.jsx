@@ -72,7 +72,7 @@ const getSlickList = (propsSlickList) =>
   ));
 
 const Blog = () => (
-  <BlogWrapper>
+  <BlogWrapper id="blog">
     <BlogConteiner>
       <BlogHeader>
         <BlogIcon />

@@ -30,10 +30,10 @@ const HeaderMenuLi = (propsHeaderMenu) =>
   ));
 
 const AdvantagesSection = () => (
-  <AdvantagesWrapper>
+  <AdvantagesWrapper id="advantages">
     <AdvantagesConteiner>
       <AdvantagesHeader>
-        <ScaleIcon />
+        <ScaleIcon width={28} height={28} fill="#ffff" />
         <Label>Преимущества</Label>
       </AdvantagesHeader>
       <AdvantagesCustom>

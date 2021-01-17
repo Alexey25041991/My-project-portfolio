@@ -20,7 +20,7 @@ import {
 import { ReactComponent as ResumeIcon } from './icon/ResumeIcon.svg';
 
 const Resume = () => (
-  <ResumeWrapper>
+  <ResumeWrapper id="resume">
     <ResumeConteiner>
       <ResumeHeader>
         <ResumeIcon />

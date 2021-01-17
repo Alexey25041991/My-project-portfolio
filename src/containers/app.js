@@ -4,7 +4,7 @@ import HeaderConteiner from '../components/header';
 import AdvantagesSection from '../components/advantages';
 import PersonalInformation from '../components/personalInformation';
 import Resume from '../components/resume';
-import ServicesCooperation from '../components/servicesCooperation';
+import Services from '../components/services';
 import ServiseList from '../components/serviseList';
 import Portfolio from '../components/portfolio';
 import OrderSite from '../components/orderSite';
@@ -18,7 +18,7 @@ const App = () => (
     <AdvantagesSection />
     <PersonalInformation />
     <Resume />
-    <ServicesCooperation />
+    <Services />
     <ServiseList />
     <Portfolio />
     <OrderSite />

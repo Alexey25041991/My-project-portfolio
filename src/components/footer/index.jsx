@@ -34,7 +34,7 @@ import { ReactComponent as FooterSkypeIcon } from './icon/FooterSkypeIcon.svg';
 import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
 
 const Footer = () => (
-  <FooterWrapper>
+  <FooterWrapper id="contacts">
     <FooterConteiner>
       <FooterCustom>
         <HeaderTopWrapper>

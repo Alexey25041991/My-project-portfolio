@@ -15,7 +15,7 @@ import {
 import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
 
 const OrderSite = () => (
-  <OrderSiteWrapper>
+  <OrderSiteWrapper id="cooperation">
     <OrderSiteConteiner>
       <OrderSiteHeader>
         <OrderSiteIcon />
