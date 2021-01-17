@@ -10,6 +10,7 @@ import Portfolio from '../components/portfolio';
 import OrderSite from '../components/orderSite';
 import Blog from '../components/blog';
 import Footer from '../components/footer';
+import Nav from '../components/nav';
 
 const App = () => (
   <>
@@ -23,6 +24,7 @@ const App = () => (
     <OrderSite />
     <Blog />
     <Footer />
+    <Nav />
   </>
 );
 
