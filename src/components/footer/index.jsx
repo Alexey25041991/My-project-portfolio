@@ -1,14 +1,14 @@
 import React from 'react';
 
 import {
-  СontactsWrapper,
-  СontactsConteiner,
-  // СontactsHeader,
-  // СontactsLabel,
-  СontactsCustom,
+  FooterWrapper,
+  FooterConteiner,
+  // FooterHeader,
+  // FooterLabel,
+  FooterCustom,
   Link,
   Label,
-  СontactsValue,
+  FooterValue,
   Ul,
   Li,
   LabelText,
@@ -22,21 +22,21 @@ import {
   OrderSiteButton,
   LinkButton,
   LabeButtonl,
-  СontactsValue1,
-  СontactsHh,
+  FooterValue1,
+  FooterHh,
 } from './style.js';
 
-import { ReactComponent as СontactsСlockIcon } from './icon/СontactsСlockIcon.svg';
-import { ReactComponent as СontactsTelephoneIcon } from './icon/СontactsTelephoneIcon.svg';
-import { ReactComponent as СontactsMailIcon } from './icon/СontactsMailIcon.svg';
-import { ReactComponent as СontactsSkypeIcon } from './icon/СontactsSkypeIcon.svg';
+import { ReactComponent as FooterСlockIcon } from './icon/FooterСlockIcon.svg';
+import { ReactComponent as FooterTelephoneIcon } from './icon/FooterTelephoneIcon.svg';
+import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
+import { ReactComponent as FooterSkypeIcon } from './icon/FooterSkypeIcon.svg';
 
 import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
 
-const Сontacts = () => (
-  <СontactsWrapper>
-    <СontactsConteiner>
-      <СontactsCustom>
+const Footer = () => (
+  <FooterWrapper>
+    <FooterConteiner>
+      <FooterCustom>
         <HeaderTopWrapper>
           <HeaderLog>
             <HeaderLogSign> {`${'< >'}`} </HeaderLogSign>
@@ -56,18 +56,18 @@ const Сontacts = () => (
             </OrderSiteButton>
           </HeaderMenu>
         </HeaderTopWrapper>
-        <СontactsValue>
+        <FooterValue>
           <Ul>
             <Li>
               <Link>
-                <СontactsСlockIcon />
+                <FooterСlockIcon />
                 <Label>Ежедневно</Label>
                 <LabelText>с 9:00 до 21:00</LabelText>
               </Link>
             </Li>
             <Li>
               <Link>
-                <СontactsTelephoneIcon />
+                <FooterTelephoneIcon />
                 <Label>Телефон</Label>
                 <LabelText>
                   +38 (066) 912-69-37 <br /> (Viber, Whatsapp)
@@ -76,35 +76,35 @@ const Сontacts = () => (
             </Li>
             <Li>
               <Link>
-                <СontactsMailIcon />
+                <FooterMailIcon />
                 <Label>E-mail</Label>
                 <LabelText>coderoldboy@gmail.com</LabelText>
               </Link>
             </Li>
             <Li>
               <Link>
-                <СontactsSkypeIcon />
+                <FooterSkypeIcon />
                 <Label>Skype</Label>
                 <LabelText>biomax1988</LabelText>
               </Link>
             </Li>
             <Li>
               <Link>
-                <СontactsHh href={`${'#'}`}>hh</СontactsHh>
+                <FooterHh href={`${'#'}`}>hh</FooterHh>
                 <Label>HeadHunter</Label>
                 <LabelText>Мазуренко Алексей</LabelText>
               </Link>
             </Li>
           </Ul>
-        </СontactsValue>
-        <СontactsValue1>
+        </FooterValue>
+        <FooterValue1>
           <HeaderLogCoderText>
             2010-2021 Фрилансер веб-разработчик CODER-OLDBOY
           </HeaderLogCoderText>
-        </СontactsValue1>
-      </СontactsCustom>
-    </СontactsConteiner>
-  </СontactsWrapper>
+        </FooterValue1>
+      </FooterCustom>
+    </FooterConteiner>
+  </FooterWrapper>
 );
 
-export default Сontacts;
+export default Footer;

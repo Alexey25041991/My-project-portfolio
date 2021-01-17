@@ -1,26 +1,16 @@
 // import styled from 'styled-components';
 import styled from 'styled-components';
 
-import myIconWawew from './icon/wawew.png';
 import myIconWawewb from './icon/wawewb.png';
 import myIconBgcont from './icon/bgcont.png';
 
-export const СontactsWrapper = styled.div`
+export const FooterWrapper = styled.div`
   display: flex;
   background-color: #2B3037;
   // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #ffff;
   font-family: 'Exo 2', sans-serif;
-  &:before {
-    background: url(${myIconWawew}) top center repeat-x;
-    content: '';
-    width: 100%;
-    height: 32px;
-    display: flex;
-    margin-top: -31px;
-    position: absolute;
-  }
   &::after {
     background: url(${myIconWawewb}) center bottom repeat-x;
     content: '';
@@ -31,7 +21,7 @@ export const СontactsWrapper = styled.div`
     position: absolute;
 `;
 
-export const СontactsConteiner = styled.div`
+export const FooterConteiner = styled.div`
   display: flex;
   flex-direction: column;
   width: 960px;
@@ -40,7 +30,7 @@ export const СontactsConteiner = styled.div`
   padding-bottom: 70px;
 `;
 
-export const СontactsHeader = styled.h1`
+export const FooterHeader = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +39,7 @@ export const СontactsHeader = styled.h1`
   margin-bottom: 30px;
 `;
 
-export const СontactsLabel = styled.div`
+export const FooterLabel = styled.div`
   color: #2b2a29;
   font-size: 30px;
   font-weight: 700;
@@ -59,7 +49,7 @@ export const СontactsLabel = styled.div`
   margin-left: 12px;
 `;
 
-export const СontactsCustom = styled.div`
+export const FooterCustom = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +98,7 @@ export const Li = styled.li`
   margin-bottom: 16px;
 `;
 
-export const СontactsValue = styled.div`
+export const FooterValue = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -219,7 +209,7 @@ export const LabeButtonl = styled.span`
   margin-left: 10px;
 `;
 
-export const СontactsValue1 = styled.div`
+export const FooterValue1 = styled.div`
   display: flex;
   padding: 35px 25px 0px 25px;
 `;
@@ -228,7 +218,7 @@ export const HeaderLogCoderIcon = styled.div`
   display: flex;
 `;
 
-export const СontactsHh = styled.a`
+export const FooterHh = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
