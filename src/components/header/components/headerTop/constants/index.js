@@ -11,7 +11,7 @@ export const propsHeaderMenu = [
     id: '1',
     label: 'Обо мне',
     value: 'person',
-    icon: <PersonIcon width={32} height={32} fill="#ffff" />,
+    icon: <PersonIcon width={28} height={28} fill="#ffff" />,
   },
   {
     id: '2',
