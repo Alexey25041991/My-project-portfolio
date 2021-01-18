@@ -30,25 +30,6 @@ export const FooterConteiner = styled.div`
   padding-bottom: 70px;
 `;
 
-export const FooterHeader = styled.h1`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  padding-top: 35px;
-  margin-bottom: 30px;
-`;
-
-export const FooterLabel = styled.div`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  margin-left: 12px;
-`;
-
 export const FooterCustom = styled.div`
   display: flex;
   flex-direction: column;
@@ -116,34 +97,6 @@ export const HeaderTopWrapper = styled.div`
   margin: 0 auto;
   border-bottom: 1px solid #ffff;
   padding-bottom: 25px;
-`;
-
-export const HeaderLog = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: top;
-  padding-top: 7px;
-`;
-
-export const HeaderLogSign = styled.div`
-  color: white;
-  line-height: 30px;
-  font-size: 25px;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 800;
-  margin-right: 5px;
-  white-space: nowrap;
-`;
-
-export const HeaderLogCoder = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const HeaderLogCoderLabel = styled(HeaderLogSign)`
-  vertical-align: top;
-  font-weight: bold;
 `;
 
 export const HeaderLogCoderText = styled.div`

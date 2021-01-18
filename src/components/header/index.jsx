@@ -2,8 +2,8 @@ import React from 'react';
 
 import { HeaderWrapper } from './style';
 
-import HeaderTop from './components/headerTop';
-import HeaderSection from './components/headerSection';
+import HeaderTop from './headerTop';
+import HeaderSection from './headerSection';
 
 const HeaderConteiner = () => (
   <HeaderWrapper>

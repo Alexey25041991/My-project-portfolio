@@ -1,10 +1,10 @@
 import React from 'react';
 
+import LogoLook from '../logoLook';
+
 import {
   FooterWrapper,
   FooterConteiner,
-  // FooterHeader,
-  // FooterLabel,
   FooterCustom,
   Link,
   Label,
@@ -13,10 +13,6 @@ import {
   Li,
   LabelText,
   HeaderTopWrapper,
-  HeaderLog,
-  HeaderLogSign,
-  HeaderLogCoder,
-  HeaderLogCoderLabel,
   HeaderLogCoderText,
   HeaderMenu,
   OrderSiteButton,
@@ -38,15 +34,7 @@ const Footer = () => (
     <FooterConteiner>
       <FooterCustom>
         <HeaderTopWrapper>
-          <HeaderLog>
-            <HeaderLogSign> {`${'< >'}`} </HeaderLogSign>
-            <HeaderLogCoder>
-              <HeaderLogCoderLabel>CODER-OLDBOY</HeaderLogCoderLabel>
-              <HeaderLogCoderText>
-                Портфолио веб-разработчика
-              </HeaderLogCoderText>
-            </HeaderLogCoder>
-          </HeaderLog>
+          <LogoLook />
           <HeaderMenu>
             <OrderSiteButton>
               <LinkButton href={`${'#'}`}>

@@ -63,7 +63,8 @@ const HeaderSection = () => (
         <Phones>
           <PhonesIcon />
           <PhonesConteiner>
-            <PhonesNumber>+38 (066) 912-69-37</PhonesNumber>
+            <PhonesNumber>+8 (999) 812-19-75</PhonesNumber>
+            <PhonesNumber>+8 (977) 270-09-30</PhonesNumber>
             <PhonesText>Viber, Whatsapp</PhonesText>
           </PhonesConteiner>
         </Phones>
@@ -72,11 +73,11 @@ const HeaderSection = () => (
         </HeaderSectionLabel>
         <Emails>
           <EmailsIcon />
-          <ContactsText>coderoldboy@gmail.com</ContactsText>
+          <ContactsText>mazurenko-alexey@mail.ru</ContactsText>
         </Emails>
         <Skype>
           <SkypeIcon />
-          <ContactsText>biomax1988</ContactsText>
+          <ContactsText>aleks10_0</ContactsText>
         </Skype>
       </HeaderSectionConteiner>
     </HeaderSectionContacts>

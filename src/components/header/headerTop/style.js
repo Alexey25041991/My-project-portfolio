@@ -8,44 +8,6 @@ export const HeaderTopWrapper = styled.div`
   margin: 0 auto;
 `;
 
-export const HeaderLog = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: top;
-  padding-top: 7px;
-`;
-
-export const HeaderLogSign = styled.div`
-  color: white;
-  line-height: 30px;
-  font-size: 25px;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 800;
-  margin-right: 5px;
-  white-space: nowrap;
-`;
-
-export const HeaderLogCoder = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const HeaderLogCoderLabel = styled(HeaderLogSign)`
-  vertical-align: top;
-  font-weight: bold;
-`;
-
-export const HeaderLogCoderText = styled.div`
-  color: white;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 400;
-  padding-top: 0px;
-  display: block;
-  font-family: 'Exo 2', sans-serif;
-`;
-
 export const HeaderMenu = styled.div`
   padding-top: 10px;
   float: right;

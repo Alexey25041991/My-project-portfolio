@@ -1,18 +1,8 @@
 import React from 'react';
 
-import {
-  HeaderTopWrapper,
-  HeaderLog,
-  HeaderLogSign,
-  HeaderLogCoder,
-  HeaderLogCoderLabel,
-  HeaderLogCoderText,
-  HeaderMenu,
-  Ul,
-  Li,
-  Link,
-  Label,
-} from './style';
+import LogoLook from '../../logoLook';
+
+import { HeaderTopWrapper, HeaderMenu, Ul, Li, Link, Label } from './style';
 
 import { propsHeaderMenu } from './constants';
 
@@ -28,13 +18,7 @@ const HeaderMenuLi = (propsHeaderMenu) =>
 
 const HeaderTop = () => (
   <HeaderTopWrapper>
-    <HeaderLog>
-      <HeaderLogSign> {`${'< >'}`} </HeaderLogSign>
-      <HeaderLogCoder>
-        <HeaderLogCoderLabel>CODER-OLDBOY</HeaderLogCoderLabel>
-        <HeaderLogCoderText>Портфолио веб-разработчика</HeaderLogCoderText>
-      </HeaderLogCoder>
-    </HeaderLog>
+    <LogoLook />
     <HeaderMenu>
       <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
     </HeaderMenu>
