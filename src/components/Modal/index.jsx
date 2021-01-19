@@ -8,6 +8,7 @@ import { Footer } from './Footer';
 import { ModalComponent } from './ModalComponent';
 
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
+import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
 
 const Modal = ({ opened = false, onRequestClose }) => {
   const handleClose = (e) => {
@@ -29,7 +30,10 @@ const Modal = ({ opened = false, onRequestClose }) => {
     opened && (
       <Overlay data-close-border opened={opened} onClick={handleOverlayClick}>
         <ModalComponent data-close-modal>
-          <Header>Modal Title</Header>
+          <Header>
+            <FooterMailIcon width={24} height={24} fill="#2b3037" /> Вы готовы
+            сделать заказ?
+          </Header>
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
           </IconClose>
