@@ -7,16 +7,7 @@ import { Content } from './Content';
 import { Footer } from './Footer';
 import { ModalComponent } from './ModalComponent';
 
-// import {
-//   ServicesWrapper,
-//   ServicesConteiner,
-//   ServicesHeader,
-//   ServicesLabel,
-// } from './style.js';
-
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
-
-// import { SIZES_WIDTH, SIZES_HEIGHT } from './constants';
 
 const Modal = ({ opened = false, onRequestClose }) => {
   const handleClose = (e) => {
@@ -24,24 +15,20 @@ const Modal = ({ opened = false, onRequestClose }) => {
     onRequestClose && onRequestClose();
   };
 
-  const onBlur = (e) => {
-    console.log(111, e);
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      onRequestClose();
+  const handleOverlayClick = (e) => {
+    if (
+      opened &&
+      e.target.closest('[data-close-border]') &&
+      !e.target.closest('[data-close-modal]')
+    ) {
+      handleClose(e);
     }
   };
 
-  // const onFocus = (e) => {
-  //   console.log(1, e);
-  //   // if (!e.currentTarget.contains(e.relatedTarget)) {
-  //   //   onRequestClose && onRequestClose();
-  //   // }
-  // };
-
   return (
     opened && (
-      <Overlay opened={opened}>
-        <ModalComponent onBlur={onBlur}>
+      <Overlay data-close-border opened={opened} onClick={handleOverlayClick}>
+        <ModalComponent data-close-modal>
           <Header>Modal Title</Header>
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
