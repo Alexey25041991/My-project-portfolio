@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import { InputText } from '../Inputs/Text';
+// import { InputText } from '../Inputs/Text';
+// import { InputMask } from '../Inputs/Mask';
+import { Input } from '../Inputs';
 
 import { Overlay } from './Overlay';
 import { Header } from './Header';
@@ -14,6 +16,7 @@ import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
 
 const Modal = ({ opened = false, onRequestClose }) => {
   const [inputValue, setValue] = useState('');
+  const [valuePhone, setValuePhone] = useState('');
   console.log(111, inputValue);
 
   const handleClose = (e) => {
@@ -43,9 +46,9 @@ const Modal = ({ opened = false, onRequestClose }) => {
             <CloseOutline width={24} height={24} />
           </IconClose>
           <Content>
-            <InputText
-              label="Optional label"
-              placeholder="Optional placeholder"
+            <Input.Text
+              label="Представьтесь, пожалуйста"
+              placeholder="Ф.И.О."
               // size={size}
               value={inputValue}
               // status={options[2].checked ? status : undefined}
@@ -56,6 +59,23 @@ const Modal = ({ opened = false, onRequestClose }) => {
               // additionalText={options[2].checked ? 'Ошибка' : undefined}
               // icon={options[0].checked && <StarSolid width={iconSize} />}
               // disabled={options[1].checked}
+            />
+            <Input.Mask
+              mask="+7(999)999-99-99"
+              label="Optional label"
+              placeholder="Optional placeholder"
+              value={valuePhone}
+              onChange={(value) => {
+                setValuePhone(value.value);
+              }}
+            />
+            <Input.Text
+              label="Контактный телефон"
+              placeholder="Ф.И.О."
+              value={inputValue}
+              onChange={(_, value) => {
+                setValue(value);
+              }}
             />
             Привет Привет
           </Content>
