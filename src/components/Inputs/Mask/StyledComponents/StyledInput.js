@@ -19,7 +19,7 @@ export const StyledInput = styled.input`
     border: transparent;
     font-stretch: normal;
     font-style: normal;
-    color: #ffffff;
+    color: #000;
     ::placeholder {
       color: #a7afd9;
     }
@@ -32,7 +32,7 @@ export const StyledInput = styled.input`
 
     ::placeholder,
     ::-webkit-input-placeholder {
-      color: #ffffff;
+      color: #000;
     }
   `}
 `;

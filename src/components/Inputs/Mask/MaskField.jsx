@@ -49,7 +49,7 @@ export const MaskField = ({
   disabled,
   status = 'default',
   additionalText,
-  size = 'big',
+  size = '44px',
   mask,
   icon,
   errorIcon,

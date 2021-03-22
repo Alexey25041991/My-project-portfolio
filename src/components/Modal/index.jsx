@@ -62,19 +62,12 @@ const Modal = ({ opened = false, onRequestClose }) => {
             />
             <Input.Mask
               mask="+7(999)999-99-99"
-              label="Optional label"
-              placeholder="Optional placeholder"
+              label="Контактный телефон*"
+              placeholder="Введите номер телефона"
               value={valuePhone}
+              width={'320px'}
               onChange={(value) => {
                 setValuePhone(value.value);
-              }}
-            />
-            <Input.Text
-              label="Контактный телефон"
-              placeholder="Ф.И.О."
-              value={inputValue}
-              onChange={(_, value) => {
-                setValue(value);
               }}
             />
             Привет Привет

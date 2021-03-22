@@ -20,7 +20,7 @@ export const StyledPlaceHolder = styled.div`
     justify-content: center;
     align-items: unset;
     font-optical-sizing: auto;
-    color: #ffffff;
+    color: #000;
     &:hover {
       background-color: #ffffff;
     }

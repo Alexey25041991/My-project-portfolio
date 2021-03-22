@@ -8,6 +8,6 @@ export const PhoneCode = styled.div`
     font-size: 14px;
     // font-weight: ;
     user-select: none;
-    color: #ffffff;
+    color: #000;
   `}
 `;

@@ -14,6 +14,6 @@ export const SpanMask = styled.span`
     font-feature-settings: 'tnum' on, 'lnum' on, 'cv03' on, 'cv04' on;
     box-sizing: content-box;
     cursor: text;
-    color: #ffffff;
+    color: #000;
   `}
 `;
