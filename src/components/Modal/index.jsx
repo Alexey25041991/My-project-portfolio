@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-// import { InputText } from '../Inputs/Text';
-// import { InputMask } from '../Inputs/Mask';
 import { Input } from '../Inputs';
+// import { Select } from '../Select';
 
 import { Overlay } from './Overlay';
 import { Header } from './Header';
@@ -10,6 +9,9 @@ import { IconClose } from './IconClose';
 import { Content } from './Content';
 import { Footer } from './Footer';
 import { ModalComponent } from './ModalComponent';
+import { ModalSection } from './ModalSection';
+
+// import { mockCardList } from './constants';
 
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
 import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
@@ -17,7 +19,8 @@ import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
 const Modal = ({ opened = false, onRequestClose }) => {
   const [inputValue, setValue] = useState('');
   const [valuePhone, setValuePhone] = useState('');
-  console.log(111, inputValue);
+  const [valueMail, setValueMail] = useState('');
+  // const [cardStatusValue, setCardValue] = useState(mockCardList[0].value);
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -45,33 +48,46 @@ const Modal = ({ opened = false, onRequestClose }) => {
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
           </IconClose>
-          <Content>
-            <Input.Text
-              label="Представьтесь, пожалуйста"
-              placeholder="Ф.И.О."
-              // size={size}
-              value={inputValue}
-              // status={options[2].checked ? status : undefined}
-              onChange={(_, value) => {
-                setValue(value);
-              }}
-              // additionalText='Привет'
-              // additionalText={options[2].checked ? 'Ошибка' : undefined}
-              // icon={options[0].checked && <StarSolid width={iconSize} />}
-              // disabled={options[1].checked}
-            />
-            <Input.Mask
-              mask="+7(999)999-99-99"
-              label="Контактный телефон*"
-              placeholder="Введите номер телефона"
-              value={valuePhone}
-              width={'320px'}
-              onChange={(value) => {
-                setValuePhone(value.value);
-              }}
-            />
-            Привет Привет
-          </Content>
+          <ModalSection>
+            <Content>
+              <Input.Text
+                label="Представьтесь, пожалуйста *"
+                placeholder="Ф.И.О."
+                value={inputValue}
+                onChange={(_, value) => {
+                  setValue(value);
+                }}
+              />
+              <Input.Mask
+                mask="+7(999) 999-99-99"
+                label="Контактный телефон *"
+                placeholder="Введите номер телефона"
+                value={valuePhone}
+                width={'320px'}
+                onChange={(value) => {
+                  setValuePhone(value.value);
+                }}
+              />
+            </Content>
+            <Content>
+              <Input.Text
+                label="Ваш e-mail *"
+                placeholder="Введите Ваш e-mail"
+                value={valueMail}
+                onChange={(_, value) => {
+                  setValueMail(value);
+                }}
+              />
+              {/* <Select
+                list={mockCardList}
+                defaultValue={[mockCardList[0]]}
+                width={"240px"}
+                placeholder="Выберите из списка"
+                value={cardStatusValue}
+                onChange={setCardValue}
+              /> */}
+            </Content>
+          </ModalSection>
           <Footer>
             {/* <Button
           {...secondaryButton}
