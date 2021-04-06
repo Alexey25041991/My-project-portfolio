@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Input } from '../Inputs';
-// import { Select } from '../Select';
+import { Select } from '../Select';
 
 import { Overlay } from './Overlay';
 import { Header } from './Header';
@@ -11,16 +11,29 @@ import { Footer } from './Footer';
 import { ModalComponent } from './ModalComponent';
 import { ModalSection } from './ModalSection';
 
-// import { mockCardList } from './constants';
-
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
 import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
+
+const listService = [
+  {
+    label: 'Подключить',
+    value: '200',
+  },
+  {
+    label: 'Активна',
+    value: '204',
+  },
+  {
+    label: 'Недоступна',
+    value: '201',
+  },
+];
 
 const Modal = ({ opened = false, onRequestClose }) => {
   const [inputValue, setValue] = useState('');
   const [valuePhone, setValuePhone] = useState('');
   const [valueMail, setValueMail] = useState('');
-  // const [cardStatusValue, setCardValue] = useState(mockCardList[0].value);
+  const [valueService, setService] = useState(listService[0].status);
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -78,14 +91,14 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   setValueMail(value);
                 }}
               />
-              {/* <Select
-                list={mockCardList}
-                defaultValue={[mockCardList[0]]}
-                width={"240px"}
+              <Select
+                label="Выберите услугу *"
+                list={listService}
+                width={'240px'}
                 placeholder="Выберите из списка"
-                value={cardStatusValue}
-                onChange={setCardValue}
-              /> */}
+                value={valueService}
+                onChange={setService}
+              />
             </Content>
           </ModalSection>
           <Footer>

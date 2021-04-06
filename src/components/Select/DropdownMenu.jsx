@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 
 import { SelectItem } from '../SelectItem';
-import { ProductSelectItem, CardSelectItem } from '../ProductOrCardSelectItem';
+// import { ProductSelectItem, CardSelectItem } from '../ProductOrCardSelectItem';
 
 import {
   MenuList,

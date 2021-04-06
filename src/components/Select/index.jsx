@@ -26,9 +26,6 @@ import {
   nextItem,
 } from './utils';
 import { SELECT_DEFAULT_WIDTH } from './constants';
-import { UsageState } from 'webpack';
-
-export * from './types';
 
 export const Select = ({
   list,
@@ -57,7 +54,7 @@ export const Select = ({
 }) => {
   const childrenArray = Children.toArray(children);
   const [opened, setOpened] = useState(menuIsOpen || false);
-  const [focused, setFocused] = UsageState(false);
+  const [focused, setFocused] = useState(false);
 
   const selectWrapperRef = useRef(null);
   const menuListRef = useRef(null);

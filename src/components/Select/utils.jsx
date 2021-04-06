@@ -1,7 +1,7 @@
 import React, { isValidElement, useEffect } from 'react';
 
 import { SelectItem } from '../SelectItem';
-import { ProductSelectItem, CardSelectItem } from '../ProductOrCardSelectItem';
+// import { ProductSelectItem, CardSelectItem } from '../ProductOrCardSelectItem';
 
 export const areEqual = (a, b) => {
   if (typeof b === 'object' && b !== null) {
@@ -33,30 +33,30 @@ export const findSelectedItemList = (list, value, type) => {
       note,
     } = selectedItems[0];
     const Icon = icon;
-    if (type === 'card')
-      return (
-        <CardSelectItem
-          value={itemValue}
-          disabled={disabled}
-          note={note}
-          image={image}
-          currency={currency}
-        >
-          {label}
-        </CardSelectItem>
-      );
-    if (type === 'product')
-      return (
-        <ProductSelectItem
-          value={itemValue}
-          disabled={disabled}
-          note={note}
-          image={image}
-          currency={currency}
-        >
-          {label}
-        </ProductSelectItem>
-      );
+    // if (type === 'card')
+    //   return (
+    //     <CardSelectItem
+    //       value={itemValue}
+    //       disabled={disabled}
+    //       note={note}
+    //       image={image}
+    //       currency={currency}
+    //     >
+    //       {label}
+    //     </CardSelectItem>
+    //   );
+    // if (type === 'product')
+    //   return (
+    //     <ProductSelectItem
+    //       value={itemValue}
+    //       disabled={disabled}
+    //       note={note}
+    //       image={image}
+    //       currency={currency}
+    //     >
+    //       {label}
+    //     </ProductSelectItem>
+    //   );
     return (
       <SelectItem value={itemValue} disabled={disabled}>
         {Icon && <Icon />}

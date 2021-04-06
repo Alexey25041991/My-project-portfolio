@@ -26,10 +26,6 @@ export const ArrowIconWrapper = styled.div`
   `}
 `;
 
-ArrowIconWrapper.defaultProps = {
-  theme: DEFAULT_THEME,
-};
-
 export const CloseIconWrapper = styled.div`
   margin-right: ${CLOSE_ICON_MARGIN_RIGHT};
   display: flex;
