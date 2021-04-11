@@ -1,16 +1,16 @@
 import React from 'react';
 
-import HeaderConteiner from '../components/header';
-import AdvantagesSection from '../components/advantages';
-import PersonalInformation from '../components/personalInformation';
-import Resume from '../components/resume';
-import Services from '../components/services';
-import ServiseList from '../components/serviseList';
-import Portfolio from '../components/portfolio';
-import OrderSite from '../components/orderSite';
-import Blog from '../components/blog';
-import Footer from '../components/footer';
-import Nav from '../components/nav';
+import HeaderConteiner from '../components/Header';
+import AdvantagesSection from '../components/Advantages';
+import PersonalInformation from '../components/PersonalInformation';
+import Resume from '../components/Resume';
+import Services from '../components/Services';
+import ServiseList from '../components/ServiseList';
+import Portfolio from '../components/Portfolio';
+import OrderSite from '../components/OrderSite';
+import Blog from '../components/Blog';
+import Footer from '../components/Footer';
+import Nav from '../components/Nav';
 
 const App = () => (
   <>
