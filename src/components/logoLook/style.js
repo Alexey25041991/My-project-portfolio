@@ -13,7 +13,7 @@ export const Logo = styled.div`
   justify-content: space-between;
   align-items: center;
   vertical-align: top;
-  padding-top: 7px;
+  padding-top: 12px;
 `;
 
 export const LogoSign = styled.div`
@@ -22,7 +22,7 @@ export const LogoSign = styled.div`
   font-size: 25px;
   font-family: 'Exo 2', sans-serif;
   font-weight: 800;
-  margin-right: 5px;
+  margin-right: 14px;
   white-space: nowrap;
 `;
 
@@ -42,7 +42,7 @@ export const LogoCoderText = styled.div`
   text-align: left;
   font-size: 12px;
   font-weight: 400;
-  padding-top: 0px;
+  padding-top: 4px;
   display: block;
   font-family: 'Exo 2', sans-serif;
 `;

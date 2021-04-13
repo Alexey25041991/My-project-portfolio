@@ -10,9 +10,9 @@ import {
 
 const LogoLook = () => (
   <Logo>
-    <LogoSign> {`${'< >'}`} </LogoSign>
+    <LogoSign> {`${'< / >'}`} </LogoSign>
     <LogoCoder>
-      <LogoCoderLabel>CODER-fanatic</LogoCoderLabel>
+      <LogoCoderLabel>it-web-master</LogoCoderLabel>
       <LogoCoderText>Портфолио веб-разработчика</LogoCoderText>
     </LogoCoder>
   </Logo>

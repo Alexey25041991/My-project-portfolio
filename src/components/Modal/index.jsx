@@ -94,7 +94,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
               <Select
                 label="Выберите услугу *"
                 list={listService}
-                width={'240px'}
+                width={'320px'}
                 placeholder="Выберите из списка"
                 value={valueService}
                 onChange={setService}

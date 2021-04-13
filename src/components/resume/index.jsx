@@ -29,7 +29,7 @@ const Resume = () => (
       <ResumeCustom>
         <ResumeOptions>
           <ResumeStatus>Статус:</ResumeStatus>
-          <ResumeValue>Веб-разработчик, фрилансер</ResumeValue>
+          <ResumeValue>Веб-разработчик</ResumeValue>
         </ResumeOptions>
         <ResumeOptions>
           <ResumeStatus>Ф.И.О.:</ResumeStatus>
@@ -37,61 +37,121 @@ const Resume = () => (
         </ResumeOptions>
         <ResumeOptions>
           <ResumeStatus>СПЕЦИАЛИЗАЦИЯ:</ResumeStatus>
-          <ResumeValue>
-            Сайт-визитка, интернет магазин, сайт каталог, корпоративный сайт,
-            промо сайт, landing page, сайт под ключ, верстка e-mail рассылок и
-            доработка функциональности сайтов.
-          </ResumeValue>
+          <ResumeValue>Программирование, разработка.</ResumeValue>
         </ResumeOptions>
         <ResumeOptions>
           <ResumeStatus>Навыки:</ResumeStatus>
           <ResumeSkills>
             <ResumeSkillsLabel>HTML / CSS</ResumeSkillsLabel>
             <ResumeSkillsProgres>
-              <ResumeSkillsValue width={100}>100%</ResumeSkillsValue>
+              <ResumeSkillsValue width={85}>85%</ResumeSkillsValue>
             </ResumeSkillsProgres>
 
-            <ResumeSkillsLabel>Javascript / jQuery / AJAX</ResumeSkillsLabel>
+            <ResumeSkillsLabel>Javascript</ResumeSkillsLabel>
             <ResumeSkillsProgres>
               <ResumeSkillsValue width={85}>85%</ResumeSkillsValue>
             </ResumeSkillsProgres>
 
-            <ResumeSkillsLabel>PHP / MySQL</ResumeSkillsLabel>
+            <ResumeSkillsLabel>React</ResumeSkillsLabel>
             <ResumeSkillsProgres>
-              <ResumeSkillsValue width={80}>80%</ResumeSkillsValue>
+              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
             </ResumeSkillsProgres>
 
-            <ResumeSkillsLabel>
-              Photoshop / Illustrator / Flash
-            </ResumeSkillsLabel>
+            <ResumeSkillsLabel>React-Native</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={65}>65%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Next.js</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={55}>55%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>TypeScript</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={65}>65%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Mob-X</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Redux</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Redux-Saga</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={55}>55%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Pug</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={65}>65%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Bootstrap</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Webpack</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={60}>60%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Jest</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={60}>60%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Node.js</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={60}>60%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Docker</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={40}>40%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Photoshop / Figma</ResumeSkillsLabel>
             <ResumeSkillsProgres>
               <ResumeSkillsValue width={90}>90%</ResumeSkillsValue>
+            </ResumeSkillsProgres>
+
+            <ResumeSkillsLabel>Git / Bitbucket</ResumeSkillsLabel>
+            <ResumeSkillsProgres>
+              <ResumeSkillsValue width={70}>70%</ResumeSkillsValue>
             </ResumeSkillsProgres>
           </ResumeSkills>
         </ResumeOptions>
         <ResumeOptions>
           <ResumeStatus>ОПЫТ РАБОТЫ:</ResumeStatus>
           <ResumeValue>
-            Созданием сайтов, версткой и прочее занимаюсь с 2011 года по наст.
+            Созданием сайтов, версткой и прочее занимаюсь с 2017 года по наст.
             время.
           </ResumeValue>
         </ResumeOptions>
         <ResumeOptions>
           <ResumeStatus>ОБРАЗОВАНИЕ:</ResumeStatus>
           <ResumeValue>
-            2004–2007, Электромеханик, среднее-техническое, Политехнический
-            техникум 2007–2012, Экономический кибернетик, бакалавр, Открытый
-            межрегиональный университет развития человека "Украина" 2007–2012,
-            Дизайнер компьютерной графики, Компьютерная Академия "ШАГ".
+            2008–2012, Московский государственный строительный университет,
+            институт фундаментального образования, Математика (бакалавр).
+            <br />
+            2012–2014, Московский государственный строительный университет,
+            институт фундаментального образования, Математика (магистр).
           </ResumeValue>
         </ResumeOptions>
         <ResumeOptions>
           <ResumeStatus>ДЕЛОВЫЕ И ЛИЧНЫЕ КАЧЕСТВА:</ResumeStatus>
           <ResumeValue>
-            Собранный и уверенный в своих силах, планирую выполнение работы,
-            творчески подхожу к выполнению ТЗ, самодисциплина и способность
-            работать в команде. Всегда нахожусь на связи и никуда никогда не
-            пропадаю, заинтересован в постоянных заказчиках.
+            Собранный и уверенный в своих силах, творчески подхожу к выполнению
+            работы. Самодисциплина и способность работать в команде. Всегда
+            нахожусь на связи, заинтересован в выполнении быстро и качественно
+            работу.
           </ResumeValue>
         </ResumeOptions>
         <ResumeOptions>
@@ -106,7 +166,9 @@ const Resume = () => (
         <ResumeOptions>
           <ResumeStatus>КОНТАКТЫ:</ResumeStatus>
           <ResumeValue>
-            Моб.: +3(066)912-69-37 (Viber. Whatsapp) Skype: biomax1988.
+            Моб.: +7(977)270-09-30 / +7(977)270-09-30
+            <br /> Skype: aleks10_0
+            <br /> Почта: mazurenko-alexey@mail.ru
           </ResumeValue>
         </ResumeOptions>
       </ResumeCustom>

@@ -58,7 +58,8 @@ const Footer = () => (
                 <FooterTelephoneIcon />
                 <Label>Телефон</Label>
                 <LabelText>
-                  +38 (066) 912-69-37 <br /> (Viber, Whatsapp)
+                  +7 (999) 812-19-75 <br />
+                  +7 (977) 270-09-30
                 </LabelText>
               </Link>
             </Li>
@@ -66,14 +67,14 @@ const Footer = () => (
               <Link>
                 <FooterMailIcon />
                 <Label>E-mail</Label>
-                <LabelText>coderoldboy@gmail.com</LabelText>
+                <LabelText>mazurenko-alexey@mail.ru</LabelText>
               </Link>
             </Li>
             <Li>
               <Link>
                 <FooterSkypeIcon />
                 <Label>Skype</Label>
-                <LabelText>biomax1988</LabelText>
+                <LabelText>aleks10_0</LabelText>
               </Link>
             </Li>
             <Li>
@@ -87,7 +88,7 @@ const Footer = () => (
         </FooterValue>
         <FooterValue1>
           <HeaderLogCoderText>
-            2010-2021 Фрилансер веб-разработчик CODER-OLDBOY
+            2017-2021 Фрилансер веб-разработчик IT-WEB-MASTER
           </HeaderLogCoderText>
         </FooterValue1>
       </FooterCustom>

@@ -68,9 +68,9 @@ const HeaderSection = () => {
           <Phones>
             <PhonesIcon />
             <PhonesConteiner>
-              <PhonesNumber>+8 (999) 812-19-75</PhonesNumber>
-              <PhonesNumber>+8 (977) 270-09-30</PhonesNumber>
-              <PhonesText>Viber, Whatsapp</PhonesText>
+              <PhonesNumber>+7 (999) 812-19-75</PhonesNumber>
+              <PhonesNumber>+7 (977) 270-09-30</PhonesNumber>
+              <PhonesText>Telegram, Whatsapp</PhonesText>
             </PhonesConteiner>
           </Phones>
           <HeaderSectionLabel>

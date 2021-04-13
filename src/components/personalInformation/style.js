@@ -69,5 +69,5 @@ export const PersonalSection = styled.p`
   display: flex;
   background: url(${myIconWebdev}) right top no-repeat;
   padding-right: 485px;
-  padding-bottom: 50px;
+  padding-bottom: 180px;
 `;
