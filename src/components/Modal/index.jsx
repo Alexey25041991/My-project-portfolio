@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-// import { Input } from '../Inputs';
-// import { Select } from '../Select';
-
 import MaskedInput from 'react-text-mask';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormLabel from '@material-ui/core/FormLabel';
-import TextField from '@material-ui/core/TextField';
+import emailMask from 'text-mask-addons/dist/emailMask';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  InputLabel,
+  TextField,
+  MenuItem,
+  Select,
+  FormControl,
+  makeStyles,
+  createStyles,
+} from '@material-ui/core';
 import css from './style.css';
 
 import { Overlay } from './Overlay';
@@ -24,33 +24,21 @@ import { ModalSection } from './ModalSection';
 
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
 import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
-import { red } from '@material-ui/core/colors';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    formControl: {
+      marginTop: 10,
+      marginBottom: 10,
+      minWidth: 120,
     },
-  },
-  textField: {
-    color: red,
-  },
-}));
-
-const listService = [
-  {
-    label: 'Подключить',
-    value: '200',
-  },
-  {
-    label: 'Активна',
-    value: '204',
-  },
-  {
-    label: 'Недоступна',
-    value: '201',
-  },
-];
+    textField: {
+      marginTop: 10,
+      marginBottom: 10,
+      minWidth: 120,
+    },
+  })
+);
 
 const maskPhone = [
   '+',
@@ -65,14 +53,19 @@ const maskPhone = [
   /\d/,
   /\d/,
   /\d/,
+  ' ',
   '-',
+  ' ',
   /\d/,
   /\d/,
+  ' ',
+  '-',
+  ' ',
   /\d/,
   /\d/,
 ];
 
-function TextMaskCustom(props) {
+function TextMaskPhone(props) {
   const { inputRef, ...other } = props;
   return (
     <MaskedInput
@@ -86,17 +79,31 @@ function TextMaskCustom(props) {
   );
 }
 
+function TextMaskEMail(props) {
+  const { inputRef, ...other } = props;
+  return (
+    <MaskedInput
+      {...other}
+      ref={inputRef}
+      mask={emailMask}
+      placeholder="Введите Ваш e-mail"
+      placeholderChar={'\u2000'}
+      showMask={false}
+    />
+  );
+}
+
 const Modal = ({ opened = false, onRequestClose }) => {
   const [valueName, setValueName] = useState('');
   const [valuePhone, setValuePhone] = useState('');
   const [valueMail, setValueMail] = useState('');
-  const [valueService, setService] = useState(listService[0].status);
+  const [valueService, setValueService] = useState('');
 
-  const handleChange = (event) => {
+  const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
   };
 
-  console.log(2, valueName, valuePhone);
+  console.log(2, valueName, valuePhone, valueMail, valueService);
   const classes = useStyles();
 
   const handleClose = (e) => {
@@ -131,6 +138,8 @@ const Modal = ({ opened = false, onRequestClose }) => {
                 id="standard-basic"
                 label="Представьтесь, пожалуйста *"
                 placeholder="Ф.И.О."
+                fullWidth
+                className={classes.textField}
                 value={valueName}
                 onChange={(e) => {
                   setValueName(e.target.value);
@@ -140,67 +149,72 @@ const Modal = ({ opened = false, onRequestClose }) => {
               <TextField
                 id="maskExample"
                 label="Контактный телефон *"
+                fullWidth
                 className={classes.textField}
                 margin="normal"
                 InputProps={{
-                  inputComponent: TextMaskCustom,
+                  inputComponent: TextMaskPhone,
                   value: valuePhone.textmask,
-                  onChange: handleChange,
-                }}
-              />
-
-              {/* <FormControl>
-                <InputLabel htmlFor="formatted-text-mask-input">
-                  Контактный телефон *
-                </InputLabel>
-                <Input
-                  value={valuePhone.textmask}
-                  onChange={handleChange}
-                  name="textmask"
-                  id="formatted-text-mask-input"
-                  inputComponent={TextMaskCustom}
-                  inputProps={{ 'aria-label': 'description' }}
-                  disableUnderline
-                />
-              </FormControl> */}
-            </Content>
-
-            {/* <Input.Text
-                label="Представьтесь, пожалуйста *"
-                placeholder="Ф.И.О."
-                value={inputValue}
-                onChange={(_, value) => {
-                  setValue(value);
-                }}
-              />
-              <Input.Mask
-                mask="+7(999) 999-99-99"
-                label="Контактный телефон *"
-                placeholder="Введите номер телефона"
-                value={valuePhone}
-                width={'320px'}
-                onChange={(value) => {
-                  setValuePhone(value.value);
+                  onChange: handleChangePhone,
                 }}
               />
             </Content>
             <Content>
-              <Input.Text
+              <TextField
+                id="maskExample"
                 label="Ваш e-mail *"
-                placeholder="Введите Ваш e-mail"
-                value={valueMail}
-                onChange={(_, value) => {
-                  setValueMail(value);
+                fullWidth
+                className={classes.textField}
+                margin="normal"
+                InputProps={{
+                  inputComponent: TextMaskEMail,
+                  value: valueMail.textmask,
+                  onChange: (e) => {
+                    setValueMail(e.target.value);
+                  },
                 }}
               />
-              <Select
-                label="Выберите услугу *"
-                list={listService}
-                width={'320px'}
-                placeholder="Выберите из списка"
-                value={valueService}
-                onChange={setService}
-              />*/}
+              <FormControl
+                variant="outlined"
+                fullWidth
+                className={classes.formControl}
+              >
+                <InputLabel id="demo-simple-select-label">
+                  Выберите услугу *
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  label="Выберите услугу *"
+                  id="demo-simple-select"
+                  value={valueService}
+                  onChange={(e) => {
+                    setValueService(e.target.value);
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>Выберите...</em>
+                  </MenuItem>
+                  <MenuItem value={'HtmlLayout'}>Html верстка</MenuItem>
+                  <MenuItem value={'Development-scratch'}>
+                    Разработка с нуля
+                  </MenuItem>
+                  <MenuItem value={'FinalizationProject'}>
+                    Доработка проекта
+                  </MenuItem>
+                  <MenuItem value={'ModuleDevelopment'}>
+                    Разработка модуля
+                  </MenuItem>
+                  <MenuItem value={'IndividualProject'}>
+                    Индивидуальный проект
+                  </MenuItem>
+                  <MenuItem value={'SiteFilling'}>Наполнение сайта</MenuItem>
+                  <MenuItem value={'SiteSupport'}>Поддержка сайта</MenuItem>
+                  <MenuItem value={'Other'}>
+                    Другое(указать в описании)
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </Content>
           </ModalSection>
           <Footer>
             {/* <Button

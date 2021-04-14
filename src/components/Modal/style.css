@@ -1,3 +1,9 @@
-.classMaskedInput {
+.formControl {
+  margin: 5px;
+  background-color: red;
+}
+
+.textField {
+  margin: 5px;
   background-color: red;
 }

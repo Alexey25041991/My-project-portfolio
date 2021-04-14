@@ -12,6 +12,7 @@ export const SIZES_HEIGHT = {
   micro: 48,
 };
 
+export const PADDING = '20px';
 export const PADDING_LEFT = '24px';
 export const PADDING_TOP = '20px';
 export const PADDING_RIGHT = '16px';
