@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Tooltip from '@material-ui/core/Tooltip';
+
 import { NavWrapper, Ul, Li, Link, Label, LogoSign } from './style';
 
 import { ReactComponent as PersonIcon } from './icon/PersonIcon.svg';
@@ -15,58 +17,67 @@ const Nav = () => (
   <NavWrapper>
     <Ul>
       <Li>
-        <Link href={'#'}>
-          <LogoSign>{`${'< / >'}`}</LogoSign>
-          <Label>Дом</Label>
-        </Link>
+        <Tooltip arrow title="Дом" placement="right">
+          <Link href={'#'}>
+            <LogoSign>{`${'< / >'}`}</LogoSign>
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#advantages'}>
-          <ScaleIcon width={28} height={28} fill="#ffff" />
-          <Label>Преимущества</Label>
-        </Link>
+        <Tooltip arrow title="Преимущества" placement="right">
+          <Link href={'#advantages'}>
+            <ScaleIcon width={28} height={28} fill="#ffff" />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#person'}>
-          <PersonIcon width={28} height={28} fill="#ffff" />
-          <Label>Обо мне</Label>
-        </Link>
+        <Tooltip arrow title="Обо мне" placement="right">
+          <Link href={'#person'}>
+            <PersonIcon width={28} height={28} fill="#ffff" />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#resume'}>
-          <ResumeIcon />
-          <Label>Резюме</Label>
-        </Link>
+        <Tooltip arrow title="Резюме" placement="right">
+          <Link href={'#resume'}>
+            <ResumeIcon />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#services'}>
-          <ServicesIcon />
-          <Label>Услуги</Label>
-        </Link>
+        <Tooltip arrow title="Услуги" placement="right">
+          <Link href={'#services'}>
+            <ServicesIcon />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#portfolio'}>
-          <PortfolioIcon />
-          <Label>Портфолио</Label>
-        </Link>
+        <Tooltip arrow title="Портфолио" placement="right">
+          <Link href={'#portfolio'}>
+            <PortfolioIcon />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#cooperation'}>
-          <СooperationIcon />
-          <Label>Сотрудничество</Label>
-        </Link>
+        <Tooltip arrow title="Сотрудничество" placement="right">
+          <Link href={'#cooperation'}>
+            <СooperationIcon />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#blog'}>
-          <BlogIcon />
-          <Label>Блог</Label>
-        </Link>
+        <Tooltip arrow title="Блог" placement="right">
+          <Link href={'#blog'}>
+            <BlogIcon />
+          </Link>
+        </Tooltip>
       </Li>
       <Li>
-        <Link href={'#contacts'}>
-          <СontactsIcon />
-          <Label>Контакты</Label>
-        </Link>
+        <Tooltip arrow title="Контакты" placement="right">
+          <Link href={'#contacts'}>
+            <СontactsIcon />
+          </Link>
+        </Tooltip>
       </Li>
     </Ul>
   </NavWrapper>
