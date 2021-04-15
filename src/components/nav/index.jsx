@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavWrapper, Ul, Li, Link, Label } from './style';
+import { NavWrapper, Ul, Li, Link, Label, LogoSign } from './style';
 
 import { ReactComponent as PersonIcon } from './icon/PersonIcon.svg';
 import { ReactComponent as ResumeIcon } from './icon/ResumeIcon.svg';
@@ -14,6 +14,12 @@ import { ReactComponent as ScaleIcon } from './icon/ScaleIcon.svg';
 const Nav = () => (
   <NavWrapper>
     <Ul>
+      <Li>
+        <Link href={'#'}>
+          <LogoSign>{`${'< / >'}`}</LogoSign>
+          <Label>Дом</Label>
+        </Link>
+      </Li>
       <Li>
         <Link href={'#advantages'}>
           <ScaleIcon width={28} height={28} fill="#ffff" />

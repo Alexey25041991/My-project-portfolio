@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35px;
-  height: 306px;
+  width: 48px;
+  height: 348px;
   margin-bottom: -11px;
   background: url(img/rocket.png) no-repeat;
   position: fixed;
@@ -63,4 +63,13 @@ export const Label = styled.span`
   padding: 2px 5px;
   border-radius: 5px;
   border: 3px solid #fff;
+`;
+
+export const LogoSign = styled.div`
+  color: white;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 800;
+  white-space: nowrap;
 `;
