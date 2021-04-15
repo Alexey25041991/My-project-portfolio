@@ -17,3 +17,8 @@ export const ModalComponent = styled.div`
     0px 6.4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
 `;
+
+export const ModalSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;

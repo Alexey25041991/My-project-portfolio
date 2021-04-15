@@ -9,10 +9,14 @@ import {
   MenuItem,
   Select,
   FormControl,
+  FormLabel,
   makeStyles,
   createStyles,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  Button,
 } from '@material-ui/core';
-import css from './style.css';
 
 import { Overlay } from './Overlay';
 import { Header } from './Header';
@@ -21,9 +25,11 @@ import { Content } from './Content';
 import { Footer } from './Footer';
 import { ModalComponent } from './ModalComponent';
 import { ModalSection } from './ModalSection';
+import { ContentText } from './ContentText';
 
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
 import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
+import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -36,6 +42,9 @@ const useStyles = makeStyles((theme) =>
       marginTop: 10,
       marginBottom: 10,
       minWidth: 120,
+    },
+    radio: {
+      backgroundColor: '#ff8560',
     },
   })
 );
@@ -98,12 +107,17 @@ const Modal = ({ opened = false, onRequestClose }) => {
   const [valuePhone, setValuePhone] = useState('');
   const [valueMail, setValueMail] = useState('');
   const [valueService, setValueService] = useState('');
+  const [valueRadioTerm, setValueRadioTerm] = useState('urgently');
+  const [valueRadioTZ, setValueRadioTZ] = useState('valueYes');
+  const [valueDescriptionProject, setValueDescriptionProject] = useState(
+    'valueYes'
+  );
 
   const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
   };
 
-  console.log(2, valueName, valuePhone, valueMail, valueService);
+  console.log(2, valueRadioTerm, valueRadioTZ, valueDescriptionProject);
   const classes = useStyles();
 
   const handleClose = (e) => {
@@ -158,22 +172,30 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   onChange: handleChangePhone,
                 }}
               />
+              <FormControl component="fieldset">
+                <FormLabel component="legend">Срок на разработку</FormLabel>
+                <RadioGroup
+                  row
+                  aria-label="position"
+                  name="position"
+                  value={valueRadioTerm}
+                  onChange={(e) => setValueRadioTerm(e.target.value)}
+                  defaultValue="urgently"
+                >
+                  <FormControlLabel
+                    value="urgently"
+                    control={<Radio color="primary" />}
+                    label="Нужно срочно"
+                  />
+                  <FormControlLabel
+                    value="wait"
+                    control={<Radio color="primary" />}
+                    label="Я не спешу"
+                  />
+                </RadioGroup>
+              </FormControl>
             </Content>
             <Content>
-              <TextField
-                id="maskExample"
-                label="Ваш e-mail *"
-                fullWidth
-                className={classes.textField}
-                margin="normal"
-                InputProps={{
-                  inputComponent: TextMaskEMail,
-                  value: valueMail.textmask,
-                  onChange: (e) => {
-                    setValueMail(e.target.value);
-                  },
-                }}
-              />
               <FormControl
                 variant="outlined"
                 fullWidth
@@ -214,14 +236,74 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   </MenuItem>
                 </Select>
               </FormControl>
+              <TextField
+                id="maskExample"
+                label="Ваш e-mail *"
+                fullWidth
+                className={classes.textField}
+                margin="normal"
+                InputProps={{
+                  inputComponent: TextMaskEMail,
+                  value: valueMail.textmask,
+                  onChange: (e) => {
+                    setValueMail(e.target.value);
+                  },
+                }}
+              />
+              <FormControl component="fieldset">
+                <FormLabel component="legend">
+                  Есть ли у вас техническое задание?
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-label="position"
+                  name="position"
+                  value={valueRadioTZ}
+                  onChange={(e) => setValueRadioTZ(e.target.value)}
+                  defaultValue="urgently"
+                >
+                  <FormControlLabel
+                    value="valueYes"
+                    control={<Radio color="primary" />}
+                    label="Да"
+                  />
+                  <FormControlLabel
+                    value="valueNot"
+                    control={<Radio color="primary" />}
+                    label="Нет"
+                  />
+                </RadioGroup>
+              </FormControl>
             </Content>
           </ModalSection>
+          <ModalSection>
+            <ContentText>
+              <TextField
+                id="outlined-textarea"
+                label="Описание проекта, требования, особые пожелания, бюджет*"
+                placeholder="Введите текст"
+                multiline
+                fullWidth
+                rows={4}
+                variant="outlined"
+                value={valueDescriptionProject}
+                onChange={(e) => {
+                  setValueDescriptionProject(e.target.value);
+                }}
+              />
+            </ContentText>
+          </ModalSection>
           <Footer>
-            {/* <Button
-          {...secondaryButton}
-          size={secondaryButton.size || 'small'}
-          kind={secondaryButton.kind || 'secondary'}
-        /> */}
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              className={classes.button}
+              startIcon={<OrderSiteIcon width={24} height={24} />}
+              onClick={() => console.log('Отправить')}
+            >
+              Отправить
+            </Button>
           </Footer>
         </ModalComponent>
       </Overlay>

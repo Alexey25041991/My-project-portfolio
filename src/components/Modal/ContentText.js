@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 import { PADDING } from './constants';
 
-export const Content = styled.div`
+export const ContentText = styled.div`
   white-space: pre-wrap;
   overflow-y: auto;
-  padding: ${PADDING};
+  padding: 5px ${PADDING} ${PADDING} ${PADDING};
   color: inherit;
   font-family: Inter;
   font-size: 15px;
