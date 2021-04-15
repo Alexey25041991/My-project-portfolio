@@ -9,7 +9,7 @@ export const FooterWrapper = styled.div`
   background-color: #2B3037;
   // background: url(${myIconBgcont}) center top;
   line-height: 20px;
-  color: #ffff;
+  color: #000;
   font-family: 'Exo 2', sans-serif;
   &::after {
     background: url(${myIconWawewb}) center bottom repeat-x;

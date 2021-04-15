@@ -30,6 +30,7 @@ import { ContentText } from './ContentText';
 import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
 import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
 import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -44,7 +45,8 @@ const useStyles = makeStyles((theme) =>
       minWidth: 120,
     },
     radio: {
-      backgroundColor: '#ff8560',
+      // backgroundColor: '#ff8560',
+      color: red,
     },
   })
 );
@@ -109,9 +111,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
   const [valueService, setValueService] = useState('');
   const [valueRadioTerm, setValueRadioTerm] = useState('urgently');
   const [valueRadioTZ, setValueRadioTZ] = useState('valueYes');
-  const [valueDescriptionProject, setValueDescriptionProject] = useState(
-    'valueYes'
-  );
+  const [valueDescriptionProject, setValueDescriptionProject] = useState('');
 
   const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
@@ -140,8 +140,8 @@ const Modal = ({ opened = false, onRequestClose }) => {
       <Overlay data-close-border opened={opened} onClick={handleOverlayClick}>
         <ModalComponent data-close-modal>
           <Header>
-            <FooterMailIcon width={24} height={24} fill="#2b3037" /> Вы готовы
-            сделать заказ?
+            <FooterMailIcon width={24} height={24} fill="#2b3037" />
+            Вы готовы сделать заказ?
           </Header>
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
@@ -270,6 +270,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   <FormControlLabel
                     value="valueNot"
                     control={<Radio color="primary" />}
+                    className={classes.radio}
                     label="Нет"
                   />
                 </RadioGroup>

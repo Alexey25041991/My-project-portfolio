@@ -10,7 +10,7 @@ export const OrderSiteWrapper = styled.div`
   background-color: #fff;
   background: url(${myIconBgcont}) center top;
   line-height: 20px;
-  color: #ffff;
+  color: #000;
   font-family: 'Exo 2', sans-serif;
   &:before {
     background: url(${myIconWawew}) top center repeat-x;

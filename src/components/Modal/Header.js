@@ -8,7 +8,7 @@ export const Header = styled.div`
   justify-content: center;
   white-space: pre-wrap;
   margin-bottom: ${HEADER_MARGIN_BOTTOM};
-  color: inherit;
+  color: #000;
   font-family: Inter;
   font-size: 20px;
   font-weight: 600;
