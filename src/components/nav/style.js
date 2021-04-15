@@ -44,27 +44,6 @@ export const Link = styled.a`
   align-items: center;
 `;
 
-export const Label = styled.span`
-  display: flex;
-  align-items: center;
-  position: absolute;
-  color: #fff;
-  left: 48px;
-  text-align: left;
-  top: 0px;
-  opacity: 0;
-  font-size: 11px;
-  visibility: hidden;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background: #2b3037;
-  padding: 2px 5px;
-  border-radius: 5px;
-  border: 3px solid #fff;
-`;
-
 export const LogoSign = styled.div`
   color: white;
   line-height: 30px;

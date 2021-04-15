@@ -2,7 +2,7 @@ import React from 'react';
 
 import Tooltip from '@material-ui/core/Tooltip';
 
-import { NavWrapper, Ul, Li, Link, Label, LogoSign } from './style';
+import { NavWrapper, Ul, Li, Link, LogoSign } from './style';
 
 import { ReactComponent as PersonIcon } from './icon/PersonIcon.svg';
 import { ReactComponent as ResumeIcon } from './icon/ResumeIcon.svg';
