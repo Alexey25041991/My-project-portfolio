@@ -11,9 +11,11 @@ import OrderSite from '../components/OrderSite';
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
+import App from '../components/ModalAnimation';
 
-const App = () => (
+const App1 = () => (
   <>
+    <App />
     <HeaderConteiner />
     <AdvantagesSection />
     <PersonalInformation />
@@ -28,4 +30,4 @@ const App = () => (
   </>
 );
 
-export default App;
+export default App1;
