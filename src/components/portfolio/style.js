@@ -68,7 +68,7 @@ export const Ul = styled.ul`
   margin: 0;
   display: flex;
   list-style-type: none;
-  height: 382px;
+  height: 420px;
   width: 960px;
   margin: 0 auto;
   position: relative;
@@ -170,7 +170,6 @@ export const SlickList = styled.div`
 export const SlickTrack = styled.div`
   display: flex;
   opacity: 1;
-  width: 60000px;
   margin-left: -13px;
   position: relative;
   top: 0;
