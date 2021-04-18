@@ -69,9 +69,24 @@ const getSlickList = (propsSlickList) =>
     </Li>
   ));
 
+const slidesToShowValue =
+  propsSlickList?.length < 3 ? propsSlickList.length : 3;
+
+const centerModeValue = propsSlickList?.length < 3;
+
+const centerPaddingValue = (slidesToShowValue) => {
+  switch (slidesToShowValue) {
+    case 1:
+      return 330;
+    case 2:
+      return 160;
+    default:
+  }
+};
+
 const settings = {
   initialSlide: 0,
-  slidesToShow: 1,
+  slidesToShow: slidesToShowValue,
   virtualList: true,
   className: 'styleSlider',
   dots: true,
@@ -79,12 +94,8 @@ const settings = {
   autoplaySpeed: 5000,
   wheel: true,
   arrows: false,
-  //в случае меньше 3
-  centerMode: true,
-  // в случае одного
-  centerPadding: 330,
-  // в случае если 2
-  // centerPadding: 160,
+  centerMode: centerModeValue,
+  centerPadding: centerPaddingValue(slidesToShowValue),
 };
 
 const Portfolio = () => {
@@ -106,7 +117,7 @@ const Portfolio = () => {
         </PortfolioHeader>
         <PortfolioCustom>
           <Ul>
-            <ButtonL onClick={gotoPrev} />
+            {propsSlickList?.length > 3 && <ButtonL onClick={gotoPrev} />}
             <SlickList>
               <SlickTrack>
                 <Slider {...settings} ref={sliderRef}>
@@ -114,7 +125,7 @@ const Portfolio = () => {
                 </Slider>
               </SlickTrack>
             </SlickList>
-            <ButtonR onClick={gotoNext} />
+            {propsSlickList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
           <Allportf>
             <Link href={`${'#'}`}>
