@@ -8,6 +8,7 @@ import ServiseList from './ServiseList';
 import Portfolio from './Portfolio';
 import OrderSite from './OrderSite';
 import Blog from './Blog';
+import Nav from './Nav';
 
 const ContentConteiner = () => (
   <>
@@ -19,6 +20,7 @@ const ContentConteiner = () => (
     <Portfolio />
     <OrderSite />
     <Blog />
+    <Nav />
   </>
 );
 

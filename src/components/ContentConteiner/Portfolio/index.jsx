@@ -13,7 +13,7 @@ import {
   ButtonL,
   ButtonR,
   Allportf,
-  LinkDiv,
+  LinkPortfolio,
   Label,
   SlickList,
   SlickTrack,
@@ -130,10 +130,10 @@ const Portfolio = () => {
           </Ul>
           <Link to="/portfolio" style={{ textDecoration: 'none' }}>
             <Allportf>
-              <LinkDiv>
+              <LinkPortfolio>
                 <KeyIcon />
                 <Label>Открыть портфолио</Label>
-              </LinkDiv>
+              </LinkPortfolio>
             </Allportf>
           </Link>
         </PortfolioCustom>

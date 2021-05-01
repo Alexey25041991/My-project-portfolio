@@ -2,7 +2,6 @@ import React from 'react';
 
 import HeaderConteiner from '../components/Header';
 import Footer from '../components/Footer';
-import Nav from '../components/Nav';
 import ContentConteiner from '../components/ContentConteiner';
 import PortfolioBlogPage from '../components/PortfolioBlogPage';
 
@@ -16,7 +15,6 @@ const App = () => (
       <Route path="/portfolio" component={PortfolioBlogPage} />
     </Switch>
     <Footer />
-    <Nav />
   </Router>
 );
 

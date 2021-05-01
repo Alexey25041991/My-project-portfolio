@@ -136,7 +136,7 @@ export const Allportf = styled.button`
   }
 `;
 
-export const LinkDiv = styled.div`
+export const LinkPortfolio = styled.div`
   text-decoration: none;
   display: flex;
   align-items: center;
