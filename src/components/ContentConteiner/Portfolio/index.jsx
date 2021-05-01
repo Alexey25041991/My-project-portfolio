@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Slider from 'infinite-react-carousel';
+import { Link } from 'react-router-dom';
 
 import {
   PortfolioWrapper,
@@ -12,7 +13,7 @@ import {
   ButtonL,
   ButtonR,
   Allportf,
-  Link,
+  LinkDiv,
   Label,
   SlickList,
   SlickTrack,
@@ -127,12 +128,14 @@ const Portfolio = () => {
             </SlickList>
             {propsSlickList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
-          <Allportf>
-            <Link href={`${'#'}`}>
-              <KeyIcon />
-              <Label>Открыть портфолио</Label>
-            </Link>
-          </Allportf>
+          <Link to="/portfolio" style={{ textDecoration: 'none' }}>
+            <Allportf>
+              <LinkDiv>
+                <KeyIcon />
+                <Label>Открыть портфолио</Label>
+              </LinkDiv>
+            </Allportf>
+          </Link>
         </PortfolioCustom>
       </PortfolioConteiner>
     </PortfolioWrapper>

@@ -18,63 +18,63 @@ const Nav = () => (
     <Ul>
       <Li>
         <Tooltip arrow title="Дом" placement="right">
-          <Link href={'#'}>
+          <Link href={'/#'}>
             <LogoSign>{`${'< / >'}`}</LogoSign>
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Преимущества" placement="right">
-          <Link href={'#advantages'}>
+          <Link href={'/#advantages'}>
             <ScaleIcon width={28} height={28} fill="#ffff" />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Обо мне" placement="right">
-          <Link href={'#person'}>
+          <Link href={'/#person'}>
             <PersonIcon width={28} height={28} fill="#ffff" />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Резюме" placement="right">
-          <Link href={'#resume'}>
+          <Link href={'/#resume'}>
             <ResumeIcon />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Услуги" placement="right">
-          <Link href={'#services'}>
+          <Link href={'/#services'}>
             <ServicesIcon />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Портфолио" placement="right">
-          <Link href={'#portfolio'}>
+          <Link href={'/#portfolio'}>
             <PortfolioIcon />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Сотрудничество" placement="right">
-          <Link href={'#cooperation'}>
+          <Link href={'/#cooperation'}>
             <СooperationIcon />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Блог" placement="right">
-          <Link href={'#blog'}>
+          <Link href={'/#blog'}>
             <BlogIcon />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Контакты" placement="right">
-          <Link href={'#contacts'}>
+          <Link href={'/#contacts'}>
             <СontactsIcon />
           </Link>
         </Tooltip>

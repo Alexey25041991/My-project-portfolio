@@ -4,14 +4,20 @@ import HeaderConteiner from '../components/Header';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import ContentConteiner from '../components/ContentConteiner';
+import PortfolioBlogPage from '../components/PortfolioBlogPage';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => (
-  <>
+  <Router>
     <HeaderConteiner />
-    <ContentConteiner />
+    <Switch>
+      <Route path="/" exact component={ContentConteiner} />
+      <Route path="/portfolio" component={PortfolioBlogPage} />
+    </Switch>
     <Footer />
     <Nav />
-  </>
+  </Router>
 );
 
 export default App;
