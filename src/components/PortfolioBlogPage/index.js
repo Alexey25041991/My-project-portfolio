@@ -1,5 +1,11 @@
 import React from 'react';
 
-const PortfolioBlogPage = () => <div>Привет</div>;
+import PortfolioHeader from './PortfolioHeader';
+
+const PortfolioBlogPage = () => (
+  <>
+    <PortfolioHeader />
+  </>
+);
 
 export default PortfolioBlogPage;
