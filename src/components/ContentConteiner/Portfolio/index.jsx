@@ -36,10 +36,10 @@ import { ReactComponent as KeyIcon } from './icon/KeyIcon.svg';
 import { ReactComponent as PortfolioLabelIcon } from './icon/PortfolioLabelIcon.svg';
 import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
 
-import { propsSlickList } from './constants';
+import { propsPortfolioList } from '../../common/constants';
 
-const getSlickList = (propsSlickList) =>
-  propsSlickList.map((item) => (
+const getSlickList = (propsPortfolioList) =>
+  propsPortfolioList.map((item) => (
     <Li key={item.id}>
       <PortfolioImg>
         <PortfolioList href={`${item.hrefImg}`}>
@@ -71,9 +71,9 @@ const getSlickList = (propsSlickList) =>
   ));
 
 const slidesToShowValue =
-  propsSlickList?.length < 3 ? propsSlickList.length : 3;
+  propsPortfolioList?.length < 3 ? propsPortfolioList.length : 3;
 
-const centerModeValue = propsSlickList?.length < 3;
+const centerModeValue = propsPortfolioList?.length < 3;
 
 const centerPaddingValue = (slidesToShowValue) => {
   switch (slidesToShowValue) {
@@ -118,15 +118,15 @@ const Portfolio = () => {
         </PortfolioHeader>
         <PortfolioCustom>
           <Ul>
-            {propsSlickList?.length > 3 && <ButtonL onClick={gotoPrev} />}
+            {propsPortfolioList?.length > 3 && <ButtonL onClick={gotoPrev} />}
             <SlickList>
               <SlickTrack>
                 <Slider {...settings} ref={sliderRef}>
-                  {getSlickList(propsSlickList)}
+                  {getSlickList(propsPortfolioList)}
                 </Slider>
               </SlickTrack>
             </SlickList>
-            {propsSlickList?.length > 3 && <ButtonR onClick={gotoNext} />}
+            {propsPortfolioList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
           <Link to="/portfolio" style={{ textDecoration: 'none' }}>
             <Allportf>

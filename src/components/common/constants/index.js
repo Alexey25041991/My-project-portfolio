@@ -1,7 +1,7 @@
-import PortfolioImgUrl1 from '../icon/PortfolioImgUrl.png';
-import webdev from '../icon/webdev.png';
+import PortfolioImgUrl1 from './icon/PortfolioImgUrl.png';
+import webdev from './icon/webdev.png';
 
-export const propsSlickList = [
+export const propsPortfolioList = [
   {
     id: '1',
     hrefImg: '#',
@@ -37,6 +37,17 @@ export const propsSlickList = [
   },
   {
     id: '4',
+    hrefImg: '#',
+    portfolioTextLabel: 'Интернет магазин',
+    portfolioDataTime: 'Январь 2021',
+    icon: `${PortfolioImgUrl1}`,
+    widthIcon: '285px',
+    heightIcon: '500px',
+    hrefNameList: '#',
+    portfolioNameList: 'Интернет магазин',
+  },
+  {
+    id: '5',
     hrefImg: '#',
     portfolioTextLabel: 'Интернет магазин',
     portfolioDataTime: 'Январь 2021',

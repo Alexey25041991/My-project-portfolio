@@ -51,7 +51,7 @@ export const PortfolioHeaderText = styled.p`
   line-height: 20px;
 `;
 
-export const PortfolioHeaderBreadCrumbs = styled.p`
+export const PortfolioHeaderBreadCrumbs = styled.div`
   margin-top: 17px;
   color: #fff;
   font-size: 14px;
