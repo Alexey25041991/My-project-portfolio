@@ -4,6 +4,9 @@ import { Breadcrumbs } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 
+import { store } from '../../store';
+import { PAGES_PORTFOLIO } from '../../common/constants';
+
 import styled from 'styled-components/macro';
 import {
   PortfolioHeaderWrapper,
@@ -30,7 +33,13 @@ const LinkBreadcrumbs = styled(Link)`
   }
 `;
 
+const hendleClick = () => {
+  return store.setPortfolioBlogPage(PAGES_PORTFOLIO.PORTFOLIO_HOME);
+};
+
 const PortfolioHeader = () => {
+  console.log(1, store.getPortfolioBlogPage());
+  const portfolio = store.getPortfolioBlogPage();
   return (
     <PortfolioHeaderWrapper>
       <PortfolioHeaderConteiner>
@@ -40,7 +49,15 @@ const PortfolioHeader = () => {
               <HomeIcon style={{ color: '#fff', marginRight: '5px' }} />
               <BreadcrumbsText>Главная</BreadcrumbsText>
             </LinkBreadcrumbs>
-            <BreadcrumbsText>Портфолио</BreadcrumbsText>
+            {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME ? (
+              <LinkBreadcrumbs to="/portfolio">
+                <BreadcrumbsText onClick={() => hendleClick()}>
+                  Портфолио
+                </BreadcrumbsText>
+              </LinkBreadcrumbs>
+            ) : (
+              <BreadcrumbsText>Портфолио</BreadcrumbsText>
+            )}
           </Breadcrumbs>
         </PortfolioHeaderBreadCrumbs>
         <PortfolioHeaderHeader>

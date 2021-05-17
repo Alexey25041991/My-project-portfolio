@@ -10,7 +10,7 @@ export const propsPortfolioList = [
     icon: `${webdev}`,
     widthIcon: '285px',
     heightIcon: '200px',
-    hrefNameList: '#',
+    hrefNameList: 'name1',
     portfolioNameList: 'Интернет магазин',
   },
   {
@@ -21,7 +21,7 @@ export const propsPortfolioList = [
     icon: `${PortfolioImgUrl1}`,
     widthIcon: '285px',
     heightIcon: '500px',
-    hrefNameList: '#',
+    hrefNameList: 'name2',
     portfolioNameList: 'Интернет магазин',
   },
   {
@@ -32,7 +32,7 @@ export const propsPortfolioList = [
     icon: `${PortfolioImgUrl1}`,
     widthIcon: '285px',
     heightIcon: '500px',
-    hrefNameList: '#',
+    hrefNameList: 'name3',
     portfolioNameList: 'Интернет магазин',
   },
   {
@@ -43,7 +43,7 @@ export const propsPortfolioList = [
     icon: `${PortfolioImgUrl1}`,
     widthIcon: '285px',
     heightIcon: '500px',
-    hrefNameList: '#',
+    hrefNameList: 'name4',
     portfolioNameList: 'Интернет магазин',
   },
   {
@@ -54,7 +54,16 @@ export const propsPortfolioList = [
     icon: `${PortfolioImgUrl1}`,
     widthIcon: '285px',
     heightIcon: '500px',
-    hrefNameList: '#',
+    hrefNameList: 'name5',
     portfolioNameList: 'Интернет магазин',
   },
 ];
+
+export const PAGES_PORTFOLIO = {
+  PORTFOLIO_HOME: 'PORTFOLIO_HOME',
+  NAMES1: 'names1',
+  NAMES2: 'names2',
+  NAMES3: 'names3',
+  NAMES4: 'names4',
+  NAMES5: 'names5',
+};

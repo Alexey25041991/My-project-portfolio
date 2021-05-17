@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { store } from '../../store';
+
 import {
   PortfolioWrapper,
   PortfolioConteiner,
@@ -48,11 +50,18 @@ const getButtonList = (propsButtonList) =>
     </PortfolioButtom>
   ));
 
+const hendleClick = (hrefNameList) => {
+  store.setPortfolioBlogPage(hrefNameList);
+};
+
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
-    <Li key={item.id}>
+    <Li key={item.id} onClick={() => hendleClick(item.hrefNameList)}>
       <PortfolioImg>
-        <PortfolioListData to="/" style={{ textDecoration: 'none' }}>
+        <PortfolioListData
+          to={`/portfolio/${item.hrefNameList}`}
+          style={{ textDecoration: 'none' }}
+        >
           <PortfolioImgUrl
             src={item.icon}
             width={item.widthIcon}
