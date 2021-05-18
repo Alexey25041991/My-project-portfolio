@@ -18,7 +18,6 @@ import {
   SlickList,
   SlickTrack,
   PortfolioImg,
-  PortfolioList,
   PortfolioImgUrl,
   PortfolioData,
   PortfolioDataValue,
@@ -28,7 +27,7 @@ import {
   PortfolioName,
   PortfolioNameList,
 } from './style.js';
-
+import styled from 'styled-components/macro';
 import './index.css';
 
 import { ReactComponent as PortfolioIcon } from './icon/PortfolioIcon.svg';
@@ -37,18 +36,37 @@ import { ReactComponent as PortfolioLabelIcon } from './icon/PortfolioLabelIcon.
 import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
 
 import { propsPortfolioList } from '../../common/constants';
+import { store } from '../../store';
+
+const PortfolioListData = styled(Link)`
+  display: flex;
+  width: 285px;
+  height: 292px;
+  overflow: hidden;
+  position: relative;
+  top: 21px;
+  left: 23px;
+`;
+
+const hendleClick = (hrefNameList) => {
+  store.setPortfolioBlogPage(hrefNameList);
+};
 
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
     <Li key={item.id}>
       <PortfolioImg>
-        <PortfolioList href={`${item.hrefImg}`}>
+        <PortfolioListData
+          to={`/portfolio/${item.hrefNameList}`}
+          style={{ textDecoration: 'none' }}
+          onClick={() => hendleClick(item.hrefNameList)}
+        >
           <PortfolioImgUrl
             src={item.icon}
             width={item.widthIcon}
             height={item.heightIcon}
           />
-        </PortfolioList>
+        </PortfolioListData>
       </PortfolioImg>
       <PortfolioData>
         <PortfolioDataValue>
@@ -63,9 +81,13 @@ const getSlickList = (propsPortfolioList) =>
         </PortfolioDataValue>
       </PortfolioData>
       <PortfolioName>
-        <PortfolioNameList href={`${item.hrefNameList}`}>
-          {item.portfolioNameList}
-        </PortfolioNameList>
+        <PortfolioListData
+          to={`/portfolio/${item.hrefNameList}`}
+          style={{ textDecoration: 'none' }}
+          onClick={() => hendleClick(item.hrefNameList)}
+        >
+          <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
+        </PortfolioListData>
       </PortfolioName>
     </Li>
   ));

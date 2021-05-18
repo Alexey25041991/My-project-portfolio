@@ -1,6 +1,9 @@
 // import styled from 'styled-components';
 import styled from 'styled-components';
 
+// import myIconWawewb from './icon/wawewb.png';
+import myIconBrouse from './icon/brouse.png';
+
 export const PortfolioWrapper = styled.div`
   display: flex;
   background-color: #fff;
@@ -46,7 +49,6 @@ export const PortfolioLabel = styled.div`
 
 export const PortfolioCustom = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -65,10 +67,7 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   display: flex;
   flex-direction: column;
-  width: 322px !important;
-  text-align: center;
-  margin-left: -8px;
-  margin-bottom: 30px;
+  margin: 30px 0;
 `;
 
 export const PortfolioButtom = styled.button`
@@ -119,11 +118,18 @@ export const SlickList = styled.div`
 
 export const SlickTrack = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   opacity: 1;
-  margin-left: -13px;
   position: relative;
   top: 0;
+`;
+
+export const PortfolioImg = styled.div`
+  display: flex;
+  background: url(${myIconBrouse}) no-repeat;
+  width: 960px;
+  height: 734px;
 `;
 
 export const PortfolioImgUrl = styled.img`

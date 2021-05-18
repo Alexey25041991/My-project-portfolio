@@ -5,7 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 
 import { store } from '../../store';
-import { PAGES_PORTFOLIO } from '../../common/constants';
+import { PAGES_PORTFOLIO, propsPortfolioList } from '../../common/constants';
 
 import styled from 'styled-components/macro';
 import {
@@ -40,6 +40,9 @@ const hendleClick = () => {
 const PortfolioHeader = () => {
   console.log(1, store.getPortfolioBlogPage());
   const portfolio = store.getPortfolioBlogPage();
+  const portfolioValue = propsPortfolioList.find(
+    (item) => item.hrefNameList === portfolio
+  );
   return (
     <PortfolioHeaderWrapper>
       <PortfolioHeaderConteiner>
@@ -57,6 +60,9 @@ const PortfolioHeader = () => {
               </LinkBreadcrumbs>
             ) : (
               <BreadcrumbsText>Портфолио</BreadcrumbsText>
+            )}
+            {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME && (
+              <BreadcrumbsText>{portfolioValue.hrefNameList}</BreadcrumbsText>
             )}
           </Breadcrumbs>
         </PortfolioHeaderBreadCrumbs>
