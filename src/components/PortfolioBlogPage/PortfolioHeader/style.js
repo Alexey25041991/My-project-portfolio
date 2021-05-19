@@ -33,7 +33,6 @@ export const PortfolioHeaderConteiner = styled.div`
 
 export const PortfolioHeaderHeader = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
@@ -41,10 +40,11 @@ export const PortfolioHeaderHeader = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 16px;
   margin-bottom: 8px;
 `;
 
-export const PortfolioHeaderText = styled.p`
+export const PortfolioHeaderText = styled.div`
   margin-top: 17px;
   color: #fff;
   font-size: 14px;
@@ -60,7 +60,7 @@ export const PortfolioHeaderBreadCrumbs = styled.div`
 
 export const BreadcrumbsText = styled.p`
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.18rem;
   font-weight: 400;
 `;
 
@@ -127,4 +127,24 @@ export const LabelText = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+`;
+
+export const PortfolioDataTime = styled.div`
+  display: flex;
+  margin-bottom: 12px;
+`;
+
+export const PortfolioDataText = styled.div`
+  display: flex;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 5px;
+`;
+
+export const PortfolioTechnologies = styled.div`
+  color: #fff;
+  font-size: 14x;
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 20px;
 `;

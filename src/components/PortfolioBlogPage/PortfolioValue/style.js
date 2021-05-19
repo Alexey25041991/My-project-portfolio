@@ -128,6 +128,7 @@ export const SlickTrack = styled.div`
 export const PortfolioImg = styled.div`
   display: flex;
   background: url(${myIconBrouse}) no-repeat;
+  position: relative;
   width: 960px;
   height: 734px;
 `;
@@ -178,9 +179,22 @@ export const PortfolioName = styled.div`
 `;
 
 export const PortfolioNameList = styled.a`
-  font-size: 14px;
   text-decoration: none;
-  border-bottom: 1px dashed #000;
-  color: #000;
+  position: absolute;
+  left: 105px;
+  top: 47px;
+  color: #8f8f8f;
+  font-size: 14px;
+  line-height: 1;
   cursor: pointer;
+`;
+
+export const Projectwindow = styled.div`
+  position: absolute;
+  top: 72px;
+  display: block;
+  width: 100%;
+  height: 655px;
+  overflow: auto;
+  border-radius: 0 0 0 10px;
 `;

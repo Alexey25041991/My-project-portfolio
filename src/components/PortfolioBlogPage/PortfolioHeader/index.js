@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Breadcrumbs } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
@@ -16,7 +16,12 @@ import {
   PortfolioHeaderBreadCrumbs,
   BreadcrumbsText,
   Label,
+  PortfolioDataTime,
+  PortfolioDataText,
+  PortfolioTechnologies,
 } from './style';
+
+import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
 
 const LinkBreadcrumbs = styled(Link)`
   display: flex;
@@ -33,16 +38,41 @@ const LinkBreadcrumbs = styled(Link)`
   }
 `;
 
-const hendleClick = () => {
+const handleClick = () => {
   return store.setPortfolioBlogPage(PAGES_PORTFOLIO.PORTFOLIO_HOME);
 };
 
 const PortfolioHeader = () => {
-  console.log(1, store.getPortfolioBlogPage());
+  const header = 'Портфолио';
+  const portfolioText = `В портфолио представлены проекты, которые я 
+  разработал в сотрудничестве с веб-студиями так и для частных клиентов, 
+  а также несколько личных проектов. Основная масса проектов содержит
+  индивидуальные функции предназначенные для реализации особенностей
+  работы веб-сайта.В моем портфолио веб-разработчика указано название
+  сайта, ссылка на сайт, цель сайта и описание выполненной работы`;
+
+  const [headerValue, setHeaderValue] = useState(header);
+  const [portfolioHeaderTextValue, setPortfolioHeaderTextValue] = useState(
+    portfolioText
+  );
+
   const portfolio = store.getPortfolioBlogPage();
   const portfolioValue = propsPortfolioList.find(
     (item) => item.hrefNameList === portfolio
   );
+  const portfolioNameList = portfolioValue?.portfolioNameList;
+  const portfolioHeaderText = portfolioValue?.portfolioText;
+
+  useEffect(() => {
+    switch (portfolio) {
+      case PAGES_PORTFOLIO.PORTFOLIO_HOME:
+        setHeaderValue(header) || setPortfolioHeaderTextValue(portfolioText);
+        break;
+      default:
+        setHeaderValue(portfolioNameList) ||
+          setPortfolioHeaderTextValue(portfolioHeaderText);
+    }
+  }, [portfolio, portfolioNameList, portfolioHeaderText, portfolioText]);
   return (
     <PortfolioHeaderWrapper>
       <PortfolioHeaderConteiner>
@@ -54,7 +84,7 @@ const PortfolioHeader = () => {
             </LinkBreadcrumbs>
             {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME ? (
               <LinkBreadcrumbs to="/portfolio">
-                <BreadcrumbsText onClick={() => hendleClick()}>
+                <BreadcrumbsText onClick={() => handleClick()}>
                   Портфолио
                 </BreadcrumbsText>
               </LinkBreadcrumbs>
@@ -62,20 +92,28 @@ const PortfolioHeader = () => {
               <BreadcrumbsText>Портфолио</BreadcrumbsText>
             )}
             {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME && (
-              <BreadcrumbsText>{portfolioValue.hrefNameList}</BreadcrumbsText>
+              <BreadcrumbsText>
+                {portfolioValue.portfolioNameList}
+              </BreadcrumbsText>
             )}
           </Breadcrumbs>
         </PortfolioHeaderBreadCrumbs>
         <PortfolioHeaderHeader>
-          <Label>Портфолио</Label>
+          <Label>{headerValue}</Label>
         </PortfolioHeaderHeader>
         <PortfolioHeaderText>
-          В портфолио представлены проекты, которые я разработал в
-          сотрудничестве с веб-студиями так и для частных клиентов, а также
-          несколько личных проектов. Основная масса проектов содержит
-          индивидуальные функции предназначенные для реализации особенностей
-          работы веб-сайта.В моем портфолио веб-разработчика указано название
-          сайта, ссылка на сайт, цель сайта и описание выполненной работы.
+          <PortfolioDataTime>
+            {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME && (
+              <PortfolioTimeIcon fill="#fff" />
+            )}
+            <PortfolioDataText>
+              {portfolioValue?.portfolioDataTime}
+              <PortfolioTechnologies>
+                {portfolioValue?.technologies}
+              </PortfolioTechnologies>
+            </PortfolioDataText>
+          </PortfolioDataTime>
+          {portfolioHeaderTextValue}
         </PortfolioHeaderText>
       </PortfolioHeaderConteiner>
     </PortfolioHeaderWrapper>

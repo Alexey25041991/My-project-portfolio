@@ -58,14 +58,14 @@ export const PersonalCustom = styled.div`
   padding: 0;
 `;
 
-export const PersonalText = styled.p`
+export const PersonalText = styled.div`
   margin-top: 17px;
   color: #000;
   font-size: 14px;
   line-height: 20px;
 `;
 
-export const PersonalSection = styled.p`
+export const PersonalSection = styled.div`
   display: flex;
   background: url(${myIconWebdev}) right top no-repeat;
   padding-right: 485px;

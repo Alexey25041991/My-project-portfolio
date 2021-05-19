@@ -73,7 +73,7 @@ const getSlickList = (propsPortfolioList) =>
         <PortfolioDataValue>
           <PortfolioDataLabel>
             <PortfolioLabelIcon />
-            <PortfolioDataText>{item.portfolioTextLabel}</PortfolioDataText>
+            <PortfolioDataText>{item.portfolioNameList}</PortfolioDataText>
           </PortfolioDataLabel>
           <PortfolioDataTime>
             <PortfolioTimeIcon />
