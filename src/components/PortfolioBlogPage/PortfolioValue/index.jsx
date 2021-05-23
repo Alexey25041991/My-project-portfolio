@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PortfolioHeader from '../PortfolioHeader';
+
 import {
   PortfolioWrapper,
   PortfolioConteiner,
@@ -12,15 +14,7 @@ import {
   PortfolioImgUrl,
 } from './style.js';
 
-import { propsPortfolioList } from '../../common/constants';
-
-import { store } from '../../store';
-
-const getSlickList = (propsPortfolioList) => {
-  const portfolioName = store.getPortfolioBlogPage();
-  const portfolioValue = propsPortfolioList.find(
-    (item) => item.hrefNameList === portfolioName
-  );
+const getSlickList = (item) => {
   return (
     <Li>
       <PortfolioImg>
@@ -28,25 +22,30 @@ const getSlickList = (propsPortfolioList) => {
           'https://react-t-shirt-shop.herokuapp.com/',
           'width=600,height=400'
         )} */}
-        <PortfolioNameList href={portfolioValue.hrefPortfolio} target="_blank">
-          {portfolioValue.hrefPortfolio}
+
+        <PortfolioNameList href={item?.hrefPortfolio} target="_blank">
+          {item?.hrefPortfolio}
         </PortfolioNameList>
+
         <Projectwindow>
-          <PortfolioImgUrl src={portfolioValue.icon} width={'936px'} />
+          <PortfolioImgUrl src={item.icon} width={'936px'} />
         </Projectwindow>
       </PortfolioImg>
     </Li>
   );
 };
 
-const PortfolioValue = () => (
-  <PortfolioWrapper id="portfolio">
-    <PortfolioConteiner>
-      <PortfolioCustom>
-        <SlickTrack>{getSlickList(propsPortfolioList)}</SlickTrack>
-      </PortfolioCustom>
-    </PortfolioConteiner>
-  </PortfolioWrapper>
+const PortfolioValue = ({ item }) => (
+  <>
+    <PortfolioHeader item={item} />
+    <PortfolioWrapper>
+      <PortfolioConteiner>
+        <PortfolioCustom>
+          <SlickTrack>{getSlickList(item)}</SlickTrack>
+        </PortfolioCustom>
+      </PortfolioConteiner>
+    </PortfolioWrapper>
+  </>
 );
 
 export default PortfolioValue;

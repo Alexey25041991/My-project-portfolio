@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // import myIconWawewb from './icon/wawewb.png';
 import myIconBrouse from './icon/brouse.png';
+import myIconWawew from './icon/wawew.png';
 
 export const PortfolioWrapper = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ export const PortfolioWrapper = styled.div`
   color: #000;
   font-family: 'Exo 2', sans-serif;
   &:before {
+    background: url(${myIconWawew}) top center repeat-x;
     content: '';
     width: 100%;
     height: 32px;

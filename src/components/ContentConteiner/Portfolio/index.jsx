@@ -36,31 +36,34 @@ import { ReactComponent as PortfolioLabelIcon } from './icon/PortfolioLabelIcon.
 import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
 
 import { propsPortfolioList } from '../../common/constants';
-import { store } from '../../store';
 
 const PortfolioListData = styled(Link)`
   display: flex;
+  justify-content: center;
   width: 285px;
   height: 292px;
   overflow: hidden;
   position: relative;
   top: 21px;
   left: 23px;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  // position: relative;
+  // & :hover:before {
+  //   position: absolute;
+  //   content: '';
+  //   width: calc(100% + (1px * 2));
+  //   height: 2px;
+  //   bottom: 15px;
+  //   background: #000;
+  // }
 `;
-
-const hendleClick = (hrefNameList) => {
-  store.setPortfolioBlogPage(hrefNameList);
-};
 
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
     <Li key={item.id}>
       <PortfolioImg>
-        <PortfolioListData
-          to={`/portfolio/${item.hrefNameList}`}
-          style={{ textDecoration: 'none' }}
-          onClick={() => hendleClick(item.hrefNameList)}
-        >
+        <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
           <PortfolioImgUrl
             src={item.icon}
             width={item.widthIcon}
@@ -81,11 +84,7 @@ const getSlickList = (propsPortfolioList) =>
         </PortfolioDataValue>
       </PortfolioData>
       <PortfolioName>
-        <PortfolioListData
-          to={`/portfolio/${item.hrefNameList}`}
-          style={{ textDecoration: 'none' }}
-          onClick={() => hendleClick(item.hrefNameList)}
-        >
+        <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
           <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
         </PortfolioListData>
       </PortfolioName>
@@ -130,7 +129,6 @@ const Portfolio = () => {
     sliderRef.current.slickPrev();
   };
 
-  // slickPrev
   return (
     <PortfolioWrapper id="portfolio">
       <PortfolioConteiner>

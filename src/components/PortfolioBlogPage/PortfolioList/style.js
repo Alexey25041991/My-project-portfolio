@@ -33,7 +33,7 @@ export const PortfolioConteiner = styled.div`
   padding: 0 25px;
 `;
 
-export const PortfolioHeader = styled.div`
+export const PortfolioHeaderValue = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

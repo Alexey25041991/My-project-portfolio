@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Breadcrumbs } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
-
-import { store } from '../../store';
-import { PAGES_PORTFOLIO, propsPortfolioList } from '../../common/constants';
 
 import styled from 'styled-components/macro';
 import {
@@ -38,41 +35,7 @@ const LinkBreadcrumbs = styled(Link)`
   }
 `;
 
-const handleClick = () => {
-  return store.setPortfolioBlogPage(PAGES_PORTFOLIO.PORTFOLIO_HOME);
-};
-
-const PortfolioHeader = () => {
-  const header = 'Портфолио';
-  const portfolioText = `В портфолио представлены проекты, которые я 
-  разработал в сотрудничестве с веб-студиями так и для частных клиентов, 
-  а также несколько личных проектов. Основная масса проектов содержит
-  индивидуальные функции предназначенные для реализации особенностей
-  работы веб-сайта.В моем портфолио веб-разработчика указано название
-  сайта, ссылка на сайт, цель сайта и описание выполненной работы`;
-
-  const [headerValue, setHeaderValue] = useState(header);
-  const [portfolioHeaderTextValue, setPortfolioHeaderTextValue] = useState(
-    portfolioText
-  );
-
-  const portfolio = store.getPortfolioBlogPage();
-  const portfolioValue = propsPortfolioList.find(
-    (item) => item.hrefNameList === portfolio
-  );
-  const portfolioNameList = portfolioValue?.portfolioNameList;
-  const portfolioHeaderText = portfolioValue?.portfolioText;
-
-  useEffect(() => {
-    switch (portfolio) {
-      case PAGES_PORTFOLIO.PORTFOLIO_HOME:
-        setHeaderValue(header) || setPortfolioHeaderTextValue(portfolioText);
-        break;
-      default:
-        setHeaderValue(portfolioNameList) ||
-          setPortfolioHeaderTextValue(portfolioHeaderText);
-    }
-  }, [portfolio, portfolioNameList, portfolioHeaderText, portfolioText]);
+const PortfolioHeader = ({ item }) => {
   return (
     <PortfolioHeaderWrapper>
       <PortfolioHeaderConteiner>
@@ -82,38 +45,34 @@ const PortfolioHeader = () => {
               <HomeIcon style={{ color: '#fff', marginRight: '5px' }} />
               <BreadcrumbsText>Главная</BreadcrumbsText>
             </LinkBreadcrumbs>
-            {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME ? (
+            {item.portfolioNameList !== 'Портфолио' ? (
               <LinkBreadcrumbs to="/portfolio">
-                <BreadcrumbsText onClick={() => handleClick()}>
-                  Портфолио
-                </BreadcrumbsText>
+                <BreadcrumbsText>Портфолио</BreadcrumbsText>
               </LinkBreadcrumbs>
             ) : (
               <BreadcrumbsText>Портфолио</BreadcrumbsText>
             )}
-            {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME && (
-              <BreadcrumbsText>
-                {portfolioValue.portfolioNameList}
-              </BreadcrumbsText>
+            {item.portfolioNameList !== 'Портфолио' && (
+              <BreadcrumbsText>{item.portfolioNameList}</BreadcrumbsText>
             )}
           </Breadcrumbs>
         </PortfolioHeaderBreadCrumbs>
         <PortfolioHeaderHeader>
-          <Label>{headerValue}</Label>
+          <Label>{item.portfolioNameList}</Label>
         </PortfolioHeaderHeader>
         <PortfolioHeaderText>
           <PortfolioDataTime>
-            {portfolio !== PAGES_PORTFOLIO.PORTFOLIO_HOME && (
+            {item.portfolioNameList !== 'Портфолио' && (
               <PortfolioTimeIcon fill="#fff" />
             )}
             <PortfolioDataText>
-              {portfolioValue?.portfolioDataTime}
+              {item?.portfolioDataTime}
               <PortfolioTechnologies>
-                {portfolioValue?.technologies}
+                {item?.technologies}
               </PortfolioTechnologies>
             </PortfolioDataText>
           </PortfolioDataTime>
-          {portfolioHeaderTextValue}
+          {item?.portfolioText}
         </PortfolioHeaderText>
       </PortfolioHeaderConteiner>
     </PortfolioHeaderWrapper>

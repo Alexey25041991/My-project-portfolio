@@ -45,7 +45,8 @@ export const PortfolioHeaderHeader = styled.div`
 `;
 
 export const PortfolioHeaderText = styled.div`
-  margin-top: 17px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   color: #fff;
   font-size: 14px;
   line-height: 20px;

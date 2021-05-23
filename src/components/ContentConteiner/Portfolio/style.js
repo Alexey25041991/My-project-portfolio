@@ -241,10 +241,8 @@ export const PortfolioName = styled.div`
   text-transform: uppercase;
 `;
 
-export const PortfolioNameList = styled.a`
+export const PortfolioNameList = styled.div`
   font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px dashed #000;
   color: #000;
   cursor: pointer;
 `;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { store } from '../../store';
+import PortfolioHeader from '../PortfolioHeader';
 
 import {
   PortfolioWrapper,
   PortfolioConteiner,
-  PortfolioHeader,
+  PortfolioHeaderValue,
   PortfolioCustom,
   Ul,
   Li,
@@ -31,7 +31,10 @@ import { ReactComponent as PortfolioLabelIcon } from './icon/PortfolioLabelIcon.
 import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
 
 import { propsButtonList } from './constants';
-import { propsPortfolioList } from '../../common/constants';
+import {
+  propsPortfolioList,
+  propsPortfolioListHome,
+} from '../../common/constants';
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -41,6 +44,7 @@ const PortfolioListData = styled(Link)`
   position: relative;
   top: 21px;
   left: 23px;
+  text-decoration: none;
 `;
 
 const getButtonList = (propsButtonList) =>
@@ -50,18 +54,11 @@ const getButtonList = (propsButtonList) =>
     </PortfolioButtom>
   ));
 
-const hendleClick = (hrefNameList) => {
-  store.setPortfolioBlogPage(hrefNameList);
-};
-
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
-    <Li key={item.id} onClick={() => hendleClick(item.hrefNameList)}>
+    <Li key={item.id}>
       <PortfolioImg>
-        <PortfolioListData
-          to={`/portfolio/${item.hrefNameList}`}
-          style={{ textDecoration: 'none' }}
-        >
+        <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
           <PortfolioImgUrl
             src={item.icon}
             width={item.widthIcon}
@@ -88,20 +85,24 @@ const getSlickList = (propsPortfolioList) =>
       </PortfolioName>
     </Li>
   ));
-
 const PortfolioList = () => (
-  <PortfolioWrapper id="portfolio">
-    <PortfolioConteiner>
-      <PortfolioHeader>{getButtonList(propsButtonList)}</PortfolioHeader>
-      <PortfolioCustom>
-        <Ul>
-          <SlickList>
-            <SlickTrack>{getSlickList(propsPortfolioList)}</SlickTrack>
-          </SlickList>
-        </Ul>
-      </PortfolioCustom>
-    </PortfolioConteiner>
-  </PortfolioWrapper>
+  <>
+    <PortfolioHeader item={propsPortfolioListHome} />
+    <PortfolioWrapper>
+      <PortfolioConteiner>
+        <PortfolioHeaderValue>
+          {getButtonList(propsButtonList)}
+        </PortfolioHeaderValue>
+        <PortfolioCustom>
+          <Ul>
+            <SlickList>
+              <SlickTrack>{getSlickList(propsPortfolioList)}</SlickTrack>
+            </SlickList>
+          </Ul>
+        </PortfolioCustom>
+      </PortfolioConteiner>
+    </PortfolioWrapper>
+  </>
 );
 
 export default PortfolioList;
