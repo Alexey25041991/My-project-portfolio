@@ -47,16 +47,13 @@ const PortfolioListData = styled(Link)`
   top: 21px;
   left: 23px;
   text-decoration: none;
-  border-bottom: 1px dashed;
-  // position: relative;
-  // & :hover:before {
-  //   position: absolute;
-  //   content: '';
-  //   width: calc(100% + (1px * 2));
-  //   height: 2px;
-  //   bottom: 15px;
-  //   background: #000;
-  // }
+`;
+
+const PortfolioListDataText = styled(Link)`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
 `;
 
 const getSlickList = (propsPortfolioList) =>
@@ -84,9 +81,9 @@ const getSlickList = (propsPortfolioList) =>
         </PortfolioDataValue>
       </PortfolioData>
       <PortfolioName>
-        <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
+        <PortfolioListDataText to={`/portfolio/${item.hrefNameList}`}>
           <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
-        </PortfolioListData>
+        </PortfolioListDataText>
       </PortfolioName>
     </Li>
   ));

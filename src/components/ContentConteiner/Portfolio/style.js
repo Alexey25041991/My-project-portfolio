@@ -239,10 +239,14 @@ export const PortfolioName = styled.div`
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
+  & :hover {
+    font-size: 18px;
+  }
 `;
 
 export const PortfolioNameList = styled.div`
   font-size: 14px;
   color: #000;
   cursor: pointer;
+  border-bottom: 1px dashed #000;
 `;
