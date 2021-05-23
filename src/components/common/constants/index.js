@@ -21,7 +21,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'shirt-shop',
-    technologies: 'React / Redux / HTML5 / JS / CSS3',
+    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
     github: 'https://github.com/Alexey25041991/react-t-shirt-shop.git',
     portfolioText:
       'Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.',
@@ -35,7 +35,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'dlg-construction',
-    technologies: 'React / Redux / HTML5 / JS / CSS3',
+    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
     portfolioText: `В портфолио представлены проекты, которые я 
     разработал в сотрудничестве с веб-студиями так и для частных клиентов, 
     а также несколько личных проектов. Основная масса проектов содержит
@@ -52,7 +52,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'topas-ts',
-    technologies: 'React / Redux / HTML5 / JS / CSS3',
+    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
     portfolioText: 'Интернет магазин3',
   },
   {
@@ -64,6 +64,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'name4',
+    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
     portfolioText: 'Интернет магазин4',
   },
   {
@@ -75,7 +76,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'name5',
-    technologies: 'React / Redux / HTML5 / JS / CSS3',
+    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
     portfolioText: 'Интернет магазин5',
   },
 ];

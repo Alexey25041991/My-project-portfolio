@@ -47,12 +47,13 @@ const PortfolioListData = styled(Link)`
   text-decoration: none;
 `;
 
-const getButtonList = (propsButtonList) =>
+const getButtonList = (propsButtonList) => {
   propsButtonList.map((item) => (
     <PortfolioButtom key={item.id}>
       <PortfolioButtomText>{item.portfolioButtonText}</PortfolioButtomText>
     </PortfolioButtom>
   ));
+};
 
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
@@ -85,24 +86,26 @@ const getSlickList = (propsPortfolioList) =>
       </PortfolioName>
     </Li>
   ));
-const PortfolioList = () => (
-  <>
-    <PortfolioHeader item={propsPortfolioListHome} />
-    <PortfolioWrapper>
-      <PortfolioConteiner>
-        <PortfolioHeaderValue>
-          {getButtonList(propsButtonList)}
-        </PortfolioHeaderValue>
-        <PortfolioCustom>
-          <Ul>
-            <SlickList>
-              <SlickTrack>{getSlickList(propsPortfolioList)}</SlickTrack>
-            </SlickList>
-          </Ul>
-        </PortfolioCustom>
-      </PortfolioConteiner>
-    </PortfolioWrapper>
-  </>
-);
+const PortfolioList = () => {
+  return (
+    <>
+      <PortfolioHeader item={propsPortfolioListHome} />
+      <PortfolioWrapper>
+        <PortfolioConteiner>
+          <PortfolioHeaderValue>
+            {getButtonList(propsButtonList)}
+          </PortfolioHeaderValue>
+          <PortfolioCustom>
+            <Ul>
+              <SlickList>
+                <SlickTrack>{getSlickList(propsPortfolioList)}</SlickTrack>
+              </SlickList>
+            </Ul>
+          </PortfolioCustom>
+        </PortfolioConteiner>
+      </PortfolioWrapper>
+    </>
+  );
+};
 
 export default PortfolioList;

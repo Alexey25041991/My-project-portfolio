@@ -70,7 +70,7 @@ const PortfolioHeader = ({ item }) => {
             <PortfolioDataText>
               {item?.portfolioDataTime}
               <PortfolioTechnologies>
-                {item?.technologies}
+                {item?.technologies?.join(' / ')}
               </PortfolioTechnologies>
             </PortfolioDataText>
           </PortfolioDataTime>
