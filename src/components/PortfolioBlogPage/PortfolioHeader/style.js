@@ -149,3 +149,23 @@ export const PortfolioTechnologies = styled.div`
   font-family: 'Exo 2', sans-serif;
   margin-left: 20px;
 `;
+
+export const PortfolioText = styled.div`
+  color: #fff;
+  font-size: 14x;
+  font-family: 'Exo 2', sans-serif;
+  margin-top: 12px;
+`;
+
+export const PortfolioGithub = styled.a`
+  text-decoration: none;
+  color: #fff;
+  font-size: 14x;
+  font-family: 'Exo 2', sans-serif;
+  margin-bottom: 12px;
+  line-height: 1;
+  cursor: pointer;
+  & :hover {
+    border-bottom: 1px dashed #fff;
+  }
+`;

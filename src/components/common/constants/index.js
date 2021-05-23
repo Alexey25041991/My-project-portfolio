@@ -22,6 +22,7 @@ export const propsPortfolioList = [
     heightIcon: '500px',
     hrefNameList: 'shirt-shop',
     technologies: 'React / Redux / HTML5 / JS / CSS3',
+    github: 'https://github.com/Alexey25041991/react-t-shirt-shop.git',
     portfolioText:
       'Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.',
   },

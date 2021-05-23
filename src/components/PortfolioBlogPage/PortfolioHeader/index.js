@@ -16,6 +16,8 @@ import {
   PortfolioDataTime,
   PortfolioDataText,
   PortfolioTechnologies,
+  PortfolioGithub,
+  PortfolioText,
 } from './style';
 
 import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
@@ -72,7 +74,10 @@ const PortfolioHeader = ({ item }) => {
               </PortfolioTechnologies>
             </PortfolioDataText>
           </PortfolioDataTime>
-          {item?.portfolioText}
+          <PortfolioGithub href={item?.github} target="_blank">
+            {item?.github}
+          </PortfolioGithub>
+          <PortfolioText>{item?.portfolioText}</PortfolioText>
         </PortfolioHeaderText>
       </PortfolioHeaderConteiner>
     </PortfolioHeaderWrapper>
