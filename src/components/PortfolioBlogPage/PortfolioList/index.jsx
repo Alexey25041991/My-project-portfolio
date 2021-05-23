@@ -47,6 +47,13 @@ const PortfolioListData = styled(Link)`
   text-decoration: none;
 `;
 
+const PortfolioListDataText = styled(Link)`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+`;
+
 const getButtonList = (propsButtonList, setPortfoliosValue) => {
   return propsButtonList.map((item) => (
     <PortfolioButtom key={item.id}>
@@ -88,9 +95,9 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
         </PortfolioDataValue>
       </PortfolioData>
       <PortfolioName>
-        <PortfolioNameList href={`${item.hrefNameList}`}>
-          {item.portfolioNameList}
-        </PortfolioNameList>
+        <PortfolioListDataText to={`/portfolio/${item.hrefNameList}`}>
+          <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
+        </PortfolioListDataText>
       </PortfolioName>
     </Li>
   ));
