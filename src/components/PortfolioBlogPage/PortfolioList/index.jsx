@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import PortfolioHeader from '../PortfolioHeader';
@@ -47,16 +47,24 @@ const PortfolioListData = styled(Link)`
   text-decoration: none;
 `;
 
-const getButtonList = (propsButtonList) => {
-  propsButtonList.map((item) => (
+const getButtonList = (propsButtonList, setPortfoliosValue) => {
+  return propsButtonList.map((item) => (
     <PortfolioButtom key={item.id}>
-      <PortfolioButtomText>{item.portfolioButtonText}</PortfolioButtomText>
+      <PortfolioButtomText onClick={() => setPortfoliosValue(item?.value)}>
+        {item.portfolioButtonText}
+      </PortfolioButtomText>
     </PortfolioButtom>
   ));
 };
 
-const getSlickList = (propsPortfolioList) =>
-  propsPortfolioList.map((item) => (
+const getSlickList = (propsPortfolioList, portfoliosValue) => {
+  const filterPropsPortfolioList =
+    portfoliosValue !== propsButtonList[0].value
+      ? propsPortfolioList.filter((item) =>
+          item.technologies.includes(portfoliosValue)
+        )
+      : propsPortfolioList;
+  return filterPropsPortfolioList?.map((item) => (
     <Li key={item.id}>
       <PortfolioImg>
         <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
@@ -86,19 +94,26 @@ const getSlickList = (propsPortfolioList) =>
       </PortfolioName>
     </Li>
   ));
+};
 const PortfolioList = () => {
+  const [portfoliosValue, setPortfoliosValue] = useState(
+    propsButtonList[0].value
+  );
+
   return (
     <>
       <PortfolioHeader item={propsPortfolioListHome} />
       <PortfolioWrapper>
         <PortfolioConteiner>
           <PortfolioHeaderValue>
-            {getButtonList(propsButtonList)}
+            {getButtonList(propsButtonList, setPortfoliosValue)}
           </PortfolioHeaderValue>
           <PortfolioCustom>
             <Ul>
               <SlickList>
-                <SlickTrack>{getSlickList(propsPortfolioList)}</SlickTrack>
+                <SlickTrack>
+                  {getSlickList(propsPortfolioList, portfoliosValue)}
+                </SlickTrack>
               </SlickList>
             </Ul>
           </PortfolioCustom>

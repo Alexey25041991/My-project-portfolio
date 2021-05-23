@@ -52,7 +52,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'topas-ts',
-    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
+    technologies: ['Node', 'Redux', 'HTML5', 'JS', 'CSS3'],
     portfolioText: 'Интернет магазин3',
   },
   {
@@ -76,7 +76,7 @@ export const propsPortfolioList = [
     widthIcon: '285px',
     heightIcon: '500px',
     hrefNameList: 'name5',
-    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
+    technologies: ['React-Native', 'Redux', 'HTML5', 'JS', 'CSS3'],
     portfolioText: 'Интернет магазин5',
   },
 ];
