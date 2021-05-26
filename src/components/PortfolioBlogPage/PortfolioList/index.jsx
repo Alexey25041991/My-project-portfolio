@@ -56,10 +56,11 @@ const PortfolioListDataText = styled(Link)`
 
 const getButtonList = (propsButtonList, setPortfoliosValue) => {
   return propsButtonList.map((item) => (
-    <PortfolioButtom key={item.id}>
-      <PortfolioButtomText onClick={() => setPortfoliosValue(item?.value)}>
-        {item.portfolioButtonText}
-      </PortfolioButtomText>
+    <PortfolioButtom
+      key={item.id}
+      onClick={() => setPortfoliosValue(item?.value)}
+    >
+      <PortfolioButtomText>{item.portfolioButtonText}</PortfolioButtomText>
     </PortfolioButtom>
   ));
 };
