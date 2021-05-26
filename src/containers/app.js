@@ -3,8 +3,8 @@ import React from 'react';
 import HeaderConteiner from '../components/Header';
 import Footer from '../components/Footer';
 import ContentConteiner from '../components/ContentConteiner';
-import PortfolioList from '../components/PortfolioBlogPage/PortfolioList';
-import PortfolioValue from '../components/PortfolioBlogPage/PortfolioValue';
+import PortfolioList from '../components/PortfolioDevelopment/PortfolioList';
+import PortfolioValue from '../components/PortfolioDevelopment/PortfolioValue';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 

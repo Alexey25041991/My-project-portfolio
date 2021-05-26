@@ -8,11 +8,11 @@ class Store {
     makeAutoObservable(this);
   }
 
-  setPortfolioBlogPage(hrefNameList) {
+  setPortfolioDevelopment(hrefNameList) {
     this.hrefValueNameList = hrefNameList;
   }
 
-  getPortfolioBlogPage() {
+  getPortfolioDevelopment() {
     return this.hrefValueNameList;
   }
 }
