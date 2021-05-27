@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import MaskedInput from 'react-text-mask';
 import emailMask from 'text-mask-addons/dist/emailMask';
 
+import ModalAnimation from '../ModalAnimation';
+
 import {
   InputLabel,
   TextField,
@@ -304,6 +306,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
             >
               Отправить
             </Button>
+            <ModalAnimation />
           </Footer>
         </ModalComponent>
       </Overlay>

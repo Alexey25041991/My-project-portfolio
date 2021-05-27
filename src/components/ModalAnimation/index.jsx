@@ -17,7 +17,7 @@ import './style.scss';
 //     </LogoCoder>
 //   </Logo>
 // );
-
+// https://codepen.io/bnhovde/pen/WMgbEa
 // export default ModalAnimation;
 
 const Character = ({ animation, armPath }) => {
@@ -161,7 +161,7 @@ const Table = () => (
   </svg>
 );
 
-class App extends React.Component {
+class ModalAnimation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -300,4 +300,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ModalAnimation;
