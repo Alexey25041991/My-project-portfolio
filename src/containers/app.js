@@ -1,33 +1,35 @@
 import React from 'react';
 
 import HeaderConteiner from '../components/Header';
-import AdvantagesSection from '../components/Advantages';
-import PersonalInformation from '../components/PersonalInformation';
-import Resume from '../components/Resume';
-import Services from '../components/Services';
-import ServiseList from '../components/ServiseList';
-import Portfolio from '../components/Portfolio';
-import OrderSite from '../components/OrderSite';
-import Blog from '../components/Blog';
 import Footer from '../components/Footer';
-import Nav from '../components/Nav';
-import App from '../components/ModalAnimation';
+import ContentConteiner from '../components/ContentConteiner';
+import PortfolioList from '../components/PortfolioDevelopment/PortfolioList';
+import PortfolioValue from '../components/PortfolioDevelopment/PortfolioValue';
 
-const App1 = () => (
-  <>
-    <App />
-    <HeaderConteiner />
-    <AdvantagesSection />
-    <PersonalInformation />
-    <Resume />
-    <Services />
-    <ServiseList />
-    <Portfolio />
-    <OrderSite />
-    <Blog />
-    <Footer />
-    <Nav />
-  </>
-);
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-export default App1;
+import { observer } from 'mobx-react-lite';
+
+import { propsPortfolioList } from '../components/common/constants';
+
+const App = observer(() => {
+  return (
+    <Router>
+      <HeaderConteiner />
+      <Switch>
+        <Route path="/" exact component={ContentConteiner} />
+        <Route path={`/portfolio`} exact component={PortfolioList} />
+        {propsPortfolioList.map((item) => (
+          <Route
+            path={`/portfolio/${item.hrefNameList}`}
+            exact
+            render={() => <PortfolioValue key={item.id} item={item} />}
+          />
+        ))}
+      </Switch>
+      <Footer />
+    </Router>
+  );
+});
+
+export default App;

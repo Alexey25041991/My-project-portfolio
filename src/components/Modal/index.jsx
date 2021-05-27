@@ -117,7 +117,6 @@ const Modal = ({ opened = false, onRequestClose }) => {
     setValuePhone(event.target.value);
   };
 
-  console.log(2, valueRadioTerm, valueRadioTZ, valueDescriptionProject);
   const classes = useStyles();
 
   const handleClose = (e) => {

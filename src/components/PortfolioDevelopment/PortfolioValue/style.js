@@ -1,19 +1,13 @@
 // import styled from 'styled-components';
 import styled from 'styled-components';
 
-import myIconWawew from './icon/wawew.png';
 // import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
-import myIconStl from './icon/stl.png';
-import myIconStlh from './icon/stlh.png';
-import myIconStr from './icon/str.png';
-import myIconStrh from './icon/strh.png';
-import myIconBgport from './icon/bgport.png';
+import myIconBrouse from './icon/brouse.png';
+import myIconWawew from './icon/wawew.png';
 
 export const PortfolioWrapper = styled.div`
   display: flex;
   background-color: #fff;
-  // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
   font-family: 'Exo 2', sans-serif;
@@ -34,16 +28,16 @@ export const PortfolioConteiner = styled.div`
   width: 960px;
   margin: 0 auto;
   padding: 0 25px;
-  padding-bottom: 70px;
 `;
 
-export const PortfolioHeader = styled.h1`
+export const PortfolioHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  padding-top: 35px;
+  margin-top: 30px;
   margin-bottom: 30px;
+}
 `;
 
 export const PortfolioLabel = styled.div`
@@ -57,7 +51,6 @@ export const PortfolioLabel = styled.div`
 
 export const PortfolioCustom = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -68,7 +61,6 @@ export const Ul = styled.ul`
   margin: 0;
   display: flex;
   list-style-type: none;
-  height: 382px;
   width: 960px;
   margin: 0 auto;
   position: relative;
@@ -77,47 +69,13 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   display: flex;
   flex-direction: column;
-  width: 322px !important;
-  text-align: center;
-  margin-left: -8px;
+  margin: 30px 0;
 `;
 
-export const ButtonL = styled.button`
-  display: flex;
-  position: absolute;
-  top: 149px;
-  background: url(${myIconStl}) no-repeat;
-  border: 0px;
-  width: 25px;
-  height: 45px;
-  left: -25px;
-  cursor: pointer;
-  &:hover {
-    background: url(${myIconStlh}) no-repeat;
-  }
-`;
-
-export const ButtonR = styled.button`
-  display: flex;
-  position: absolute;
-  top: 149px;
-  background: url(${myIconStr}) no-repeat;
-  border: 0px;
-  width: 25px;
-  height: 45px;
-  right: -25px;
-  cursor: pointer;
-  &:hover {
-    background: url(${myIconStrh}) no-repeat;
-  }
-`;
-
-export const Allportf = styled.button`
+export const PortfolioButtom = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  width: 290px;
   height: 40px;
   background-color: #2b3037;
   border-radius: 4px;
@@ -131,23 +89,18 @@ export const Allportf = styled.button`
   line-height: 40px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  margin: 0 20px;
   &:hover {
     background-color: #ff8560;
   }
 `;
 
-export const Link = styled.a`
+export const PortfolioButtomText = styled.div`
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding: 5px 15px;
-  color: palevioletred;
-`;
-
-export const Label = styled.span`
-  display: flex;
-  align-items: center;
   justify-content: center;
+  padding: 5px 15px;
   color: white;
   line-height: 17px;
   font-size: 14px;
@@ -156,8 +109,6 @@ export const Label = styled.span`
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
-  margin-top: 10px;
-  margin-left: 10px;
 `;
 
 export const SlickList = styled.div`
@@ -169,28 +120,19 @@ export const SlickList = styled.div`
 
 export const SlickTrack = styled.div`
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   opacity: 1;
-  width: 60000px;
-  margin-left: -13px;
   position: relative;
   top: 0;
 `;
 
 export const PortfolioImg = styled.div`
   display: flex;
-  background: url(${myIconBgport}) no-repeat;
-  width: 328px;
-  height: 359px;
-`;
-
-export const PortfolioList = styled.a`
-  display: flex;
-  width: 285px;
-  height: 292px;
-  overflow: hidden;
+  background: url(${myIconBrouse}) no-repeat;
   position: relative;
-  top: 21px;
-  left: 23px;
+  width: 960px;
+  height: 734px;
 `;
 
 export const PortfolioImgUrl = styled.img`
@@ -239,9 +181,22 @@ export const PortfolioName = styled.div`
 `;
 
 export const PortfolioNameList = styled.a`
-  font-size: 14px;
   text-decoration: none;
-  border-bottom: 1px dashed #000;
-  color: #000;
+  position: absolute;
+  left: 105px;
+  top: 47px;
+  color: #8f8f8f;
+  font-size: 14px;
+  line-height: 1;
   cursor: pointer;
+`;
+
+export const Projectwindow = styled.div`
+  position: absolute;
+  top: 72px;
+  display: block;
+  width: 100%;
+  height: 655px;
+  overflow: auto;
+  border-radius: 0 0 0 10px;
 `;
