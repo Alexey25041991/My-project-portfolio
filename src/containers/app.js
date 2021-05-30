@@ -12,22 +12,26 @@ import { observer } from 'mobx-react-lite';
 
 import { propsPortfolioList } from '../components/common/constants';
 
+import { AppWrapper } from './style';
+
 const App = observer(() => {
   return (
     <Router>
-      <HeaderConteiner />
-      <Switch>
-        <Route path="/" exact component={ContentConteiner} />
-        <Route path={`/portfolio`} exact component={PortfolioList} />
-        {propsPortfolioList.map((item) => (
-          <Route
-            path={`/portfolio/${item.hrefNameList}`}
-            exact
-            render={() => <PortfolioValue key={item.id} item={item} />}
-          />
-        ))}
-      </Switch>
-      <Footer />
+      <AppWrapper>
+        <HeaderConteiner />
+        <Switch>
+          <Route path="/" exact component={ContentConteiner} />
+          <Route path={`/portfolio`} exact component={PortfolioList} />
+          {propsPortfolioList.map((item) => (
+            <Route
+              path={`/portfolio/${item.hrefNameList}`}
+              exact
+              render={() => <PortfolioValue key={item.id} item={item} />}
+            />
+          ))}
+        </Switch>
+        <Footer />
+      </AppWrapper>
     </Router>
   );
 });
