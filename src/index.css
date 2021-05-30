@@ -5,6 +5,29 @@ body {
   line-height: 20px;
   color: #000;
   font-family: 'Exo 2', sans-serif;
+  overflow-y: auto;
+}
+
+/* Основная ширина полосы прокрутки. */
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Цвет дорожки, по которой двигается бегунок прокрутки. */
+body::-webkit-scrollbar-track {
+  background: #2b3037;
+  background-clip: content-box;
+}
+
+/* Размер и цвет бегунка. */
+body::-webkit-scrollbar-thumb {
+  background: #ff8560;
+  border: 6px solid #ffff;
+  border-radius: 10px;
+}
+/* Размер бегунка при наведении на него курсора. */
+body::-webkit-scrollbar-thumb:hover {
+  border: 5px solid #ffff;
 }
 
 code {
