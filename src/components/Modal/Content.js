@@ -13,3 +13,7 @@ export const Content = styled.div`
   line-height: 24px;
   width: 100%;
 `;
+
+export const ContentAnimation = styled.div`
+  margin-left: 60px;
+`;

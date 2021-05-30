@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import MaskedInput from 'react-text-mask';
 import emailMask from 'text-mask-addons/dist/emailMask';
@@ -20,10 +20,12 @@ import {
   Button,
 } from '@material-ui/core';
 
+import { compact } from 'lodash';
+
 import { Overlay } from './Overlay';
 import { Header } from './Header';
 import { IconClose } from './IconClose';
-import { Content } from './Content';
+import { Content, ContentAnimation } from './Content';
 import { Footer } from './Footer';
 import { ModalComponent } from './ModalComponent';
 import { ModalSection } from './ModalSection';
@@ -49,6 +51,9 @@ const useStyles = makeStyles((theme) =>
     radio: {
       // backgroundColor: '#ff8560',
       color: red,
+    },
+    button: {
+      marginBottom: '20px !important',
     },
   })
 );
@@ -111,9 +116,22 @@ const Modal = ({ opened = false, onRequestClose }) => {
   const [valuePhone, setValuePhone] = useState('');
   const [valueMail, setValueMail] = useState('');
   const [valueService, setValueService] = useState('');
-  const [valueRadioTerm, setValueRadioTerm] = useState('urgently');
-  const [valueRadioTZ, setValueRadioTZ] = useState('valueYes');
+  const [valueRadioTerm, setValueRadioTerm] = useState('wait');
+  const [valueRadioTZ, setValueRadioTZ] = useState('valueNot');
   const [valueDescriptionProject, setValueDescriptionProject] = useState('');
+  const [animationWork, setAnimationWork] = useState('false');
+  const [
+    animationProjectDescription,
+    setAnimationProjectDescription,
+  ] = useState('false');
+
+  useEffect(() => {
+    const profileValue = [valueName, valuePhone, valueMail];
+    const profileValueInterest = compact(profileValue).length > 1;
+    const projectDescription = valueDescriptionProject.length > 25;
+    setAnimationProjectDescription(projectDescription);
+    setAnimationWork(profileValueInterest);
+  }, [valueName, valuePhone, valueMail, valueDescriptionProject]);
 
   const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
@@ -181,17 +199,22 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   name="position"
                   value={valueRadioTerm}
                   onChange={(e) => setValueRadioTerm(e.target.value)}
-                  defaultValue="urgently"
+                  defaultValue="wait"
                 >
-                  <FormControlLabel
-                    value="urgently"
-                    control={<Radio color="primary" />}
-                    label="Нужно срочно"
-                  />
                   <FormControlLabel
                     value="wait"
                     control={<Radio color="primary" />}
                     label="Я не спешу"
+                  />
+                  <FormControlLabel
+                    value="urgently"
+                    control={<Radio color="primary" />}
+                    label="Cрочно"
+                  />
+                  <FormControlLabel
+                    value="yesterday"
+                    control={<Radio color="primary" />}
+                    label="Вчера"
                   />
                 </RadioGroup>
               </FormControl>
@@ -264,15 +287,15 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   defaultValue="urgently"
                 >
                   <FormControlLabel
-                    value="valueYes"
-                    control={<Radio color="primary" />}
-                    label="Да"
-                  />
-                  <FormControlLabel
                     value="valueNot"
                     control={<Radio color="primary" />}
                     className={classes.radio}
                     label="Нет"
+                  />
+                  <FormControlLabel
+                    value="valueYes"
+                    control={<Radio color="primary" />}
+                    label="Да"
                   />
                 </RadioGroup>
               </FormControl>
@@ -306,7 +329,14 @@ const Modal = ({ opened = false, onRequestClose }) => {
             >
               Отправить
             </Button>
-            <ModalAnimation />
+            <ContentAnimation>
+              <ModalAnimation
+                animationWork={animationWork}
+                animationProjectDescription={animationProjectDescription}
+                valueRadioTerm={valueRadioTerm}
+                valueRadioTZ={valueRadioTZ}
+              />
+            </ContentAnimation>
           </Footer>
         </ModalComponent>
       </Overlay>

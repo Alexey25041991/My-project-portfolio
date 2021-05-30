@@ -183,6 +183,38 @@ class ModalAnimation extends React.Component {
     this.loopref = null;
   }
 
+  componentDidUpdate(prevProps) {
+    const {
+      animationWork,
+      animationProjectDescription,
+      valueRadioTerm,
+    } = this.props;
+
+    if (animationWork !== prevProps.animationWork) {
+      if (animationWork) {
+        this.setAnimation('waiting');
+      } else this.setAnimation('passive');
+    }
+
+    if (animationProjectDescription !== prevProps.animationProjectDescription) {
+      if (animationProjectDescription && animationWork) {
+        this.setAnimation('thinking');
+      } else if (animationWork) {
+        this.setAnimation('waiting');
+      } else this.setAnimation('passive');
+    }
+
+    if (valueRadioTerm !== prevProps.valueRadioTerm) {
+      if (valueRadioTerm === 'urgently' && animationWork) {
+        this.setAnimation('typing');
+      } else if (valueRadioTerm === 'yesterday' && animationWork) {
+        this.setAnimation('stressed');
+      } else if (animationWork) {
+        this.setAnimation('waiting');
+      } else this.setAnimation('passive');
+    }
+  }
+
   createCurve(x, offset, inverted = false) {
     const { frequency, ystart, xstart, amplitude } = this.state;
     const phase = inverted
@@ -248,7 +280,6 @@ class ModalAnimation extends React.Component {
     const { frequency, amplitude, animation } = this.state;
     return (
       <div className="app">
-        <h1>Wormco</h1>
         <div className="wrapper">
           <ArmLeft
             animation={this.state.animation}
@@ -262,37 +293,32 @@ class ModalAnimation extends React.Component {
           <Table />
           <Computer animation={this.state.animation} />
         </div>
-        <div className="controls">
-          <button onClick={() => this.setAnimation('passive')}>Passive</button>
-          <button onClick={() => this.setAnimation('waiting')}>Waiting</button>
-          <button onClick={() => this.setAnimation('thinking')}>
-            Thinking
-          </button>
-          <button onClick={() => this.setAnimation('typing')}>Typing</button>
-          <button onClick={() => this.setAnimation('stressed', 240)}>
-            Nailing it
-          </button>
-        </div>
         {animation === 'stressed' && (
           <div className="sliders">
-            <input
-              type="range"
-              step="0.01"
-              name="frequency"
-              value={frequency}
-              onChange={this.setConfig}
-              min="0"
-              max="10"
-            />
-            <input
-              type="range"
-              step="0.01"
-              name="amplitude"
-              value={amplitude}
-              onChange={this.setConfig}
-              min="0.05"
-              max="2"
-            />
+            <div className="conditions">
+              <div className="conditionsText">Деньги</div>
+              <input
+                type="range"
+                step="0.01"
+                name="frequency"
+                value={frequency}
+                onChange={this.setConfig}
+                min="0"
+                max="10"
+              />
+            </div>
+            <div className="conditions">
+              <div className="conditionsText">Сотрудничество</div>
+              <input
+                type="range"
+                step="0.01"
+                name="amplitude"
+                value={amplitude}
+                onChange={this.setConfig}
+                min="0.05"
+                max="2"
+              />
+            </div>
           </div>
         )}
       </div>
