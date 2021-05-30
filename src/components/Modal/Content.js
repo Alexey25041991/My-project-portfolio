@@ -15,5 +15,5 @@ export const Content = styled.div`
 `;
 
 export const ContentAnimation = styled.div`
-  margin-left: 60px;
+  margin-left: 200px;
 `;
