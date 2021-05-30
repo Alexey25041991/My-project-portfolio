@@ -25,7 +25,7 @@ body::-webkit-scrollbar-track {
 /* Размер и цвет бегунка. */
 body::-webkit-scrollbar-thumb {
   background: #ff8560;
-  border: 6px solid #ffff;
+  border: 6px solid #2b3037;
   border-radius: 10px;
 }
 /* Размер бегунка при наведении на него курсора. */
