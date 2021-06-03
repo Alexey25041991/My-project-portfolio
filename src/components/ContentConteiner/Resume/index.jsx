@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import {
   ResumeWrapper,
@@ -15,9 +15,22 @@ import {
   ResumeSkillsValue,
 } from './style.js';
 
-// import style from './style.css';
+import './style.css';
+
+import { propsPortfolioResume } from './constants';
 
 import { ReactComponent as ResumeIcon } from './icon/ResumeIcon.svg';
+
+const ResumeSkillsLabelValue = (title, numberValue, id) => (
+  <Fragment key={id}>
+    <ResumeSkillsLabel>{title}</ResumeSkillsLabel>
+    <ResumeSkillsProgres className="progress">
+      <ResumeSkillsValue className="fill a" width={numberValue}>
+        {`${numberValue + '%'}`}
+      </ResumeSkillsValue>
+    </ResumeSkillsProgres>
+  </Fragment>
+);
 
 const Resume = () => (
   <ResumeWrapper id="resume">
@@ -42,90 +55,26 @@ const Resume = () => (
         <ResumeOptions>
           <ResumeStatus>Навыки:</ResumeStatus>
           <ResumeSkills>
-            <ResumeSkillsLabel>HTML / CSS</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={85}>85%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Javascript</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={85}>85%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>React</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>React-Native</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={65}>65%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Next.js</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={55}>55%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>TypeScript</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={65}>65%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Mob-X</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Redux</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Redux-Saga</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={55}>55%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Pug</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={65}>65%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Bootstrap</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={75}>75%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Webpack</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={60}>60%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Jest</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={60}>60%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Node.js</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={60}>60%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Docker</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={40}>40%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Photoshop / Figma</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={90}>90%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
-
-            <ResumeSkillsLabel>Git / Bitbucket</ResumeSkillsLabel>
-            <ResumeSkillsProgres>
-              <ResumeSkillsValue width={70}>70%</ResumeSkillsValue>
-            </ResumeSkillsProgres>
+            {propsPortfolioResume.map((item) =>
+              ResumeSkillsLabelValue(item.title, item.numberValue, item.id)
+            )}
+            {/* {ResumeSkillsLabelValue('HTML / CSS', 85)}
+            {ResumeSkillsLabelValue('Javascript', 85)}
+            {ResumeSkillsLabelValue('React', 75)}
+            {ResumeSkillsLabelValue('React-Native', 65)}
+            {ResumeSkillsLabelValue('Next.js', 55)}
+            {ResumeSkillsLabelValue('TypeScript', 65)}
+            {ResumeSkillsLabelValue('Mob-X', 75)}
+            {ResumeSkillsLabelValue('Redux', 75)}
+            {ResumeSkillsLabelValue('Redux-Saga', 55)}
+            {ResumeSkillsLabelValue('Pug', 65)}
+            {ResumeSkillsLabelValue('Bootstrap', 75)}
+            {ResumeSkillsLabelValue('Webpack', 60)}
+            {ResumeSkillsLabelValue('Jest', 60)}
+            {ResumeSkillsLabelValue('Node.js', 60)}
+            {ResumeSkillsLabelValue('Docker', 40)}
+            {ResumeSkillsLabelValue('Photoshop / Figma', 90)}
+            {ResumeSkillsLabelValue('Git / Bitbucket', 70)} */}
           </ResumeSkills>
         </ResumeOptions>
         <ResumeOptions>

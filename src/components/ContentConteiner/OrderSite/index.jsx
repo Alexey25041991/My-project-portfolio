@@ -36,10 +36,10 @@ const OrderSite = () => {
                 'Ищите разработчика?',
                 'Нужна хорошая поддержка?',
               ]}
-              pause="5000"
-              emptyPause="1000"
-              typingInterval="60"
-              deletingInterval="5"
+              pause={5000}
+              emptyPause={1000}
+              typingInterval={60}
+              deletingInterval={5}
             />
             <span className="react-rotating-text-cursor" />
             {`${' / >'}`}
