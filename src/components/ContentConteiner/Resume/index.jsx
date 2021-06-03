@@ -94,15 +94,6 @@ const Resume = () => (
           </ResumeValue>
         </ResumeOptions>
         <ResumeOptions>
-          <ResumeStatus>ЦЕНА НА САЙТ, ДИЗАЙН:</ResumeStatus>
-          <ResumeValue>
-            На сайте цен нет — каждый сайт или логотип индивидуальный и цены
-            могут кардинально отличатся. С радостью отвечу на все Ваши вопросы,
-            постараюсь сделать прикидки по ценам на создание сайта и другие
-            работы.
-          </ResumeValue>
-        </ResumeOptions>
-        <ResumeOptions>
           <ResumeStatus>КОНТАКТЫ:</ResumeStatus>
           <ResumeValue>
             Моб.: +7(977)270-09-30 / +7(977)270-09-30
