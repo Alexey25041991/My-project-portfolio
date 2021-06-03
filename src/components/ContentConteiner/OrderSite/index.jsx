@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import Modal from '../../Modal';
 
+import ReactRotatingText from 'react-rotating-text';
+
 import {
   OrderSiteWrapper,
   OrderSiteConteiner,
@@ -14,6 +16,8 @@ import {
   Label,
 } from './style.js';
 
+import './style.css';
+
 import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
 
 const OrderSite = () => {
@@ -24,7 +28,22 @@ const OrderSite = () => {
       <OrderSiteConteiner>
         <OrderSiteHeader>
           <OrderSiteIcon />
-          <OrderSiteLabel>Нужен крутой сайт ?</OrderSiteLabel>
+          <OrderSiteLabel>
+            {`${'< '}`}
+            <ReactRotatingText
+              items={[
+                'Нужен крутой сайт?',
+                'Ищите разработчика?',
+                'Нужна хорошая поддержка?',
+              ]}
+              pause="5000"
+              emptyPause="1000"
+              typingInterval="60"
+              deletingInterval="5"
+            />
+            <span className="react-rotating-text-cursor" />
+            {`${' / >'}`}
+          </OrderSiteLabel>
         </OrderSiteHeader>
         <OrderSiteCustom>
           <OrderSiteText>

@@ -67,7 +67,8 @@ export const PersonalText = styled.div`
 
 export const PersonalSection = styled.div`
   display: flex;
+  flex-direction: column;
   background: url(${myIconWebdev}) right top no-repeat;
   padding-right: 485px;
-  padding-bottom: 180px;
+  padding-bottom: 10px;
 `;

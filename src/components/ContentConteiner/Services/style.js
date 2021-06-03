@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import myIconWawew from './icon/wawew.png';
 // import myIconWawewb from './icon/wawewb.png';
 import myIconBgcont from './icon/bgcont.png';
+import myIconService from './icon/service.png';
 
 export const ServicesWrapper = styled.div`
   display: flex;
@@ -59,7 +60,15 @@ export const ServicesCustom = styled.div`
 
 export const ServicesText = styled.p`
   margin-top: 17px;
+  margin-bottom: 0;
   color: #000;
   font-size: 14px;
   line-height: 20px;
+`;
+
+export const ServicesSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: url(${myIconService}) right top no-repeat;
+  padding-right: 485px;
 `;
