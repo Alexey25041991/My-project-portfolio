@@ -13,6 +13,8 @@ import {
   ResumeSkillsLabel,
   ResumeSkillsProgres,
   ResumeSkillsValue,
+  ResumeOptionsWrapper,
+  Avatar,
 } from './style.js';
 
 import './style.css';
@@ -40,18 +42,23 @@ const Resume = () => (
         <ResumeLabel>Резюме</ResumeLabel>
       </ResumeHeader>
       <ResumeCustom>
-        <ResumeOptions>
-          <ResumeStatus>Статус:</ResumeStatus>
-          <ResumeValue>Веб-разработчик</ResumeValue>
-        </ResumeOptions>
-        <ResumeOptions>
-          <ResumeStatus>Ф.И.О.:</ResumeStatus>
-          <ResumeValue>Мазуренко Алексей Анатольевич</ResumeValue>
-        </ResumeOptions>
-        <ResumeOptions>
-          <ResumeStatus>СПЕЦИАЛИЗАЦИЯ:</ResumeStatus>
-          <ResumeValue>Программирование, разработка.</ResumeValue>
-        </ResumeOptions>
+        <ResumeOptionsWrapper>
+          <div>
+            <ResumeOptions>
+              <ResumeStatus>Статус:</ResumeStatus>
+              <ResumeValue>Веб-разработчик</ResumeValue>
+            </ResumeOptions>
+            <ResumeOptions>
+              <ResumeStatus>Ф.И.О.:</ResumeStatus>
+              <ResumeValue>Мазуренко Алексей Анатольевич</ResumeValue>
+            </ResumeOptions>
+            <ResumeOptions>
+              <ResumeStatus>СПЕЦИАЛИЗАЦИЯ:</ResumeStatus>
+              <ResumeValue>Программирование, разработка.</ResumeValue>
+            </ResumeOptions>
+          </div>
+          <Avatar />
+        </ResumeOptionsWrapper>
         <ResumeOptions>
           <ResumeStatus>Навыки:</ResumeStatus>
           <ResumeSkills>

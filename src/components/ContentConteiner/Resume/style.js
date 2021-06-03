@@ -1,9 +1,10 @@
 // import styled from 'styled-components';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import myIconWawew from './icon/wawew.png';
 import myIconWawewb from './icon/wawewb.png';
 import myIconBgcont from './icon/bgcont.png';
+import myMainIcon from './icon/MainIcon.png';
 
 export const ResumeWrapper = styled.div`
   display: flex;
@@ -29,6 +30,20 @@ export const ResumeWrapper = styled.div`
     display: flex;
     margin-top: -5px;
     position: absolute;
+`;
+
+export const Avatar = styled.div`
+  background: url(${myMainIcon}) center no-repeat;
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  position: absolute;
+  right: 140px;
+`;
+
+export const ResumeOptionsWrapper = styled.div`
+  display: flex;
+  position: relative;
 `;
 
 export const ResumeConteiner = styled.div`
