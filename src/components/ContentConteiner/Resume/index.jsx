@@ -58,23 +58,6 @@ const Resume = () => (
             {propsPortfolioResume.map((item) =>
               ResumeSkillsLabelValue(item.title, item.numberValue, item.id)
             )}
-            {/* {ResumeSkillsLabelValue('HTML / CSS', 85)}
-            {ResumeSkillsLabelValue('Javascript', 85)}
-            {ResumeSkillsLabelValue('React', 75)}
-            {ResumeSkillsLabelValue('React-Native', 65)}
-            {ResumeSkillsLabelValue('Next.js', 55)}
-            {ResumeSkillsLabelValue('TypeScript', 65)}
-            {ResumeSkillsLabelValue('Mob-X', 75)}
-            {ResumeSkillsLabelValue('Redux', 75)}
-            {ResumeSkillsLabelValue('Redux-Saga', 55)}
-            {ResumeSkillsLabelValue('Pug', 65)}
-            {ResumeSkillsLabelValue('Bootstrap', 75)}
-            {ResumeSkillsLabelValue('Webpack', 60)}
-            {ResumeSkillsLabelValue('Jest', 60)}
-            {ResumeSkillsLabelValue('Node.js', 60)}
-            {ResumeSkillsLabelValue('Docker', 40)}
-            {ResumeSkillsLabelValue('Photoshop / Figma', 90)}
-            {ResumeSkillsLabelValue('Git / Bitbucket', 70)} */}
           </ResumeSkills>
         </ResumeOptions>
         <ResumeOptions>
