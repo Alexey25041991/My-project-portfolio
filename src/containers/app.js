@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import HeaderConteiner from '../components/Header';
-import Footer from '../components/Footer';
-import ContentConteiner from '../components/ContentConteiner';
-import PortfolioList from '../components/PortfolioDevelopment/PortfolioList';
-import PortfolioValue from '../components/PortfolioDevelopment/PortfolioValue';
+import HeaderConteiner from "../components/Header";
+import Footer from "../components/Footer";
+import ContentConteiner from "../components/ContentConteiner";
+import PortfolioList from "../components/PortfolioDevelopment/PortfolioList";
+import PortfolioValue from "../components/PortfolioDevelopment/PortfolioValue";
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { observer } from 'mobx-react-lite';
+// import { observer } from 'mobx-react-lite';
 
-import { propsPortfolioList } from '../components/common/constants';
+import { propsPortfolioList } from "../components/common/constants";
 
-import { AppWrapper } from './style';
+import { AppWrapper } from "./style";
 
-const App = observer(() => {
+const App = () => {
   return (
     <Router>
       <AppWrapper>
@@ -34,6 +34,6 @@ const App = observer(() => {
       </AppWrapper>
     </Router>
   );
-});
+};
 
 export default App;
