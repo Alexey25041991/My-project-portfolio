@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import LogoLook from '../../logoLook';
+import LogoLook from "../../logoLook";
 
-import { HeaderTopWrapper, HeaderMenu, Ul, Li, Link, Label } from './style';
+import { HeaderTopWrapper, HeaderMenu, Ul, Li, Link, Label } from "./style";
 
-import { propsHeaderMenu } from './constants';
+import { propsHeaderMenu } from "./constants";
 
 const HeaderMenuLi = (propsHeaderMenu) =>
   propsHeaderMenu.map((item) => (
     <Li key={item.id}>
-      <Link href={`${'/#' + item.value}`}>
+      <Link href={`${"/#" + item.value}`}>
         {item.icon}
-        <Label>{item.label}</Label>
+        <Label style={{ pointerEvents: "none" }}>{item.label}</Label>
       </Link>
     </Li>
   ));

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavWrapper = styled.div`
   display: flex;
@@ -34,6 +34,9 @@ export const Li = styled.li`
 
   & :hover {
     cursor: pointer;
+    border-radius: 50%;
+    background-color: #ff8560b3;
+    box-shadow: 0 0 18px #ff8560e0;
   }
 `;
 
@@ -48,7 +51,7 @@ export const LogoSign = styled.div`
   color: white;
   line-height: 30px;
   font-size: 16px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 800;
   white-space: nowrap;
 `;

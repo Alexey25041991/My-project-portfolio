@@ -1,81 +1,93 @@
-import React from 'react';
+import React from "react";
 
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from "@material-ui/core/Tooltip";
 
-import { NavWrapper, Ul, Li, Link, LogoSign } from './style';
+import { NavWrapper, Ul, Li, Link, LogoSign } from "./style";
 
-import { ReactComponent as PersonIcon } from './icon/PersonIcon.svg';
-import { ReactComponent as ResumeIcon } from './icon/ResumeIcon.svg';
-import { ReactComponent as PortfolioIcon } from './icon/PortfolioIcon.svg';
-import { ReactComponent as ServicesIcon } from './icon/ServicesIcon.svg';
-import { ReactComponent as BlogIcon } from './icon/BlogIcon.svg';
-import { ReactComponent as СontactsIcon } from './icon/СontactsIcon.svg';
-import { ReactComponent as СooperationIcon } from './icon/СooperationIcon.svg';
-import { ReactComponent as ScaleIcon } from './icon/ScaleIcon.svg';
+import { ReactComponent as PersonIcon } from "./icon/PersonIcon.svg";
+import { ReactComponent as ResumeIcon } from "./icon/ResumeIcon.svg";
+import { ReactComponent as PortfolioIcon } from "./icon/PortfolioIcon.svg";
+import { ReactComponent as ServicesIcon } from "./icon/ServicesIcon.svg";
+import { ReactComponent as BlogIcon } from "./icon/BlogIcon.svg";
+import { ReactComponent as СontactsIcon } from "./icon/СontactsIcon.svg";
+import { ReactComponent as СooperationIcon } from "./icon/СooperationIcon.svg";
+import { ReactComponent as ScaleIcon } from "./icon/ScaleIcon.svg";
 
 const Nav = () => (
   <NavWrapper>
     <Ul>
       <Li>
         <Tooltip arrow title="Дом" placement="right">
-          <Link href={'/#'}>
-            <LogoSign>{`${'< / >'}`}</LogoSign>
+          <Link href={"/#"}>
+            <LogoSign
+              style={{ pointerEvents: "none" }}
+            >{`${"< / >"}`}</LogoSign>
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Преимущества" placement="right">
-          <Link href={'/#advantages'}>
-            <ScaleIcon width={28} height={28} fill="#ffff" />
+          <Link href={"/#advantages"}>
+            <ScaleIcon
+              width={28}
+              height={28}
+              fill="#ffff"
+              style={{ pointerEvents: "none" }}
+            />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Обо мне" placement="right">
-          <Link href={'/#person'}>
-            <PersonIcon width={28} height={28} fill="#ffff" />
+          <Link href={"/#person"}>
+            <PersonIcon
+              width={28}
+              height={28}
+              fill="#ffff"
+              style={{ pointerEvents: "none" }}
+            />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Резюме" placement="right">
-          <Link href={'/#resume'}>
-            <ResumeIcon />
+          <Link href={"/#resume"}>
+            <ResumeIcon style={{ pointerEvents: "none" }} />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Услуги" placement="right">
-          <Link href={'/#services'}>
-            <ServicesIcon />
+          <Link href={"/#services"}>
+            <ServicesIcon style={{ pointerEvents: "none" }} />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Портфолио" placement="right">
-          <Link href={'/#portfolio'}>
-            <PortfolioIcon />
+          <Link href={"/#portfolio"}>
+            <PortfolioIcon style={{ pointerEvents: "none" }} />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Сотрудничество" placement="right">
-          <Link href={'/#cooperation'}>
-            <СooperationIcon />
+          <Link href={"/#cooperation"}>
+            <СooperationIcon style={{ pointerEvents: "none" }} />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Блог" placement="right">
-          <Link href={'/#blog'}>
-            <BlogIcon />
+          <Link href={"/#blog"}>
+            <BlogIcon style={{ pointerEvents: "none" }} />
           </Link>
         </Tooltip>
       </Li>
       <Li>
         <Tooltip arrow title="Контакты" placement="right">
-          <Link href={'/#contacts'}>
-            <СontactsIcon />
+          <Link href={"/#contacts"}>
+            <СontactsIcon style={{ pointerEvents: "none" }} />
           </Link>
         </Tooltip>
       </Li>

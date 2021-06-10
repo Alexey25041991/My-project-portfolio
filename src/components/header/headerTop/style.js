@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderTopWrapper = styled.div`
   display: flex;
@@ -29,6 +29,16 @@ export const Li = styled.li`
   & :hover {
     cursor: pointer;
   }
+
+  position: relative;
+  & :hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + (1px * 2));
+    height: 2px;
+    bottom: 0px;
+    background: #ff8560;
+  }
 `;
 
 export const Link = styled.a`
@@ -46,7 +56,7 @@ export const Label = styled.span`
   color: white;
   line-height: 17px;
   font-size: 14px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
