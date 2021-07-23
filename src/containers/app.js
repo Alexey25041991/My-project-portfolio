@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ContentConteiner from "../components/ContentConteiner";
 import PortfolioList from "../components/PortfolioDevelopment/PortfolioList";
 import PortfolioValue from "../components/PortfolioDevelopment/PortfolioValue";
+import PortfolioListBlog from "../components/PortfolioBlog/PortfolioListBlog";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -25,6 +26,14 @@ const App = () => {
           {propsPortfolioList.map((item) => (
             <Route
               path={`/portfolio/${item.hrefNameList}`}
+              exact
+              render={() => <PortfolioValue key={item.id} item={item} />}
+            />
+          ))}
+          <Route path={`/blog`} exact component={PortfolioListBlog} />
+          {propsPortfolioList.map((item) => (
+            <Route
+              path={`/blog/${item.hrefNameList}`}
               exact
               render={() => <PortfolioValue key={item.id} item={item} />}
             />

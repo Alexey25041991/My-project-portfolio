@@ -1,8 +1,8 @@
-import PortfolioImgUrl1 from './icon/PortfolioImgUrl.png';
+import PortfolioImgUrl1 from "./icon/PortfolioImgUrl.png";
 // import webdev from './icon/webdev.png';
 
 export const propsPortfolioListHome = {
-  portfolioNameList: 'Портфолио',
+  portfolioNameList: "Портфолио",
   portfolioText: `В портфолио представлены проекты, которые я 
   разработал в сотрудничестве с веб-студиями так и для частных клиентов, 
   а также несколько личных проектов. Основная масса проектов содержит
@@ -11,31 +11,37 @@ export const propsPortfolioListHome = {
   сайта, ссылка на сайт, цель сайта и описание выполненной работы`,
 };
 
+export const propsPortfolioBlogHome = {
+  portfolioNameList: "Заметки веб-разработчика",
+  portfolioText:
+    "Добро пожаловать на блог веб-разработчика. \n Я наконец-то, решил сам для себя сделать площадку, чтобы делиться интересными новостями и примерами в мире front-end разработки.",
+};
+
 export const propsPortfolioList = [
   {
-    id: '1',
-    hrefPortfolio: 'https://react-t-shirt-shop.herokuapp.com/',
-    portfolioNameList: 'Интернет магазин',
-    portfolioDataTime: 'Январь 2021',
+    id: "1",
+    hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: '285px',
-    heightIcon: '500px',
-    hrefNameList: 'shirt-shop',
-    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
-    github: 'https://github.com/Alexey25041991/react-t-shirt-shop.git',
+    widthIcon: "285px",
+    heightIcon: "500px",
+    hrefNameList: "shirt-shop",
+    technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
+    github: "https://github.com/Alexey25041991/react-t-shirt-shop.git",
     portfolioText:
-      'Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.',
+      "Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.",
   },
   {
-    id: '2',
-    hrefPortfolio: 'http://dlg-construction.ru/',
-    portfolioNameList: 'Интернет магазин',
-    portfolioDataTime: 'Январь 2021',
+    id: "2",
+    hrefPortfolio: "http://dlg-construction.ru/",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: '285px',
-    heightIcon: '500px',
-    hrefNameList: 'dlg-construction',
-    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
+    widthIcon: "285px",
+    heightIcon: "500px",
+    hrefNameList: "dlg-construction",
+    technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: `В портфолио представлены проекты, которые я 
     разработал в сотрудничестве с веб-студиями так и для частных клиентов, 
     а также несколько личных проектов. Основная масса проектов содержит
@@ -44,48 +50,48 @@ export const propsPortfolioList = [
     сайта, ссылка на сайт, цель сайта и описание выполненной работы`,
   },
   {
-    id: '3',
-    hrefPortfolio: 'https://topas-ts.ru',
-    portfolioNameList: 'Интернет магазин',
-    portfolioDataTime: 'Январь 2021',
+    id: "3",
+    hrefPortfolio: "https://topas-ts.ru",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: '285px',
-    heightIcon: '500px',
-    hrefNameList: 'topas-ts',
-    technologies: ['Node', 'Redux', 'HTML5', 'JS', 'CSS3'],
-    portfolioText: 'Интернет магазин3',
+    widthIcon: "285px",
+    heightIcon: "500px",
+    hrefNameList: "topas-ts",
+    technologies: ["Node", "Redux", "HTML5", "JS", "CSS3"],
+    portfolioText: "Интернет магазин3",
   },
   {
-    id: '4',
-    hrefPortfolio: 'https://react-t-shirt-shop.herokuapp.com/',
-    portfolioNameList: 'Интернет магазин',
-    portfolioDataTime: 'Январь 2021',
+    id: "4",
+    hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: '285px',
-    heightIcon: '500px',
-    hrefNameList: 'name4',
-    technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
-    portfolioText: 'Интернет магазин4',
+    widthIcon: "285px",
+    heightIcon: "500px",
+    hrefNameList: "name4",
+    technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
+    portfolioText: "Интернет магазин4",
   },
   {
-    id: '5',
-    hrefPortfolio: 'https://react-t-shirt-shop.herokuapp.com/',
-    portfolioNameList: 'Интернет магазин',
-    portfolioDataTime: 'Январь 2021',
+    id: "5",
+    hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: '285px',
-    heightIcon: '500px',
-    hrefNameList: 'name5',
-    technologies: ['React-Native', 'Redux', 'HTML5', 'JS', 'CSS3'],
-    portfolioText: 'Интернет магазин5',
+    widthIcon: "285px",
+    heightIcon: "500px",
+    hrefNameList: "name5",
+    technologies: ["React-Native", "Redux", "HTML5", "JS", "CSS3"],
+    portfolioText: "Интернет магазин5",
   },
 ];
 
 export const PAGES_PORTFOLIO = {
-  PORTFOLIO_HOME: 'PORTFOLIO_HOME',
-  NAMES1: 'names1',
-  NAMES2: 'names2',
-  NAMES3: 'names3',
-  NAMES4: 'names4',
-  NAMES5: 'names5',
+  PORTFOLIO_HOME: "PORTFOLIO_HOME",
+  NAMES1: "names1",
+  NAMES2: "names2",
+  NAMES3: "names3",
+  NAMES4: "names4",
+  NAMES5: "names5",
 };

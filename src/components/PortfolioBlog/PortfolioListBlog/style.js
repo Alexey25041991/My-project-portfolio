@@ -4,12 +4,10 @@ import styled from "styled-components";
 import myIconWawew from "./icon/wawew.png";
 // import myIconWawewb from './icon/wawewb.png';
 import myIconBgcont from "./icon/bgcont.png";
-import myIconStl from "./icon/stl.png";
-import myIconStlh from "./icon/stlh.png";
-import myIconStr from "./icon/str.png";
-import myIconStrh from "./icon/strh.png";
+import myIconBgport from "./icon/bgport.png";
+import myIconBgportActiv from "./icon/bgporth.png";
 
-export const BlogWrapper = styled.div`
+export const PortfolioWrapper = styled.div`
   display: flex;
   background-color: #fff;
   // background: url(${myIconBgcont}) center top;
@@ -27,25 +25,30 @@ export const BlogWrapper = styled.div`
   }
 `;
 
-export const BlogConteiner = styled.div`
+export const PortfolioConteiner = styled.div`
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   width: 960px;
   margin: 0 auto;
   padding: 0 25px;
-  padding-bottom: 70px;
 `;
 
-export const BlogHeader = styled.h1`
+export const PortfolioHeaderValueWrapper = styled.div`
+  width: 300px;
+`;
+
+export const PortfolioHeaderValue = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   color: white;
-  padding-top: 35px;
+  margin-top: 30px;
   margin-bottom: 30px;
+  position: ${({ handleScrollNav }) =>
+    handleScrollNav ? "fixed" : "relative"};
+  top: ${({ handleScrollNav }) => (handleScrollNav ? "0px" : "auto")};
 `;
 
-export const BlogLabel = styled.div`
+export const PortfolioLabel = styled.div`
   color: #2b2a29;
   font-size: 30px;
   font-weight: 700;
@@ -54,12 +57,14 @@ export const BlogLabel = styled.div`
   margin-left: 12px;
 `;
 
-export const BlogCustom = styled.div`
+export const PortfolioCustom = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
   padding: 0;
+  border-right: 1px solid #ddd;
+  width: 760px;
 `;
 
 export const Ul = styled.ul`
@@ -67,56 +72,25 @@ export const Ul = styled.ul`
   margin: 0;
   display: flex;
   list-style-type: none;
+  width: 760px;
   margin: 0 auto;
   position: relative;
 `;
 
 export const Li = styled.li`
   display: flex;
+  width: 100% !important;
+  // text-align: center;
+  margin-left: -8px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+`;
+
+export const PortfolioButtom = styled.button`
+  display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 298px;
-  margin: 0px 9px;
-  border-bottom: 3px solid #707980;
-  padding-bottom: 15px;
-`;
-
-export const ButtonL = styled.button`
-  display: flex;
-  position: absolute;
-  top: 149px;
-  background: url(${myIconStl}) no-repeat;
-  border: 0px;
-  width: 25px;
-  height: 45px;
-  left: -25px;
-  cursor: pointer;
-  &:hover {
-    background: url(${myIconStlh}) no-repeat;
-  }
-`;
-
-export const ButtonR = styled.button`
-  display: flex;
-  position: absolute;
-  top: 149px;
-  background: url(${myIconStr}) no-repeat;
-  border: 0px;
-  width: 25px;
-  height: 45px;
-  right: -25px;
-  cursor: pointer;
-  &:hover {
-    background: url(${myIconStrh}) no-repeat;
-  }
-`;
-
-export const Allportf = styled.button`
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  width: 290px;
   height: 40px;
   background-color: #2b3037;
   border-radius: 4px;
@@ -130,23 +104,18 @@ export const Allportf = styled.button`
   line-height: 40px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  margin: 0 20px;
   &:hover {
     background-color: #ff8560;
   }
 `;
 
-export const LinkPortfolio = styled.div`
+export const PortfolioButtomText = styled.div`
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding: 5px 15px;
-  color: palevioletred;
-`;
-
-export const Label = styled.span`
-  display: flex;
-  align-items: center;
   justify-content: center;
+  padding: 5px 15px;
   color: white;
   line-height: 17px;
   font-size: 14px;
@@ -155,8 +124,6 @@ export const Label = styled.span`
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
-  margin-top: 10px;
-  margin-left: 10px;
 `;
 
 export const SlickList = styled.div`
@@ -168,90 +135,87 @@ export const SlickList = styled.div`
 
 export const SlickTrack = styled.div`
   display: flex;
+  flex-wrap: wrap;
   opacity: 1;
   margin-left: -13px;
   position: relative;
   top: 0;
 `;
 
-export const BlogImg = styled.div`
-  width: 298px;
-  height: 192px;
-  overflow: hidden;
-`;
-
-export const BlogList = styled.a`
+export const PortfolioImg = styled.div`
   display: flex;
-  width: 298px;
-  height: 192px;
-  overflow: hidden;
-  position: relative;
+  background: url(${myIconBgport}) no-repeat;
+  width: 328px;
+  height: 359px;
+  &:hover {
+    background: url(${myIconBgportActiv}) no-repeat;
+  }
 `;
 
-export const BlogImgUrl = styled.img`
+export const PortfolioImgUrl = styled.img`
   display: flex;
   position: relative;
 `;
 
-export const BlogData = styled.div`
+export const TextBlog = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TextBlogValue = styled.div`
+  font-size: 14x;
+  font-family: "Exo 2", sans-serif;
+  margin-top: 12px;
+`;
+
+export const PortfolioData = styled.div`
   display: flex;
   text-align: left;
-  margin-top: 0px;
-  background: #707980;
-  color: #fff;
-  padding: 12px 12px;
+  margin-top: -46px;
+  padding: 0px 14px 0px 23px;
+  margin-bottom: 15px;
   position: relative;
 `;
 
-export const BlogValue = styled.div`
+export const PortfolioDataValue = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 7px;
+  background: #e7e9ea;
+  color: #707980;
+  min-width: 277px;
+`;
+
+export const PortfolioDataLabel = styled.div`
+  display: flex;
+`;
+
+export const PortfolioDataText = styled.div`
+  color: #707980;
   font-size: 12px;
   font-family: "Exo 2", sans-serif;
   margin-left: 5px;
 `;
 
-export const BlogDataValue = styled.div`
+export const PortfolioDataTime = styled.div`
   display: flex;
-  margin-right: 20px;
 `;
 
-export const BlogShow = styled.div`
+export const PortfolioName = styled.div`
+  display: flex;
+  justify-content: center;
   color: #2b2a29;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
+  & :hover {
+    font-size: 18px;
+  }
 `;
 
-export const BlogListShow = styled.a`
+export const PortfolioNameList = styled.div`
   font-size: 14px;
-  text-decoration: none;
   border-bottom: 1px dashed #000;
   color: #000;
   cursor: pointer;
-`;
-
-export const BlogTitle = styled.span`
-  text-align: left;
-  margin: 10px 0px;
-  height: 38px;
-  overflow: hidden;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #000;
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 20px;
-  font-family: "Exo 2", sans-serif;
-  margin-left: 5px;
-`;
-
-export const BlogText = styled.span`
-  text-align: left;
-  overflow: hidden;
-  color: #000;
-  text-decoration: none;
-  line-height: 20px;
-  font-family: "Exo 2", sans-serif;
-  height: 83px;
-  font-size: 12px;
-  margin-left: 5px;
 `;

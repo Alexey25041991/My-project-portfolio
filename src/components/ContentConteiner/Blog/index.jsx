@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   BlogWrapper,
@@ -11,7 +12,7 @@ import {
   ButtonL,
   ButtonR,
   Allportf,
-  Link,
+  LinkPortfolio,
   Label,
   SlickList,
   SlickTrack,
@@ -25,15 +26,15 @@ import {
   BlogListShow,
   BlogTitle,
   BlogText,
-} from './style.js';
+} from "./style.js";
 
-import { ReactComponent as BlogIcon } from './icon/BlogIcon.svg';
-import { ReactComponent as KeyIcon } from './icon/KeyIcon.svg';
-import { ReactComponent as BlogVisitorIcon } from './icon/BlogVisitorIcon.svg';
-import { ReactComponent as BlogTimeIcon } from './icon/BlogTimeIcon.svg';
-import { ReactComponent as BlogLikeIcon } from './icon/BlogLikeIcon.svg';
+import { ReactComponent as BlogIcon } from "./icon/BlogIcon.svg";
+import { ReactComponent as KeyIcon } from "./icon/KeyIcon.svg";
+import { ReactComponent as BlogVisitorIcon } from "./icon/BlogVisitorIcon.svg";
+import { ReactComponent as BlogTimeIcon } from "./icon/BlogTimeIcon.svg";
+import { ReactComponent as BlogLikeIcon } from "./icon/BlogLikeIcon.svg";
 
-import { propsSlickList } from './constants';
+import { propsSlickList } from "./constants";
 
 const getSlickList = (propsSlickList) =>
   propsSlickList.map((item) => (
@@ -86,12 +87,14 @@ const Blog = () => (
           </SlickList>
           <ButtonR />
         </Ul>
-        <Allportf>
-          <Link href={`${'#'}`}>
-            <KeyIcon />
-            <Label>Открыть блок</Label>
-          </Link>
-        </Allportf>
+        <Link to="/blog" style={{ textDecoration: "none" }}>
+          <Allportf>
+            <LinkPortfolio>
+              <KeyIcon />
+              <Label>Открыть блок</Label>
+            </LinkPortfolio>
+          </Allportf>
+        </Link>
       </BlogCustom>
     </BlogConteiner>
   </BlogWrapper>
