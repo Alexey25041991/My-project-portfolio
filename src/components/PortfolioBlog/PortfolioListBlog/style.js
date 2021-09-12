@@ -79,11 +79,15 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   display: flex;
+  flex-direction: column;
   width: 100% !important;
-  // text-align: center;
-  margin-left: -8px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   border-bottom: 1px solid #ddd;
+  & li:last-child {
+    border-bottom: none;
+    background-color: red;
+  }
 `;
 
 export const PortfolioButtom = styled.button`
@@ -144,12 +148,12 @@ export const SlickTrack = styled.div`
 
 export const PortfolioImg = styled.div`
   display: flex;
-  background: url(${myIconBgport}) no-repeat;
+  // background: url(${myIconBgport}) no-repeat;
   width: 328px;
   height: 359px;
-  &:hover {
-    background: url(${myIconBgportActiv}) no-repeat;
-  }
+  // &:hover {
+  //   background: url(${myIconBgportActiv}) no-repeat;
+  // }
 `;
 
 export const PortfolioImgUrl = styled.img`
@@ -160,12 +164,25 @@ export const PortfolioImgUrl = styled.img`
 export const TextBlog = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 20px;
 `;
 
 export const TextBlogValue = styled.div`
   font-size: 14x;
   font-family: "Exo 2", sans-serif;
   margin-top: 12px;
+`;
+
+export const TextBlogHeader = styled.div`
+  font-size: 14x;
+  font-family: "Exo 2", sans-serif;
+  margin-left: 20px;
+  text-transform: uppercase;
+`;
+
+export const TextBlogWrapper = styled.div`
+  display: flex;
 `;
 
 export const PortfolioData = styled.div`

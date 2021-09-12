@@ -23,6 +23,8 @@ import {
   PortfolioHeaderValueWrapper,
   TextBlog,
   TextBlogValue,
+  TextBlogHeader,
+  TextBlogWrapper,
 } from "./style.js";
 import styled from "styled-components/macro";
 import "./index.css";
@@ -41,8 +43,7 @@ const PortfolioListData = styled(Link)`
   height: 292px;
   overflow: hidden;
   position: relative;
-  top: 21px;
-  left: 23px;
+  top: 20px;
   text-decoration: none;
 `;
 
@@ -71,30 +72,32 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
           item.technologies.includes(portfoliosValue)
         )
       : propsPortfolioList;
-  console.log(111, filterPropsPortfolioList);
   return filterPropsPortfolioList?.map((item) => (
-    <Li key={item.id}>
-      <PortfolioImg>
-        <PortfolioListData to={`/blog/${item.hrefNameList}`}>
-          <PortfolioImgUrl
-            src={item.icon}
-            width={item.widthIcon}
-            height={item.heightIcon}
-          />
-        </PortfolioListData>
-      </PortfolioImg>
-      <TextBlog>
-        <PortfolioDataTime>
-          <PortfolioTimeIcon />
-          <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
-        </PortfolioDataTime>
-        <TextBlogValue>{item.portfolioText}</TextBlogValue>
-        <PortfolioName>
-          <PortfolioListDataText to={`/blog/${item.hrefNameList}`}>
-            <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
-          </PortfolioListDataText>
-        </PortfolioName>
-      </TextBlog>
+    <Li key={item.id} className>
+      <TextBlogHeader>{item.textBlogHeader}</TextBlogHeader>
+      <TextBlogWrapper>
+        <PortfolioImg>
+          <PortfolioListData to={`/blog/${item.hrefNameList}`}>
+            <PortfolioImgUrl
+              src={item.icon}
+              width={item.widthIcon}
+              height={item.heightIcon}
+            />
+          </PortfolioListData>
+        </PortfolioImg>
+        <TextBlog>
+          <PortfolioDataTime>
+            <PortfolioTimeIcon />
+            <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
+          </PortfolioDataTime>
+          <TextBlogValue>{item.portfolioText}</TextBlogValue>
+          <PortfolioName>
+            <PortfolioListDataText to={`/blog/${item.hrefNameList}`}>
+              <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
+            </PortfolioListDataText>
+          </PortfolioName>
+        </TextBlog>
+      </TextBlogWrapper>
     </Li>
   ));
 };
