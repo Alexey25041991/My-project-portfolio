@@ -7,23 +7,15 @@ import {
   BlogHeader,
   BlogLabel,
   BlogCustom,
-  Ul,
-  Li,
-  ButtonL,
-  ButtonR,
+  MyBlogSection,
+  MyBlog,
   Allportf,
   LinkPortfolio,
   Label,
-  SlickList,
-  SlickTrack,
-  BlogImg,
-  BlogList,
-  BlogImgUrl,
+  BlogCat,
   BlogData,
   BlogDataValue,
   BlogValue,
-  BlogShow,
-  BlogListShow,
   BlogTitle,
   BlogText,
 } from "./style.js";
@@ -34,43 +26,9 @@ import { ReactComponent as BlogVisitorIcon } from "./icon/BlogVisitorIcon.svg";
 import { ReactComponent as BlogTimeIcon } from "./icon/BlogTimeIcon.svg";
 import { ReactComponent as BlogLikeIcon } from "./icon/BlogLikeIcon.svg";
 
-import { propsSlickList } from "./constants";
+import CatCodes from "./CatCodes";
 
-const getSlickList = (propsSlickList) =>
-  propsSlickList.map((item) => (
-    <Li key={item.id}>
-      <BlogImg>
-        <BlogList href={`${item.hrefBlog}`}>
-          <BlogImgUrl
-            src={item.icon}
-            width={item.widthIcon}
-            height={item.heightIcon}
-          />
-        </BlogList>
-      </BlogImg>
-      <BlogData>
-        <BlogDataValue>
-          <BlogTimeIcon />
-          <BlogValue>{item.BlogDataTime}</BlogValue>
-        </BlogDataValue>
-        <BlogDataValue>
-          <BlogVisitorIcon />
-          <BlogValue>2970</BlogValue>
-        </BlogDataValue>
-        <BlogDataValue>
-          <BlogLikeIcon />
-          <BlogValue>10</BlogValue>
-        </BlogDataValue>
-      </BlogData>
-      <BlogTitle>{item.BlogTitle}</BlogTitle>
-      <BlogText>{item.BlogText}</BlogText>
-      <BlogShow>
-        <BlogListShow href={`${item.hrefNameList}`}>
-          {item.BlogListShow}
-        </BlogListShow>
-      </BlogShow>
-    </Li>
-  ));
+import { propsSlickList } from "./constants";
 
 const Blog = () => (
   <BlogWrapper id="blog">
@@ -80,13 +38,29 @@ const Blog = () => (
         <BlogLabel>Мой Блог</BlogLabel>
       </BlogHeader>
       <BlogCustom>
-        <Ul>
-          <ButtonL />
-          <SlickList>
-            <SlickTrack>{getSlickList(propsSlickList)}</SlickTrack>
-          </SlickList>
-          <ButtonR />
-        </Ul>
+        <MyBlogSection>
+          <MyBlog>
+            <BlogTitle>{propsSlickList.BlogTitle}</BlogTitle>
+            <BlogText>{propsSlickList.BlogText}</BlogText>
+            <BlogData>
+              <BlogDataValue>
+                <BlogTimeIcon />
+                <BlogValue>{propsSlickList.BlogDataTime}</BlogValue>
+              </BlogDataValue>
+              <BlogDataValue>
+                <BlogVisitorIcon />
+                <BlogValue>2970</BlogValue>
+              </BlogDataValue>
+              <BlogDataValue>
+                <BlogLikeIcon />
+                <BlogValue>10</BlogValue>
+              </BlogDataValue>
+            </BlogData>
+          </MyBlog>
+          <BlogCat>
+            <CatCodes />
+          </BlogCat>
+        </MyBlogSection>
         <Link to="/blog" style={{ textDecoration: "none" }}>
           <Allportf>
             <LinkPortfolio>

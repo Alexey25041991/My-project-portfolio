@@ -4,10 +4,6 @@ import styled from "styled-components";
 import myIconWawew from "./icon/wawew.png";
 // import myIconWawewb from './icon/wawewb.png';
 import myIconBgcont from "./icon/bgcont.png";
-import myIconStl from "./icon/stl.png";
-import myIconStlh from "./icon/stlh.png";
-import myIconStr from "./icon/str.png";
-import myIconStrh from "./icon/strh.png";
 
 export const BlogWrapper = styled.div`
   display: flex;
@@ -62,53 +58,23 @@ export const BlogCustom = styled.div`
   padding: 0;
 `;
 
-export const Ul = styled.ul`
+export const MyBlogSection = styled.div`
   padding: 0;
   margin: 0;
   display: flex;
   list-style-type: none;
   margin: 0 auto;
   position: relative;
-`;
-
-export const Li = styled.li`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 298px;
-  margin: 0px 9px;
   border-bottom: 3px solid #707980;
   padding-bottom: 15px;
 `;
 
-export const ButtonL = styled.button`
+export const MyBlog = styled.div`
   display: flex;
-  position: absolute;
-  top: 149px;
-  background: url(${myIconStl}) no-repeat;
-  border: 0px;
-  width: 25px;
-  height: 45px;
-  left: -25px;
-  cursor: pointer;
-  &:hover {
-    background: url(${myIconStlh}) no-repeat;
-  }
-`;
-
-export const ButtonR = styled.button`
-  display: flex;
-  position: absolute;
-  top: 149px;
-  background: url(${myIconStr}) no-repeat;
-  border: 0px;
-  width: 25px;
-  height: 45px;
-  right: -25px;
-  cursor: pointer;
-  &:hover {
-    background: url(${myIconStrh}) no-repeat;
-  }
+  flex-direction: column;
+  text-align: center;
+  width: 298px;
+  margin-right: 40px;
 `;
 
 export const Allportf = styled.button`
@@ -174,22 +140,13 @@ export const SlickTrack = styled.div`
   top: 0;
 `;
 
-export const BlogImg = styled.div`
+export const BlogCat = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 298px;
   height: 192px;
   overflow: hidden;
-`;
-
-export const BlogList = styled.a`
-  display: flex;
-  width: 298px;
-  height: 192px;
-  overflow: hidden;
-  position: relative;
-`;
-
-export const BlogImgUrl = styled.img`
-  display: flex;
   position: relative;
 `;
 
@@ -231,7 +188,7 @@ export const BlogListShow = styled.a`
 
 export const BlogTitle = styled.span`
   text-align: left;
-  margin: 10px 0px;
+  margin-bottom: 10px;
   height: 38px;
   overflow: hidden;
   text-transform: uppercase;
@@ -241,7 +198,6 @@ export const BlogTitle = styled.span`
   font-size: 12px;
   line-height: 20px;
   font-family: "Exo 2", sans-serif;
-  margin-left: 5px;
 `;
 
 export const BlogText = styled.span`
@@ -253,5 +209,5 @@ export const BlogText = styled.span`
   font-family: "Exo 2", sans-serif;
   height: 83px;
   font-size: 12px;
-  margin-left: 5px;
+  margin-bottom: 10px;
 `;
