@@ -5,13 +5,17 @@ import Footer from "../components/Footer";
 import ContentConteiner from "../components/ContentConteiner";
 import PortfolioList from "../components/PortfolioDevelopment/PortfolioList";
 import PortfolioValue from "../components/PortfolioDevelopment/PortfolioValue";
+import PortfolioValueBlog from "../components/PortfolioBlog/PortfolioValueBlog";
 import PortfolioListBlog from "../components/PortfolioBlog/PortfolioListBlog";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // import { observer } from 'mobx-react-lite';
 
-import { propsPortfolioList } from "../components/common/constants";
+import {
+  propsPortfolioList,
+  propsPortfolioListBlog,
+} from "../components/common/constants";
 
 import { AppWrapper } from "./style";
 
@@ -31,11 +35,11 @@ const App = () => {
             />
           ))}
           <Route path={`/blog`} exact component={PortfolioListBlog} />
-          {propsPortfolioList.map((item) => (
+          {propsPortfolioListBlog.map((item) => (
             <Route
               path={`/blog/${item.hrefNameList}`}
               exact
-              render={() => <PortfolioValue key={item.id} item={item} />}
+              render={() => <PortfolioValueBlog key={item.id} item={item} />}
             />
           ))}
         </Switch>

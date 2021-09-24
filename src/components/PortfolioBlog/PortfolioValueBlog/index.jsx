@@ -1,6 +1,6 @@
 import React from "react";
 
-import PortfolioHeader from "../PortfolioHeader";
+import PortfolioHeader from "../../PortfolioHeader";
 
 import {
   PortfolioWrapper,

@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import PortfolioHeader from "../PortfolioHeader";
+import PortfolioHeader from "../../PortfolioHeader";
 
 import {
   PortfolioWrapper,
@@ -33,7 +33,7 @@ import { ReactComponent as PortfolioTimeIcon } from "./icon/PortfolioTimeIcon.sv
 
 import { propsButtonList } from "./constants";
 import {
-  propsPortfolioList,
+  propsPortfolioListBlog,
   propsPortfolioBlogHome,
 } from "../../common/constants";
 
@@ -135,7 +135,7 @@ const PortfolioListBlog = () => {
             <Ul>
               <SlickList>
                 <SlickTrack>
-                  {getSlickList(propsPortfolioList, portfoliosValue)}
+                  {getSlickList(propsPortfolioListBlog, portfoliosValue)}
                 </SlickTrack>
               </SlickList>
             </Ul>

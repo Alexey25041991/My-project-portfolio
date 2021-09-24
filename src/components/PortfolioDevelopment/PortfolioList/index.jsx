@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import PortfolioHeader from '../PortfolioHeader';
+import PortfolioHeader from "../../PortfolioHeader";
 
 import {
   PortfolioWrapper,
@@ -23,18 +23,18 @@ import {
   PortfolioDataTime,
   PortfolioName,
   PortfolioNameList,
-} from './style.js';
-import styled from 'styled-components/macro';
-import './index.css';
+} from "./style.js";
+import styled from "styled-components/macro";
+import "./index.css";
 
-import { ReactComponent as PortfolioLabelIcon } from './icon/PortfolioLabelIcon.svg';
-import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
+import { ReactComponent as PortfolioLabelIcon } from "./icon/PortfolioLabelIcon.svg";
+import { ReactComponent as PortfolioTimeIcon } from "./icon/PortfolioTimeIcon.svg";
 
-import { propsButtonList } from './constants';
+import { propsButtonList } from "./constants";
 import {
   propsPortfolioList,
   propsPortfolioListHome,
-} from '../../common/constants';
+} from "../../common/constants";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -110,7 +110,7 @@ const PortfolioList = () => {
 
   return (
     <>
-      <PortfolioHeader item={propsPortfolioListHome} />
+      <PortfolioHeader item={propsPortfolioListHome} portfolio />
       <PortfolioWrapper>
         <PortfolioConteiner>
           <PortfolioHeaderValue>

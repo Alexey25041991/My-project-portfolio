@@ -28,7 +28,7 @@ import { ReactComponent as BlogLikeIcon } from "./icon/BlogLikeIcon.svg";
 
 import CatCodes from "./CatCodes";
 
-import { propsSlickList } from "./constants";
+import { propsSlickList } from "../../common/constants";
 
 const Blog = () => (
   <BlogWrapper id="blog">

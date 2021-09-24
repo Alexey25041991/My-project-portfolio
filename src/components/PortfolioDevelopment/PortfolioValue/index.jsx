@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import PortfolioHeader from '../PortfolioHeader';
+import PortfolioHeader from "../../PortfolioHeader";
 
 import {
   PortfolioWrapper,
@@ -12,7 +12,7 @@ import {
   PortfolioNameList,
   Projectwindow,
   PortfolioImgUrl,
-} from './style.js';
+} from "./style.js";
 
 const getSlickList = (item) => {
   return (
@@ -28,7 +28,7 @@ const getSlickList = (item) => {
         </PortfolioNameList>
 
         <Projectwindow>
-          <PortfolioImgUrl src={item.icon} width={'936px'} />
+          <PortfolioImgUrl src={item.icon} width={"936px"} />
         </Projectwindow>
       </PortfolioImg>
     </Li>
@@ -37,7 +37,7 @@ const getSlickList = (item) => {
 
 const PortfolioValue = ({ item }) => (
   <>
-    <PortfolioHeader item={item} />
+    <PortfolioHeader item={item} portfolio />
     <PortfolioWrapper>
       <PortfolioConteiner>
         <PortfolioCustom>
