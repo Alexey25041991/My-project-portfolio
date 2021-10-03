@@ -17,6 +17,7 @@ import {
   PortfolioImg,
   PortfolioImgUrl,
   PortfolioDataText,
+  PortfolioTagText,
   PortfolioDataTime,
   PortfolioName,
   PortfolioNameList,
@@ -39,17 +40,17 @@ import {
 
 const PortfolioListData = styled(Link)`
   display: flex;
-  width: 285px;
-  height: 292px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   position: relative;
-  top: 20px;
+  // top: 20px;
   text-decoration: none;
 `;
 
 const PortfolioListDataText = styled(Link)`
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   overflow: hidden;
   text-decoration: none;
 `;
@@ -93,7 +94,7 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
           <TextBlogValue>{item.portfolioText}</TextBlogValue>
           <PortfolioName>
             <PortfolioListDataText to={`/blog/${item.hrefNameList}`}>
-              <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
+              <PortfolioNameList>Показать больше</PortfolioNameList>
             </PortfolioListDataText>
           </PortfolioName>
         </TextBlog>
@@ -142,7 +143,7 @@ const PortfolioListBlog = () => {
           </PortfolioCustom>
           <PortfolioHeaderValueWrapper>
             <PortfolioHeaderValue handleScrollNav={handleScrollNav}>
-              <PortfolioDataText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioDataText>
+              <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
               {getButtonList(propsButtonList, setPortfoliosValue)}
             </PortfolioHeaderValue>
           </PortfolioHeaderValueWrapper>

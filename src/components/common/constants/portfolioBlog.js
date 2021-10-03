@@ -4,7 +4,7 @@ import PortfolioImgUrl1 from "./icon/PortfolioImgUrl.png";
 export const propsPortfolioBlogHome = {
   portfolioNameList: "Заметки веб-разработчика",
   portfolioText:
-    "Добро пожаловать на блог веб-разработчика. \n Я наконец-то, решил сам для себя сделать площадку, чтобы делиться интересными новостями и примерами в мире front-end разработки.",
+    "Добро пожаловать на блог веб-разработчика. Я наконец-то, решил сам для себя сделать площадку, чтобы делиться интересными новостями и примерами в мире front-end разработки.",
 };
 
 export const propsSlickList = {
@@ -22,11 +22,11 @@ export const propsPortfolioListBlog = [
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: "285px",
-    heightIcon: "500px",
+    widthIcon: "200px",
+    heightIcon: "200px",
     hrefNameList: "shirt-shop",
-    technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
-    github: "https://github.com/Alexey25041991/react-t-shirt-shop.git",
+    // technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
+    // github: 'https://github.com/Alexey25041991/react-t-shirt-shop.git',
     portfolioText:
       "Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.",
     textBlogHeader:
@@ -38,8 +38,8 @@ export const propsPortfolioListBlog = [
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: "285px",
-    heightIcon: "500px",
+    widthIcon: "200px",
+    heightIcon: "200px",
     hrefNameList: "dlg-construction",
     technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: `В портфолио представлены проекты, которые я 
@@ -57,8 +57,8 @@ export const propsPortfolioListBlog = [
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: "285px",
-    heightIcon: "500px",
+    widthIcon: "200px",
+    heightIcon: "200px",
     hrefNameList: "topas-ts",
     technologies: ["Node", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: `В портфолио представлены проекты, которые я 
@@ -76,8 +76,8 @@ export const propsPortfolioListBlog = [
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: "285px",
-    heightIcon: "500px",
+    widthIcon: "200px",
+    heightIcon: "200px",
     hrefNameList: "name4",
     technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: "Интернет магазин4",
@@ -90,8 +90,8 @@ export const propsPortfolioListBlog = [
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
     icon: `${PortfolioImgUrl1}`,
-    widthIcon: "285px",
-    heightIcon: "500px",
+    widthIcon: "200px",
+    heightIcon: "200px",
     hrefNameList: "name5",
     technologies: ["React-Native", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: "Интернет магазин5",

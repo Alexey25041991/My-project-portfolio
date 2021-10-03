@@ -40,9 +40,9 @@ export const PortfolioHeaderValueWrapper = styled.div`
 export const PortfolioHeaderValue = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 16px;
   color: white;
-  margin-top: 30px;
-  margin-bottom: 30px;
   position: ${({ handleScrollNav }) =>
     handleScrollNav ? "fixed" : "relative"};
   top: ${({ handleScrollNav }) => (handleScrollNav ? "0px" : "auto")};
@@ -84,9 +84,8 @@ export const Li = styled.li`
   margin-bottom: 15px;
   margin-top: 15px;
   border-bottom: 1px solid #ddd;
-  & li:last-child {
+  &:last-child {
     border-bottom: none;
-    background-color: red;
   }
 `;
 
@@ -95,6 +94,8 @@ export const PortfolioButtom = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-bottom: 6px;
   height: 40px;
   background-color: #2b3037;
   border-radius: 4px;
@@ -108,7 +109,6 @@ export const PortfolioButtom = styled.button`
   line-height: 40px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  margin: 0 20px;
   &:hover {
     background-color: #ff8560;
   }
@@ -149,8 +149,8 @@ export const SlickTrack = styled.div`
 export const PortfolioImg = styled.div`
   display: flex;
   // background: url(${myIconBgport}) no-repeat;
-  width: 328px;
-  height: 359px;
+  width: 200px;
+  height: 200px;
   // &:hover {
   //   background: url(${myIconBgportActiv}) no-repeat;
   // }
@@ -165,17 +165,27 @@ export const TextBlog = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 20px;
+  margin-left: 20px;
+  // top: 20px;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
 `;
 
 export const TextBlogValue = styled.div`
-  font-size: 14x;
+  font-size: 14px;
   font-family: "Exo 2", sans-serif;
   margin-top: 12px;
+
+  // height: 80px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 `;
 
 export const TextBlogHeader = styled.div`
-  font-size: 14x;
+  font-size: 14px;
+  font-weight: 700;
   font-family: "Exo 2", sans-serif;
   margin-left: 20px;
   text-transform: uppercase;
@@ -183,6 +193,7 @@ export const TextBlogHeader = styled.div`
 
 export const TextBlogWrapper = styled.div`
   display: flex;
+  margin: 20px 0;
 `;
 
 export const PortfolioData = styled.div`
@@ -209,9 +220,18 @@ export const PortfolioDataLabel = styled.div`
 
 export const PortfolioDataText = styled.div`
   color: #707980;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
   font-family: "Exo 2", sans-serif;
   margin-left: 5px;
+`;
+
+export const PortfolioTagText = styled.div`
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Exo 2", sans-serif;
 `;
 
 export const PortfolioDataTime = styled.div`
@@ -220,11 +240,12 @@ export const PortfolioDataTime = styled.div`
 
 export const PortfolioName = styled.div`
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   color: #2b2a29;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
+  margin-top: 12px;
   & :hover {
     font-size: 18px;
   }

@@ -145,14 +145,14 @@ export const PortfolioDataText = styled.div`
 
 export const PortfolioTechnologies = styled.div`
   color: #fff;
-  font-size: 14x;
+  font-size: 14px;
   font-family: "Exo 2", sans-serif;
   margin-left: 20px;
 `;
 
 export const PortfolioText = styled.div`
   color: #fff;
-  font-size: 14x;
+  font-size: 14px;
   font-family: "Exo 2", sans-serif;
   margin-top: 12px;
 `;
@@ -160,7 +160,7 @@ export const PortfolioText = styled.div`
 export const PortfolioGithub = styled.a`
   text-decoration: none;
   color: #fff;
-  font-size: 14x;
+  font-size: 14px;
   font-family: "Exo 2", sans-serif;
   margin-bottom: 12px;
   line-height: 1;
