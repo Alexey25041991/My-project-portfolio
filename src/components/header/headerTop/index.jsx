@@ -1,6 +1,6 @@
 import React from "react";
 
-import LogoLook from "../../logoLook";
+import LogoLook from "../../LogoLook";
 
 import { HeaderTopWrapper, HeaderMenu, Ul, Li, Link, Label } from "./style";
 

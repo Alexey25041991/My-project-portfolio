@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import LogoLook from '../logoLook';
-import Modal from '../Modal';
+import LogoLook from "../LogoLook";
+import Modal from "../Modal";
 
 import {
   FooterWrapper,
@@ -21,14 +21,14 @@ import {
   LabeButtonl,
   FooterValue1,
   FooterHh,
-} from './style.js';
+} from "./style.js";
 
-import { ReactComponent as FooterСlockIcon } from './icon/FooterСlockIcon.svg';
-import { ReactComponent as FooterTelephoneIcon } from './icon/FooterTelephoneIcon.svg';
-import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
-import { ReactComponent as FooterSkypeIcon } from './icon/FooterSkypeIcon.svg';
+import { ReactComponent as FooterСlockIcon } from "./icon/FooterСlockIcon.svg";
+import { ReactComponent as FooterTelephoneIcon } from "./icon/FooterTelephoneIcon.svg";
+import { ReactComponent as FooterMailIcon } from "./icon/FooterMailIcon.svg";
+import { ReactComponent as FooterSkypeIcon } from "./icon/FooterSkypeIcon.svg";
 
-import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
+import { ReactComponent as OrderSiteIcon } from "./icon/OrderSiteIcon.svg";
 
 const Footer = () => {
   const [opened, setOpened] = useState(false);
@@ -84,7 +84,7 @@ const Footer = () => {
               </Li>
               <Li>
                 <Link>
-                  <FooterHh href={`${'#'}`}>hh</FooterHh>
+                  <FooterHh href={`${"#"}`}>hh</FooterHh>
                   <Label>HeadHunter</Label>
                   <LabelText>Мазуренко Алексей</LabelText>
                 </Link>
