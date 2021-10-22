@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 import {
   ResumeWrapper,
@@ -15,20 +15,20 @@ import {
   ResumeSkillsValue,
   ResumeOptionsWrapper,
   Avatar,
-} from './style.js';
+} from "./style.js";
 
-import './style.css';
+import "./style.css";
 
-import { propsPortfolioResume } from './constants';
+import { propsPortfolioResume } from "./constants";
 
-import { ReactComponent as ResumeIcon } from './icon/ResumeIcon.svg';
+import { ReactComponent as ResumeIcon } from "./icon/ResumeIcon.svg";
 
 const ResumeSkillsLabelValue = (title, numberValue, id) => (
   <Fragment key={id}>
     <ResumeSkillsLabel>{title}</ResumeSkillsLabel>
     <ResumeSkillsProgres className="progress">
       <ResumeSkillsValue className="fill a" width={numberValue}>
-        {`${numberValue + '%'}`}
+        {`${numberValue + "%"}`}
       </ResumeSkillsValue>
     </ResumeSkillsProgres>
   </Fragment>

@@ -40,6 +40,8 @@ import {
 
 const PortfolioListData = styled(Link)`
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   height: 200px;
   overflow: hidden;

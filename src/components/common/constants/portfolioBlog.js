@@ -1,4 +1,6 @@
 import PortfolioImgUrl1 from "./icon/PortfolioImgUrl.png";
+import JavaScript from "./icon/JavaScript.png";
+import React from "./icon/React.png";
 // import webdev from './icon/webdev.png';
 
 export const propsPortfolioBlogHome = {
@@ -19,37 +21,35 @@ export const propsPortfolioListBlog = [
   {
     id: "1",
     hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
-    portfolioNameList: "Интернет магазин",
+    portfolioNameList: "JavaScript",
     portfolioDataTime: "Январь 2021",
-    icon: `${PortfolioImgUrl1}`,
+    icon: `${JavaScript}`,
     widthIcon: "200px",
     heightIcon: "200px",
-    hrefNameList: "shirt-shop",
-    // technologies: ['React', 'Redux', 'HTML5', 'JS', 'CSS3'],
+    hrefNameList: "javaScript",
+    technologies: ["JavaScript"],
     // github: 'https://github.com/Alexey25041991/react-t-shirt-shop.git',
     portfolioText:
-      "Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.",
-    textBlogHeader:
-      "Итоги создания сайтов за 2018 год и падение переходов на мой сайт.",
+      "Здесь хочу поделиться полезной информацией свянанной с JavaScript. Можно посмотреть полезные ссылки, примеры кода, что появилось нового. Так же порекомендую из своей практики что стоит изучить, а что не забывать и повторять.",
+    textBlogHeader: "Заметки про JavaScript и как с ним работать.",
   },
   {
     id: "2",
     hrefPortfolio: "http://dlg-construction.ru/",
-    portfolioNameList: "Интернет магазин",
+    portfolioNameList: "React",
     portfolioDataTime: "Январь 2021",
-    icon: `${PortfolioImgUrl1}`,
-    widthIcon: "200px",
-    heightIcon: "200px",
-    hrefNameList: "dlg-construction",
-    technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
+    icon: `${React}`,
+    widthIcon: "160px",
+    heightIcon: "160px",
+    hrefNameList: "react",
+    technologies: ["React"],
     portfolioText: `В портфолио представлены проекты, которые я 
     разработал в сотрудничестве с веб-студиями так и для частных клиентов, 
     а также несколько личных проектов. Основная масса проектов содержит
     индивидуальные функции предназначенные для реализации особенностей
     работы веб-сайта.В моем портфолио веб-разработчика указано название
     сайта, ссылка на сайт, цель сайта и описание выполненной работы`,
-    textBlogHeader:
-      "Итоги создания сайтов за 2018 год и падение переходов на мой сайт.",
+    textBlogHeader: "Что такое Reac и с чем его едят",
   },
   {
     id: "3",
@@ -67,8 +67,7 @@ export const propsPortfolioListBlog = [
     индивидуальные функции предназначенные для реализации особенностей
     работы веб-сайта.В моем портфолио веб-разработчика указано название
     сайта, ссылка на сайт, цель сайта и описание выполненной работы`,
-    textBlogHeader:
-      "Итоги создания сайтов за 2018 год и падение переходов на мой сайт.",
+    textBlogHeader: "Зазем нужен Next js",
   },
   {
     id: "4",
@@ -81,8 +80,7 @@ export const propsPortfolioListBlog = [
     hrefNameList: "name4",
     technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: "Интернет магазин4",
-    textBlogHeader:
-      "Итоги создания сайтов за 2018 год и падение переходов на мой сайт.",
+    textBlogHeader: "Node.js",
   },
   {
     id: "5",
@@ -95,8 +93,7 @@ export const propsPortfolioListBlog = [
     hrefNameList: "name5",
     technologies: ["React-Native", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: "Интернет магазин5",
-    textBlogHeader:
-      "Итоги создания сайтов за 2018 год и падение переходов на мой сайт.",
+    textBlogHeader: "Git",
   },
 ];
 
