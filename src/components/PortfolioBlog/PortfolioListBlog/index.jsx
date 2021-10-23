@@ -10,8 +10,6 @@ import {
   PortfolioCustom,
   Ul,
   Li,
-  // PortfolioButtom,
-  // PortfolioButtomText,
   SlickList,
   SlickTrack,
   PortfolioImg,
@@ -38,19 +36,12 @@ import {
   propsPortfolioBlogHome,
 } from "../../common/constants";
 
-// import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
-// import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
-// import InboxIcon from "@mui/icons-material/MoveToInbox";
-// import DraftsIcon from "@mui/icons-material/Drafts";
-// import SendIcon from "@mui/icons-material/Send";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-// import StarBorder from "@mui/icons-material/StarBorder";
-// import Typography from "@mui/material/Typography";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -79,7 +70,7 @@ const getButtonList = (
 ) => {
   return propsButtonList.map((item) => (
     <List
-      sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+      sx={{ width: "100%", maxWidth: 360, bgcolor: "inherit" }}
       component="nav"
       aria-labelledby="nested-list-subheader"
       key={item.id}
@@ -89,10 +80,11 @@ const getButtonList = (
         <ListItemButton
           onClick={() => setPortfoliosValue(item?.value)}
           sx={{
-            color: "black",
+            color: "white",
+            backgroundColor: "#65696f",
+            borderRadius: "8px",
+            boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
             "&:hover": {
-              backgroundColor: "#1976d214",
-              borderRadius: "8px",
               color: "#ff8560",
               "& .MuiListItemIcon-root": {
                 color: "#ff8560",
@@ -100,9 +92,6 @@ const getButtonList = (
             },
           }}
         >
-          {/* <ListItemIcon>
-            <SendIcon />
-          </ListItemIcon> */}
           <ListItemText primary={item.portfolioButtonText} />
         </ListItemButton>
       )}
@@ -112,10 +101,13 @@ const getButtonList = (
           <ListItemButton
             onClick={handleClick}
             sx={{
-              color: "black",
+              color: "white",
+              backgroundColor: "#65696f",
+              borderRadius: "8px",
+              boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+              margin: "8px 0",
               "&:hover": {
                 backgroundColor: "#1976d214",
-                borderRadius: "8px",
                 color: "#ff8560",
                 "& .MuiListItemIcon-root": {
                   color: "#ff8560",
@@ -123,9 +115,6 @@ const getButtonList = (
               },
             }}
           >
-            {/* <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon> */}
             <ListItemText primary={item.portfolioButtonText} />
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
@@ -137,10 +126,13 @@ const getButtonList = (
                   onClick={() => setPortfoliosValue(itemJS?.value)}
                   sx={{
                     pl: 4,
-                    color: "black",
+                    color: "white",
+                    backgroundColor: "#65696f",
+                    borderRadius: "8px",
+                    boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+                    margin: "8px 0",
                     "&:hover": {
                       backgroundColor: "#1976d214",
-                      borderRadius: "8px",
                       color: "#ff8560",
                       "& .MuiListItemIcon-root": {
                         color: "#ff8560",
@@ -148,9 +140,6 @@ const getButtonList = (
                     },
                   }}
                 >
-                  {/* <ListItemIcon>
-                    <StarBorder />
-                  </ListItemIcon> */}
                   <ListItemText primary={itemJS.value} />
                 </ListItemButton>
               </List>
@@ -203,7 +192,7 @@ const PortfolioListBlog = () => {
     propsButtonList[0].value
   );
   const [handleScrollNav, setHandleScrollNav] = useState(false);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setOpen(!open);

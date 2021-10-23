@@ -41,7 +41,10 @@ export const PortfolioHeaderValue = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
   margin: 16px;
+  max-width: 100%;
+  min-width: 160px;
   color: white;
   position: ${({ handleScrollNav }) =>
     handleScrollNav ? "fixed" : "relative"};
@@ -87,47 +90,6 @@ export const Li = styled.li`
   &:last-child {
     border-bottom: none;
   }
-`;
-
-export const PortfolioButtom = styled.button`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 6px;
-  height: 40px;
-  background-color: #2b3037;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
-  color: white;
-  font-family: "Exo 2", sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-decoration: none;
-  line-height: 40px;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  &:hover {
-    background-color: #ff8560;
-  }
-`;
-
-export const PortfolioButtomText = styled.div`
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 15px;
-  color: white;
-  line-height: 17px;
-  font-size: 14px;
-  font-family: "Exo 2", sans-serif;
-  font-weight: 400;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
 `;
 
 export const SlickList = styled.div`
