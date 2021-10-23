@@ -5,38 +5,44 @@ export const propsButtonList = [
     value: "All",
   },
   {
-    id: "2",
+    id: "JavaScript",
     portfolioButtonText: "JavaScript",
-    value: "JavaScript",
-  },
-  {
-    id: "3",
-    portfolioButtonText: "TypeScript",
-    value: "React",
-  },
-  {
-    id: "4",
-    portfolioButtonText: "React",
-    value: "React",
-  },
-  {
-    id: "5",
-    portfolioButtonText: "Next",
-    value: "Next",
-  },
-  {
-    id: "6",
-    portfolioButtonText: "Redux",
-    value: "Redux",
-  },
-  {
-    id: "7",
-    portfolioButtonText: "React-Native",
-    value: "React-Native",
+    value: [
+      {
+        id: "2",
+        portfolioButtonText: "JavaScript",
+        value: "JavaScript",
+      },
+      {
+        id: "3",
+        portfolioButtonText: "TypeScript",
+        value: "TypeScript",
+      },
+      {
+        id: "4",
+        portfolioButtonText: "React",
+        value: "React",
+      },
+      {
+        id: "5",
+        portfolioButtonText: "Next",
+        value: "Next",
+      },
+      {
+        id: "6",
+        portfolioButtonText: "ReactNative",
+        value: "ReactNative",
+      },
+      {
+        id: "7",
+        portfolioButtonText: "Node",
+        value: "Node",
+      },
+    ],
   },
   {
     id: "8",
-    portfolioButtonText: "Node",
-    value: "Node",
+    portfolioButtonText: "Redux",
+    value: "Redux",
   },
 ];
