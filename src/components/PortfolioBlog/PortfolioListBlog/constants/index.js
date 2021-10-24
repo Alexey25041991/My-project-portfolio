@@ -45,4 +45,9 @@ export const propsButtonList = [
     portfolioButtonText: "Redux",
     value: "Redux",
   },
+  {
+    id: "9",
+    portfolioButtonText: "Git",
+    value: "Git",
+  },
 ];

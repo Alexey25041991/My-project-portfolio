@@ -1,6 +1,11 @@
-import PortfolioImgUrl1 from "./icon/PortfolioImgUrl.png";
 import JavaScript from "./icon/JavaScript.png";
 import React from "./icon/React.png";
+import NextJs from "./icon/NextJs.png";
+import TypeScript from "./icon/TypeScript.png";
+import ReactNative from "./icon/ReactNative.jpeg";
+import NodeJs from "./icon/NodeJs.png";
+import Redux from "./icon/Redux.png";
+import Git from "./icon/Git.png";
 // import webdev from './icon/webdev.png';
 
 export const propsPortfolioBlogHome = {
@@ -35,6 +40,21 @@ export const propsPortfolioListBlog = [
   },
   {
     id: "2",
+    hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
+    portfolioNameList: "TypeScript",
+    portfolioDataTime: "Январь 2021",
+    icon: `${TypeScript}`,
+    widthIcon: "200px",
+    heightIcon: "200px",
+    hrefNameList: "typeScript",
+    technologies: ["TypeScript"],
+    // github: 'https://github.com/Alexey25041991/react-t-shirt-shop.git',
+    portfolioText:
+      "Здесь хочу поделиться полезной информацией свянанной с JavaScript. Можно посмотреть полезные ссылки, примеры кода, что появилось нового. Так же порекомендую из своей практики что стоит изучить, а что не забывать и повторять.",
+    textBlogHeader: "Заметки про JavaScript и как с ним работать.",
+  },
+  {
+    id: "3",
     hrefPortfolio: "http://dlg-construction.ru/",
     portfolioNameList: "React",
     portfolioDataTime: "Январь 2021",
@@ -52,13 +72,13 @@ export const propsPortfolioListBlog = [
     textBlogHeader: "Что такое Reac и с чем его едят",
   },
   {
-    id: "3",
+    id: "4",
     hrefPortfolio: "https://topas-ts.ru",
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
-    icon: `${PortfolioImgUrl1}`,
-    widthIcon: "200px",
-    heightIcon: "200px",
+    icon: `${NextJs}`,
+    widthIcon: "160px",
+    heightIcon: "160px",
     hrefNameList: "topas-ts",
     technologies: ["Node", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: `В портфолио представлены проекты, которые я 
@@ -70,11 +90,24 @@ export const propsPortfolioListBlog = [
     textBlogHeader: "Зазем нужен Next js",
   },
   {
-    id: "4",
+    id: "5",
     hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
-    icon: `${PortfolioImgUrl1}`,
+    icon: `${ReactNative}`,
+    widthIcon: "200px",
+    heightIcon: "140px",
+    hrefNameList: "name4",
+    technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
+    portfolioText: "Интернет магазин4",
+    textBlogHeader: "ReactNative.js",
+  },
+  {
+    id: "6",
+    hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
+    icon: `${NodeJs}`,
     widthIcon: "200px",
     heightIcon: "200px",
     hrefNameList: "name4",
@@ -83,13 +116,26 @@ export const propsPortfolioListBlog = [
     textBlogHeader: "Node.js",
   },
   {
-    id: "5",
+    id: "7",
     hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
     portfolioNameList: "Интернет магазин",
     portfolioDataTime: "Январь 2021",
-    icon: `${PortfolioImgUrl1}`,
+    icon: `${Redux}`,
     widthIcon: "200px",
     heightIcon: "200px",
+    hrefNameList: "name5",
+    technologies: ["React-Native", "Redux", "HTML5", "JS", "CSS3"],
+    portfolioText: "Интернет магазин5",
+    textBlogHeader: "Redux",
+  },
+  {
+    id: "8",
+    hrefPortfolio: "https://react-t-shirt-shop.herokuapp.com/",
+    portfolioNameList: "Интернет магазин",
+    portfolioDataTime: "Январь 2021",
+    icon: `${Git}`,
+    widthIcon: "160px",
+    heightIcon: "160px",
     hrefNameList: "name5",
     technologies: ["React-Native", "Redux", "HTML5", "JS", "CSS3"],
     portfolioText: "Интернет магазин5",
