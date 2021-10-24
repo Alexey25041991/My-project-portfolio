@@ -44,7 +44,7 @@ export const PortfolioHeaderValue = styled.div`
   z-index: 2;
   margin: 16px;
   max-width: 100%;
-  min-width: 160px;
+  width: 160px;
   color: white;
   position: ${({ handleScrollNav }) =>
     handleScrollNav ? "fixed" : "relative"};
