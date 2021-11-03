@@ -1,12 +1,11 @@
-import JavaScript from "./icon/JavaScript.png";
-import React from "./icon/React.png";
-import NextJs from "./icon/NextJs.png";
-import TypeScript from "./icon/TypeScript.png";
-import ReactNative from "./icon/ReactNative.jpeg";
-import NodeJs from "./icon/NodeJs.png";
-import Redux from "./icon/Redux.png";
-import Git from "./icon/Git.png";
-// import webdev from './icon/webdev.png';
+import JavaScript from "../icon/icon-blog/JavaScript.png";
+import React from "../icon/icon-blog/React.png";
+import NextJs from "../icon/icon-blog/NextJs.png";
+import TypeScript from "../icon/icon-blog/TypeScript.png";
+import ReactNative from "../icon/icon-blog/ReactNative.jpeg";
+import NodeJs from "../icon/icon-blog/NodeJs.png";
+import Redux from "../icon/icon-blog/Redux.png";
+import Git from "../icon/icon-blog/Git.png";
 
 export const propsPortfolioBlogHome = {
   portfolioNameList: "Заметки веб-разработчика",

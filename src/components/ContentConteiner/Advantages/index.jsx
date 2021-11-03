@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   AdvantagesWrapper,
@@ -12,11 +12,11 @@ import {
   Span,
   LabelTitle,
   LabelText,
-} from './style';
+} from "./style";
 
-import { ReactComponent as ScaleIcon } from './icon/ScaleIcon.svg';
+import { ReactComponent as ScaleIcon } from "../../common/icon/icon-advantages/ScaleIcon.svg";
 
-import { propsHeaderMenu } from './constants';
+import { propsHeaderMenu } from "../../common/constants";
 
 const HeaderMenuLi = (propsHeaderMenu) =>
   propsHeaderMenu.map((item) => (

@@ -1,4 +1,4 @@
-import PortfolioImgUrl1 from "./icon/PortfolioImgUrl.png";
+import PortfolioImgUrl1 from "../icon/icon-blog/PortfolioImgUrl.png";
 // import webdev from './icon/webdev.png';
 
 export const propsPortfolioListHome = {

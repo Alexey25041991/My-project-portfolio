@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawe from './icon/wawe.png';
-import myIconBgcont from './icon/bgcont.png';
+import myIconWawe from "../../common/icon/icon-common/wawe.png";
+import myIconBgcont from "../../common/icon/icon-common/bgcont.png";
 
 export const AdvantagesWrapper = styled.div`
   display: flex;
@@ -9,10 +9,10 @@ export const AdvantagesWrapper = styled.div`
   background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   &:before {
     background: url(${myIconWawe}) top center repeat-x;
-    content: '';
+    content: "";
     width: 100%;
     height: 22px;
     display: flex;
@@ -57,7 +57,7 @@ export const Label = styled.span`
   color: white;
   line-height: 17px;
   font-size: 30px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 700;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
