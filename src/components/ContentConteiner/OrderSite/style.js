@@ -1,9 +1,8 @@
-// import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawew from './icon/wawew.png';
-import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconWawewb from "../../common/icon/wawewb.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
 
 export const OrderSiteWrapper = styled.div`
   display: flex;
@@ -87,7 +86,7 @@ export const OrderSiteButton = styled.button`
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
@@ -114,7 +113,7 @@ export const Label = styled.span`
   color: white;
   line-height: 17px;
   font-size: 14px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Modal from '../../Modal';
+import Modal from "../../Modal";
 
-import ReactRotatingText from 'react-rotating-text';
+import ReactRotatingText from "react-rotating-text";
 
 import {
   OrderSiteWrapper,
@@ -14,11 +14,11 @@ import {
   OrderSiteButton,
   Link,
   Label,
-} from './style.js';
+} from "./style.js";
 
-import './style.css';
+import "./style.css";
 
-import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
+import { ReactComponent as OrderSiteIcon } from "../../common/icon/RocketIcon.svg";
 
 const OrderSite = () => {
   const [opened, setOpened] = useState(false);
@@ -27,14 +27,13 @@ const OrderSite = () => {
       <Modal opened={opened} onRequestClose={() => setOpened(false)} />
       <OrderSiteConteiner>
         <OrderSiteHeader>
-          <OrderSiteIcon />
           <OrderSiteLabel>
-            {`${'< '}`}
+            {`${"< "}`}
             <ReactRotatingText
               items={[
-                'Нужен крутой сайт?',
-                'Ищите разработчика?',
-                'Нужна хорошая поддержка?',
+                "Нужен крутой сайт?",
+                "Ищите разработчика?",
+                "Нужна хорошая поддержка?",
               ]}
               pause={5000}
               emptyPause={1000}
@@ -42,7 +41,7 @@ const OrderSite = () => {
               deletingInterval={5}
             />
             <span className="react-rotating-text-cursor" />
-            {`${' / >'}`}
+            {`${" / >"}`}
           </OrderSiteLabel>
         </OrderSiteHeader>
         <OrderSiteCustom>
