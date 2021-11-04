@@ -20,11 +20,11 @@ import {
   BlogText,
 } from "./style.js";
 
-import { ReactComponent as BlogIcon } from "./icon/BlogIcon.svg";
-import { ReactComponent as KeyIcon } from "./icon/KeyIcon.svg";
-import { ReactComponent as BlogVisitorIcon } from "./icon/BlogVisitorIcon.svg";
-import { ReactComponent as BlogTimeIcon } from "./icon/BlogTimeIcon.svg";
-import { ReactComponent as BlogLikeIcon } from "./icon/BlogLikeIcon.svg";
+import { ReactComponent as BlogIcon } from "../../common/icon/icon-blog/BlogIcon.svg";
+import { ReactComponent as KeyIcon } from "../../common/icon/icon-common/KeyIcon.svg";
+import { ReactComponent as BlogVisitorIcon } from "../../common/icon/icon-common/VisitorIcon.svg";
+import { ReactComponent as BlogTimeIcon } from "../../common/icon/icon-common/TimeIcon.svg";
+import { ReactComponent as BlogLikeIcon } from "../../common/icon/icon-common/LikeIcon.svg";
 
 import CatCodes from "./CatCodes";
 

@@ -1,9 +1,8 @@
 // import styled from 'styled-components';
 import styled from "styled-components";
 
-import myIconWawew from "./icon/wawew.png";
-// import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from "./icon/bgcont.png";
+import myIconWawew from "../../common/icon/icon-common/wawew.png";
+import myIconBgcont from "../../common/icon/icon-common/bgcont.png";
 
 export const BlogWrapper = styled.div`
   display: flex;
@@ -125,21 +124,6 @@ export const Label = styled.span`
   margin-left: 10px;
 `;
 
-export const SlickList = styled.div`
-  margin: 0px 12px !important;
-  overflow: hidden;
-  position: relative;
-  padding: 0;
-`;
-
-export const SlickTrack = styled.div`
-  display: flex;
-  opacity: 1;
-  margin-left: -13px;
-  position: relative;
-  top: 0;
-`;
-
 export const BlogCat = styled.div`
   display: flex;
   align-items: center;
@@ -169,21 +153,6 @@ export const BlogValue = styled.div`
 export const BlogDataValue = styled.div`
   display: flex;
   margin-right: 20px;
-`;
-
-export const BlogShow = styled.div`
-  color: #2b2a29;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-`;
-
-export const BlogListShow = styled.a`
-  font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px dashed #000;
-  color: #000;
-  cursor: pointer;
 `;
 
 export const BlogTitle = styled.span`
