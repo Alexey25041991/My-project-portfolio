@@ -4,14 +4,14 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 import { NavWrapper, Ul, Li, Link, LogoSign } from "./style";
 
-import { ReactComponent as PersonIcon } from "./icon/PersonIcon.svg";
-import { ReactComponent as ResumeIcon } from "./icon/ResumeIcon.svg";
-import { ReactComponent as PortfolioIcon } from "./icon/PortfolioIcon.svg";
-import { ReactComponent as ServicesIcon } from "./icon/ServicesIcon.svg";
-import { ReactComponent as BlogIcon } from "./icon/BlogIcon.svg";
-import { ReactComponent as СontactsIcon } from "./icon/СontactsIcon.svg";
-import { ReactComponent as СooperationIcon } from "./icon/СooperationIcon.svg";
-import { ReactComponent as ScaleIcon } from "./icon/ScaleIcon.svg";
+import { ReactComponent as PersonIcon } from "../../common/icon/PersonIcon.svg";
+import { ReactComponent as ResumeIcon } from "../../common/icon/ResumeIcon.svg";
+import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioIcon.svg";
+import { ReactComponent as ServicesIcon } from "../../common/icon/ServicesIcon.svg";
+import { ReactComponent as BlogIcon } from "../../common/icon/BlogLightIcon.svg";
+import { ReactComponent as СontactsIcon } from "../../common/icon/СontactsIcon.svg";
+import { ReactComponent as СooperationIcon } from "../../common/icon/СooperationIcon.svg";
+import { ReactComponent as ScaleIcon } from "../../common/icon/ScaleIcon.svg";
 
 const Nav = () => (
   <NavWrapper>

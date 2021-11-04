@@ -20,7 +20,7 @@ import {
   BlogText,
 } from "./style.js";
 
-import { ReactComponent as BlogIcon } from "../../common/icon/icon-blog/BlogIcon.svg";
+import { ReactComponent as BlogIcon } from "../../common/icon/BlogIcon.svg";
 import { ReactComponent as KeyIcon } from "../../common/icon/KeyIcon.svg";
 import { ReactComponent as BlogVisitorIcon } from "../../common/icon/VisitorIcon.svg";
 import { ReactComponent as BlogTimeIcon } from "../../common/icon/TimeIcon.svg";
