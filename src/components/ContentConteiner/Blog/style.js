@@ -1,8 +1,8 @@
 // import styled from 'styled-components';
 import styled from "styled-components";
 
-import myIconWawew from "../../common/icon/icon-common/wawew.png";
-import myIconBgcont from "../../common/icon/icon-common/bgcont.png";
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
 
 export const BlogWrapper = styled.div`
   display: flex;

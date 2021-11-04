@@ -1,9 +1,9 @@
-import { ReactComponent as PriceIcon } from "../icon/icon-advantages/PriceIcon.svg";
-import { ReactComponent as ExperienceIcon } from "../icon/icon-advantages/ExperienceIcon.svg";
-import { ReactComponent as TermIcon } from "../icon/icon-advantages/TermIcon.svg";
-import { ReactComponent as TechnologiesIcon } from "../icon/icon-advantages/TechnologiesIcon.svg";
-import { ReactComponent as LayoutIcon } from "../icon/icon-advantages/LayoutIcon.svg";
-import { ReactComponent as SupportIcon } from "../icon/icon-advantages/SupportIcon.svg";
+import { ReactComponent as PriceIcon } from "../icon/PriceIcon.svg";
+import { ReactComponent as ExperienceIcon } from "../icon/ExperienceIcon.svg";
+import { ReactComponent as TermIcon } from "../icon/TermIcon.svg";
+import { ReactComponent as TechnologiesIcon } from "../icon/TechnologiesIcon.svg";
+import { ReactComponent as LayoutIcon } from "../icon/LayoutIcon.svg";
+import { ReactComponent as SupportIcon } from "../icon/SupportIcon.svg";
 
 export const propsHeaderMenu = [
   {

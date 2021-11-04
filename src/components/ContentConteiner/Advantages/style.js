@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import myIconWawe from "../../common/icon/icon-common/wawe.png";
-import myIconBgcont from "../../common/icon/icon-common/bgcont.png";
+import myIconWawe from "../../common/icon/wawe.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
 
 export const AdvantagesWrapper = styled.div`
   display: flex;

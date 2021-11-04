@@ -14,7 +14,7 @@ import {
   LabelText,
 } from "./style";
 
-import { ReactComponent as ScaleIcon } from "../../common/icon/icon-advantages/ScaleIcon.svg";
+import { ReactComponent as ScaleIcon } from "../../common/icon/ScaleIcon.svg";
 
 import { propsHeaderMenu } from "../../common/constants";
 
