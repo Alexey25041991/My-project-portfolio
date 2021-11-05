@@ -3,12 +3,9 @@ import React from "react";
 import {
   PersonalWrapper,
   PersonalConteiner,
-  // PersonalHeader,
-  // PersonalHeaderCustom,
   PersonalCustom,
   PersonalText,
   PersonalSection,
-  // PersonalHeaderJs,
 } from "./style.js";
 
 const ComponentReact = () => (

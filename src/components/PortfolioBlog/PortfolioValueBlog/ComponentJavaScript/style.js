@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-// import myIconWawew from "./icon/wawew.png";
-// import myIconWawewb from './icon/wawewb.png';
-// import myIconBgcont from "./icon/bgcont.png";
-// import myIconWebdev from "./icon/webdev.png";
-
 export const PersonalWrapper = styled.div`
   display: flex;
   background-color: #fff;
@@ -36,16 +31,6 @@ export const PersonalHeader = styled.p`
 
 export const PersonalHeaderJs = styled.span`
   margin: 0 auto;
-`;
-
-export const PersonalHeaderCustom = styled.h4`
-  color: #2b2a29;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 11px;
-  margin-bottom: 30px;
 `;
 
 export const PersonalCustom = styled.div`

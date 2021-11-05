@@ -28,7 +28,7 @@ import {
 import styled from "styled-components/macro";
 import "./index.css";
 
-import { ReactComponent as PortfolioTimeIcon } from "./icon/PortfolioTimeIcon.svg";
+import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
 import { propsButtonList } from "./constants";
 import {

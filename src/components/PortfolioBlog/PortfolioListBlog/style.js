@@ -1,16 +1,10 @@
-// import styled from 'styled-components';
 import styled from "styled-components";
 
-import myIconWawew from "./icon/wawew.png";
-// import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from "./icon/bgcont.png";
-import myIconBgport from "./icon/bgport.png";
-import myIconBgportActiv from "./icon/bgporth.png";
+import myIconWawew from "../../common/icon/wawew.png";
 
 export const PortfolioWrapper = styled.div`
   display: flex;
   background-color: #fff;
-  // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
   font-family: "Exo 2", sans-serif;
@@ -27,7 +21,6 @@ export const PortfolioWrapper = styled.div`
 
 export const PortfolioConteiner = styled.div`
   display: flex;
-  // flex-direction: column;
   width: 960px;
   margin: 0 auto;
   padding: 0 25px;
@@ -49,15 +42,6 @@ export const PortfolioHeaderValue = styled.div`
   position: ${({ handleScrollNav }) =>
     handleScrollNav ? "fixed" : "relative"};
   top: ${({ handleScrollNav }) => (handleScrollNav ? "0px" : "auto")};
-`;
-
-export const PortfolioLabel = styled.div`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  margin-left: 12px;
 `;
 
 export const PortfolioCustom = styled.div`
@@ -110,12 +94,8 @@ export const SlickTrack = styled.div`
 
 export const PortfolioImg = styled.div`
   display: flex;
-  // background: url(${myIconBgport}) no-repeat;
   width: 200px;
   height: 200px;
-  // &:hover {
-  //   background: url(${myIconBgportActiv}) no-repeat;
-  // }
 `;
 
 export const PortfolioImgUrl = styled.img`
@@ -128,9 +108,6 @@ export const TextBlog = styled.div`
   flex-direction: column;
   position: relative;
   margin-left: 20px;
-  // top: 20px;
-  // margin-top: 20px;
-  // margin-bottom: 20px;
 `;
 
 export const TextBlogValue = styled.div`
@@ -138,7 +115,6 @@ export const TextBlogValue = styled.div`
   font-family: "Exo 2", sans-serif;
   margin-top: 12px;
 
-  // height: 80px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 6;
@@ -156,28 +132,6 @@ export const TextBlogHeader = styled.div`
 export const TextBlogWrapper = styled.div`
   display: flex;
   margin: 20px 0;
-`;
-
-export const PortfolioData = styled.div`
-  display: flex;
-  text-align: left;
-  margin-top: -46px;
-  padding: 0px 14px 0px 23px;
-  margin-bottom: 15px;
-  position: relative;
-`;
-
-export const PortfolioDataValue = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 7px;
-  background: #e7e9ea;
-  color: #707980;
-  min-width: 277px;
-`;
-
-export const PortfolioDataLabel = styled.div`
-  display: flex;
 `;
 
 export const PortfolioDataText = styled.div`
@@ -202,7 +156,6 @@ export const PortfolioDataTime = styled.div`
 
 export const PortfolioName = styled.div`
   display: flex;
-  // justify-content: center;
   color: #2b2a29;
   font-size: 16px;
   font-weight: 700;

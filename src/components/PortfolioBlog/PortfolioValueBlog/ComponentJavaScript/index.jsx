@@ -4,7 +4,6 @@ import {
   PersonalWrapper,
   PersonalConteiner,
   PersonalHeader,
-  // PersonalHeaderCustom,
   PersonalCustom,
   PersonalText,
   PersonalSection,
