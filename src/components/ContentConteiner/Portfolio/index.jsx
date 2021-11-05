@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import Slider from 'infinite-react-carousel';
-import { Link } from 'react-router-dom';
+import React, { useRef } from "react";
+import Slider from "infinite-react-carousel";
+import { Link } from "react-router-dom";
 
 import {
   PortfolioWrapper,
@@ -26,16 +26,16 @@ import {
   PortfolioDataTime,
   PortfolioName,
   PortfolioNameList,
-} from './style.js';
-import styled from 'styled-components/macro';
-import './index.css';
+} from "./style.js";
+import styled from "styled-components/macro";
+import "./index.css";
 
-import { ReactComponent as PortfolioIcon } from './icon/PortfolioIcon.svg';
-import { ReactComponent as KeyIcon } from './icon/KeyIcon.svg';
-import { ReactComponent as PortfolioLabelIcon } from './icon/PortfolioLabelIcon.svg';
-import { ReactComponent as PortfolioTimeIcon } from './icon/PortfolioTimeIcon.svg';
+import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioDarkIcon.svg";
+import { ReactComponent as KeyIcon } from "../../common/icon/KeyIcon.svg";
+import { ReactComponent as PortfolioLabelIcon } from "../../common/icon/LabelIcon.svg";
+import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
-import { propsPortfolioList } from '../../common/constants';
+import { propsPortfolioList } from "../../common/constants";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -107,7 +107,7 @@ const settings = {
   initialSlide: 0,
   slidesToShow: slidesToShowValue,
   virtualList: true,
-  className: 'styleSlider',
+  className: "styleSlider",
   dots: true,
   autoplay: true,
   autoplaySpeed: 5000,
@@ -145,7 +145,7 @@ const Portfolio = () => {
             </SlickList>
             {propsPortfolioList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
-          <Link to="/portfolio" style={{ textDecoration: 'none' }}>
+          <Link to="/portfolio" style={{ textDecoration: "none" }}>
             <Allportf>
               <LinkPortfolio>
                 <KeyIcon />

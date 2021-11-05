@@ -1,15 +1,13 @@
-// import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawew from './icon/wawew.png';
-// import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
-import myIconStl from './icon/stl.png';
-import myIconStlh from './icon/stlh.png';
-import myIconStr from './icon/str.png';
-import myIconStrh from './icon/strh.png';
-import myIconBgport from './icon/bgport.png';
-import myIconBgportActiv from './icon/bgporth.png';
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
+import myIconStl from "../../common/icon/stl.png";
+import myIconStlh from "../../common/icon/stlh.png";
+import myIconStr from "../../common/icon/str.png";
+import myIconStrh from "../../common/icon/strh.png";
+import myIconBgport from "../../common/icon/bgport.png";
+import myIconBgportActiv from "../../common/icon/bgporth.png";
 
 export const PortfolioWrapper = styled.div`
   display: flex;
@@ -17,10 +15,10 @@ export const PortfolioWrapper = styled.div`
   // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   &:before {
     background: url(${myIconWawew}) top center repeat-x;
-    content: '';
+    content: "";
     width: 100%;
     height: 32px;
     display: flex;
@@ -124,7 +122,7 @@ export const Allportf = styled.button`
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
@@ -152,7 +150,7 @@ export const Label = styled.span`
   color: white;
   line-height: 17px;
   font-size: 14px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
@@ -186,16 +184,6 @@ export const PortfolioImg = styled.div`
   }
 `;
 
-export const PortfolioList = styled.a`
-  display: flex;
-  width: 285px;
-  height: 292px;
-  overflow: hidden;
-  position: relative;
-  top: 21px;
-  left: 23px;
-`;
-
 export const PortfolioImgUrl = styled.img`
   display: flex;
   position: relative;
@@ -226,7 +214,7 @@ export const PortfolioDataLabel = styled.div`
 export const PortfolioDataText = styled.div`
   color: #707980;
   font-size: 12px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   margin-left: 5px;
 `;
 
