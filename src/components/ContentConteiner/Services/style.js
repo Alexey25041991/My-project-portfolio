@@ -1,10 +1,8 @@
-// import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawew from './icon/wawew.png';
-// import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
-import myIconService from './icon/service.png';
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
+import myIconService from "../../common/icon/service.png";
 
 export const ServicesWrapper = styled.div`
   display: flex;
@@ -12,10 +10,10 @@ export const ServicesWrapper = styled.div`
   // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   &:before {
     background: url(${myIconWawew}) top center repeat-x;
-    content: '';
+    content: "";
     width: 100%;
     height: 32px;
     display: flex;

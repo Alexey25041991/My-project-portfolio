@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   ServicesWrapper,
@@ -8,9 +8,9 @@ import {
   ServicesCustom,
   ServicesText,
   ServicesSection,
-} from './style.js';
+} from "./style.js";
 
-import { ReactComponent as ServicesIcon } from './icon/ServicesIcon.svg';
+import { ReactComponent as ServicesIcon } from "../../common/icon/ServicesDarkIcon.svg";
 
 const Services = () => (
   <ServicesWrapper id="services">
