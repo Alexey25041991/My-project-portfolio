@@ -20,7 +20,7 @@ import {
   PortfolioText,
 } from "./style";
 
-import { ReactComponent as PortfolioTimeIcon } from "./icon/PortfolioTimeIcon.svg";
+import { ReactComponent as PortfolioTimeIcon } from "../common/icon/TimeIcon.svg";
 
 const LinkBreadcrumbs = styled(Link)`
   display: flex;
