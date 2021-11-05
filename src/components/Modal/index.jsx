@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import MaskedInput from 'react-text-mask';
-import emailMask from 'text-mask-addons/dist/emailMask';
+import MaskedInput from "react-text-mask";
+import emailMask from "text-mask-addons/dist/emailMask";
 
-import ModalAnimation from '../ModalAnimation';
+import ModalAnimation from "../ModalAnimation";
 
 import {
   InputLabel,
@@ -18,23 +18,23 @@ import {
   RadioGroup,
   FormControlLabel,
   Button,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
-import { compact } from 'lodash';
+import { compact } from "lodash";
 
-import { Overlay } from './Overlay';
-import { Header } from './Header';
-import { IconClose } from './IconClose';
-import { Content, ContentAnimation } from './Content';
-import { Footer } from './Footer';
-import { ModalComponent } from './ModalComponent';
-import { ModalSection } from './ModalSection';
-import { ContentText } from './ContentText';
+import { Overlay } from "./Overlay";
+import { Header } from "./Header";
+import { IconClose } from "./IconClose";
+import { Content, ContentAnimation } from "./Content";
+import { Footer } from "./Footer";
+import { ModalComponent } from "./ModalComponent";
+import { ModalSection } from "./ModalSection";
+import { ContentText } from "./ContentText";
 
-import { ReactComponent as CloseOutline } from './icon/CloseOutline.svg';
-import { ReactComponent as FooterMailIcon } from './icon/FooterMailIcon.svg';
-import { ReactComponent as OrderSiteIcon } from './icon/OrderSiteIcon.svg';
-import { red } from '@material-ui/core/colors';
+import { ReactComponent as CloseOutline } from "../common/icon/CloseOutline.svg";
+import { ReactComponent as FooterMailIcon } from "../common/icon/MailDarkIcon.svg";
+import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
+import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -59,26 +59,26 @@ const useStyles = makeStyles((theme) =>
 );
 
 const maskPhone = [
-  '+',
-  '7',
-  ' ',
-  '(',
+  "+",
+  "7",
+  " ",
+  "(",
   /[1-9]/,
   /\d/,
   /\d/,
-  ')',
-  ' ',
+  ")",
+  " ",
   /\d/,
   /\d/,
   /\d/,
-  ' ',
-  '-',
-  ' ',
+  " ",
+  "-",
+  " ",
   /\d/,
   /\d/,
-  ' ',
-  '-',
-  ' ',
+  " ",
+  "-",
+  " ",
   /\d/,
   /\d/,
 ];
@@ -91,7 +91,7 @@ function TextMaskPhone(props) {
       ref={inputRef}
       mask={maskPhone}
       placeholder="Введите номер телефона"
-      placeholderChar={'\u2000'}
+      placeholderChar={"\u2000"}
       showMask={false}
     />
   );
@@ -105,25 +105,25 @@ function TextMaskEMail(props) {
       ref={inputRef}
       mask={emailMask}
       placeholder="Введите Ваш e-mail"
-      placeholderChar={'\u2000'}
+      placeholderChar={"\u2000"}
       showMask={false}
     />
   );
 }
 
 const Modal = ({ opened = false, onRequestClose }) => {
-  const [valueName, setValueName] = useState('');
-  const [valuePhone, setValuePhone] = useState('');
-  const [valueMail, setValueMail] = useState('');
-  const [valueService, setValueService] = useState('');
-  const [valueRadioTerm, setValueRadioTerm] = useState('wait');
-  const [valueRadioTZ, setValueRadioTZ] = useState('valueNot');
-  const [valueDescriptionProject, setValueDescriptionProject] = useState('');
-  const [animationWork, setAnimationWork] = useState('false');
+  const [valueName, setValueName] = useState("");
+  const [valuePhone, setValuePhone] = useState("");
+  const [valueMail, setValueMail] = useState("");
+  const [valueService, setValueService] = useState("");
+  const [valueRadioTerm, setValueRadioTerm] = useState("wait");
+  const [valueRadioTZ, setValueRadioTZ] = useState("valueNot");
+  const [valueDescriptionProject, setValueDescriptionProject] = useState("");
+  const [animationWork, setAnimationWork] = useState("false");
   const [
     animationProjectDescription,
     setAnimationProjectDescription,
-  ] = useState('false');
+  ] = useState("false");
 
   useEffect(() => {
     const profileValue = [valueName, valuePhone, valueMail];
@@ -147,8 +147,8 @@ const Modal = ({ opened = false, onRequestClose }) => {
   const handleOverlayClick = (e) => {
     if (
       opened &&
-      e.target.closest('[data-close-border]') &&
-      !e.target.closest('[data-close-modal]')
+      e.target.closest("[data-close-border]") &&
+      !e.target.closest("[data-close-modal]")
     ) {
       handleClose(e);
     }
@@ -240,22 +240,22 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   <MenuItem value="">
                     <em>Выберите...</em>
                   </MenuItem>
-                  <MenuItem value={'HtmlLayout'}>Html верстка</MenuItem>
-                  <MenuItem value={'Development-scratch'}>
+                  <MenuItem value={"HtmlLayout"}>Html верстка</MenuItem>
+                  <MenuItem value={"Development-scratch"}>
                     Разработка с нуля
                   </MenuItem>
-                  <MenuItem value={'FinalizationProject'}>
+                  <MenuItem value={"FinalizationProject"}>
                     Доработка проекта
                   </MenuItem>
-                  <MenuItem value={'ModuleDevelopment'}>
+                  <MenuItem value={"ModuleDevelopment"}>
                     Разработка модуля
                   </MenuItem>
-                  <MenuItem value={'IndividualProject'}>
+                  <MenuItem value={"IndividualProject"}>
                     Индивидуальный проект
                   </MenuItem>
-                  <MenuItem value={'SiteFilling'}>Наполнение сайта</MenuItem>
-                  <MenuItem value={'SiteSupport'}>Поддержка сайта</MenuItem>
-                  <MenuItem value={'Other'}>
+                  <MenuItem value={"SiteFilling"}>Наполнение сайта</MenuItem>
+                  <MenuItem value={"SiteSupport"}>Поддержка сайта</MenuItem>
+                  <MenuItem value={"Other"}>
                     Другое(указать в описании)
                   </MenuItem>
                 </Select>
@@ -325,7 +325,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
               size="large"
               className={classes.button}
               startIcon={<OrderSiteIcon width={24} height={24} />}
-              onClick={() => console.log('Отправить')}
+              onClick={() => console.log("Отправить")}
             >
               Отправить
             </Button>
