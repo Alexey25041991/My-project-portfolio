@@ -4,10 +4,10 @@ import LogoLook from "../../LogoLook";
 
 import { HeaderTopWrapper, HeaderMenu, Ul, Li, Link, Label } from "./style";
 
-import { propsHeaderMenu } from "./constants";
+import { propsHeaderTopMenu } from "../../common/constants";
 
-const HeaderMenuLi = (propsHeaderMenu) =>
-  propsHeaderMenu.map((item) => (
+const HeaderMenuLi = (propsHeaderTopMenu) =>
+  propsHeaderTopMenu.map((item) => (
     <Li key={item.id}>
       <Link href={`${"/#" + item.value}`}>
         {item.icon}
@@ -20,7 +20,7 @@ const HeaderTop = () => (
   <HeaderTopWrapper>
     <LogoLook />
     <HeaderMenu>
-      <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
+      <Ul>{HeaderMenuLi(propsHeaderTopMenu)}</Ul>
     </HeaderMenu>
   </HeaderTopWrapper>
 );

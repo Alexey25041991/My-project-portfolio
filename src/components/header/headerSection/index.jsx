@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import {
   HeaderSectionWrapper,
@@ -23,15 +23,15 @@ import {
   IconPicture,
   IconDay,
   IconSun,
-} from './style';
+} from "./style";
 
-import Modal from '../../Modal';
-import Clock from './Clock';
+import Modal from "../../Modal";
+import Clock from "./Clock";
 
-import { ReactComponent as RocketGetsiteIcon } from './icon/RocketGetsiteIcon.svg';
-import { ReactComponent as PhonesIcon } from './icon/PhonesIcon.svg';
-import { ReactComponent as EmailsIcon } from './icon/EmailsIcon.svg';
-import { ReactComponent as SkypeIcon } from './icon/SkypeIcon.svg';
+import { ReactComponent as RocketGetsiteIcon } from "../../common/icon/RocketIcon.svg";
+import { ReactComponent as PhonesIcon } from "../../common/icon/PhonesIcon.svg";
+import { ReactComponent as EmailsIcon } from "../../common/icon/EmailsIcon.svg";
+import { ReactComponent as SkypeIcon } from "../../common/icon/SkypeHeaderIcon.svg";
 
 const HeaderSection = () => {
   const [opened, setOpened] = useState(false);

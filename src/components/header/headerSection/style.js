@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconComp from './icon/comp.png';
-import myIconMap from './icon/map.png';
-import myIconWindow from './icon/window.png';
-import myIconBook from './icon/books.png';
-import myIconPicture from './icon/image.png';
-import myIconDay from './icon/day.jpg';
-import myIconSun from './icon/sun.png';
+import myIconComp from "../../common/icon/icon-header/comp.png";
+import myIconMap from "../../common/icon/icon-header/map.png";
+import myIconWindow from "../../common/icon/icon-header/window.png";
+import myIconBook from "../../common/icon/icon-header/books.png";
+import myIconPicture from "../../common/icon/icon-header/image.png";
+import myIconDay from "../../common/icon/icon-header/day.jpg";
+import myIconSun from "../../common/icon/icon-header/sun.png";
 
 export const HeaderSectionWrapper = styled.div`
   position: relative;
@@ -36,7 +36,7 @@ export const Link = styled.a`
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 15px;
   font-weight: 900;
   text-transform: uppercase;
@@ -55,7 +55,7 @@ export const Link = styled.a`
 export const Label = styled.span`
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 15px;
   font-weight: 900;
   text-transform: uppercase;
@@ -101,7 +101,7 @@ export const PhonesNumber = styled.span`
   font-weight: 700;
   line-height: 24px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
 `;
 
 export const PhonesText = styled(PhonesNumber)``;
