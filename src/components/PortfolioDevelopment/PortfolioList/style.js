@@ -1,11 +1,9 @@
-// import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawew from './icon/wawew.png';
-// import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
-import myIconBgport from './icon/bgport.png';
-import myIconBgportActiv from './icon/bgporth.png';
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
+import myIconBgport from "../../common/icon/bgport.png";
+import myIconBgportActiv from "../../common/icon/bgporth.png";
 
 export const PortfolioWrapper = styled.div`
   display: flex;
@@ -13,10 +11,10 @@ export const PortfolioWrapper = styled.div`
   // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   &:before {
     background: url(${myIconWawew}) top center repeat-x;
-    content: '';
+    content: "";
     width: 100%;
     height: 32px;
     display: flex;
@@ -40,16 +38,6 @@ export const PortfolioHeaderValue = styled.div`
   color: white;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-`;
-
-export const PortfolioLabel = styled.div`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  margin-left: 12px;
 `;
 
 export const PortfolioCustom = styled.div`
@@ -88,7 +76,7 @@ export const PortfolioButtom = styled.button`
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
@@ -111,7 +99,7 @@ export const PortfolioButtomText = styled.div`
   color: white;
   line-height: 17px;
   font-size: 14px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
@@ -174,7 +162,7 @@ export const PortfolioDataLabel = styled.div`
 export const PortfolioDataText = styled.div`
   color: #707980;
   font-size: 12px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   margin-left: 5px;
 `;
 
