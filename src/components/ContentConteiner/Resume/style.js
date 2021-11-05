@@ -1,10 +1,9 @@
-// import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawew from './icon/wawew.png';
-import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
-import myMainIcon from './icon/MainIcon.png';
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconWawewb from "../../common/icon/wawewb.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
+import myMainIcon from "../../common/icon/MainIcon.png";
 
 export const ResumeWrapper = styled.div`
   display: flex;

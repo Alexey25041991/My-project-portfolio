@@ -21,7 +21,7 @@ import "./style.css";
 
 import { propsPortfolioResume } from "./constants";
 
-import { ReactComponent as ResumeIcon } from "./icon/ResumeIcon.svg";
+import { ReactComponent as ResumeIcon } from "../../common/icon/ResumeIcon.svg";
 
 const ResumeSkillsLabelValue = (title, numberValue, id) => (
   <Fragment key={id}>
