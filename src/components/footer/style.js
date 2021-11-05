@@ -1,8 +1,8 @@
 // import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
+import myIconWawewb from "../common/icon/wawewb.png";
+import myIconBgcont from "../common/icon/bgcont.png";
 
 export const FooterWrapper = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ export const LabelText = styled.span`
   color: white;
   line-height: 17px;
   font-size: 14px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
@@ -106,7 +106,7 @@ export const HeaderLogCoderText = styled.div`
   font-weight: 400;
   padding-top: 0px;
   display: block;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
 `;
 
 export const HeaderMenu = styled.div`
@@ -126,7 +126,7 @@ export const OrderSiteButton = styled.button`
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
@@ -153,7 +153,7 @@ export const LabeButtonl = styled.span`
   color: white;
   line-height: 17px;
   font-size: 14px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
@@ -165,10 +165,6 @@ export const LabeButtonl = styled.span`
 export const FooterValue1 = styled.div`
   display: flex;
   padding: 35px 25px 0px 25px;
-`;
-
-export const HeaderLogCoderIcon = styled.div`
-  display: flex;
 `;
 
 export const FooterHh = styled.a`
@@ -186,6 +182,6 @@ export const FooterHh = styled.a`
   font-weight: 700;
   font-style: normal;
   text-indent: 1px;
-  font-family: 'PT Sans', Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   text-decoration: none;
 `;

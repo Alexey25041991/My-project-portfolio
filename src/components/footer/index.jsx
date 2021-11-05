@@ -23,12 +23,12 @@ import {
   FooterHh,
 } from "./style.js";
 
-import { ReactComponent as FooterСlockIcon } from "./icon/FooterСlockIcon.svg";
-import { ReactComponent as FooterTelephoneIcon } from "./icon/FooterTelephoneIcon.svg";
-import { ReactComponent as FooterMailIcon } from "./icon/FooterMailIcon.svg";
-import { ReactComponent as FooterSkypeIcon } from "./icon/FooterSkypeIcon.svg";
+import { ReactComponent as FooterСlockIcon } from "../common/icon/TermIcon.svg";
+import { ReactComponent as FooterTelephoneIcon } from "../common/icon/TelephoneIcon.svg";
+import { ReactComponent as FooterMailIcon } from "../common/icon/MailIcon.svg";
+import { ReactComponent as FooterSkypeIcon } from "../common/icon/SkypeIcon.svg";
 
-import { ReactComponent as OrderSiteIcon } from "./icon/OrderSiteIcon.svg";
+import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
 
 const Footer = () => {
   const [opened, setOpened] = useState(false);
@@ -53,7 +53,7 @@ const Footer = () => {
             <Ul>
               <Li>
                 <Link>
-                  <FooterСlockIcon />
+                  <FooterСlockIcon width="40px" height="40px" />
                   <Label>Ежедневно</Label>
                   <LabelText>с 9:00 до 21:00</LabelText>
                 </Link>
