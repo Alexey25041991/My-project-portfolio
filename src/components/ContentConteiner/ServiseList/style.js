@@ -1,12 +1,11 @@
-// import styled from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import myIconWawew from './icon/wawew.png';
-import myIconWawewb from './icon/wawewb.png';
-import myIconBgcont from './icon/bgcont.png';
-import myIconLinet from './icon/linet.png';
-import myIconLinem from './icon/linem.png';
-import myIconLineb from './icon/lineb.png';
+import myIconWawew from "../../common/icon/wawew.png";
+import myIconWawewb from "../../common/icon/wawewb.png";
+import myIconBgcont from "../../common/icon/bgcont.png";
+import myIconLinet from "../../common/icon/linet.png";
+import myIconLinem from "../../common/icon/linem.png";
+import myIconLineb from "../../common/icon/lineb.png";
 
 export const ServiseListWrapper = styled.div`
   display: flex;

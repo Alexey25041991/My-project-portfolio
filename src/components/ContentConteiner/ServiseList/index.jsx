@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   ServiseListWrapper,
@@ -11,9 +11,9 @@ import {
   LiFir,
   Li,
   LiLas,
-} from './style.js';
+} from "./style.js";
 
-import { ReactComponent as ServiseListIcon } from './icon/ServiseListIcon.svg';
+import { ReactComponent as ServiseListIcon } from "../../common/icon/ServiseListIcon.svg";
 
 const ServiseList = () => (
   <ServiseListWrapper>
