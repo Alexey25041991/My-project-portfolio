@@ -1,13 +1,10 @@
-// import styled from 'styled-components';
 import styled from "styled-components";
 
 import myIconWawewb from "../common/icon/wawewb.png";
-import myIconBgcont from "../common/icon/bgcont.png";
 
 export const FooterWrapper = styled.div`
   display: flex;
   background-color: #2B3037;
-  // background: url(${myIconBgcont}) center top;
   line-height: 20px;
   color: #000;
   font-family: 'Exo 2', sans-serif;

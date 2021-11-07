@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  AdvantagesWrapper,
-  AdvantagesConteiner,
   AdvantagesHeader,
   AdvantagesCustom,
   Label,
@@ -18,6 +16,9 @@ import { ReactComponent as ScaleIcon } from "../../common/icon/ScaleIcon.svg";
 
 import { propsHeaderMenu } from "../../common/constants";
 
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
+
 const HeaderMenuLi = (propsHeaderMenu) =>
   propsHeaderMenu.map((item) => (
     <Li key={item.id}>
@@ -30,8 +31,8 @@ const HeaderMenuLi = (propsHeaderMenu) =>
   ));
 
 const AdvantagesSection = () => (
-  <AdvantagesWrapper id="advantages">
-    <AdvantagesConteiner>
+  <PageWrapper dark id="advantages">
+    <PageConteiner>
       <AdvantagesHeader>
         <ScaleIcon width={28} height={28} fill="#ffff" />
         <Label>Преимущества</Label>
@@ -39,8 +40,8 @@ const AdvantagesSection = () => (
       <AdvantagesCustom>
         <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
       </AdvantagesCustom>
-    </AdvantagesConteiner>
-  </AdvantagesWrapper>
+    </PageConteiner>
+  </PageWrapper>
 );
 
 export default AdvantagesSection;

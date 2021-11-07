@@ -5,8 +5,6 @@ import Modal from "../../Modal";
 import ReactRotatingText from "react-rotating-text";
 
 import {
-  OrderSiteWrapper,
-  OrderSiteConteiner,
   OrderSiteHeader,
   OrderSiteLabel,
   OrderSiteCustom,
@@ -20,12 +18,15 @@ import "./style.css";
 
 import { ReactComponent as OrderSiteIcon } from "../../common/icon/RocketIcon.svg";
 
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
+
 const OrderSite = () => {
   const [opened, setOpened] = useState(false);
   return (
-    <OrderSiteWrapper id="cooperation">
+    <PageWrapper dark id="cooperation">
       <Modal opened={opened} onRequestClose={() => setOpened(false)} />
-      <OrderSiteConteiner>
+      <PageConteiner>
         <OrderSiteHeader>
           <OrderSiteLabel>
             {`${"< "}`}
@@ -58,8 +59,8 @@ const OrderSite = () => {
             </Link>
           </OrderSiteButton>
         </OrderSiteCustom>
-      </OrderSiteConteiner>
-    </OrderSiteWrapper>
+      </PageConteiner>
+    </PageWrapper>
   );
 };
 

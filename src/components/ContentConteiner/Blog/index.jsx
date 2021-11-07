@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import {
-  BlogWrapper,
-  BlogConteiner,
   BlogHeader,
   BlogLabel,
   BlogCustom,
@@ -30,9 +28,12 @@ import CatCodes from "./CatCodes";
 
 import { propsSlickList } from "../../common/constants";
 
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
+
 const Blog = () => (
-  <BlogWrapper id="blog">
-    <BlogConteiner>
+  <PageWrapper id="blog">
+    <PageConteiner>
       <BlogHeader>
         <BlogIcon />
         <BlogLabel>Мой Блог</BlogLabel>
@@ -70,8 +71,8 @@ const Blog = () => (
           </Allportf>
         </Link>
       </BlogCustom>
-    </BlogConteiner>
-  </BlogWrapper>
+    </PageConteiner>
+  </PageWrapper>
 );
 
 export default Blog;

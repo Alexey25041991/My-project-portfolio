@@ -1,36 +1,5 @@
 import styled from "styled-components";
 
-import myIconWawe from "../../common/icon/wawe.png";
-import myIconBgcont from "../../common/icon/bgcont.png";
-
-export const AdvantagesWrapper = styled.div`
-  display: flex;
-  background-color: #2b3037;
-  background: url(${myIconBgcont}) center top;
-  line-height: 20px;
-  color: #000;
-  font-family: "Exo 2", sans-serif;
-  &:before {
-    background: url(${myIconWawe}) top center repeat-x;
-    content: "";
-    width: 100%;
-    height: 22px;
-    display: flex;
-    margin-top: -22px;
-    position: absolute;
-    z-index: 10;
-  }
-`;
-
-export const AdvantagesConteiner = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0 25px;
-  padding-bottom: 70px;
-`;
-
 export const AdvantagesHeader = styled.div`
   display: flex;
   justify-content: center;
@@ -78,7 +47,6 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   list-style: none;
   display: flex;
-  // flex-direction: column;
   vertical-align: top;
   width: 296px;
   margin-right: 17px;

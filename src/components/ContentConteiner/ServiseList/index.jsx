@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  ServiseListWrapper,
-  ServiseListConteiner,
   ServiseListHeader,
   ServiseListLabel,
   ServiseListCustom,
@@ -15,9 +13,12 @@ import {
 
 import { ReactComponent as ServiseListIcon } from "../../common/icon/ServiseListIcon.svg";
 
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
+
 const ServiseList = () => (
-  <ServiseListWrapper>
-    <ServiseListConteiner>
+  <PageWrapper dark>
+    <PageConteiner>
       <ServiseListHeader>
         <ServiseListIcon />
         <ServiseListLabel>Перечень услуг</ServiseListLabel>
@@ -46,8 +47,8 @@ const ServiseList = () => (
           </Ul>
         </ServiseListOptions>
       </ServiseListCustom>
-    </ServiseListConteiner>
-  </ServiseListWrapper>
+    </PageConteiner>
+  </PageWrapper>
 );
 
 export default ServiseList;

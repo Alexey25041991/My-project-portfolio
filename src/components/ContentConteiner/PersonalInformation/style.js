@@ -1,35 +1,6 @@
 import styled from "styled-components";
 
-import myIconWawew from "../../common/icon/wawew.png";
-import myIconBgcont from "../../common/icon/bgcont.png";
 import myIconWebdev from "../../common/icon/webdev.png";
-
-export const PersonalWrapper = styled.div`
-  display: flex;
-  background-color: #fff;
-  // background: url(${myIconBgcont}) center top;
-  line-height: 20px;
-  color: #000;
-  font-family: "Exo 2", sans-serif;
-  &:before {
-    background: url(${myIconWawew}) top center repeat-x;
-    content: "";
-    width: 100%;
-    height: 32px;
-    display: flex;
-    margin-top: -31px;
-    position: absolute;
-  }
-`;
-
-export const PersonalConteiner = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0 25px;
-  padding-bottom: 70px;
-`;
 
 export const PersonalHeader = styled.h1`
   color: #2b2a29;

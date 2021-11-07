@@ -1,35 +1,6 @@
 import styled from "styled-components";
 
-import myIconWawew from "../../common/icon/wawew.png";
-import myIconWawewb from "../../common/icon/wawewb.png";
-import myIconBgcont from "../../common/icon/bgcont.png";
 import myMainIcon from "../../common/icon/MainIcon.png";
-
-export const ResumeWrapper = styled.div`
-  display: flex;
-  background-color: #fff;
-  background: url(${myIconBgcont}) center top;
-  line-height: 20px;
-  color: #000;
-  font-family: 'Exo 2', sans-serif;
-  &:before {
-    background: url(${myIconWawew}) top center repeat-x;
-    content: '';
-    width: 100%;
-    height: 32px;
-    display: flex;
-    margin-top: -31px;
-    position: absolute;
-  }
-  &::after {
-    background: url(${myIconWawewb}) center bottom repeat-x;
-    content: '';
-    width: 100%;
-    height: 28px;
-    display: flex;
-    margin-top: -5px;
-    position: absolute;
-`;
 
 export const Avatar = styled.div`
   background: url(${myMainIcon}) center no-repeat;
@@ -43,15 +14,6 @@ export const Avatar = styled.div`
 export const ResumeOptionsWrapper = styled.div`
   display: flex;
   position: relative;
-`;
-
-export const ResumeConteiner = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0 25px;
-  padding-bottom: 70px;
 `;
 
 export const ResumeHeader = styled.h1`

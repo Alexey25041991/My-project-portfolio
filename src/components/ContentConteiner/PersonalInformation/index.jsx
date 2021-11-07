@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
 
 import {
-  PersonalWrapper,
-  PersonalConteiner,
   PersonalHeader,
   PersonalHeaderCustom,
   PersonalCustom,
   PersonalText,
   PersonalSection,
-} from './style';
+} from "./style";
+
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
 
 const PersonalInformation = () => (
-  <PersonalWrapper id="person">
-    <PersonalConteiner>
+  <PageWrapper id="person">
+    <PageConteiner>
       <PersonalHeader>Сайт веб-разработчика</PersonalHeader>
       <PersonalCustom>
         <PersonalHeaderCustom>подробнее обо мне</PersonalHeaderCustom>
@@ -39,8 +40,8 @@ const PersonalInformation = () => (
           </PersonalText>
         </PersonalSection>
       </PersonalCustom>
-    </PersonalConteiner>
-  </PersonalWrapper>
+    </PageConteiner>
+  </PageWrapper>
 );
 
 export default PersonalInformation;

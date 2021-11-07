@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  ServicesWrapper,
-  ServicesConteiner,
   ServicesHeader,
   ServicesLabel,
   ServicesCustom,
@@ -12,9 +10,12 @@ import {
 
 import { ReactComponent as ServicesIcon } from "../../common/icon/ServicesDarkIcon.svg";
 
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
+
 const Services = () => (
-  <ServicesWrapper id="services">
-    <ServicesConteiner>
+  <PageWrapper id="services">
+    <PageConteiner>
       <ServicesHeader>
         <ServicesIcon />
         <ServicesLabel>Услуги и сотрудничество</ServicesLabel>
@@ -42,8 +43,8 @@ const Services = () => (
           </ServicesText>
         </ServicesSection>
       </ServicesCustom>
-    </ServicesConteiner>
-  </ServicesWrapper>
+    </PageConteiner>
+  </PageWrapper>
 );
 
 export default Services;

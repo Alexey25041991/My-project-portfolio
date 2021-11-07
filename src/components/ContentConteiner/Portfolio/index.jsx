@@ -3,8 +3,6 @@ import Slider from "infinite-react-carousel";
 import { Link } from "react-router-dom";
 
 import {
-  PortfolioWrapper,
-  PortfolioConteiner,
   PortfolioHeader,
   PortfolioLabel,
   PortfolioCustom,
@@ -36,6 +34,9 @@ import { ReactComponent as PortfolioLabelIcon } from "../../common/icon/LabelIco
 import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
 import { propsPortfolioList } from "../../common/constants";
+
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -127,8 +128,8 @@ const Portfolio = () => {
   };
 
   return (
-    <PortfolioWrapper id="portfolio">
-      <PortfolioConteiner>
+    <PageWrapper id="portfolio">
+      <PageConteiner>
         <PortfolioHeader>
           <PortfolioIcon />
           <PortfolioLabel>Недавно разработаны</PortfolioLabel>
@@ -154,8 +155,8 @@ const Portfolio = () => {
             </Allportf>
           </Link>
         </PortfolioCustom>
-      </PortfolioConteiner>
-    </PortfolioWrapper>
+      </PageConteiner>
+    </PageWrapper>
   );
 };
 
