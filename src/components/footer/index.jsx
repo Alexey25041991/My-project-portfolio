@@ -4,8 +4,6 @@ import LogoLook from "../LogoLook";
 import Modal from "../Modal";
 
 import {
-  FooterWrapper,
-  FooterConteiner,
   FooterCustom,
   Link,
   Label,
@@ -30,13 +28,16 @@ import { ReactComponent as FooterSkypeIcon } from "../common/icon/SkypeIcon.svg"
 
 import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
 
+import PageWrapper from "../common/PageWrapper";
+import PageConteiner from "../common/PageConteiner";
+
 const Footer = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <FooterWrapper id="contacts">
+    <PageWrapper dark footer id="contacts">
       <Modal opened={opened} onRequestClose={() => setOpened(false)} />
-      <FooterConteiner>
+      <PageConteiner footer>
         <FooterCustom>
           <HeaderTopWrapper>
             <LogoLook />
@@ -97,8 +98,8 @@ const Footer = () => {
             </HeaderLogCoderText>
           </FooterValue1>
         </FooterCustom>
-      </FooterConteiner>
-    </FooterWrapper>
+      </PageConteiner>
+    </PageWrapper>
   );
 };
 

@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
 import {
-  PortfolioHeaderWrapper,
-  PortfolioHeaderConteiner,
   PortfolioHeaderHeader,
   PortfolioHeaderText,
   PortfolioHeaderBreadCrumbs,
@@ -21,6 +19,9 @@ import {
 } from "./style";
 
 import { ReactComponent as PortfolioTimeIcon } from "../common/icon/TimeIcon.svg";
+
+import PageWrapper from "../common/PageWrapper";
+import PageConteiner from "../common/PageConteiner";
 
 const LinkBreadcrumbs = styled(Link)`
   display: flex;
@@ -65,8 +66,8 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
   const dataTime = portfolio ? "Портфолио" : "Заметки веб-разработчика";
   return (
-    <PortfolioHeaderWrapper>
-      <PortfolioHeaderConteiner>
+    <PageWrapper dark>
+      <PageConteiner>
         <PortfolioHeaderBreadCrumbs>
           {setPortfolioHeaderBreadCrumbs(item, portfolio)}
         </PortfolioHeaderBreadCrumbs>
@@ -90,8 +91,8 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
           </PortfolioGithub>
           <PortfolioText>{item?.portfolioText}</PortfolioText>
         </PortfolioHeaderText>
-      </PortfolioHeaderConteiner>
-    </PortfolioHeaderWrapper>
+      </PageConteiner>
+    </PageWrapper>
   );
 };
 

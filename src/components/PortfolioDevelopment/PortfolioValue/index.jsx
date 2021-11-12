@@ -3,8 +3,6 @@ import React from "react";
 import PortfolioHeader from "../../PortfolioHeader";
 
 import {
-  PortfolioWrapper,
-  PortfolioConteiner,
   PortfolioCustom,
   Li,
   SlickTrack,
@@ -13,6 +11,9 @@ import {
   Projectwindow,
   PortfolioImgUrl,
 } from "./style.js";
+
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
 
 const getSlickList = (item) => {
   return (
@@ -38,13 +39,13 @@ const getSlickList = (item) => {
 const PortfolioValue = ({ item }) => (
   <>
     <PortfolioHeader item={item} portfolio />
-    <PortfolioWrapper>
-      <PortfolioConteiner>
+    <PageWrapper>
+      <PageConteiner>
         <PortfolioCustom>
           <SlickTrack>{getSlickList(item)}</SlickTrack>
         </PortfolioCustom>
-      </PortfolioConteiner>
-    </PortfolioWrapper>
+      </PageConteiner>
+    </PageWrapper>
   </>
 );
 

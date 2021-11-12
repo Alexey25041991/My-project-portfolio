@@ -6,8 +6,12 @@ import myIconWawew from "../icon/wawew.png";
 
 const PageWrapper = styled.div`
   display: flex;
-  background: ${({ dark }) =>
-    dark ? `url(${myIconBgcont}) center top` : "none"};
+  background: ${({ dark, footer = false }) =>
+    dark && !footer
+      ? `url(${myIconBgcont}) center top`
+      : footer
+      ? `#2b3037`
+      : "none"};
   &:before {
     background: url(${({ dark }) => (dark ? myIconWawe : myIconWawew)}) top
       center repeat-x;

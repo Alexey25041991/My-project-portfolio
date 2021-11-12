@@ -1,32 +1,5 @@
 import styled from "styled-components";
 
-import myIconWawewb from "../common/icon/wawewb.png";
-
-export const FooterWrapper = styled.div`
-  display: flex;
-  background-color: #2B3037;
-  line-height: 20px;
-  color: #000;
-  font-family: 'Exo 2', sans-serif;
-  &::after {
-    background: url(${myIconWawewb}) center bottom repeat-x;
-    content: '';
-    width: 100%;
-    height: 28px;
-    display: flex;
-    margin-top: -5px;
-    position: absolute;
-`;
-
-export const FooterConteiner = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 960px;
-  margin: 0 auto;
-  padding: 35px 25px;
-  padding-bottom: 70px;
-`;
-
 export const FooterCustom = styled.div`
   display: flex;
   flex-direction: column;

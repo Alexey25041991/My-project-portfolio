@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import PortfolioHeader from "../../PortfolioHeader";
 
 import {
-  PortfolioWrapper,
-  PortfolioConteiner,
   PortfolioHeaderValue,
   PortfolioCustom,
   Ul,
@@ -35,6 +33,9 @@ import {
   propsPortfolioList,
   propsPortfolioListHome,
 } from "../../common/constants";
+
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -111,8 +112,8 @@ const PortfolioList = () => {
   return (
     <>
       <PortfolioHeader item={propsPortfolioListHome} portfolio />
-      <PortfolioWrapper>
-        <PortfolioConteiner>
+      <PageWrapper>
+        <PageConteiner>
           <PortfolioHeaderValue>
             {getButtonList(propsButtonList, setPortfoliosValue)}
           </PortfolioHeaderValue>
@@ -125,8 +126,8 @@ const PortfolioList = () => {
               </SlickList>
             </Ul>
           </PortfolioCustom>
-        </PortfolioConteiner>
-      </PortfolioWrapper>
+        </PageConteiner>
+      </PageWrapper>
     </>
   );
 };

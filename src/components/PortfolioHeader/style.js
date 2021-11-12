@@ -1,36 +1,5 @@
 import styled from "styled-components";
 
-import myIconWawe from "../common/icon/wawe.png";
-import myIconBgcont from "../common/icon/bgcont.png";
-
-export const PortfolioHeaderWrapper = styled.div`
-  display: flex;
-  background-color: #2b3037;
-  background: url(${myIconBgcont}) center top;
-  line-height: 20px;
-  color: #000;
-  font-family: "Exo 2", sans-serif;
-  &:before {
-    background: url(${myIconWawe}) top center repeat-x;
-    content: "";
-    width: 100%;
-    height: 22px;
-    display: flex;
-    margin-top: -22px;
-    position: absolute;
-    z-index: 10;
-  }
-`;
-
-export const PortfolioHeaderConteiner = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0 25px;
-  padding-bottom: 25px;
-`;
-
 export const PortfolioHeaderHeader = styled.div`
   display: flex;
   align-items: center;

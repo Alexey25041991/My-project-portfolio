@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import PortfolioHeader from "../../PortfolioHeader";
 
 import {
-  PortfolioWrapper,
-  PortfolioConteiner,
   PortfolioHeaderValue,
   PortfolioCustom,
   Ul,
@@ -36,6 +34,9 @@ import {
   propsPortfolioBlogHome,
 } from "../../common/constants";
 
+import PageWrapper from "../../common/PageWrapper";
+import PageConteiner from "../../common/PageConteiner";
+
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
@@ -51,13 +52,11 @@ const PortfolioListData = styled(Link)`
   height: 200px;
   overflow: hidden;
   position: relative;
-  // top: 20px;
   text-decoration: none;
 `;
 
 const PortfolioListDataText = styled(Link)`
   display: flex;
-  // justify-content: center;
   overflow: hidden;
   text-decoration: none;
 `;
@@ -220,8 +219,8 @@ const PortfolioListBlog = () => {
   return (
     <>
       <PortfolioHeader item={propsPortfolioBlogHome} />
-      <PortfolioWrapper>
-        <PortfolioConteiner data-select-container>
+      <PageWrapper>
+        <PageConteiner blog data-select-container>
           <PortfolioCustom>
             <Ul>
               <SlickList>
@@ -242,8 +241,8 @@ const PortfolioListBlog = () => {
               )}
             </PortfolioHeaderValue>
           </PortfolioHeaderValueWrapper>
-        </PortfolioConteiner>
-      </PortfolioWrapper>
+        </PageConteiner>
+      </PageWrapper>
     </>
   );
 };

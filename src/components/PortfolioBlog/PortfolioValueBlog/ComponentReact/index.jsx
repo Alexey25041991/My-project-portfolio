@@ -1,17 +1,14 @@
 import React from "react";
 
-import {
-  PersonalWrapper,
-  PersonalConteiner,
-  PersonalCustom,
-  PersonalText,
-  PersonalSection,
-} from "./style.js";
+import { PersonalCustom, PersonalText, PersonalSection } from "./style.js";
+
+import PageWrapper from "../../../common/PageWrapper";
+import PageConteiner from "../../../common/PageConteiner";
 
 const ComponentReact = () => (
   <>
-    <PersonalWrapper id="person">
-      <PersonalConteiner>
+    <PageWrapper id="person">
+      <PageConteiner>
         <PersonalCustom>
           {/* <PersonalHeaderCustom>подробнее обо мне</PersonalHeaderCustom> */}
           <PersonalText>
@@ -38,8 +35,8 @@ const ComponentReact = () => (
             </PersonalText>
           </PersonalSection>
         </PersonalCustom>
-      </PersonalConteiner>
-    </PersonalWrapper>
+      </PageConteiner>
+    </PageWrapper>
   </>
 );
 

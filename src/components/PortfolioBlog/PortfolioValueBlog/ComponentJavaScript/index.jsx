@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  PersonalWrapper,
-  PersonalConteiner,
   PersonalHeader,
   PersonalCustom,
   PersonalText,
@@ -12,10 +10,13 @@ import {
 
 import "./style.css";
 
+import PageWrapper from "../../../common/PageWrapper";
+import PageConteiner from "../../../common/PageConteiner";
+
 const ComponentJavaScript = () => (
   <>
-    <PersonalWrapper id="person">
-      <PersonalConteiner>
+    <PageWrapper id="person">
+      <PageConteiner>
         <PersonalHeader className="titleText">
           Великий и ужасный
           <PersonalHeaderJs className="javaScript">JavaScript</PersonalHeaderJs>
@@ -47,8 +48,8 @@ const ComponentJavaScript = () => (
             </PersonalText>
           </PersonalSection>
         </PersonalCustom>
-      </PersonalConteiner>
-    </PersonalWrapper>
+      </PageConteiner>
+    </PageWrapper>
   </>
 );
 
