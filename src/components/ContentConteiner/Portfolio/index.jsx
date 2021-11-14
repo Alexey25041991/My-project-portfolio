@@ -8,9 +8,6 @@ import {
   Li,
   ButtonL,
   ButtonR,
-  Allportf,
-  LinkPortfolio,
-  Label,
   SlickList,
   SlickTrack,
   PortfolioImg,
@@ -36,6 +33,7 @@ import { propsPortfolioList } from "../../common/constants";
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
+import Button from "../../common/Button";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -145,12 +143,9 @@ const Portfolio = () => {
             {propsPortfolioList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
           <Link to="/portfolio" style={{ textDecoration: "none" }}>
-            <Allportf>
-              <LinkPortfolio>
-                <KeyIcon />
-                <Label>Открыть портфолио</Label>
-              </LinkPortfolio>
-            </Allportf>
+            <Button title="Открыть портфолио">
+              <KeyIcon />
+            </Button>
           </Link>
         </PortfolioCustom>
       </PageConteiner>

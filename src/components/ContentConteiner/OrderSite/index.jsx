@@ -4,14 +4,7 @@ import Modal from "../../Modal";
 
 import ReactRotatingText from "react-rotating-text";
 
-import {
-  OrderSiteLabel,
-  OrderSiteCustom,
-  OrderSiteText,
-  OrderSiteButton,
-  Link,
-  Label,
-} from "./style.js";
+import { OrderSiteLabel, OrderSiteCustom, OrderSiteText } from "./style.js";
 
 import "./style.css";
 
@@ -20,6 +13,7 @@ import { ReactComponent as OrderSiteIcon } from "../../common/icon/RocketIcon.sv
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
+import Button from "../../common/Button";
 
 const OrderSite = () => {
   const [opened, setOpened] = useState(false);
@@ -52,12 +46,11 @@ const OrderSite = () => {
             техническое задание, сроки, условия оплаты и отвечу на все
             интересующие Вас вопросы.
           </OrderSiteText>
-          <OrderSiteButton onClick={() => setOpened(!opened)}>
-            <Link>
+          <div onClick={() => setOpened(!opened)}>
+            <Button title="Заказать сайт" toOrder>
               <OrderSiteIcon />
-              <Label>Заказать сайт</Label>
-            </Link>
-          </OrderSiteButton>
+            </Button>
+          </div>
         </OrderSiteCustom>
       </PageConteiner>
     </PageWrapper>

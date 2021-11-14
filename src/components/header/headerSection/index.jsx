@@ -6,8 +6,6 @@ import {
   HeaderSectionGetsite,
   HeaderSectionContacts,
   HeaderSectionConteiner,
-  Link,
-  Label,
   HeaderSectionLabel,
   Phones,
   PhonesConteiner,
@@ -32,6 +30,7 @@ import { ReactComponent as RocketGetsiteIcon } from "../../common/icon/RocketIco
 import { ReactComponent as PhonesIcon } from "../../common/icon/PhonesIcon.svg";
 import { ReactComponent as EmailsIcon } from "../../common/icon/EmailsIcon.svg";
 import { ReactComponent as SkypeIcon } from "../../common/icon/SkypeHeaderIcon.svg";
+import Button from "../../common/Button";
 
 const HeaderSection = () => {
   const [opened, setOpened] = useState(false);
@@ -52,10 +51,11 @@ const HeaderSection = () => {
 
       <HeaderSectionGetsite>
         <HeaderSectionConteiner>
-          <Link href="#" onClick={() => setOpened(!opened)}>
-            <RocketGetsiteIcon />
-            <Label>Заказ услуг</Label>
-          </Link>
+          <div onClick={() => setOpened(!opened)}>
+            <Button title="Заказать сайт" toOrderHeader>
+              <RocketGetsiteIcon />
+            </Button>
+          </div>
           <Modal opened={opened} onRequestClose={() => setOpened(false)} />
           <HeaderSectionLabel>
             Заполните форму заказа, <br />и я свяжусь с Вами

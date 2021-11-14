@@ -5,9 +5,6 @@ import {
   BlogCustom,
   MyBlogSection,
   MyBlog,
-  Allportf,
-  LinkPortfolio,
-  Label,
   BlogCat,
   BlogData,
   BlogDataValue,
@@ -29,6 +26,7 @@ import { propsSlickList } from "../../common/constants";
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
+import Button from "../../common/Button";
 
 const Blog = () => (
   <PageWrapper id="blog">
@@ -61,12 +59,9 @@ const Blog = () => (
           </BlogCat>
         </MyBlogSection>
         <Link to="/blog" style={{ textDecoration: "none" }}>
-          <Allportf>
-            <LinkPortfolio>
-              <KeyIcon />
-              <Label>Открыть блок</Label>
-            </LinkPortfolio>
-          </Allportf>
+          <Button title="Открыть блок">
+            <KeyIcon />
+          </Button>
         </Link>
       </BlogCustom>
     </PageConteiner>

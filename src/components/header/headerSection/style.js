@@ -29,41 +29,6 @@ export const HeaderSectionConteiner = styled.div`
   flex-direction: column;
 `;
 
-export const Link = styled.a`
-  width: 173px;
-  height: 30px;
-  background-color: #ff8560;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
-  color: white;
-  font-family: "Exo 2", sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 29px;
-  text-align: center;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
-  & :hover {
-    cursor: pointer;
-  }
-`;
-
-export const Label = styled.span`
-  text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
-  color: white;
-  font-family: "Exo 2", sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 29px;
-  text-align: center;
-  margin-left: 5px;
-`;
-
 export const HeaderSectionLabel = styled.span`
   color: white;
   font-size: 13px;

@@ -13,11 +13,7 @@ import {
   LabelText,
   HeaderTopWrapper,
   HeaderLogCoderText,
-  HeaderMenu,
-  OrderSiteButton,
-  LinkButton,
-  LabeButtonl,
-  FooterValue1,
+  FooterValueIt,
   FooterHh,
 } from "./style.js";
 
@@ -30,6 +26,7 @@ import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
 
 import PageWrapper from "../common/PageWrapper";
 import PageConteiner from "../common/PageConteiner";
+import Button from "../common/Button";
 
 const Footer = () => {
   const [opened, setOpened] = useState(false);
@@ -41,14 +38,11 @@ const Footer = () => {
         <FooterCustom>
           <HeaderTopWrapper>
             <LogoLook />
-            <HeaderMenu>
-              <OrderSiteButton onClick={() => setOpened(!opened)}>
-                <LinkButton>
-                  <OrderSiteIcon />
-                  <LabeButtonl>Заказать сайт</LabeButtonl>
-                </LinkButton>
-              </OrderSiteButton>
-            </HeaderMenu>
+            <div onClick={() => setOpened(!opened)}>
+              <Button title="Заказать сайт" toOrder>
+                <OrderSiteIcon />
+              </Button>
+            </div>
           </HeaderTopWrapper>
           <FooterValue>
             <Ul>
@@ -92,11 +86,11 @@ const Footer = () => {
               </Li>
             </Ul>
           </FooterValue>
-          <FooterValue1>
+          <FooterValueIt>
             <HeaderLogCoderText>
               2017-2021 Фрилансер веб-разработчик IT-WEB-MASTER
             </HeaderLogCoderText>
-          </FooterValue1>
+          </FooterValueIt>
         </FooterCustom>
       </PageConteiner>
     </PageWrapper>
