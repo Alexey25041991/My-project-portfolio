@@ -45,6 +45,7 @@ export const BlogData = styled.div`
   color: #fff;
   padding: 12px 12px;
   position: relative;
+  border-radius: 8px;
 `;
 
 export const BlogValue = styled.div`
