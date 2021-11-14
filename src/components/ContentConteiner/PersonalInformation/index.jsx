@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  PersonalHeader,
   PersonalHeaderCustom,
   PersonalCustom,
   PersonalText,
@@ -10,11 +9,12 @@ import {
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const PersonalInformation = () => (
   <PageWrapper id="person">
     <PageConteiner>
-      <PersonalHeader>Сайт веб-разработчика</PersonalHeader>
+      <HeaderTitle title="Сайт веб-разработчика" />
       <PersonalCustom>
         <PersonalHeaderCustom>подробнее обо мне</PersonalHeaderCustom>
         <PersonalText>

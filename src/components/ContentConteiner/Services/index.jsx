@@ -1,25 +1,19 @@
 import React from "react";
 
-import {
-  ServicesHeader,
-  ServicesLabel,
-  ServicesCustom,
-  ServicesText,
-  ServicesSection,
-} from "./style.js";
+import { ServicesCustom, ServicesText, ServicesSection } from "./style.js";
 
 import { ReactComponent as ServicesIcon } from "../../common/icon/ServicesDarkIcon.svg";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const Services = () => (
   <PageWrapper id="services">
     <PageConteiner>
-      <ServicesHeader>
+      <HeaderTitle title="Услуги и сотрудничество">
         <ServicesIcon />
-        <ServicesLabel>Услуги и сотрудничество</ServicesLabel>
-      </ServicesHeader>
+      </HeaderTitle>
       <ServicesCustom>
         <ServicesSection>
           <ServicesText>

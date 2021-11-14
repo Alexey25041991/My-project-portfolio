@@ -2,15 +2,6 @@ import styled from "styled-components";
 
 import myIconWebdev from "../../common/icon/webdev.png";
 
-export const PersonalHeader = styled.h1`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 35px;
-`;
-
 export const PersonalHeaderCustom = styled.h4`
   color: #2b2a29;
   font-size: 20px;

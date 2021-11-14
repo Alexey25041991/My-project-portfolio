@@ -4,25 +4,6 @@ import myIconLinet from "../../common/icon/linet.png";
 import myIconLinem from "../../common/icon/linem.png";
 import myIconLineb from "../../common/icon/lineb.png";
 
-export const ServiseListHeader = styled.h1`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  padding-top: 35px;
-  margin-bottom: 30px;
-`;
-
-export const ServiseListLabel = styled.div`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  margin-left: 12px;
-`;
-
 export const ServiseListCustom = styled.div`
   display: flex;
   flex-direction: column;

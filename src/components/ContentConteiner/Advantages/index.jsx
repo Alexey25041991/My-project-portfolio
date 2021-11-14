@@ -1,9 +1,7 @@
 import React from "react";
 
 import {
-  AdvantagesHeader,
   AdvantagesCustom,
-  Label,
   Ul,
   Li,
   Link,
@@ -18,6 +16,7 @@ import { propsHeaderMenu } from "../../common/constants";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const HeaderMenuLi = (propsHeaderMenu) =>
   propsHeaderMenu.map((item) => (
@@ -33,10 +32,9 @@ const HeaderMenuLi = (propsHeaderMenu) =>
 const AdvantagesSection = () => (
   <PageWrapper dark id="advantages">
     <PageConteiner>
-      <AdvantagesHeader>
+      <HeaderTitle dark title="Преимущества">
         <ScaleIcon width={28} height={28} fill="#ffff" />
-        <Label>Преимущества</Label>
-      </AdvantagesHeader>
+      </HeaderTitle>
       <AdvantagesCustom>
         <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
       </AdvantagesCustom>

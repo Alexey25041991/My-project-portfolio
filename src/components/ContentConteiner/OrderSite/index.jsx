@@ -5,7 +5,6 @@ import Modal from "../../Modal";
 import ReactRotatingText from "react-rotating-text";
 
 import {
-  OrderSiteHeader,
   OrderSiteLabel,
   OrderSiteCustom,
   OrderSiteText,
@@ -20,6 +19,7 @@ import { ReactComponent as OrderSiteIcon } from "../../common/icon/RocketIcon.sv
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const OrderSite = () => {
   const [opened, setOpened] = useState(false);
@@ -27,7 +27,7 @@ const OrderSite = () => {
     <PageWrapper dark id="cooperation">
       <Modal opened={opened} onRequestClose={() => setOpened(false)} />
       <PageConteiner>
-        <OrderSiteHeader>
+        <HeaderTitle dark>
           <OrderSiteLabel>
             {`${"< "}`}
             <ReactRotatingText
@@ -44,7 +44,7 @@ const OrderSite = () => {
             <span className="react-rotating-text-cursor" />
             {`${" / >"}`}
           </OrderSiteLabel>
-        </OrderSiteHeader>
+        </HeaderTitle>
         <OrderSiteCustom>
           <OrderSiteText>
             Заполните форму точной информацией о Вашем заказе, далее я свяжусь с

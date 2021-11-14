@@ -1,38 +1,9 @@
 import styled from "styled-components";
 
-export const AdvantagesHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
-  color: white;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 8px;
-`;
-
 export const AdvantagesCustom = styled.div`
   display: flex;
   margin: 0;
   padding: 0;
-`;
-
-export const Label = styled.span`
-  display: flex;
-  align-items: center;
-  color: white;
-  line-height: 17px;
-  font-size: 30px;
-  font-family: "Exo 2", sans-serif;
-  font-weight: 700;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  margin-top: 5px;
-  margin-left: 20px;
 `;
 
 export const Ul = styled.ul`

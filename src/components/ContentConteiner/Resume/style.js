@@ -16,25 +16,6 @@ export const ResumeOptionsWrapper = styled.div`
   position: relative;
 `;
 
-export const ResumeHeader = styled.h1`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  padding-top: 35px;
-  margin-bottom: 0;
-`;
-
-export const ResumeLabel = styled.div`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  margin-left: 12px;
-`;
-
 export const ResumeCustom = styled.div`
   display: flex;
   flex-direction: column;

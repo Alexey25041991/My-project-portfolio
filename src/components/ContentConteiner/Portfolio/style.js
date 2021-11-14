@@ -7,24 +7,6 @@ import myIconStrh from "../../common/icon/strh.png";
 import myIconBgport from "../../common/icon/bgport.png";
 import myIconBgportActiv from "../../common/icon/bgporth.png";
 
-export const PortfolioHeader = styled.h1`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  padding-top: 35px;
-  margin-bottom: 30px;
-`;
-
-export const PortfolioLabel = styled.div`
-  color: #2b2a29;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  margin-left: 12px;
-`;
-
 export const PortfolioCustom = styled.div`
   display: flex;
   flex-direction: column;

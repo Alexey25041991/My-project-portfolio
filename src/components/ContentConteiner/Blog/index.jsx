@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import {
-  BlogHeader,
-  BlogLabel,
   BlogCustom,
   MyBlogSection,
   MyBlog,
@@ -30,14 +28,14 @@ import { propsSlickList } from "../../common/constants";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const Blog = () => (
   <PageWrapper id="blog">
     <PageConteiner>
-      <BlogHeader>
+      <HeaderTitle title="Мой Блог">
         <BlogIcon />
-        <BlogLabel>Мой Блог</BlogLabel>
-      </BlogHeader>
+      </HeaderTitle>
       <BlogCustom>
         <MyBlogSection>
           <MyBlog>

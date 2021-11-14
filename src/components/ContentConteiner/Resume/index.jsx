@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 
 import {
-  ResumeHeader,
-  ResumeLabel,
   ResumeCustom,
   ResumeOptions,
   ResumeStatus,
@@ -23,6 +21,7 @@ import { ReactComponent as ResumeIcon } from "../../common/icon/ResumeIcon.svg";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const ResumeSkillsLabelValue = (title, numberValue, id) => (
   <Fragment key={id}>
@@ -38,10 +37,9 @@ const ResumeSkillsLabelValue = (title, numberValue, id) => (
 const Resume = () => (
   <PageWrapper dark id="resume">
     <PageConteiner>
-      <ResumeHeader>
+      <HeaderTitle dark title="Резюме">
         <ResumeIcon />
-        <ResumeLabel>Резюме</ResumeLabel>
-      </ResumeHeader>
+      </HeaderTitle>
       <ResumeCustom>
         <ResumeOptionsWrapper>
           <div>

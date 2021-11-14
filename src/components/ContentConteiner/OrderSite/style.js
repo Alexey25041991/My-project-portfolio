@@ -1,16 +1,6 @@
 import styled from "styled-components";
 
-export const OrderSiteHeader = styled.h1`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  padding-top: 35px;
-  margin-bottom: 30px;
-`;
-
 export const OrderSiteLabel = styled.div`
-  color: #2b2a29;
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;

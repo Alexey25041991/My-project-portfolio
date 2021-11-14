@@ -3,8 +3,6 @@ import Slider from "infinite-react-carousel";
 import { Link } from "react-router-dom";
 
 import {
-  PortfolioHeader,
-  PortfolioLabel,
   PortfolioCustom,
   Ul,
   Li,
@@ -37,6 +35,7 @@ import { propsPortfolioList } from "../../common/constants";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import HeaderTitle from "../../common/HeaderTitle";
 
 const PortfolioListData = styled(Link)`
   display: flex;
@@ -130,10 +129,9 @@ const Portfolio = () => {
   return (
     <PageWrapper id="portfolio">
       <PageConteiner>
-        <PortfolioHeader>
+        <HeaderTitle title="Недавно разработаны">
           <PortfolioIcon />
-          <PortfolioLabel>Недавно разработаны</PortfolioLabel>
-        </PortfolioHeader>
+        </HeaderTitle>
         <PortfolioCustom>
           <Ul>
             {propsPortfolioList?.length > 3 && <ButtonL onClick={gotoPrev} />}
