@@ -5,7 +5,7 @@ const ButtonWrapper = styled.button`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  width: 360px;
+  width: 260px;
   height: 44px;
   background-color: #2b3037;
   border-radius: 8px;
@@ -23,7 +23,7 @@ const ButtonWrapper = styled.button`
   ${({ toOrderHeader }) =>
     toOrderHeader &&
     css`
-      width: 175px;
+      width: 260px;
       background-color: #ff8560;
       box-shadow: none;
       &:hover {
