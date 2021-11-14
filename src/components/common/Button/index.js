@@ -29,6 +29,7 @@ const ButtonWrapper = styled.button`
       &:hover {
         background-color: #fa5f1d;
       }
+      border: 2px solid white;
     `}
 `;
 
