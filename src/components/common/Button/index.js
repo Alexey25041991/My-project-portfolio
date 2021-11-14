@@ -30,6 +30,7 @@ const ButtonWrapper = styled.button`
         background-color: #fa5f1d;
       }
       border: 2px solid white;
+      margin-top: 0;
     `}
 `;
 
