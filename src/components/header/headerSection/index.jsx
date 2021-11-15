@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import {
   HeaderSectionWrapper,
+  HeaderContactWrapper,
   HeaderSectionFon,
   HeaderSectionGetsite,
   HeaderSectionContacts,
@@ -49,43 +50,45 @@ const HeaderSection = () => {
         <IconPicture />
       </HeaderSectionFon>
 
-      <HeaderSectionGetsite>
-        <HeaderSectionConteiner>
-          <div onClick={() => setOpened(!opened)}>
-            <Button title="Заказать сайт" toOrderHeader>
-              <RocketGetsiteIcon />
-            </Button>
-          </div>
-          <Modal opened={opened} onRequestClose={() => setOpened(false)} />
-          <HeaderSectionLabel>
-            Заполните форму заказа, <br />и я свяжусь с Вами
-          </HeaderSectionLabel>
-        </HeaderSectionConteiner>
-      </HeaderSectionGetsite>
+      <HeaderContactWrapper>
+        <HeaderSectionGetsite>
+          <HeaderSectionConteiner>
+            <div onClick={() => setOpened(!opened)}>
+              <Button title="Заказать сайт" toOrderHeader>
+                <RocketGetsiteIcon />
+              </Button>
+            </div>
+            <Modal opened={opened} onRequestClose={() => setOpened(false)} />
+            <HeaderSectionLabel>
+              Заполните форму заказа, <br />и я свяжусь с Вами
+            </HeaderSectionLabel>
+          </HeaderSectionConteiner>
+        </HeaderSectionGetsite>
 
-      <HeaderSectionContacts>
-        <HeaderSectionConteiner>
-          <Phones>
-            <PhonesIcon />
-            <PhonesConteiner>
-              <PhonesNumber>+7 (999) 812-19-75</PhonesNumber>
-              <PhonesNumber>+7 (977) 270-09-30</PhonesNumber>
-              <PhonesText>Telegram, Whatsapp</PhonesText>
-            </PhonesConteiner>
-          </Phones>
-          <HeaderSectionLabel>
-            Звоните в удобное для Вас время!
-          </HeaderSectionLabel>
-          <Emails>
-            <EmailsIcon />
-            <ContactsText>mazurenko-alexey@mail.ru</ContactsText>
-          </Emails>
-          <Skype>
-            <SkypeIcon />
-            <ContactsText>aleks10_0</ContactsText>
-          </Skype>
-        </HeaderSectionConteiner>
-      </HeaderSectionContacts>
+        <HeaderSectionContacts>
+          <HeaderSectionConteiner>
+            <Phones>
+              <PhonesIcon />
+              <PhonesConteiner>
+                <PhonesNumber>+7 (999) 812-19-75</PhonesNumber>
+                <PhonesNumber>+7 (977) 270-09-30</PhonesNumber>
+                <PhonesText>Telegram, Whatsapp</PhonesText>
+              </PhonesConteiner>
+            </Phones>
+            <HeaderSectionLabel>
+              Звоните в удобное для Вас время!
+            </HeaderSectionLabel>
+            <Emails>
+              <EmailsIcon />
+              <ContactsText>mazurenko-alexey@mail.ru</ContactsText>
+            </Emails>
+            <Skype>
+              <SkypeIcon />
+              <ContactsText>aleks10_0</ContactsText>
+            </Skype>
+          </HeaderSectionConteiner>
+        </HeaderSectionContacts>
+      </HeaderContactWrapper>
     </HeaderSectionWrapper>
   );
 };

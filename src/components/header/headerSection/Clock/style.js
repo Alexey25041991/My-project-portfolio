@@ -1,8 +1,8 @@
-// import styled, { css, keyframes } from 'styled-components';
-import styled from 'styled-components';
+import styled from "styled-components";
+import { TABLET_959, MOBILE_660 } from "../../../common/media";
 
-import myIconClock from './icon/clock.png';
-import myIconJs from './icon/js.png';
+import myIconClock from "./icon/clock.png";
+import myIconJs from "./icon/js.png";
 
 export const ClockWrapper = styled.div`
   display: flex;
@@ -17,8 +17,6 @@ export const ClockWrapper = styled.div`
     );
   background-size: cover;
   border-radius: 50%;
-  // box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35), inset 0 -15px 15px #191919,
-  //   0 15px 15px rgba(134, 134, 134, 0.35), inset 0 15px 15px #191919;
   display: flex;
   width: 118px;
   height: 118px;
@@ -26,13 +24,19 @@ export const ClockWrapper = styled.div`
   top: 114px;
   left: 287px;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 6px;
     height: 6px;
     background-color: #ffffff;
     border-radius: 50%;
     z-index: 999;
+  }
+  @media ${TABLET_959} {
+    position: initial;
+  }
+  @media ${MOBILE_660} {
+    display: none;
   }
 `;
 
@@ -45,7 +49,7 @@ export const Hour = styled.div`
   position: absolute;
   border-radius: 50%;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 3px;
     height: 32px;
@@ -59,7 +63,7 @@ export const Min = styled(Hour)`
   width: 60px;
   height: 60px;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 2px;
     height: 38px;
@@ -73,7 +77,7 @@ export const Sec = styled(Hour)`
   width: 72px;
   height: 72px;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 1px;
     height: 50px;

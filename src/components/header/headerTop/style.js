@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TABLET_1024 } from "../../common/media";
 
 export const HeaderTopWrapper = styled.div`
   display: flex;
@@ -6,11 +7,16 @@ export const HeaderTopWrapper = styled.div`
   height: 74px;
   width: 960px;
   margin: 0 auto;
+  @media ${TABLET_1024} {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const HeaderMenu = styled.div`
   padding-top: 10px;
-  float: right;
 `;
 
 export const Ul = styled.ul`
@@ -46,7 +52,7 @@ export const Link = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px 15px;
+  padding: 5px 8px;
   color: palevioletred;
 `;
 

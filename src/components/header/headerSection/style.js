@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import {
+  TABLET_1024,
+  TABLET_959,
+  MOBILE_660,
+  MOBILE_560,
+} from "../../common/media";
 
 import myIconComp from "../../common/icon/icon-header/comp.png";
 import myIconMap from "../../common/icon/icon-header/map.png";
@@ -16,12 +22,34 @@ export const HeaderSectionWrapper = styled.div`
   width: 960px;
   margin: 0 auto;
   padding-top: 20px;
+  @media ${TABLET_1024} {
+    width: 100%;
+  }
+`;
+
+export const HeaderContactWrapper = styled.div`
+  display: flex;
+  @media ${MOBILE_560} {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 export const HeaderSectionGetsite = styled.div`
   position: absolute;
   left: 411px;
   top: 34px;
+  @media ${TABLET_959} {
+    left: 20px;
+  }
+  @media ${MOBILE_560} {
+    position: initial;
+    margin-top: 18px;
+  }
 `;
 
 export const HeaderSectionConteiner = styled.div`
@@ -49,6 +77,12 @@ export const HeaderSectionContacts = styled.div`
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
   color: #fff;
   right: 0px;
+  @media ${TABLET_1024} {
+    right: 20px;
+  }
+  @media ${MOBILE_560} {
+    position: initial;
+  }
 `;
 
 export const Phones = styled.div`
@@ -84,10 +118,20 @@ export const Skype = styled(Phones)``;
 
 export const HeaderSectionFon = styled.div`
   position: relitive;
+  @media ${TABLET_959} {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const IconComp = styled.div`
-  background: url(${myIconComp}) no-repeat;
+  background: url(${myIconComp}) 100% 100% no-repeat;
   display: flex;
   width: 697px;
   height: 321px;
@@ -95,6 +139,13 @@ export const IconComp = styled.div`
   bottom: 0px;
   left: 115px;
   z-index: 10;
+  @media ${TABLET_959} {
+    position: initial;
+  }
+  @media ${MOBILE_660} {
+    width: 100%;
+    background-size: 100%;
+  }
 `;
 
 export const IconMap = styled.div`
@@ -115,6 +166,12 @@ export const IconBook = styled.div`
   position: absolute;
   top: 203px;
   right: 0px;
+  @media ${TABLET_1024} {
+    right: 20px;
+  }
+  @media ${TABLET_959} {
+    display: none;
+  }
 `;
 
 export const IconPicture = styled.div`
@@ -146,6 +203,12 @@ export const IconDay = styled.div`
   top: 45px;
   left: 0px;
   overflow: hidden;
+  @media ${TABLET_1024} {
+    left: 20px;
+  }
+  @media ${TABLET_959} {
+    display: none;
+  }
 `;
 
 export const IconSun = styled.div`

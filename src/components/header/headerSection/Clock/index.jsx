@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { ClockWrapper, Hour, Min, Sec } from './style';
+import { ClockWrapper, Hour, Min, Sec } from "./style";
 
 const Clock = () => {
   const [hour, setHour] = useState(0);
