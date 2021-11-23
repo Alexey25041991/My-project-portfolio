@@ -46,11 +46,13 @@ const OrderSite = () => {
             техническое задание, сроки, условия оплаты и отвечу на все
             интересующие Вас вопросы.
           </OrderSiteText>
-          <div onClick={() => setOpened(!opened)}>
-            <Button title="Заказать сайт" toOrder>
-              <OrderSiteIcon />
-            </Button>
-          </div>
+          <Button
+            title="Заказать сайт"
+            toOrder
+            handleClick={() => setOpened(!opened)}
+          >
+            <OrderSiteIcon />
+          </Button>
         </OrderSiteCustom>
       </PageConteiner>
     </PageWrapper>

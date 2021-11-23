@@ -53,11 +53,13 @@ const HeaderSection = () => {
       <HeaderContactWrapper>
         <HeaderSectionGetsite>
           <HeaderSectionConteiner>
-            <div onClick={() => setOpened(!opened)}>
-              <Button title="Заказать сайт" toOrderHeader>
-                <RocketGetsiteIcon />
-              </Button>
-            </div>
+            <Button
+              title="Заказать сайт"
+              toOrderHeader
+              handleClick={() => setOpened(!opened)}
+            >
+              <RocketGetsiteIcon />
+            </Button>
             <Modal opened={opened} onRequestClose={() => setOpened(false)} />
             <HeaderSectionLabel>
               Заполните форму заказа, <br />и я свяжусь с Вами

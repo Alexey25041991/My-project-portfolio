@@ -38,11 +38,13 @@ const Footer = () => {
         <FooterCustom>
           <HeaderTopWrapper>
             <LogoLook />
-            <div onClick={() => setOpened(!opened)}>
-              <Button title="Заказать сайт" toOrder>
-                <OrderSiteIcon />
-              </Button>
-            </div>
+            <Button
+              title="Заказать сайт"
+              toOrder
+              handleClick={() => setOpened(!opened)}
+            >
+              <OrderSiteIcon />
+            </Button>
           </HeaderTopWrapper>
           <FooterValue>
             <Ul>

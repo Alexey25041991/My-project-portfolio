@@ -46,9 +46,13 @@ const Label = styled.div`
   margin-top: 5px;
 `;
 
-const Button = ({ children, title, toOrder, toOrderHeader }) => {
+const Button = ({ children, title, toOrder, toOrderHeader, handleClick }) => {
   return (
-    <ButtonWrapper toOrder={toOrder} toOrderHeader={toOrderHeader}>
+    <ButtonWrapper
+      toOrder={toOrder}
+      toOrderHeader={toOrderHeader}
+      onClick={handleClick}
+    >
       {children}
       {title && <Label>{title}</Label>}
     </ButtonWrapper>

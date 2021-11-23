@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Logo,
@@ -6,14 +6,14 @@ import {
   LogoCoder,
   LogoCoderLabel,
   LogoCoderText,
-} from './style';
+} from "./style";
 
 const LogoLook = () => (
   <Logo>
-    <LogoSign> {`${'< / >'}`} </LogoSign>
+    <LogoSign> {`${"< / >"}`} </LogoSign>
     <LogoCoder>
       <LogoCoderLabel>it-web-master</LogoCoderLabel>
-      <LogoCoderText>Портфолио веб-разработчика</LogoCoderText>
+      <LogoCoderText>Портфолио разработчика</LogoCoderText>
     </LogoCoder>
   </Logo>
 );

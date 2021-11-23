@@ -22,13 +22,19 @@ export const HeaderSectionWrapper = styled.div`
   width: 960px;
   margin: 0 auto;
   padding-top: 20px;
+
   @media ${TABLET_1024} {
     width: 100%;
+  }
+
+  @media ${MOBILE_660} {
+    padding-top: 100px;
   }
 `;
 
 export const HeaderContactWrapper = styled.div`
   display: flex;
+
   @media ${MOBILE_560} {
     flex-direction: column-reverse;
     justify-content: center;
@@ -43,9 +49,15 @@ export const HeaderSectionGetsite = styled.div`
   position: absolute;
   left: 411px;
   top: 34px;
+
   @media ${TABLET_959} {
     left: 20px;
   }
+
+  @media ${MOBILE_660} {
+    top: 100px;
+  }
+
   @media ${MOBILE_560} {
     position: initial;
     margin-top: 18px;
@@ -77,9 +89,15 @@ export const HeaderSectionContacts = styled.div`
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
   color: #fff;
   right: 0px;
+
   @media ${TABLET_1024} {
     right: 20px;
   }
+
+  @media ${MOBILE_660} {
+    top: 100px;
+  }
+
   @media ${MOBILE_560} {
     position: initial;
   }
@@ -118,6 +136,7 @@ export const Skype = styled(Phones)``;
 
 export const HeaderSectionFon = styled.div`
   position: relitive;
+
   @media ${TABLET_959} {
     display: flex;
     width: 100%;
@@ -139,9 +158,11 @@ export const IconComp = styled.div`
   bottom: 0px;
   left: 115px;
   z-index: 10;
+
   @media ${TABLET_959} {
     position: initial;
   }
+
   @media ${MOBILE_660} {
     width: 100%;
     background-size: 100%;
@@ -166,9 +187,11 @@ export const IconBook = styled.div`
   position: absolute;
   top: 203px;
   right: 0px;
+
   @media ${TABLET_1024} {
     right: 20px;
   }
+
   @media ${TABLET_959} {
     display: none;
   }
@@ -203,9 +226,11 @@ export const IconDay = styled.div`
   top: 45px;
   left: 0px;
   overflow: hidden;
+
   @media ${TABLET_1024} {
     left: 20px;
   }
+
   @media ${TABLET_959} {
     display: none;
   }

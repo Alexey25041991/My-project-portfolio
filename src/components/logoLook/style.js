@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MOBILE_660, MOBILE_480 } from "../common/media";
 
 export const Logo = styled.div`
   display: flex;
@@ -6,6 +7,14 @@ export const Logo = styled.div`
   align-items: center;
   vertical-align: top;
   padding-top: 12px;
+
+  @media ${MOBILE_660} {
+    padding: 10px 20px;
+  }
+
+  @media ${MOBILE_480} {
+    padding-left: 0;
+  }
 `;
 
 export const LogoSign = styled.div`
@@ -16,6 +25,11 @@ export const LogoSign = styled.div`
   font-weight: 800;
   margin-right: 14px;
   white-space: nowrap;
+  @media ${MOBILE_480} {
+    line-height: 24px;
+    font-size: 19px;
+    margin-right: 8px;
+  }
 `;
 
 export const LogoCoder = styled.div`
@@ -37,4 +51,5 @@ export const LogoCoderText = styled.div`
   padding-top: 4px;
   display: block;
   font-family: "Exo 2", sans-serif;
+  white-space: nowrap;
 `;

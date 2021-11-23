@@ -1,5 +1,18 @@
 import styled from "styled-components";
-import { TABLET_1024 } from "../../common/media";
+import { TABLET_1024, MOBILE_660 } from "../../common/media";
+
+export const Overlay = styled.div`
+  ${({ opened }) => (opened ? "" : "display: none;")};
+  position: fixed;
+  top: 0;
+  left: 0;
+  inset: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease 0s;
+  background: rgba(0, 0, 0, 0.4);
+`;
 
 export const HeaderTopWrapper = styled.div`
   display: flex;
@@ -7,16 +20,42 @@ export const HeaderTopWrapper = styled.div`
   height: 74px;
   width: 960px;
   margin: 0 auto;
+  position: relative;
+
   @media ${TABLET_1024} {
     flex-direction: column;
     height: auto;
     width: 100%;
     align-items: center;
   }
+
+  @media ${MOBILE_660} {
+    position: fixed;
+    z-index: 20;
+    background-color: #2b3037;
+  }
 `;
 
 export const HeaderMenu = styled.div`
   padding-top: 10px;
+  position: relative;
+  @media ${MOBILE_660} {
+    display: ${({ opened = false }) => (opened ? "flex" : "none")};
+    width: 100%;
+    z-index: 20;
+    background-color: #464a53;
+    padding-top: 0;
+  }
+`;
+
+export const MenuWrapper = styled.div`
+  @media ${MOBILE_660} {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    background-color: #464a53;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -24,6 +63,11 @@ export const Ul = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+
+  @media ${MOBILE_660} {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const Li = styled.li`
@@ -45,6 +89,14 @@ export const Li = styled.li`
     bottom: 0px;
     background: #ff8560;
   }
+
+  @media ${MOBILE_660} {
+    margin-bottom: 0;
+    border-bottom: 2px solid #fff;
+    & :hover:before {
+      display: none;
+    }
+  }
 `;
 
 export const Link = styled.a`
@@ -54,6 +106,11 @@ export const Link = styled.a`
   align-items: center;
   padding: 5px 8px;
   color: palevioletred;
+
+  @media ${MOBILE_660} {
+    flex-direction: row;
+    padding: 10px 20px;
+  }
 `;
 
 export const Label = styled.span`
@@ -69,4 +126,9 @@ export const Label = styled.span`
   text-transform: uppercase;
   margin-top: 10px;
   white-space: nowrap;
+
+  @media ${MOBILE_660} {
+    margin-top: 0;
+    padding-left: 10px;
+  }
 `;

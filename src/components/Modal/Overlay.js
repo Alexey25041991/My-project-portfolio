@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Overlay = styled.div`
-  ${({ opened }) => (opened ? '' : 'display: none;')};
+  ${({ opened }) => (opened ? "" : "display: none;")};
   position: fixed;
   top: 0;
   left: 0;
@@ -10,5 +10,5 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   transition: opacity 0.3s ease 0s;
-  background: rgba(0, 0, 0, 0.4); ;
+  background: rgba(0, 0, 0, 0.4);
 `;
