@@ -164,8 +164,9 @@ export const IconComp = styled.div`
   }
 
   @media ${MOBILE_660} {
-    width: 100%;
+    width: 94%;
     background-size: 100%;
+    z-index: 0;
   }
 `;
 

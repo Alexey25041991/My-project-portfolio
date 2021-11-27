@@ -1,15 +1,17 @@
 import styled from "styled-components";
+import { TABLET_959 } from "../../common/media";
 
 import myIconWebdev from "../../common/icon/webdev.png";
 
 export const PersonalHeaderCustom = styled.h4`
   color: #2b2a29;
   font-size: 20px;
+  line-height: 26px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 11px;
-  margin-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 16px;
 `;
 
 export const PersonalCustom = styled.div`
@@ -20,7 +22,8 @@ export const PersonalCustom = styled.div`
 `;
 
 export const PersonalText = styled.div`
-  margin-top: 17px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #000;
   font-size: 14px;
   line-height: 20px;
@@ -32,4 +35,11 @@ export const PersonalSection = styled.div`
   background: url(${myIconWebdev}) right top no-repeat;
   padding-right: 485px;
   padding-bottom: 10px;
+
+  @media ${TABLET_959} {
+    background: url(${myIconWebdev}) center top no-repeat;
+    padding-right: 0;
+    padding-top: 189px;
+    background-size: 294px;
+  }
 `;

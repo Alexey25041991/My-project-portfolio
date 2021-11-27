@@ -10,6 +10,7 @@ import {
   ResumeSkillsProgres,
   ResumeSkillsValue,
   ResumeOptionsWrapper,
+  ResumeStatusWrapper,
   Avatar,
 } from "./style.js";
 
@@ -42,7 +43,7 @@ const Resume = () => (
       </HeaderTitle>
       <ResumeCustom>
         <ResumeOptionsWrapper>
-          <div>
+          <ResumeStatusWrapper>
             <ResumeOptions>
               <ResumeStatus>Статус:</ResumeStatus>
               <ResumeValue>Веб-разработчик</ResumeValue>
@@ -55,7 +56,7 @@ const Resume = () => (
               <ResumeStatus>СПЕЦИАЛИЗАЦИЯ:</ResumeStatus>
               <ResumeValue>Программирование, разработка.</ResumeValue>
             </ResumeOptions>
-          </div>
+          </ResumeStatusWrapper>
           <Avatar />
         </ResumeOptionsWrapper>
         <ResumeOptions>

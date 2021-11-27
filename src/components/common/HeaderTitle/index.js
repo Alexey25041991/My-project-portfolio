@@ -10,6 +10,7 @@ const HeaderWrapper = styled.h1`
 const HeaderLabel = styled.div`
   color: ${({ dark }) => (dark ? "white" : "#2b2a29")};
   font-size: 30px;
+  line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;

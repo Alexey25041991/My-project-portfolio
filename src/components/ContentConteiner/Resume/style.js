@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TABLET_959, MOBILE_660 } from "../../common/media";
 
 import myMainIcon from "../../common/icon/MainIcon.png";
 
@@ -9,11 +10,42 @@ export const Avatar = styled.div`
   border-radius: 50%;
   position: absolute;
   right: 140px;
+
+  @media ${TABLET_959} {
+    position: relative;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  @media ${MOBILE_660} {
+    margin: 0 auto;
+  }
 `;
 
 export const ResumeOptionsWrapper = styled.div`
   display: flex;
   position: relative;
+
+  @media ${TABLET_959} {
+    justify-content: center;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  @media ${MOBILE_660} {
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+`;
+
+export const ResumeStatusWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media ${MOBILE_660} {
+    width: 100%;
+  }
 `;
 
 export const ResumeCustom = styled.div`
@@ -25,7 +57,14 @@ export const ResumeCustom = styled.div`
 
 export const ResumeOptions = styled.div`
   display: flex;
+  margin: 0 auto;
   margin-top: 20px;
+  width: 100%;
+
+  @media ${TABLET_959} {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const ResumeStatus = styled.div`
@@ -40,6 +79,15 @@ export const ResumeStatus = styled.div`
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media ${TABLET_959} {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  @media ${MOBILE_660} {
+    width: 100%;
+  }
 `;
 
 export const ResumeValue = styled.div`
@@ -51,6 +99,15 @@ export const ResumeValue = styled.div`
   color: white;
   font-size: 14px;
   font-weight: 400;
+
+  @media ${TABLET_959} {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  @media ${MOBILE_660} {
+    width: 100%;
+  }
 `;
 
 export const ResumeSkills = styled.div`
@@ -61,6 +118,15 @@ export const ResumeSkills = styled.div`
   width: 400px;
   margin-bottom: 20px;
   margin-top: -15px;
+
+  @media ${TABLET_959} {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  @media ${MOBILE_660} {
+    width: 100%;
+  }
 `;
 
 export const ResumeSkillsLabel = styled.div`

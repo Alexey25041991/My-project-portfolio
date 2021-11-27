@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TABLET_959 } from "../../common/media";
 
 export const AdvantagesCustom = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ export const AdvantagesCustom = styled.div`
 export const Ul = styled.ul`
   display: flex;
   align-content: center;
+  justify-content: center;
   flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
@@ -22,6 +24,16 @@ export const Li = styled.li`
   width: 296px;
   margin-right: 17px;
   margin-top: 40px;
+
+  @media ${TABLET_959} {
+    flex-direction: column;
+    width: 235px;
+    text-align: center;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+  }
 `;
 
 export const Span = styled.div`
@@ -38,6 +50,10 @@ export const Link = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+
+  @media ${TABLET_959} {
+    margin-top: 12px;
+  }
 `;
 
 export const LabelTitle = styled.div`
@@ -49,7 +65,7 @@ export const LabelTitle = styled.div`
 `;
 
 export const LabelText = styled.div`
-  margin-top: 7px;
+  margin-top: 12px;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;
   font-size: 14px;
