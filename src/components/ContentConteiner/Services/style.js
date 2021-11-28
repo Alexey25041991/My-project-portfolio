@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TABLET_959 } from "../../common/media";
 
 import myIconService from "../../common/icon/service.png";
 
@@ -22,4 +23,11 @@ export const ServicesSection = styled.div`
   flex-direction: column;
   background: url(${myIconService}) right top no-repeat;
   padding-right: 485px;
+
+  @media ${TABLET_959} {
+    background: url(${myIconService}) center top no-repeat;
+    padding-right: 0;
+    padding-top: 128px;
+    background-size: 294px;
+  }
 `;

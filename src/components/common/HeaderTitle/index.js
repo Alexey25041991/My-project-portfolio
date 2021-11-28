@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import { MOBILE_660 } from "../../common/media";
 
 const HeaderWrapper = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+
+  @media ${MOBILE_660} {
+    flex-direction: column;
+  }
 `;
 
 const HeaderLabel = styled.div`
@@ -15,12 +20,19 @@ const HeaderLabel = styled.div`
   text-transform: uppercase;
   text-align: center;
   margin-left: 12px;
+
+  @media ${MOBILE_660} {
+    margin-left: 0;
+    margin-top: 12px;
+    font-size: 26px;
+    line-height: 30px;
+  }
 `;
 
 const HeaderTitle = ({ children, title, dark }) => {
   return (
     <HeaderWrapper>
-      {children}
+      <div>{children}</div>
       {title && <HeaderLabel dark={dark}>{title}</HeaderLabel>}
     </HeaderWrapper>
   );

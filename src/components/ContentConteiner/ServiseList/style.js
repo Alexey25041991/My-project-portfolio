@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MOBILE_660 } from "../../common/media";
 
 import myIconLinet from "../../common/icon/linet.png";
 import myIconLinem from "../../common/icon/linem.png";
@@ -17,6 +18,10 @@ export const ServiseListOptions = styled.div`
   display: flex;
   vertical-align: top;
   width: 450px;
+
+  @media ${MOBILE_660} {
+    width: 100%;
+  }
 `;
 
 export const Ul = styled.ul`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MOBILE_660 } from "../../common/media";
 
 export const OrderSiteLabel = styled.div`
   font-size: 30px;
@@ -7,6 +8,12 @@ export const OrderSiteLabel = styled.div`
   text-align: center;
   color: #fff;
   margin-left: 12px;
+  line-height: 36px;
+
+  @media ${MOBILE_660} {
+    font-size: 26px;
+    line-height: 30px;
+  }
 `;
 
 export const OrderSiteCustom = styled.div`
@@ -18,7 +25,7 @@ export const OrderSiteCustom = styled.div`
 `;
 
 export const OrderSiteText = styled.p`
-  margin-top: 17px;
+  margin-top: 0;
   color: #fff;
   font-size: 14px;
   line-height: 20px;

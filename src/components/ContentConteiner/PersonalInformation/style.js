@@ -39,7 +39,7 @@ export const PersonalSection = styled.div`
   @media ${TABLET_959} {
     background: url(${myIconWebdev}) center top no-repeat;
     padding-right: 0;
-    padding-top: 189px;
+    padding-top: 170px;
     background-size: 294px;
   }
 `;
