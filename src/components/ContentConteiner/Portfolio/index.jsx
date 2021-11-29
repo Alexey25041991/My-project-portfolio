@@ -86,24 +86,32 @@ const getSlickList = (propsPortfolioList) =>
     </Li>
   ));
 
+const screenWidth = window.screen.width;
+
+const slidesToScreenWidth = (screenWidth) => {
+  if (screenWidth < 768) {
+    return 1;
+  }
+  if (768 <= screenWidth && screenWidth <= 1024) {
+    return 2;
+  }
+  return 3;
+};
+
 const slidesToShowValue =
   propsPortfolioList?.length < 3 ? propsPortfolioList.length : 3;
 
 const centerModeValue = propsPortfolioList?.length < 3;
 
 const centerPaddingValue = (slidesToShowValue) => {
-  switch (slidesToShowValue) {
-    case 1:
-      return 330;
-    case 2:
-      return 160;
-    default:
-  }
+  if (slidesToShowValue === 1) return 330;
+  if (slidesToShowValue === 2) return 160;
+  return 0;
 };
 
 const settings = {
   initialSlide: 0,
-  slidesToShow: slidesToShowValue,
+  slidesToShow: slidesToScreenWidth(screenWidth),
   virtualList: true,
   className: "styleSlider",
   dots: true,

@@ -1,3 +1,14 @@
+@media screen and (max-width: 1023px) {
+  .styleSlider {
+    width: 100% !important;
+  }
+
+  .styleSlider > div > div > div {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .styleSlider {
   width: 960px;
 }

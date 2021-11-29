@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TABLET_1024, TABLET_768, MOBILE_660 } from "../../common/media";
 
 import myIconStl from "../../common/icon/stl.png";
 import myIconStlh from "../../common/icon/stlh.png";
@@ -24,6 +25,10 @@ export const Ul = styled.ul`
   width: 960px;
   margin: 0 auto;
   position: relative;
+
+  @media ${TABLET_1024} {
+    width: 100%;
+  }
 `;
 
 export const Li = styled.li`
@@ -32,6 +37,11 @@ export const Li = styled.li`
   width: 322px !important;
   text-align: center;
   margin-left: -8px;
+
+  @media ${TABLET_768} {
+    width: 100% important;
+    justify-content: center;
+  }
 `;
 
 export const ButtonL = styled.button`
@@ -46,6 +56,10 @@ export const ButtonL = styled.button`
   cursor: pointer;
   &:hover {
     background: url(${myIconStlh}) no-repeat;
+  }
+
+  @media ${TABLET_1024} {
+    left: 0;
   }
 `;
 
@@ -62,6 +76,10 @@ export const ButtonR = styled.button`
   &:hover {
     background: url(${myIconStrh}) no-repeat;
   }
+
+  @media ${TABLET_1024} {
+    right: 0;
+  }
 `;
 
 export const SlickList = styled.div`
@@ -69,6 +87,14 @@ export const SlickList = styled.div`
   overflow: hidden;
   position: relative;
   padding: 0;
+
+  @media ${TABLET_1024} {
+    width: 100%;
+  }
+
+  @media ${MOBILE_660} {
+    margin: 0px 17px !important;
+  }
 `;
 
 export const SlickTrack = styled.div`
@@ -77,6 +103,11 @@ export const SlickTrack = styled.div`
   margin-left: -13px;
   position: relative;
   top: 0;
+
+  @media ${TABLET_1024} {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 export const PortfolioImg = styled.div`
