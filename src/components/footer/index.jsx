@@ -15,6 +15,7 @@ import {
   HeaderLogCoderText,
   FooterValueIt,
   FooterHh,
+  ButtonWrapper,
 } from "./style.js";
 
 import { ReactComponent as FooterСlockIcon } from "../common/icon/TermIcon.svg";
@@ -38,13 +39,15 @@ const Footer = () => {
         <FooterCustom>
           <HeaderTopWrapper>
             <LogoLook />
-            <Button
-              title="Заказать сайт"
-              toOrder
-              handleClick={() => setOpened(!opened)}
-            >
-              <OrderSiteIcon />
-            </Button>
+            <ButtonWrapper>
+              <Button
+                title="Заказать сайт"
+                toOrder
+                handleClick={() => setOpened(!opened)}
+              >
+                <OrderSiteIcon />
+              </Button>
+            </ButtonWrapper>
           </HeaderTopWrapper>
           <FooterValue>
             <Ul>

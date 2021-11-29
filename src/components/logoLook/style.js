@@ -10,6 +10,7 @@ export const Logo = styled.div`
 
   @media ${MOBILE_660} {
     padding: 10px 20px;
+    justify-content: center;
   }
 
   @media ${MOBILE_480} {

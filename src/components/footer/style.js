@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TABLET_959, MOBILE_660 } from "../common/media";
 
 export const FooterCustom = styled.div`
   display: flex;
@@ -30,6 +31,14 @@ export const LabelText = styled.span`
   margin-top: 10px;
 `;
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+
+  @media ${MOBILE_660} {
+    justify-content: center;
+  }
+`;
+
 export const Label = styled(LabelText)`
   text-transform: uppercase;
 `;
@@ -40,6 +49,10 @@ export const Ul = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+
+  @media ${MOBILE_660} {
+    flex-direction: column;
+  }
 `;
 
 export const Li = styled.li`
@@ -57,6 +70,10 @@ export const FooterValue = styled.div`
   padding: 35px 25px;
   border-bottom: 1px solid #ffff;
   padding-bottom: 25px;
+
+  @media ${TABLET_959} {
+    width: 100%;
+  }
 `;
 
 export const HeaderTopWrapper = styled.div`
@@ -67,6 +84,15 @@ export const HeaderTopWrapper = styled.div`
   margin: 0 auto;
   border-bottom: 1px solid #ffff;
   padding-bottom: 25px;
+
+  @media ${TABLET_959} {
+    width: 100%;
+  }
+
+  @media ${MOBILE_660} {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 export const HeaderLogCoderText = styled.div`

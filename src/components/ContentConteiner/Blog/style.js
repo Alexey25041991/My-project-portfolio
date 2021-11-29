@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MOBILE_660 } from "../../common/media";
 
 export const BlogCustom = styled.div`
   display: flex;
@@ -17,6 +18,10 @@ export const MyBlogSection = styled.div`
   position: relative;
   border-bottom: 3px solid #707980;
   padding-bottom: 15px;
+
+  @media ${MOBILE_660} {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const MyBlog = styled.div`
@@ -25,6 +30,10 @@ export const MyBlog = styled.div`
   text-align: center;
   width: 298px;
   margin-right: 40px;
+
+  @media ${MOBILE_660} {
+    margin-right: 0;
+  }
 `;
 
 export const BlogCat = styled.div`
