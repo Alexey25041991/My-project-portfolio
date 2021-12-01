@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { TABLET_959 } from "../common/media";
 
-import { PADDING } from './constants';
+import { PADDING } from "./constants";
 
 export const ContentText = styled.div`
   white-space: pre-wrap;
@@ -12,4 +13,8 @@ export const ContentText = styled.div`
   font-weight: 400;
   line-height: 24px;
   width: 100%;
+
+  @media ${TABLET_959} {
+    padding: 8px 0;
+  }
 `;

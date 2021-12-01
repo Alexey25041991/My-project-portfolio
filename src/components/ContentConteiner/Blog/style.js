@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MOBILE_660 } from "../../common/media";
+import { MOBILE_660, MOBILE_480 } from "../../common/media";
 
 export const BlogCustom = styled.div`
   display: flex;
@@ -34,6 +34,10 @@ export const MyBlog = styled.div`
   @media ${MOBILE_660} {
     margin-right: 0;
   }
+
+  @media ${MOBILE_480} {
+    width: 100%;
+  }
 `;
 
 export const BlogCat = styled.div`
@@ -44,6 +48,10 @@ export const BlogCat = styled.div`
   height: 192px;
   overflow: hidden;
   position: relative;
+
+  @media ${MOBILE_480} {
+    width: 100%;
+  }
 `;
 
 export const BlogData = styled.div`

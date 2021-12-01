@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { MOBILE_560 } from "../common/media";
 
-import { HEADER_MARGIN_BOTTOM } from './constants';
+import { HEADER_MARGIN_BOTTOM } from "./constants";
 
 export const Header = styled.div`
   display: flex;
@@ -14,4 +15,9 @@ export const Header = styled.div`
   font-weight: 600;
   line-height: 24px;
   text-transform: uppercase;
+
+  @media ${MOBILE_560} {
+    flex-direction: column;
+    font-size: 16px;
+  }
 `;
