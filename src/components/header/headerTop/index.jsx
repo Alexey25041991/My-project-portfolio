@@ -16,9 +16,9 @@ import {
 
 import { propsHeaderTopMenu } from "../../common/constants";
 
-const HeaderMenuLi = (propsHeaderTopMenu) =>
+const HeaderMenuLi = (propsHeaderTopMenu, setOpened) =>
   propsHeaderTopMenu.map((item) => (
-    <Li key={item.id}>
+    <Li key={item.id} onClick={() => setOpened(false)}>
       <Link href={`${"/#" + item.value}`}>
         {item.icon}
         <Label style={{ pointerEvents: "none" }}>{item.label}</Label>
@@ -48,7 +48,7 @@ const HeaderTop = () => {
           <LogoLook />
         </MenuWrapper>
         <HeaderMenu opened={opened}>
-          <Ul>{HeaderMenuLi(propsHeaderTopMenu)}</Ul>
+          <Ul>{HeaderMenuLi(propsHeaderTopMenu, setOpened)}</Ul>
         </HeaderMenu>
       </HeaderTopWrapper>
     </>

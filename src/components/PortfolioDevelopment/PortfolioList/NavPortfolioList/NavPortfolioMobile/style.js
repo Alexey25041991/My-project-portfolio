@@ -7,7 +7,7 @@ export const Overlay = styled.div`
   top: 0;
   left: 0;
   inset: 0px;
-  z-index: 10;
+  z-index: 21;
   width: 100%;
   height: 100%;
   transition: opacity 0.3s ease 0s;
@@ -24,7 +24,7 @@ export const HeaderTopWrapper = styled.div`
     width: 100%;
     align-items: center;
     position: fixed;
-    z-index: 20;
+    z-index: 22;
     background-color: #2b3037;
     bottom: 0;
     margin-left: -20px;

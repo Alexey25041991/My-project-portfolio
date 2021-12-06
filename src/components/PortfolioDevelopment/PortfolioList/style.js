@@ -22,6 +22,7 @@ export const Ul = styled.ul`
   position: relative;
 
   @media ${TABLET_959} {
+    justify-content: center;
     width: 100%;
   }
 `;

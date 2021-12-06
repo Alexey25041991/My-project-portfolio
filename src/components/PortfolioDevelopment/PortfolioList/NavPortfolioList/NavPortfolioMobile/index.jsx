@@ -14,16 +14,22 @@ import {
   MenuWrapper,
 } from "./style";
 
-const HeaderMenuLi = (propsButtonList, setPortfoliosValue) =>
-  propsButtonList.map((item) => (
-    <Li key={item.id} onClick={() => setPortfoliosValue(item?.value)}>
-      <Link>
-        <Label style={{ pointerEvents: "none" }}>
-          {item.portfolioButtonText}
-        </Label>
-      </Link>
-    </Li>
-  ));
+const HeaderMenuLi = (propsButtonList, setPortfoliosValue, setOpened) =>
+  propsButtonList.map((item) => {
+    const handleClick = (itemValue) => {
+      setPortfoliosValue(itemValue);
+      setOpened(false);
+    };
+    return (
+      <Li key={item.id} onClick={() => handleClick(item?.value)}>
+        <Link>
+          <Label style={{ pointerEvents: "none" }}>
+            {item.portfolioButtonText}
+          </Label>
+        </Link>
+      </Li>
+    );
+  });
 
 const NavPortfolioMobile = ({ propsButtonList, setPortfoliosValue }) => {
   const [opened, setOpened] = useState(false);
@@ -31,8 +37,8 @@ const NavPortfolioMobile = ({ propsButtonList, setPortfoliosValue }) => {
   const handleOverlayClick = (e) => {
     if (
       opened &&
-      e.target.closest("[data-close-border]") &&
-      !e.target.closest("[data-close-modal]")
+      e.target.closest("[data-close-border-portfolio]") &&
+      !e.target.closest("[data-close-modal-portfolio]")
     ) {
       setOpened(false);
     }
@@ -40,14 +46,20 @@ const NavPortfolioMobile = ({ propsButtonList, setPortfoliosValue }) => {
 
   return (
     <>
-      <Overlay data-close-border opened={opened} onClick={handleOverlayClick} />
-      <HeaderTopWrapper data-close-modal>
+      <Overlay
+        data-close-border-portfolio
+        opened={opened}
+        onClick={handleOverlayClick}
+      />
+      <HeaderTopWrapper data-close-modal-portfolio>
         <MenuWrapper>
           <HeaderLabel>Фильтр проектов</HeaderLabel>
           <MenuBurger opened={opened} handleClick={() => setOpened(!opened)} />
         </MenuWrapper>
         <HeaderMenu opened={opened}>
-          <Ul>{HeaderMenuLi(propsButtonList, setPortfoliosValue)}</Ul>
+          <Ul>
+            {HeaderMenuLi(propsButtonList, setPortfoliosValue, setOpened)}
+          </Ul>
         </HeaderMenu>
       </HeaderTopWrapper>
     </>
