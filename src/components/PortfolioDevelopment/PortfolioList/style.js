@@ -1,16 +1,8 @@
 import styled from "styled-components";
+import { TABLET_959 } from "../../common/media";
 
 import myIconBgport from "../../common/icon/bgport.png";
 import myIconBgportActiv from "../../common/icon/bgporth.png";
-
-export const PortfolioHeaderValue = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  margin-top: 30px;
-  margin-bottom: 30px;
-`;
 
 export const PortfolioCustom = styled.div`
   display: flex;
@@ -28,6 +20,10 @@ export const Ul = styled.ul`
   width: 960px;
   margin: 0 auto;
   position: relative;
+
+  @media ${TABLET_959} {
+    width: 100%;
+  }
 `;
 
 export const Li = styled.li`
@@ -37,45 +33,6 @@ export const Li = styled.li`
   text-align: center;
   margin-left: -8px;
   margin-bottom: 30px;
-`;
-
-export const PortfolioButtom = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  background-color: #2b3037;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
-  color: white;
-  font-family: "Exo 2", sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-decoration: none;
-  line-height: 40px;
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin: 0 20px;
-  &:hover {
-    background-color: #ff8560;
-  }
-`;
-
-export const PortfolioButtomText = styled.div`
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 15px;
-  color: white;
-  line-height: 17px;
-  font-size: 14px;
-  font-family: "Exo 2", sans-serif;
-  font-weight: 400;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
 `;
 
 export const SlickList = styled.div`
@@ -92,6 +49,10 @@ export const SlickTrack = styled.div`
   margin-left: -13px;
   position: relative;
   top: 0;
+
+  @media ${TABLET_959} {
+    justify-content: center;
+  }
 `;
 
 export const PortfolioImg = styled.div`

@@ -4,12 +4,9 @@ import { Link } from "react-router-dom";
 import PortfolioHeader from "../../PortfolioHeader";
 
 import {
-  PortfolioHeaderValue,
   PortfolioCustom,
   Ul,
   Li,
-  PortfolioButtom,
-  PortfolioButtomText,
   SlickList,
   SlickTrack,
   PortfolioImg,
@@ -37,6 +34,8 @@ import {
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 
+import NavPortfolioList from "./NavPortfolioList";
+
 const PortfolioListData = styled(Link)`
   display: flex;
   width: 285px;
@@ -54,17 +53,6 @@ const PortfolioListDataText = styled(Link)`
   overflow: hidden;
   text-decoration: none;
 `;
-
-const getButtonList = (propsButtonList, setPortfoliosValue) => {
-  return propsButtonList.map((item) => (
-    <PortfolioButtom
-      key={item.id}
-      onClick={() => setPortfoliosValue(item?.value)}
-    >
-      <PortfolioButtomText>{item.portfolioButtonText}</PortfolioButtomText>
-    </PortfolioButtom>
-  ));
-};
 
 const getSlickList = (propsPortfolioList, portfoliosValue) => {
   const filterPropsPortfolioList =
@@ -114,9 +102,10 @@ const PortfolioList = () => {
       <PortfolioHeader item={propsPortfolioListHome} portfolio />
       <PageWrapper>
         <PageConteiner>
-          <PortfolioHeaderValue>
-            {getButtonList(propsButtonList, setPortfoliosValue)}
-          </PortfolioHeaderValue>
+          <NavPortfolioList
+            propsButtonList={propsButtonList}
+            setPortfoliosValue={setPortfoliosValue}
+          />
           <PortfolioCustom>
             <Ul>
               <SlickList>
