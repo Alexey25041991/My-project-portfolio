@@ -19,6 +19,8 @@ export const PortfolioHeaderText = styled.div`
   color: #fff;
   font-size: 14px;
   line-height: 20px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const PortfolioHeaderBreadCrumbs = styled.div`
@@ -80,7 +82,7 @@ export const PortfolioGithub = styled.a`
   font-size: 14px;
   font-family: "Exo 2", sans-serif;
   margin-bottom: 12px;
-  line-height: 1;
+  line-height: 22px;
   cursor: pointer;
   & :hover {
     border-bottom: 1px dashed #fff;

@@ -28,7 +28,7 @@ const getSlickList = (item) => {
           {item?.hrefPortfolio}
         </PortfolioNameList>
 
-        <Projectwindow>
+        <Projectwindow href={item?.hrefPortfolio} target="_blank">
           <PortfolioImgUrl src={item.icon} width={"936px"} />
         </Projectwindow>
       </PortfolioImg>

@@ -87,7 +87,10 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
             </PortfolioDataText>
           </PortfolioDataTime>
           <PortfolioGithub href={item?.github} target="_blank">
-            {item?.github}
+            Ссылка на github: {item?.github}
+          </PortfolioGithub>
+          <PortfolioGithub href={item?.hrefPortfolio} target="_blank">
+            Ссылка на сайт: {item?.hrefPortfolio}
           </PortfolioGithub>
           <PortfolioText>{item?.portfolioText}</PortfolioText>
         </PortfolioHeaderText>
