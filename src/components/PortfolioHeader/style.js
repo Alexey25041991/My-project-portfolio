@@ -19,8 +19,10 @@ export const PortfolioHeaderBreadCrumbs = styled.div`
 
 export const BreadcrumbsText = styled.p`
   color: white;
-  font-size: 1.18rem;
   font-weight: 400;
+  margin-bottom: 4px;
+  line-height: 24px;
+  margin-top: 4px;
 `;
 
 export const PortfolioDataTitle = styled.span`
