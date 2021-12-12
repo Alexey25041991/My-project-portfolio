@@ -6,15 +6,14 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
 import {
-  PortfolioHeaderHeader,
   PortfolioHeaderText,
   PortfolioHeaderBreadCrumbs,
   BreadcrumbsText,
-  Label,
+  PortfolioDataTitle,
   PortfolioDataTime,
   PortfolioDataText,
-  PortfolioTechnologies,
-  PortfolioGithub,
+  PortfolioData,
+  PortfolioDataLink,
   PortfolioText,
 } from "./style";
 
@@ -22,6 +21,7 @@ import { ReactComponent as PortfolioTimeIcon } from "../common/icon/TimeIcon.svg
 
 import PageWrapper from "../common/PageWrapper";
 import PageConteiner from "../common/PageConteiner";
+import HeaderTitle from "../common/HeaderTitle";
 
 const LinkBreadcrumbs = styled(Link)`
   display: flex;
@@ -71,27 +71,44 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
         <PortfolioHeaderBreadCrumbs>
           {setPortfolioHeaderBreadCrumbs(item, portfolio)}
         </PortfolioHeaderBreadCrumbs>
-        <PortfolioHeaderHeader>
-          <Label>{item.portfolioNameList}</Label>
-        </PortfolioHeaderHeader>
+        <HeaderTitle dark title={item.portfolioNameList} />
         <PortfolioHeaderText>
-          <PortfolioDataTime>
-            {item.portfolioNameList !== dataTime && (
-              <PortfolioTimeIcon fill="#fff" />
-            )}
-            <PortfolioDataText>
-              {item?.portfolioDataTime}
-              <PortfolioTechnologies>
-                {item?.technologies?.join(" / ")}
-              </PortfolioTechnologies>
-            </PortfolioDataText>
-          </PortfolioDataTime>
-          <PortfolioGithub href={item?.github} target="_blank">
-            Ссылка на github: {item?.github}
-          </PortfolioGithub>
-          <PortfolioGithub href={item?.hrefPortfolio} target="_blank">
-            Ссылка на сайт: {item?.hrefPortfolio}
-          </PortfolioGithub>
+          {item?.technologies && (
+            <PortfolioData>
+              <PortfolioDataTitle>Дата создания:</PortfolioDataTitle>
+              <PortfolioDataText>
+                <PortfolioDataTime>
+                  {item.portfolioNameList !== dataTime && (
+                    <PortfolioTimeIcon fill="#fff" />
+                  )}
+                </PortfolioDataTime>
+                <span>{item?.portfolioDataTime}</span>
+              </PortfolioDataText>
+            </PortfolioData>
+          )}
+          {item?.technologies && (
+            <PortfolioData>
+              <PortfolioDataTitle>Технологии:</PortfolioDataTitle>
+              <span>{item?.technologies?.join(" / ")}</span>
+            </PortfolioData>
+          )}
+
+          {item?.github && (
+            <PortfolioData>
+              <PortfolioDataTitle>Ссылка на github:</PortfolioDataTitle>
+              <PortfolioDataLink href={item?.github} target="_blank">
+                {item?.github}
+              </PortfolioDataLink>
+            </PortfolioData>
+          )}
+          {item?.hrefPortfolio && (
+            <PortfolioData>
+              <PortfolioDataTitle>Ссылка на сайт:</PortfolioDataTitle>
+              <PortfolioDataLink href={item?.hrefPortfolio} target="_blank">
+                {item?.hrefPortfolio}
+              </PortfolioDataLink>
+            </PortfolioData>
+          )}
           <PortfolioText>{item?.portfolioText}</PortfolioText>
         </PortfolioHeaderText>
       </PageConteiner>
