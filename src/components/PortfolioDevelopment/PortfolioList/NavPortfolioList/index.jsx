@@ -1,7 +1,7 @@
 import React from "react";
 
 import NavPortfolioDecstop from "./NavPortfolioDecstop";
-import NavPortfolioMobile from "./NavPortfolioMobile";
+import NavPortfolioMobile from "../../../NavPortfolioMobile";
 
 const NavPortfolioList = ({ propsButtonList, setPortfoliosValue }) => {
   return (
@@ -13,6 +13,7 @@ const NavPortfolioList = ({ propsButtonList, setPortfoliosValue }) => {
       <NavPortfolioMobile
         propsButtonList={propsButtonList}
         setPortfoliosValue={setPortfoliosValue}
+        titleText="Фильтр проектов"
       />
     </>
   );

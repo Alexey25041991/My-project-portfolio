@@ -21,17 +21,27 @@ const HeaderMenuLi = (propsButtonList, setPortfoliosValue, setOpened) =>
       setOpened(false);
     };
     return (
-      <Li key={item.id} onClick={() => handleClick(item?.value)}>
-        <Link>
-          <Label style={{ pointerEvents: "none" }}>
-            {item.portfolioButtonText}
-          </Label>
-        </Link>
-      </Li>
+      <>
+        {item.id !== "JavaScript" && (
+          <Li key={item.id} onClick={() => handleClick(item?.value)}>
+            <Link>
+              <Label style={{ pointerEvents: "none" }}>
+                {item.portfolioButtonText}
+              </Label>
+            </Link>
+          </Li>
+        )}
+        {item.id === "JavaScript" &&
+          HeaderMenuLi(item.value, setPortfoliosValue, setOpened)}
+      </>
     );
   });
 
-const NavPortfolioMobile = ({ propsButtonList, setPortfoliosValue }) => {
+const NavPortfolioMobile = ({
+  propsButtonList,
+  setPortfoliosValue,
+  titleText,
+}) => {
   const [opened, setOpened] = useState(false);
 
   const handleOverlayClick = (e) => {
@@ -53,7 +63,7 @@ const NavPortfolioMobile = ({ propsButtonList, setPortfoliosValue }) => {
       />
       <HeaderTopWrapper data-close-modal-portfolio>
         <MenuWrapper>
-          <HeaderLabel>Фильтр проектов</HeaderLabel>
+          <HeaderLabel>{titleText}</HeaderLabel>
           <MenuBurger opened={opened} handleClick={() => setOpened(!opened)} />
         </MenuWrapper>
         <HeaderMenu opened={opened}>
