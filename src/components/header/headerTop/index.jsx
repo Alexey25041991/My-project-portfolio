@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import LogoLook from "../../LogoLook";
-import MenuBurger from "./MenuBurger";
+import MenuBurger from "../../MenuBurger";
 
 import {
   Overlay,
