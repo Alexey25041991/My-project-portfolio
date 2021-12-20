@@ -1,22 +1,5 @@
 import styled from "styled-components";
-
-export const PortfolioHeaderValueWrapper = styled.div`
-  width: 300px;
-`;
-
-export const PortfolioHeaderValue = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-  margin: 16px;
-  max-width: 100%;
-  width: 160px;
-  color: white;
-  position: ${({ handleScrollNav }) =>
-    handleScrollNav ? "fixed" : "relative"};
-  top: ${({ handleScrollNav }) => (handleScrollNav ? "0px" : "auto")};
-`;
+import { TABLET_959, MOBILE_660 } from "../../common/media";
 
 export const PortfolioCustom = styled.div`
   display: flex;
@@ -26,6 +9,14 @@ export const PortfolioCustom = styled.div`
   padding: 0;
   border-right: 1px solid #ddd;
   width: 760px;
+
+  @media ${TABLET_959} {
+    width: 100%;
+  }
+
+  @media ${MOBILE_660} {
+    border-right: none;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -36,6 +27,10 @@ export const Ul = styled.ul`
   width: 760px;
   margin: 0 auto;
   position: relative;
+
+  @media ${TABLET_959} {
+    width: 100%;
+  }
 `;
 
 export const Li = styled.li`
@@ -101,11 +96,21 @@ export const TextBlogHeader = styled.div`
   font-family: "Exo 2", sans-serif;
   margin-left: 20px;
   text-transform: uppercase;
+
+  @media ${MOBILE_660} {
+    text-align: center;
+  }
 `;
 
 export const TextBlogWrapper = styled.div`
   display: flex;
   margin: 20px 0;
+
+  @media ${TABLET_959} {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const PortfolioDataText = styled.div`
@@ -114,14 +119,6 @@ export const PortfolioDataText = styled.div`
   font-weight: 700;
   font-family: "Exo 2", sans-serif;
   margin-left: 5px;
-`;
-
-export const PortfolioTagText = styled.div`
-  margin-bottom: 20px;
-  color: #000000;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Exo 2", sans-serif;
 `;
 
 export const PortfolioDataTime = styled.div`

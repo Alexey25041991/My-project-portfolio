@@ -18,6 +18,5 @@ export const PersonalSection = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding-right: 485px;
   padding-bottom: 10px;
 `;

@@ -25,7 +25,7 @@ export const ModalComponent = styled.div`
   }
 
   @media ${MOBILE_660} {
-    max-height: calc(100vh - 160px);
+    max-height: calc(100vh - 220px);
   }
 `;
 
