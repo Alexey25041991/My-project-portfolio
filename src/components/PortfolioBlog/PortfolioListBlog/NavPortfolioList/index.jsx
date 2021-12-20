@@ -16,15 +16,15 @@ const HeaderLabel = styled.span`
   text-transform: uppercase;
 `;
 
-const NavPortfolioList = ({ propsButtonList, setPortfoliosValue }) => {
+const NavPortfolioList = ({ propsList, setPortfoliosValue }) => {
   return (
     <>
       <NavPortfolioDecstop
-        propsButtonList={propsButtonList}
+        propsList={propsList}
         setPortfoliosValue={setPortfoliosValue}
       />
       <NavPortfolioMobile
-        propsButtonList={propsButtonList}
+        propsList={propsList}
         setPortfoliosValue={setPortfoliosValue}
       >
         <HeaderLabel>Фильтр заметок</HeaderLabel>

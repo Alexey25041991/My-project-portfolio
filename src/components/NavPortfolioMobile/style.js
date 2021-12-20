@@ -26,9 +26,10 @@ export const HeaderTopWrapper = styled.div`
     position: fixed;
     z-index: 22;
     background-color: #2b3037;
-    bottom: 0;
-    margin-left: -20px;
-    flex-direction: column-reverse;
+    bottom: ${({ header }) => (header ? "auto" : 0)};
+    top: ${({ header }) => (header ? 0 : "auto")};
+    margin-left: ${({ header }) => (header ? 0 : "-20px")};
+    flex-direction: ${({ header }) => (header ? "column" : "column-reverse")};
   }
 `;
 
@@ -46,7 +47,9 @@ export const MenuWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border-top: 2px solid #fff;
+  border-top: ${({ header }) => (header ? "none" : "2px solid #fff")};
+  border-bottom: ${({ header }) => (header ? "2px solid #fff" : "none")};
+  flex-direction: ${({ header }) => (header ? "row-reverse" : "row")};
   background-color: #464a53;
 `;
 
@@ -80,7 +83,8 @@ export const Li = styled.li`
   }
 
   margin-bottom: 0;
-  border-top: 2px solid #fff;
+  border-top: ${({ header }) => (header ? "none" : "2px solid #fff")};
+  border-bottom: ${({ header }) => (header ? "2px solid #fff" : "none")};
   & :hover:before {
     display: none;
   }

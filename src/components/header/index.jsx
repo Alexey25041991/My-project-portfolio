@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import { HeaderWrapper } from './style';
+import { HeaderWrapper } from "./style";
 
-import HeaderTop from './HeaderTop';
-import HeaderSection from './HeaderSection';
+import NavHeaderTop from "./NavHeaderTop";
+import HeaderSection from "./HeaderSection";
+
+import { propsHeaderTopMenu } from "../common/constants";
 
 const HeaderConteiner = () => (
   <HeaderWrapper>
-    <HeaderTop />
+    <NavHeaderTop propsList={propsHeaderTopMenu} />
     <HeaderSection />
   </HeaderWrapper>
 );

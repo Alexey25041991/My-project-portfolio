@@ -13,13 +13,8 @@ import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
-const getButtonList = (
-  propsButtonList,
-  setPortfoliosValue,
-  handleClick,
-  open
-) => {
-  return propsButtonList.map((item) => (
+const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
+  return propsList.map((item) => (
     <List
       sx={{ width: "100%", maxWidth: 360, bgcolor: "inherit" }}
       component="nav"
@@ -102,7 +97,7 @@ const getButtonList = (
   ));
 };
 
-const NavPortfolioDecstop = ({ propsButtonList, setPortfoliosValue }) => {
+const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   const [handleScrollNav, setHandleScrollNav] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -133,7 +128,7 @@ const NavPortfolioDecstop = ({ propsButtonList, setPortfoliosValue }) => {
     <PortfolioHeaderValueWrapper>
       <PortfolioHeaderValue handleScrollNav={handleScrollNav}>
         <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
-        {getButtonList(propsButtonList, setPortfoliosValue, handleClick, open)}
+        {getButtonList(propsList, setPortfoliosValue, handleClick, open)}
       </PortfolioHeaderValue>
     </PortfolioHeaderValueWrapper>
   );

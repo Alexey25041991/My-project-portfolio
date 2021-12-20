@@ -13,8 +13,8 @@ import {
   MenuWrapper,
 } from "./style";
 
-const HeaderMenuLi = (propsButtonList, setPortfoliosValue, setOpened) =>
-  propsButtonList.map((item) => {
+const NavMenuLi = (propsList, setPortfoliosValue, setOpened, header) =>
+  propsList.map((item) => {
     const handleClick = (itemValue) => {
       setPortfoliosValue(itemValue);
       setOpened(false);
@@ -31,15 +31,26 @@ const HeaderMenuLi = (propsButtonList, setPortfoliosValue, setOpened) =>
           </Li>
         )}
         {item.id === "JavaScript" &&
-          HeaderMenuLi(item.value, setPortfoliosValue, setOpened)}
+          NavMenuLi(item.value, setPortfoliosValue, setOpened)}
       </>
     );
   });
 
+const HeaderMenuLi = (propsList, setOpened, header) =>
+  propsList.map((item) => (
+    <Li header={header} key={item.id} onClick={() => setOpened(false)}>
+      <Link href={`${"/#" + item.value}`}>
+        {item.icon}
+        <Label style={{ pointerEvents: "none" }}>{item.label}</Label>
+      </Link>
+    </Li>
+  ));
+
 const NavPortfolioMobile = ({
   children,
-  propsButtonList,
+  propsList,
   setPortfoliosValue,
+  header,
 }) => {
   const [opened, setOpened] = useState(false);
 
@@ -53,22 +64,29 @@ const NavPortfolioMobile = ({
     }
   };
 
+  const MenuLi = header
+    ? HeaderMenuLi(propsList, setOpened, header)
+    : NavMenuLi(propsList, setPortfoliosValue, setOpened);
+
   return (
     <>
       <Overlay data-close-border opened={opened} onClick={handleOverlayClick} />
-      <HeaderTopWrapper data-close-modal>
-        <MenuWrapper>
+      <HeaderTopWrapper data-close-modal header={header}>
+        <MenuWrapper header={header}>
           {children}
           <MenuBurger opened={opened} handleClick={() => setOpened(!opened)} />
         </MenuWrapper>
         <HeaderMenu opened={opened}>
-          <Ul>
-            {HeaderMenuLi(propsButtonList, setPortfoliosValue, setOpened)}
-          </Ul>
+          <Ul>{MenuLi}</Ul>
         </HeaderMenu>
       </HeaderTopWrapper>
     </>
   );
+};
+
+NavPortfolioMobile.defaultProps = {
+  setPortfoliosValue: () => {},
+  header: false,
 };
 
 export default NavPortfolioMobile;

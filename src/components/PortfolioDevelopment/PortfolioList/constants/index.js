@@ -1,4 +1,4 @@
-export const propsButtonList = [
+export const propsList = [
   {
     id: "1",
     portfolioButtonText: "Все",

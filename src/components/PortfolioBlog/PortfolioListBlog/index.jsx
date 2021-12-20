@@ -25,7 +25,7 @@ import "./index.css";
 
 import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
-import { propsButtonList } from "./constants";
+import { propsList } from "./constants";
 import {
   propsPortfolioListBlog,
   propsPortfolioBlogHome,
@@ -55,7 +55,7 @@ const PortfolioListDataText = styled(Link)`
 
 const getSlickList = (propsPortfolioList, portfoliosValue) => {
   const filterPropsPortfolioList =
-    portfoliosValue !== propsButtonList[0].value
+    portfoliosValue !== propsList[0].value
       ? propsPortfolioList.filter((item) =>
           item.technologies.includes(portfoliosValue)
         )
@@ -90,9 +90,7 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
   ));
 };
 const PortfolioListBlog = () => {
-  const [portfoliosValue, setPortfoliosValue] = useState(
-    propsButtonList[0].value
-  );
+  const [portfoliosValue, setPortfoliosValue] = useState(propsList[0].value);
 
   return (
     <>
@@ -109,7 +107,7 @@ const PortfolioListBlog = () => {
             </Ul>
           </PortfolioCustom>
           <NavPortfolioList
-            propsButtonList={propsButtonList}
+            propsList={propsList}
             setPortfoliosValue={setPortfoliosValue}
           />
         </PageConteiner>

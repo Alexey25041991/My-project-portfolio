@@ -6,10 +6,10 @@ import {
   PortfolioButtomText,
 } from "./style";
 
-const NavPortfolioDecstop = ({ propsButtonList, setPortfoliosValue }) => {
+const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   return (
     <PortfolioHeaderValue>
-      {propsButtonList.map((item) => (
+      {propsList.map((item) => (
         <PortfolioButtom
           key={item.id}
           onClick={() => setPortfoliosValue(item?.value)}
