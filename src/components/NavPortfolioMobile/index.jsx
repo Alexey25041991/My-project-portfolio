@@ -54,12 +54,8 @@ const NavPortfolioMobile = ({
 }) => {
   const [opened, setOpened] = useState(false);
 
-  const handleOverlayClick = (e) => {
-    if (
-      opened &&
-      e.target.closest("[data-close-border]") &&
-      !e.target.closest("[data-close-modal]")
-    ) {
+  const onBlur = (e) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
       setOpened(false);
     }
   };
@@ -68,16 +64,15 @@ const NavPortfolioMobile = ({
     ? HeaderMenuLi(propsList, setOpened, header)
     : NavMenuLi(propsList, setPortfoliosValue, setOpened);
 
-  const onBlur = (e) => {
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      setOpened(false);
-    }
-  };
-
   return (
     <>
-      <Overlay data-close-border opened={opened} onClick={handleOverlayClick} />
-      <HeaderTopWrapper data-close-modal header={header} onBlur={onBlur}>
+      <Overlay data-close-border opened={opened} />
+      <HeaderTopWrapper
+        data-close-modal
+        header={header}
+        onBlur={onBlur}
+        tabIndex={1}
+      >
         <MenuWrapper header={header}>
           {children}
           <MenuBurger opened={opened} handleClick={() => setOpened(!opened)} />
