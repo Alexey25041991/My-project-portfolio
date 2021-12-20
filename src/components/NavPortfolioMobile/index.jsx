@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import MenuBurger from "../MenuBurger";
 
@@ -59,6 +59,12 @@ const NavPortfolioMobile = ({
       setOpened(false);
     }
   };
+
+  useEffect(() => {
+    opened
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "");
+  }, [opened]);
 
   const MenuLi = header
     ? HeaderMenuLi(propsList, setOpened, header)
