@@ -13,7 +13,7 @@ import {
   MenuWrapper,
 } from "./style";
 
-const NavMenuLi = (propsList, setPortfoliosValue, setOpened, header) =>
+const NavMenuLi = (propsList, setPortfoliosValue, setOpened) =>
   propsList.map((item) => {
     const handleClick = (itemValue) => {
       setPortfoliosValue(itemValue);
