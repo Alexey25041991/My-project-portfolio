@@ -6,7 +6,6 @@ import {
   Overlay,
   HeaderTopWrapper,
   HeaderMenu,
-  HeaderLabel,
   Ul,
   Li,
   Link,
@@ -38,17 +37,17 @@ const HeaderMenuLi = (propsButtonList, setPortfoliosValue, setOpened) =>
   });
 
 const NavPortfolioMobile = ({
+  children,
   propsButtonList,
   setPortfoliosValue,
-  titleText,
 }) => {
   const [opened, setOpened] = useState(false);
 
   const handleOverlayClick = (e) => {
     if (
       opened &&
-      e.target.closest("[data-close-border-portfolio]") &&
-      !e.target.closest("[data-close-modal-portfolio]")
+      e.target.closest("[data-close-border]") &&
+      !e.target.closest("[data-close-modal]")
     ) {
       setOpened(false);
     }
@@ -56,14 +55,10 @@ const NavPortfolioMobile = ({
 
   return (
     <>
-      <Overlay
-        data-close-border-portfolio
-        opened={opened}
-        onClick={handleOverlayClick}
-      />
-      <HeaderTopWrapper data-close-modal-portfolio>
+      <Overlay data-close-border opened={opened} onClick={handleOverlayClick} />
+      <HeaderTopWrapper data-close-modal>
         <MenuWrapper>
-          <HeaderLabel>{titleText}</HeaderLabel>
+          {children}
           <MenuBurger opened={opened} handleClick={() => setOpened(!opened)} />
         </MenuWrapper>
         <HeaderMenu opened={opened}>

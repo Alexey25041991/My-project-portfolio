@@ -50,17 +50,6 @@ export const MenuWrapper = styled.div`
   background-color: #464a53;
 `;
 
-export const HeaderLabel = styled.span`
-  color: white;
-  font-family: "Exo 2", sans-serif;
-  font-weight: 800;
-  margin: 20px;
-  white-space: nowrap;
-  line-height: 24px;
-  font-size: 19px;
-  text-transform: uppercase;
-`;
-
 export const Ul = styled.ul`
   display: flex;
   list-style-type: none;
