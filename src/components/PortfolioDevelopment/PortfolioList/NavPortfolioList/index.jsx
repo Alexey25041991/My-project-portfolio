@@ -27,7 +27,7 @@ const NavPortfolioList = ({ propsList, setPortfoliosValue }) => {
         propsList={propsList}
         setPortfoliosValue={setPortfoliosValue}
       >
-        <HeaderLabel>Фильтр заметок</HeaderLabel>
+        <HeaderLabel>Фильтр проектов</HeaderLabel>
       </NavPortfolioMobile>
     </>
   );
