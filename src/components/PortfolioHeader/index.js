@@ -33,7 +33,7 @@ const LinkBreadcrumbs = styled(Link)`
     content: "";
     width: calc(100% + (1px * 2));
     height: 2px;
-    bottom: 15px;
+    bottom: 0;
     background: #fff;
   }
 `;
