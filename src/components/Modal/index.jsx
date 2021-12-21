@@ -20,18 +20,20 @@ import {
   Button,
 } from "@material-ui/core";
 
-import { ContentWrapper } from "./style";
+import {
+  ContentWrapper,
+  Overlay,
+  Header,
+  IconClose,
+  Content,
+  ContentAnimation,
+  Footer,
+  ModalComponent,
+  ModalSection,
+  ContentText,
+} from "./style";
 
 import { compact } from "lodash";
-
-import { Overlay } from "./Overlay";
-import { Header } from "./Header";
-import { IconClose } from "./IconClose";
-import { Content, ContentAnimation } from "./Content";
-import { Footer } from "./Footer";
-import { ModalComponent } from "./ModalComponent";
-import { ModalSection } from "./ModalSection";
-import { ContentText } from "./ContentText";
 
 import { ReactComponent as CloseOutline } from "../common/icon/CloseOutline.svg";
 import { ReactComponent as FooterMailIcon } from "../common/icon/MailDarkIcon.svg";
@@ -155,6 +157,12 @@ const Modal = ({ opened = false, onRequestClose }) => {
       handleClose(e);
     }
   };
+
+  useEffect(() => {
+    opened
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "");
+  }, [opened]);
 
   return (
     opened && (
