@@ -164,7 +164,6 @@ export const ModalSectionWrapper = styled.div`
   overflow-x: hidden;
   max-height: 84vh;
 
-  padding: 0 24px 0 24px;
   margin-bottom: 8px;
 
   /* Основная ширина полосы прокрутки. */
@@ -189,6 +188,10 @@ export const ModalSectionWrapper = styled.div`
   /* Размер бегунка при наведении на него курсора. */
   ::-webkit-scrollbar-thumb:hover {
     border: 4px solid #ffff;
+  }
+
+  @media ${TABLET_959} {
+    padding: 0 24px 0 24px;
   }
 
   @media ${MOBILE_660} {

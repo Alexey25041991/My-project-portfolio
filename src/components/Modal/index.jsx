@@ -88,7 +88,7 @@ const maskPhone = [
   /\d/,
 ];
 
-function TextMaskPhone(props) {
+const TextMaskPhone = React.forwardRef((props, ref) => {
   const { inputRef, ...other } = props;
   return (
     <MaskedInput
@@ -100,9 +100,9 @@ function TextMaskPhone(props) {
       showMask={false}
     />
   );
-}
+});
 
-function TextMaskEMail(props) {
+const TextMaskEMail = React.forwardRef((props, ref) => {
   const { inputRef, ...other } = props;
   return (
     <MaskedInput
@@ -114,7 +114,7 @@ function TextMaskEMail(props) {
       showMask={false}
     />
   );
-}
+});
 
 const Modal = ({ opened = false, onRequestClose }) => {
   const [valueName, setValueName] = useState("");
