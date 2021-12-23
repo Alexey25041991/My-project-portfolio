@@ -65,7 +65,7 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           {item.value.map((itemJS) => (
-            <Collapse in={open} timeout="auto" unmountOnExit>
+            <Collapse key={itemJS.id} in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
                 <ListItemButton
                   // sx={{ pl: 4 }}
