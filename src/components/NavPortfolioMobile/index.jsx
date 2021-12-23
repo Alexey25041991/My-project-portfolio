@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import MenuBurger from "../MenuBurger";
 
@@ -9,6 +9,7 @@ import {
   Ul,
   Li,
   Link,
+  Button,
   Label,
   MenuWrapper,
 } from "./style";
@@ -20,19 +21,19 @@ const NavMenuLi = (propsList, setPortfoliosValue, setOpened) =>
       setOpened(false);
     };
     return (
-      <>
+      <Fragment key={item.id}>
         {item.id !== "JavaScript" && (
           <Li key={item.id} onClick={() => handleClick(item?.value)}>
-            <Link>
+            <Button>
               <Label style={{ pointerEvents: "none" }}>
                 {item.portfolioButtonText}
               </Label>
-            </Link>
+            </Button>
           </Li>
         )}
         {item.id === "JavaScript" &&
           NavMenuLi(item.value, setPortfoliosValue, setOpened)}
-      </>
+      </Fragment>
     );
   });
 
