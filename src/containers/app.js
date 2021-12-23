@@ -29,6 +29,7 @@ const App = () => {
           <Route path={`/portfolio`} exact component={PortfolioList} />
           {propsPortfolioList.map((item) => (
             <Route
+              key={item.id}
               path={`/portfolio/${item.hrefNameList}`}
               exact
               render={() => <PortfolioValue key={item.id} item={item} />}
@@ -37,6 +38,7 @@ const App = () => {
           <Route path={`/blog`} exact component={PortfolioListBlog} />
           {propsPortfolioListBlog.map((item) => (
             <Route
+              key={item.id}
               path={`/blog/${item.hrefNameList}`}
               exact
               render={() => <PortfolioValueBlog key={item.id} item={item} />}

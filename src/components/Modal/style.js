@@ -11,10 +11,8 @@ import {
   BUTTONS_MARGIN_BETWEEN,
   BUTTONS_PADDING_BOTTOM,
   PADDING_RIGHT,
-  PADDING_LEFT,
   HEADER_MARGIN_BOTTOM,
   PADDING_TOP,
-  SCROLL_PADDING_RIGHT,
 } from "./constants";
 
 export const ContentWrapper = styled.div`
@@ -100,6 +98,8 @@ export const Header = styled.div`
   line-height: 24px;
   text-transform: uppercase;
 
+  padding: 20px 24px 0px 24px;
+
   @media ${MOBILE_560} {
     flex-direction: column;
     font-size: 16px;
@@ -112,13 +112,13 @@ export const IconClose = styled.div`
   align-items: center;
   position: absolute;
   top: ${PADDING_TOP};
-  right: calc(${PADDING_RIGHT} + ${SCROLL_PADDING_RIGHT});
+  right: calc(22px);
 
   &:hover {
     cursor: pointer;
   }
 
-  &:before {
+  &:hover:before {
     content: "";
     position: absolute;
     top: -6px;
@@ -126,11 +126,15 @@ export const IconClose = styled.div`
     bottom: -6px;
     right: -6px;
     border-radius: 50%;
-    background-color: transparent;
+    background-color: rgba(98, 108, 119, 0.25);
   }
 
   & svg {
     fill: #7b7e86;
+  }
+
+  &:hover svg {
+    fill: red;
   }
 `;
 
@@ -140,20 +144,51 @@ export const ModalComponent = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   outline: 0;
-  padding: ${PADDING_TOP} ${SCROLL_PADDING_RIGHT} 0px ${PADDING_LEFT};
 
-  width: 800px;
-  max-height: 84vh;
+  width: 824px;
   background-color: #ffffff;
   box-shadow: 0px 1.2px 18px rgba(0, 0, 0, 0.08),
     0px 6.4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
 
-  overflow-y: auto;
-  overflow-x: hidden;
-
   @media ${TABLET_959} {
     width: 84%;
+  }
+`;
+
+export const ModalSectionWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 84vh;
+
+  padding: 0 24px 0 24px;
+  margin-bottom: 8px;
+
+  /* Основная ширина полосы прокрутки. */
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  /* Цвет дорожки, по которой двигается бегунок прокрутки. */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+    background-clip: content-box;
+    /* opacity: 0;
+  background-color: transparent; */
+  }
+
+  /* Размер и цвет бегунка. */
+  ::-webkit-scrollbar-thumb {
+    background: #ff8560;
+    border: 6px solid #fff;
+    border-radius: 10px;
+  }
+  /* Размер бегунка при наведении на него курсора. */
+  ::-webkit-scrollbar-thumb:hover {
+    border: 4px solid #ffff;
   }
 
   @media ${MOBILE_660} {
