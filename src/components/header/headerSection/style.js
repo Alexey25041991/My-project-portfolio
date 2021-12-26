@@ -112,22 +112,76 @@ export const PhonesConteiner = styled(HeaderSectionConteiner)`
   margin-left: 10px;
 `;
 
-export const PhonesNumber = styled.span`
+export const PhonesNumber = styled.a`
+  display: flex;
+  align-items: center;
   color: white;
   font-size: 19px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 28px;
+  text-decoration: none;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
   font-family: "Exo 2", sans-serif;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + (1px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #fff;
+  }
 `;
 
-export const PhonesText = styled(PhonesNumber)``;
+export const PhonesTextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const PhonesTextDivide = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 28px;
+  text-decoration: none;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  font-family: "Exo 2", sans-serif;
+  margin-right: 4px;
+`;
+
+export const PhonesText = styled.a`
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 28px;
+  text-decoration: none;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  font-family: "Exo 2", sans-serif;
+  position: relative;
+  cursor: pointer;
+
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + (1px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #fff;
+  }
+`;
 
 export const Emails = styled(Phones)`
   margin-bottom: 7px;
 `;
 
-export const ContactsText = styled(PhonesNumber)`
+export const ContactsText = styled(PhonesText)`
   font-size: 15px;
   margin-left: 10px;
 `;
@@ -186,7 +240,7 @@ export const IconBook = styled.div`
   width: 212px;
   height: 96px;
   position: absolute;
-  top: 203px;
+  top: 220px;
   right: 0px;
 
   @media ${TABLET_1024} {

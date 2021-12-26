@@ -14,6 +14,7 @@ import {
   HeaderTopWrapper,
   HeaderLogCoderText,
   FooterValueIt,
+  HhWrapper,
   FooterHh,
   ButtonWrapper,
 } from "./style.js";
@@ -62,8 +63,10 @@ const Footer = () => {
                 <Link>
                   <FooterTelephoneIcon />
                   <Label>Телефон</Label>
-                  <LabelText>
-                    +7 (999) 812-19-75 <br />
+                  <LabelText href="tel:+79998121975">
+                    +7 (999) 812-19-75
+                  </LabelText>
+                  <LabelText href="tel:+79772700930">
                     +7 (977) 270-09-30
                   </LabelText>
                 </Link>
@@ -72,22 +75,27 @@ const Footer = () => {
                 <Link>
                   <FooterMailIcon />
                   <Label>E-mail</Label>
-                  <LabelText>mazurenko-alexey@mail.ru</LabelText>
+                  <LabelText href="mailto:mazurenko-alexey@mail.ru">
+                    mazurenko-alexey@mail.ru
+                  </LabelText>
                 </Link>
               </Li>
               <Li>
                 <Link>
                   <FooterSkypeIcon />
                   <Label>Skype</Label>
-                  <LabelText>aleks10_0</LabelText>
+                  <LabelText href="skype:aleks10_0?chat">aleks10_0</LabelText>
                 </Link>
               </Li>
               <Li>
-                <Link>
-                  <FooterHh href={`${"#"}`}>hh</FooterHh>
+                <HhWrapper
+                  href="https://odintsovo.hh.ru/resume/4aec3036ff03a8254c0039ed1f33756c4c7653"
+                  target="_blank"
+                >
+                  <FooterHh>hh</FooterHh>
                   <Label>HeadHunter</Label>
                   <LabelText>Мазуренко Алексей</LabelText>
-                </Link>
+                </HhWrapper>
               </Li>
             </Ul>
           </FooterValue>

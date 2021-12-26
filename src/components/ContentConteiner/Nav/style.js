@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MOBILE_660 } from "../../common/media";
+import { TABLET_1120 } from "../../common/media";
 
 export const NavWrapper = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ export const NavWrapper = styled.div`
   padding-top: 13px;
   z-index: 50;
 
-  @media ${MOBILE_660} {
+  @media ${TABLET_1120} {
     display: none;
   }
 `;

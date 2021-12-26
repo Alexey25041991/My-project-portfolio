@@ -18,17 +18,27 @@ export const Link = styled.div`
   color: palevioletred;
 `;
 
-export const LabelText = styled.span`
+export const LabelText = styled.a`
   display: flex;
   align-items: center;
   color: white;
-  line-height: 17px;
+  line-height: 24px;
   font-size: 14px;
   font-family: "Exo 2", sans-serif;
   font-weight: 400;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
+  position: relative;
+
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + (1px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #fff;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -39,8 +49,19 @@ export const ButtonWrapper = styled.div`
   }
 `;
 
-export const Label = styled(LabelText)`
+export const Label = styled.div`
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: white;
+  line-height: 17px;
+  font-size: 14px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  position: relative;
 `;
 
 export const Ul = styled.ul`
@@ -110,7 +131,16 @@ export const FooterValueIt = styled.div`
   padding: 35px 25px 0px 25px;
 `;
 
-export const FooterHh = styled.a`
+export const HhWrapper = styled.a`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 15px;
+  color: palevioletred;
+`;
+
+export const FooterHh = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

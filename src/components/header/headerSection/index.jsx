@@ -12,6 +12,8 @@ import {
   PhonesConteiner,
   PhonesNumber,
   PhonesText,
+  PhonesTextDivide,
+  PhonesTextWrapper,
   Emails,
   ContactsText,
   Skype,
@@ -72,9 +74,21 @@ const HeaderSection = () => {
             <Phones>
               <PhonesIcon />
               <PhonesConteiner>
-                <PhonesNumber>+7 (999) 812-19-75</PhonesNumber>
-                <PhonesNumber>+7 (977) 270-09-30</PhonesNumber>
-                <PhonesText>Telegram, Whatsapp</PhonesText>
+                <PhonesNumber href="tel:+79998121975">
+                  +7 (999) 812-19-75
+                </PhonesNumber>
+                <PhonesNumber href="tel:+79772700930">
+                  +7 (977) 270-09-30
+                </PhonesNumber>
+                <PhonesTextWrapper>
+                  <PhonesText href="https://t.me/amazurenk">
+                    Telegram
+                  </PhonesText>
+                  <PhonesTextDivide>,</PhonesTextDivide>
+                  <PhonesText href="https://api.whatsapp.com/send?phone=79772700930">
+                    Whatsapp
+                  </PhonesText>
+                </PhonesTextWrapper>
               </PhonesConteiner>
             </Phones>
             <HeaderSectionLabel>
@@ -82,11 +96,13 @@ const HeaderSection = () => {
             </HeaderSectionLabel>
             <Emails>
               <EmailsIcon />
-              <ContactsText>mazurenko-alexey@mail.ru</ContactsText>
+              <ContactsText href="mailto:mazurenko-alexey@mail.ru">
+                mazurenko-alexey@mail.ru
+              </ContactsText>
             </Emails>
             <Skype>
               <SkypeIcon />
-              <ContactsText>aleks10_0</ContactsText>
+              <ContactsText href="skype:aleks10_0?chat">aleks10_0</ContactsText>
             </Skype>
           </HeaderSectionConteiner>
         </HeaderSectionContacts>
