@@ -41,6 +41,29 @@ export const LabelText = styled.a`
   }
 `;
 
+export const LabelTextValue = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  position: relative;
+
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + (1px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #fff;
+  }
+`;
+
 export const ButtonWrapper = styled.div`
   display: flex;
 

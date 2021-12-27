@@ -11,6 +11,7 @@ import {
   Ul,
   Li,
   LabelText,
+  LabelTextValue,
   HeaderTopWrapper,
   HeaderLogCoderText,
   FooterValueIt,
@@ -94,7 +95,7 @@ const Footer = () => {
                 >
                   <FooterHh>hh</FooterHh>
                   <Label>HeadHunter</Label>
-                  <LabelText>Мазуренко Алексей</LabelText>
+                  <LabelTextValue>Мазуренко Алексей</LabelTextValue>
                 </HhWrapper>
               </Li>
             </Ul>
