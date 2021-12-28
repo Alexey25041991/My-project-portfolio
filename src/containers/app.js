@@ -1,6 +1,6 @@
 import React from "react";
 
-import HeaderConteiner from "../components/Header";
+import HeaderConteiner from "../components/HeaderConteiner";
 import Footer from "../components/Footer";
 import ContentConteiner from "../components/ContentConteiner";
 import PortfolioList from "../components/PortfolioDevelopment/PortfolioList";
