@@ -31,7 +31,7 @@ import PageWrapper from "../common/PageWrapper";
 import PageConteiner from "../common/PageConteiner";
 import Button from "../common/Button";
 
-const Footer = () => {
+const FooterConteiner = () => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -111,4 +111,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterConteiner;

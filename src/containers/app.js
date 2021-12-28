@@ -1,7 +1,7 @@
 import React from "react";
 
 import HeaderConteiner from "../components/HeaderConteiner";
-import Footer from "../components/Footer";
+import FooterConteiner from "../components/FooterConteiner";
 import ContentConteiner from "../components/ContentConteiner";
 import PortfolioList from "../components/PortfolioDevelopment/PortfolioList";
 import PortfolioValue from "../components/PortfolioDevelopment/PortfolioValue";
@@ -45,7 +45,7 @@ const App = () => {
             />
           ))}
         </Switch>
-        <Footer />
+        <FooterConteiner />
       </AppWrapper>
     </Router>
   );
