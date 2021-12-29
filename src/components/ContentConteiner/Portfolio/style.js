@@ -174,3 +174,26 @@ export const PortfolioNameList = styled.div`
   cursor: pointer;
   border-bottom: 1px dashed #000;
 `;
+
+export const PortfolioListData = styled.a`
+  display: flex;
+  justify-content: center;
+  width: 285px;
+  height: 292px;
+  overflow: hidden;
+  position: relative;
+  top: 21px;
+  left: 23px;
+  text-decoration: none;
+`;
+
+export const PortfolioListDataText = styled.a`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+`;
+
+export const ButtonWrapper = styled.a`
+  text-decoration: none;
+`;

@@ -2,9 +2,7 @@ import React from "react";
 
 import { Breadcrumbs } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
-import { Link } from "react-router-dom";
 
-import styled from "styled-components/macro";
 import {
   PortfolioHeaderText,
   PortfolioHeaderBreadCrumbs,
@@ -15,6 +13,7 @@ import {
   PortfolioData,
   PortfolioDataLink,
   PortfolioText,
+  LinkBreadcrumbs,
 } from "./style";
 
 import { ReactComponent as PortfolioTimeIcon } from "../common/icon/TimeIcon.svg";
@@ -23,21 +22,6 @@ import PageWrapper from "../common/PageWrapper";
 import PageConteiner from "../common/PageConteiner";
 import HeaderTitle from "../common/HeaderTitle";
 
-const LinkBreadcrumbs = styled(Link)`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  position: relative;
-  & :hover:before {
-    position: absolute;
-    content: "";
-    width: calc(100% + (1px * 2));
-    height: 2px;
-    bottom: 0;
-    background: #fff;
-  }
-`;
-
 const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
   const text = portfolio ? "Портфолио" : "Заметки веб-разработчика";
   const textTo = portfolio ? "/portfolio" : "/blog";
@@ -45,12 +29,12 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 
   return (
     <Breadcrumbs aria-label="breadcrumb" style={{ color: "#fff" }}>
-      <LinkBreadcrumbs to="/">
+      <LinkBreadcrumbs href="/">
         <HomeIcon style={{ color: "#fff", marginRight: "5px" }} />
         <BreadcrumbsText>Главная</BreadcrumbsText>
       </LinkBreadcrumbs>
       {item.portfolioNameList !== text ? (
-        <LinkBreadcrumbs to={textTo}>
+        <LinkBreadcrumbs href={`${textTo}/#portfolioHeader`}>
           <BreadcrumbsText>{textValue}</BreadcrumbsText>
         </LinkBreadcrumbs>
       ) : (
@@ -66,7 +50,7 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
   const dataTime = portfolio ? "Портфолио" : "Заметки веб-разработчика";
   return (
-    <PageWrapper dark>
+    <PageWrapper dark id="portfolioHeader">
       <PageConteiner>
         <PortfolioHeaderBreadCrumbs>
           {setPortfolioHeaderBreadCrumbs(item, portfolio)}

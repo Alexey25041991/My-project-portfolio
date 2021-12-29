@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Slider from "infinite-react-carousel";
-import { Link } from "react-router-dom";
 
 import {
   PortfolioCustom,
@@ -19,8 +18,10 @@ import {
   PortfolioDataTime,
   PortfolioName,
   PortfolioNameList,
+  PortfolioListData,
+  PortfolioListDataText,
+  ButtonWrapper,
 } from "./style.js";
-import styled from "styled-components/macro";
 import "./index.css";
 
 import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioDarkIcon.svg";
@@ -35,30 +36,13 @@ import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
 
-const PortfolioListData = styled(Link)`
-  display: flex;
-  justify-content: center;
-  width: 285px;
-  height: 292px;
-  overflow: hidden;
-  position: relative;
-  top: 21px;
-  left: 23px;
-  text-decoration: none;
-`;
-
-const PortfolioListDataText = styled(Link)`
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  text-decoration: none;
-`;
-
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
     <Li key={item.id}>
       <PortfolioImg>
-        <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
+        <PortfolioListData
+          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
+        >
           <PortfolioImgUrl
             src={item.icon}
             width={item.widthIcon}
@@ -79,7 +63,9 @@ const getSlickList = (propsPortfolioList) =>
         </PortfolioDataValue>
       </PortfolioData>
       <PortfolioName>
-        <PortfolioListDataText to={`/portfolio/${item.hrefNameList}`}>
+        <PortfolioListDataText
+          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
+        >
           <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
         </PortfolioListDataText>
       </PortfolioName>
@@ -150,11 +136,11 @@ const Portfolio = () => {
             </SlickList>
             {propsPortfolioList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
-          <Link to="/portfolio" style={{ textDecoration: "none" }}>
+          <ButtonWrapper href={"/portfolio/#portfolioHeader"}>
             <Button title="Открыть портфолио">
               <KeyIcon />
             </Button>
-          </Link>
+          </ButtonWrapper>
         </PortfolioCustom>
       </PageConteiner>
     </PageWrapper>

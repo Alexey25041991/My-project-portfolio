@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import {
   BlogCustom,
@@ -11,6 +10,7 @@ import {
   BlogValue,
   BlogTitle,
   BlogText,
+  ButtonWrapper,
 } from "./style.js";
 
 import { ReactComponent as BlogIcon } from "../../common/icon/BlogIcon.svg";
@@ -58,11 +58,11 @@ const Blog = () => (
             <CatCodes />
           </BlogCat>
         </MyBlogSection>
-        <Link to="/blog" style={{ textDecoration: "none" }}>
+        <ButtonWrapper href={"/blog/#portfolioHeader"}>
           <Button title="Открыть блок">
             <KeyIcon />
           </Button>
-        </Link>
+        </ButtonWrapper>
       </BlogCustom>
     </PageConteiner>
   </PageWrapper>

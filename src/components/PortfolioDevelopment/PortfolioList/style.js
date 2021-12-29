@@ -120,3 +120,21 @@ export const PortfolioNameList = styled.div`
   color: #000;
   cursor: pointer;
 `;
+
+export const PortfolioListData = styled.a`
+  display: flex;
+  width: 285px;
+  height: 292px;
+  overflow: hidden;
+  position: relative;
+  top: 21px;
+  left: 23px;
+  text-decoration: none;
+`;
+
+export const PortfolioListDataText = styled.a`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+`;

@@ -143,3 +143,20 @@ export const PortfolioNameList = styled.div`
   color: #000;
   cursor: pointer;
 `;
+
+export const PortfolioListData = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+`;
+
+export const PortfolioListDataText = styled.a`
+  display: flex;
+  overflow: hidden;
+  text-decoration: none;
+`;

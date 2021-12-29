@@ -101,3 +101,7 @@ export const BlogText = styled.span`
   font-size: 12px;
   margin-bottom: 10px;
 `;
+
+export const ButtonWrapper = styled.a`
+  text-decoration: none;
+`;

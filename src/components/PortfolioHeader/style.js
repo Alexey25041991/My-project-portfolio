@@ -81,3 +81,19 @@ export const PortfolioDataLink = styled.a`
     background: #fff;
   }
 `;
+
+export const LinkBreadcrumbs = styled.a`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  & :hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + (1px * 2));
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+  }
+`;

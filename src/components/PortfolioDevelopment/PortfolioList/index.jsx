@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 import PortfolioHeader from "../../PortfolioHeader";
 
@@ -18,8 +17,9 @@ import {
   PortfolioDataTime,
   PortfolioName,
   PortfolioNameList,
+  PortfolioListData,
+  PortfolioListDataText,
 } from "./style.js";
-import styled from "styled-components/macro";
 import "./index.css";
 
 import { ReactComponent as PortfolioLabelIcon } from "../../common/icon/LabelIcon.svg";
@@ -36,24 +36,6 @@ import PageConteiner from "../../common/PageConteiner";
 
 import NavPortfolioList from "./NavPortfolioList";
 
-const PortfolioListData = styled(Link)`
-  display: flex;
-  width: 285px;
-  height: 292px;
-  overflow: hidden;
-  position: relative;
-  top: 21px;
-  left: 23px;
-  text-decoration: none;
-`;
-
-const PortfolioListDataText = styled(Link)`
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  text-decoration: none;
-`;
-
 const getSlickList = (propsPortfolioList, portfoliosValue) => {
   const filterPropsPortfolioList =
     portfoliosValue !== propsList[0].value
@@ -64,7 +46,9 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
   return filterPropsPortfolioList?.map((item) => (
     <Li key={item.id}>
       <PortfolioImg>
-        <PortfolioListData to={`/portfolio/${item.hrefNameList}`}>
+        <PortfolioListData
+          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
+        >
           <PortfolioImgUrl
             src={item.icon}
             width={item.widthIcon}
@@ -85,7 +69,9 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
         </PortfolioDataValue>
       </PortfolioData>
       <PortfolioName>
-        <PortfolioListDataText to={`/portfolio/${item.hrefNameList}`}>
+        <PortfolioListDataText
+          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
+        >
           <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
         </PortfolioListDataText>
       </PortfolioName>
