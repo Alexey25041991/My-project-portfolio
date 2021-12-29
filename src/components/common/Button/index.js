@@ -4,6 +4,7 @@ const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   margin-top: 20px;
   width: 260px;
   height: 44px;

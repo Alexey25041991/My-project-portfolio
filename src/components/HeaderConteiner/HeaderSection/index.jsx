@@ -64,7 +64,7 @@ const HeaderSection = () => {
             </Button>
             <Modal opened={opened} onRequestClose={() => setOpened(false)} />
             <HeaderSectionLabel>
-              Заполните форму заказа, <br />и я свяжусь с Вами
+              Заполните форму заказа, и я свяжусь с Вами
             </HeaderSectionLabel>
           </HeaderSectionConteiner>
         </HeaderSectionGetsite>

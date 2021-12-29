@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { TABLET_1024, TABLET_768, MOBILE_660 } from "../../common/media";
+import {
+  TABLET_1024,
+  TABLET_768,
+  MOBILE_660,
+  MOBILE_480,
+} from "../../common/media";
 
 import myIconStl from "../../common/icon/stl.png";
 import myIconStlh from "../../common/icon/stlh.png";
@@ -61,6 +66,10 @@ export const ButtonL = styled.button`
   @media ${TABLET_1024} {
     left: 0;
   }
+
+  @media ${MOBILE_480} {
+    left: -10px;
+  }
 `;
 
 export const ButtonR = styled.button`
@@ -79,6 +88,10 @@ export const ButtonR = styled.button`
 
   @media ${TABLET_1024} {
     right: 0;
+  }
+
+  @media ${MOBILE_480} {
+    right: -10px;
   }
 `;
 

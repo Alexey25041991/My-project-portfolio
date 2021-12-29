@@ -76,7 +76,6 @@ export const HeaderSectionLabel = styled.span`
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   margin: 7px 0px;
   font-style: italic;
-  width: 185px;
   line-height: 18px;
   white-space: nowrap;
 `;
