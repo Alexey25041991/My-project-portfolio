@@ -6,7 +6,24 @@ import { ReactComponent as PersonIcon } from "../icon/PersonIcon.svg";
 import { ReactComponent as BlogIcon } from "../icon/BlogLightIcon.svg";
 import { ReactComponent as СontactsIcon } from "../icon/СontactsIcon.svg";
 
+import styled from "styled-components/macro";
+
+const LogoSign = styled.div`
+  color: white;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  white-space: nowrap;
+`;
+
 export const propsHeaderTopMenu = [
+  {
+    id: "0",
+    label: "Дом",
+    value: "",
+    icon: <LogoSign style={{ pointerEvents: "none" }}>{`${"< / >"}`}</LogoSign>,
+  },
   {
     id: "1",
     label: "Обо мне",
