@@ -151,6 +151,10 @@ export const HeaderLogCoderText = styled.div`
 
 export const FooterValueIt = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding: 35px 25px 0px 25px;
 `;
 

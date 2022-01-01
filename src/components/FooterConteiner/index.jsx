@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import LogoLook from "../LogoLook";
 import Modal from "../Modal";
+import SocialIcons from "../SocialIcons";
 
 import {
   FooterCustom,
@@ -102,8 +103,9 @@ const FooterConteiner = () => {
           </FooterValue>
           <FooterValueIt>
             <HeaderLogCoderText>
-              2017-2021 Фрилансер веб-разработчик IT-WEB-MASTER
+              2017 - Веб-разработчик IT-WEB-MASTER
             </HeaderLogCoderText>
+            <SocialIcons />
           </FooterValueIt>
         </FooterCustom>
       </PageConteiner>
