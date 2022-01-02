@@ -111,8 +111,14 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
         .querySelector("[data-select-container]")
         .getBoundingClientRect();
       const topNav = boxNavValue.top;
+      const bottomNav = boxNavValue.bottom;
 
-      if (topNav <= 10) {
+      const boxPortfolioFilter = document
+        .querySelector("[data-portfolio-filter]")
+        .getBoundingClientRect();
+      const bottomFilter = boxPortfolioFilter.bottom;
+
+      if (topNav <= 10 && bottomNav - bottomFilter > 16) {
         setHandleScrollNav(true);
       } else {
         setHandleScrollNav(false);
@@ -126,7 +132,10 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
 
   return (
     <PortfolioHeaderValueWrapper>
-      <PortfolioHeaderValue handleScrollNav={handleScrollNav}>
+      <PortfolioHeaderValue
+        handleScrollNav={handleScrollNav}
+        data-portfolio-filter
+      >
         <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
         {getButtonList(propsList, setPortfoliosValue, handleClick, open)}
       </PortfolioHeaderValue>
