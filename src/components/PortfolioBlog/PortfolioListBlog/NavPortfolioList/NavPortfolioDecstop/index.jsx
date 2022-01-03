@@ -102,6 +102,7 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   const [handleScrollNav, setHandleScrollNav] = useState(false);
   const [handleScrollFilter, setHandleScrollFilter] = useState(false);
   const [handleHeightFilter, setHandleHeightFilter] = useState(312);
+  const [handleWrapperHeight, setHandleWrapperHeight] = useState(300);
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -126,10 +127,17 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
         .getBoundingClientRect();
       const heightFilter = boxPortfolioFilter.height;
 
+      const boxPortfolioWrapperHeight = document
+        .querySelector("[data-portfolio-wrapper-height]")
+        .getBoundingClientRect();
+      const portfolioWrapperHeight = boxPortfolioWrapperHeight.height;
+
       const filterBottom = 65;
       const dataSelectContainerMarginTop = 25;
 
       setHandleHeightFilter(heightFilter);
+      // Добавил 16 чтобы все 4 блока вильтрации помещались полностью и не нужно был скролл
+      setHandleWrapperHeight(portfolioWrapperHeight + 16);
 
       if (topNav + dataSelectContainerMarginTop <= 0) {
         setHandleScrollNav(true);
@@ -154,7 +162,7 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   ]);
 
   return (
-    <PortfolioHeaderValueWrapper>
+    <PortfolioHeaderValueWrapper data-portfolio-wrapper-height>
       <PortfolioHeaderValueInvisible
         handleHeightFilter={handleHeightFilter}
         data-portfolio-bottom
@@ -162,6 +170,7 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
       <PortfolioHeaderValue
         handleScrollNav={handleScrollNav}
         handleScrollFilter={handleScrollFilter}
+        handleWrapperHeight={handleWrapperHeight}
         data-portfolio-height
       >
         <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
