@@ -3,6 +3,7 @@ import { MOBILE_660 } from "../../../../common/media";
 
 export const PortfolioHeaderValueWrapper = styled.div`
   width: 300px;
+  position: relative;
 
   @media ${MOBILE_660} {
     display: none;
@@ -26,7 +27,18 @@ export const PortfolioHeaderValue = styled.div`
   max-width: 100%;
   width: 160px;
   color: white;
-  position: ${({ handleScrollNav }) =>
-    handleScrollNav ? "fixed" : "relative"};
-  top: ${({ handleScrollNav }) => (handleScrollNav ? "0px" : "auto")};
+  position: ${({ handleScrollNav, handleScrollFilter }) =>
+    handleScrollNav && handleScrollFilter ? "fixed" : "absolute"};
+  top: ${({ handleScrollFilter }) => (handleScrollFilter ? "0" : "auto")};
+  bottom: ${({ handleScrollFilter }) => (handleScrollFilter ? "auto" : "0")};
+`;
+
+export const PortfolioHeaderValueInvisible = styled.div`
+  display: flex;
+  visibility: hidden;
+  height: ${({ handleHeightFilter }) => handleHeightFilter + "px"};
+  width: 160px;
+  margin: 16px;
+  position: fixed;
+  top: 0;
 `;

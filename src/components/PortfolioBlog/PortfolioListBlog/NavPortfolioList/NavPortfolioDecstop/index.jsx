@@ -4,6 +4,7 @@ import {
   PortfolioHeaderValue,
   PortfolioHeaderValueWrapper,
   PortfolioTagText,
+  PortfolioHeaderValueInvisible,
 } from "./style";
 
 import List from "@mui/material/List";
@@ -99,6 +100,8 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
 
 const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   const [handleScrollNav, setHandleScrollNav] = useState(false);
+  const [handleScrollFilter, setHandleScrollFilter] = useState(false);
+  const [handleHeightFilter, setHandleHeightFilter] = useState(312);
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -113,28 +116,53 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
       const topNav = boxNavValue.top;
       const bottomNav = boxNavValue.bottom;
 
-      const boxPortfolioFilter = document
-        .querySelector("[data-portfolio-filter]")
+      const boxPortfolioFilterInvisible = document
+        .querySelector("[data-portfolio-bottom]")
         .getBoundingClientRect();
-      const bottomFilter = boxPortfolioFilter.bottom;
+      const bottomFilter = boxPortfolioFilterInvisible.bottom;
 
-      if (topNav <= 10 && bottomNav - bottomFilter > 16) {
+      const boxPortfolioFilter = document
+        .querySelector("[data-portfolio-height]")
+        .getBoundingClientRect();
+      const heightFilter = boxPortfolioFilter.height;
+
+      const filterBottom = 65;
+      const dataSelectContainerMarginTop = 25;
+
+      setHandleHeightFilter(heightFilter);
+
+      if (topNav + dataSelectContainerMarginTop <= 0) {
         setHandleScrollNav(true);
       } else {
         setHandleScrollNav(false);
+      }
+      if (bottomNav - bottomFilter > filterBottom) {
+        setHandleScrollFilter(true);
+      } else {
+        setHandleScrollFilter(false);
       }
     };
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, [setHandleScrollNav, handleScrollNav]);
+  }, [
+    setHandleScrollNav,
+    handleScrollNav,
+    setHandleScrollFilter,
+    handleScrollFilter,
+  ]);
 
   return (
     <PortfolioHeaderValueWrapper>
+      <PortfolioHeaderValueInvisible
+        handleHeightFilter={handleHeightFilter}
+        data-portfolio-bottom
+      />
       <PortfolioHeaderValue
         handleScrollNav={handleScrollNav}
-        data-portfolio-filter
+        handleScrollFilter={handleScrollFilter}
+        data-portfolio-height
       >
         <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
         {getButtonList(propsList, setPortfoliosValue, handleClick, open)}
