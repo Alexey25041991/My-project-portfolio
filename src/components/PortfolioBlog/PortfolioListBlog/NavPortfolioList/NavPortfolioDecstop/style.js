@@ -39,12 +39,13 @@ export const PortfolioHeaderValue = styled.div`
     handleFilterInvisible,
     handleScrollFilter,
     handleScrollNav,
+    handleTopNav,
   }) =>
     handleFilterInvisible
       ? handleWrapperHeight + "px"
       : !handleScrollNav && handleScrollFilter
-      ? "calc(100vh - 180px)"
-      : "calc(100vh - 36px)"};
+      ? `calc(100vh - ${handleTopNav}px - 30px)`
+      : "calc(100vh - 30px)"};
   padding-right: 12px;
 
   /* Основная ширина полосы прокрутки. */

@@ -83,8 +83,8 @@ const PortfolioListBlog = () => {
     <>
       <PortfolioHeader item={propsPortfolioBlogHome} />
       <PageWrapper>
-        <PageConteiner blog data-select-container>
-          <PortfolioCustom>
+        <PageConteiner blog>
+          <PortfolioCustom data-select-container>
             <Ul>
               <SlickList>
                 <SlickTrack>

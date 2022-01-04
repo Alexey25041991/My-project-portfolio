@@ -109,6 +109,7 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   const [handleHeightFilter, setHandleHeightFilter] = useState(312);
   const [handleWrapperHeight, setHandleWrapperHeight] = useState(300);
   const [handleFilterInvisible, setHandleFilterInvisible] = useState(false);
+  const [handleTopNav, setHandleTopNav] = useState(0);
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -122,6 +123,8 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
         .getBoundingClientRect();
       const topNav = boxNavValue.top;
       const bottomNav = boxNavValue.bottom;
+
+      setHandleTopNav(topNav);
 
       const boxPortfolioFilterInvisible = document
         .querySelector("[data-portfolio-bottom]")
@@ -175,6 +178,7 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
         handleScrollFilter={handleScrollFilter}
         handleWrapperHeight={handleWrapperHeight}
         handleFilterInvisible={handleFilterInvisible}
+        handleTopNav={handleTopNav}
         data-portfolio-height
       >
         <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
