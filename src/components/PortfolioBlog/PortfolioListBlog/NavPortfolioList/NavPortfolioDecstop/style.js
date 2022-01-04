@@ -34,8 +34,17 @@ export const PortfolioHeaderValue = styled.div`
   top: ${({ handleScrollFilter }) => (handleScrollFilter ? "0" : "auto")};
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: ${({ handleWrapperHeight, handleFilterInvisible }) =>
-    handleFilterInvisible ? handleWrapperHeight + "px" : "calc(100vh - 36px)"};
+  max-height: ${({
+    handleWrapperHeight,
+    handleFilterInvisible,
+    handleScrollFilter,
+    handleScrollNav,
+  }) =>
+    handleFilterInvisible
+      ? handleWrapperHeight + "px"
+      : !handleScrollNav && handleScrollFilter
+      ? "calc(100vh - 180px)"
+      : "calc(100vh - 36px)"};
   padding-right: 12px;
 
   /* Основная ширина полосы прокрутки. */
