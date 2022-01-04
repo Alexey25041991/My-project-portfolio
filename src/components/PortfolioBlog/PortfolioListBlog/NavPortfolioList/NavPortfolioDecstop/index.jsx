@@ -124,7 +124,7 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
       const topNav = boxNavValue.top;
       const bottomNav = boxNavValue.bottom;
 
-      setHandleTopNav(topNav);
+      setHandleTopNav(Math.abs(topNav.toFixed(0)));
 
       const boxPortfolioFilterInvisible = document
         .querySelector("[data-portfolio-bottom]")
