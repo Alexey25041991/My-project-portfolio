@@ -5,6 +5,7 @@ import {
   PortfolioHeaderValueWrapper,
   PortfolioTagText,
   PortfolioHeaderValueInvisible,
+  ButtonWrapper,
 } from "./style";
 
 import List from "@mui/material/List";
@@ -24,23 +25,25 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
       color="red"
     >
       {item.id !== "JavaScript" && (
-        <ListItemButton
-          onClick={() => setPortfoliosValue(item?.value)}
-          sx={{
-            color: "white",
-            backgroundColor: "#65696f",
-            borderRadius: "8px",
-            boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
-            "&:hover": {
-              color: "#ff8560",
-              "& .MuiListItemIcon-root": {
+        <ButtonWrapper href={"/blog/#portfolioHeader"}>
+          <ListItemButton
+            onClick={() => setPortfoliosValue(item?.value)}
+            sx={{
+              color: "white",
+              backgroundColor: "#65696f",
+              borderRadius: "8px",
+              boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+              "&:hover": {
                 color: "#ff8560",
+                "& .MuiListItemIcon-root": {
+                  color: "#ff8560",
+                },
               },
-            },
-          }}
-        >
-          <ListItemText primary={item.portfolioButtonText} />
-        </ListItemButton>
+            }}
+          >
+            <ListItemText primary={item.portfolioButtonText} />
+          </ListItemButton>
+        </ButtonWrapper>
       )}
 
       {item.id === "JavaScript" && (
@@ -68,27 +71,29 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
           {item.value.map((itemJS) => (
             <Collapse key={itemJS.id} in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItemButton
-                  // sx={{ pl: 4 }}
-                  onClick={() => setPortfoliosValue(itemJS?.value)}
-                  sx={{
-                    pl: 4,
-                    color: "white",
-                    backgroundColor: "#65696f",
-                    borderRadius: "8px",
-                    boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
-                    margin: "8px 0",
-                    "&:hover": {
-                      backgroundColor: "#1976d214",
-                      color: "#ff8560",
-                      "& .MuiListItemIcon-root": {
+                <ButtonWrapper href={"/blog/#portfolioHeader"}>
+                  <ListItemButton
+                    // sx={{ pl: 4 }}
+                    onClick={() => setPortfoliosValue(itemJS?.value)}
+                    sx={{
+                      pl: 4,
+                      color: "white",
+                      backgroundColor: "#65696f",
+                      borderRadius: "8px",
+                      boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+                      margin: "8px 0",
+                      "&:hover": {
+                        backgroundColor: "#1976d214",
                         color: "#ff8560",
+                        "& .MuiListItemIcon-root": {
+                          color: "#ff8560",
+                        },
                       },
-                    },
-                  }}
-                >
-                  <ListItemText primary={itemJS.value} />
-                </ListItemButton>
+                    }}
+                  >
+                    <ListItemText primary={itemJS.value} />
+                  </ListItemButton>
+                </ButtonWrapper>
               </List>
             </Collapse>
           ))}
