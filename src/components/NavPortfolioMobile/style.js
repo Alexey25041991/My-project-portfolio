@@ -79,7 +79,7 @@ export const Ul = styled.ul`
 
   /* Размер и цвет бегунка. */
   ::-webkit-scrollbar-thumb {
-    background: #ff8560;
+    background: #464a53;
     border: 6px solid #fff;
     border-radius: 10px;
   }

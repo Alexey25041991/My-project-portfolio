@@ -173,7 +173,8 @@ export const ModalSectionWrapper = styled.div`
 
   /* Цвет дорожки, по которой двигается бегунок прокрутки. */
   ::-webkit-scrollbar-track {
-    background: #fff;
+    background: #464a5352;
+    border-radius: 10px;
     background-clip: content-box;
     /* opacity: 0;
   background-color: transparent; */
@@ -181,8 +182,8 @@ export const ModalSectionWrapper = styled.div`
 
   /* Размер и цвет бегунка. */
   ::-webkit-scrollbar-thumb {
-    background: #ff8560;
-    border: 6px solid #fff;
+    background: #464a53;
+    border: 6px solid #f1f1f1;
     border-radius: 10px;
   }
   /* Размер бегунка при наведении на него курсора. */
