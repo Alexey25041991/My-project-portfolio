@@ -5,8 +5,9 @@ import {
   PortfolioHeaderValueWrapper,
   PortfolioTagText,
   PortfolioHeaderValueInvisible,
-  ButtonWrapper,
 } from "./style";
+
+import ButtonLink from "../../../../common/ButtonLink";
 
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -24,8 +25,8 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
       key={item.id}
       color="red"
     >
-      {item.id !== "JavaScript" && (
-        <ButtonWrapper href={"/blog/#portfolioHeader"}>
+      {item.id !== "JS" && (
+        <ButtonLink navMenuLink="blog">
           <ListItemButton
             onClick={() => setPortfoliosValue(item?.value)}
             sx={{
@@ -43,10 +44,10 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
           >
             <ListItemText primary={item.portfolioButtonText} />
           </ListItemButton>
-        </ButtonWrapper>
+        </ButtonLink>
       )}
 
-      {item.id === "JavaScript" && (
+      {item.id === "JS" && (
         <>
           <ListItemButton
             onClick={handleClick}
@@ -71,7 +72,7 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
           {item.value.map((itemJS) => (
             <Collapse key={itemJS.id} in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ButtonWrapper href={"/blog/#portfolioHeader"}>
+                <ButtonLink navMenuLink="blog">
                   <ListItemButton
                     // sx={{ pl: 4 }}
                     onClick={() => setPortfoliosValue(itemJS?.value)}
@@ -93,7 +94,7 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
                   >
                     <ListItemText primary={itemJS.value} />
                   </ListItemButton>
-                </ButtonWrapper>
+                </ButtonLink>
               </List>
             </Collapse>
           ))}

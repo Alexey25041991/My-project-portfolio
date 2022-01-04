@@ -5,8 +5,8 @@ export const propsList = [
     value: "All",
   },
   {
-    id: "JavaScript",
-    portfolioButtonText: "JavaScript",
+    id: "JS",
+    portfolioButtonText: "JS",
     value: [
       {
         id: "2",

@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import MenuBurger from "../MenuBurger";
+import ButtonLink from "../common/ButtonLink";
 
 import {
   Overlay,
@@ -14,7 +15,7 @@ import {
   MenuWrapper,
 } from "./style";
 
-const NavMenuLi = (propsList, setPortfoliosValue, setOpened) =>
+const NavMenuLi = (propsList, setPortfoliosValue, setOpened, navMenuLink) =>
   propsList.map((item) => {
     const handleClick = (itemValue) => {
       setPortfoliosValue(itemValue);
@@ -22,17 +23,19 @@ const NavMenuLi = (propsList, setPortfoliosValue, setOpened) =>
     };
     return (
       <Fragment key={item.id}>
-        {item.id !== "JavaScript" && (
+        {item.id !== "JS" && (
           <Li key={item.id} onClick={() => handleClick(item?.value)}>
-            <Button>
-              <Label style={{ pointerEvents: "none" }}>
-                {item.portfolioButtonText}
-              </Label>
-            </Button>
+            <ButtonLink navMenuLink={navMenuLink}>
+              <Button>
+                <Label style={{ pointerEvents: "none" }}>
+                  {item.portfolioButtonText}
+                </Label>
+              </Button>
+            </ButtonLink>
           </Li>
         )}
-        {item.id === "JavaScript" &&
-          NavMenuLi(item.value, setPortfoliosValue, setOpened)}
+        {item.id === "JS" &&
+          NavMenuLi(item.value, setPortfoliosValue, setOpened, navMenuLink)}
       </Fragment>
     );
   });
@@ -52,6 +55,7 @@ const NavPortfolioMobile = ({
   propsList,
   setPortfoliosValue,
   header,
+  navMenuLink,
 }) => {
   const [opened, setOpened] = useState(false);
 
@@ -69,7 +73,7 @@ const NavPortfolioMobile = ({
 
   const MenuLi = header
     ? HeaderMenuLi(propsList, setOpened, header)
-    : NavMenuLi(propsList, setPortfoliosValue, setOpened);
+    : NavMenuLi(propsList, setPortfoliosValue, setOpened, navMenuLink);
 
   return (
     <>
@@ -95,6 +99,7 @@ const NavPortfolioMobile = ({
 NavPortfolioMobile.defaultProps = {
   setPortfoliosValue: () => {},
   header: false,
+  navMenuLink: "",
 };
 
 export default NavPortfolioMobile;

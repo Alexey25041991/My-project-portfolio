@@ -82,7 +82,3 @@ export const PortfolioHeaderValueInvisible = styled.div`
   position: fixed;
   top: 0;
 `;
-
-export const ButtonWrapper = styled.a`
-  text-decoration: none;
-`;

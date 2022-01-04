@@ -20,7 +20,6 @@ import {
   PortfolioNameList,
   PortfolioListData,
   PortfolioListDataText,
-  ButtonWrapper,
 } from "./style.js";
 import "./index.css";
 
@@ -35,6 +34,7 @@ import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
+import ButtonLink from "../../common/ButtonLink";
 
 const getSlickList = (propsPortfolioList) =>
   propsPortfolioList.map((item) => (
@@ -136,11 +136,11 @@ const Portfolio = () => {
             </SlickList>
             {propsPortfolioList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
-          <ButtonWrapper href={"/portfolio/#portfolioHeader"}>
+          <ButtonLink navMenuLink="portfolio">
             <Button title="Открыть портфолио">
               <KeyIcon />
             </Button>
-          </ButtonWrapper>
+          </ButtonLink>
         </PortfolioCustom>
       </PageConteiner>
     </PageWrapper>

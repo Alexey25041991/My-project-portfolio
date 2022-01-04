@@ -206,7 +206,3 @@ export const PortfolioListDataText = styled.a`
   overflow: hidden;
   text-decoration: none;
 `;
-
-export const ButtonWrapper = styled.a`
-  text-decoration: none;
-`;

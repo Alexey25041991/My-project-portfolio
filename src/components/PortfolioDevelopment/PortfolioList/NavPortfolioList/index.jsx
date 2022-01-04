@@ -26,6 +26,7 @@ const NavPortfolioList = ({ propsList, setPortfoliosValue }) => {
       <NavPortfolioMobile
         propsList={propsList}
         setPortfoliosValue={setPortfoliosValue}
+        navMenuLink="portfolio"
       >
         <HeaderLabel>Фильтр проектов</HeaderLabel>
       </NavPortfolioMobile>

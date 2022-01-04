@@ -10,7 +10,6 @@ import {
   BlogValue,
   BlogTitle,
   BlogText,
-  ButtonWrapper,
 } from "./style.js";
 
 import { ReactComponent as BlogIcon } from "../../common/icon/BlogIcon.svg";
@@ -27,6 +26,7 @@ import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
+import ButtonLink from "../../common/ButtonLink";
 
 const Blog = () => (
   <PageWrapper id="blog">
@@ -58,11 +58,11 @@ const Blog = () => (
             <CatCodes />
           </BlogCat>
         </MyBlogSection>
-        <ButtonWrapper href={"/blog/#portfolioHeader"}>
+        <ButtonLink navMenuLink="blog">
           <Button title="Открыть блок">
             <KeyIcon />
           </Button>
-        </ButtonWrapper>
+        </ButtonLink>
       </BlogCustom>
     </PageConteiner>
   </PageWrapper>
