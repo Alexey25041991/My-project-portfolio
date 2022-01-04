@@ -29,8 +29,9 @@ export const PortfolioHeaderValue = styled.div`
   color: white;
   position: ${({ handleScrollNav, handleScrollFilter }) =>
     handleScrollNav && handleScrollFilter ? "fixed" : "absolute"};
+  bottom: ${({ handleScrollFilter, handleFilterInvisible }) =>
+    handleScrollFilter || handleFilterInvisible ? "auto" : "0"};
   top: ${({ handleScrollFilter }) => (handleScrollFilter ? "0" : "auto")};
-  bottom: ${({ handleScrollFilter }) => (handleScrollFilter ? "auto" : "0")};
   overflow-y: auto;
   overflow-x: hidden;
   max-height: ${({ handleWrapperHeight }) => handleWrapperHeight + "px"};
