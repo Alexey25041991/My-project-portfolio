@@ -55,7 +55,7 @@ export const PortfolioHeaderValue = styled.div`
 
   /* Цвет дорожки, по которой двигается бегунок прокрутки. */
   ::-webkit-scrollbar-track {
-    background: #464a53;
+    background: #464a5352;
     border-radius: 10px;
     background-clip: content-box;
     /* opacity: 0;
