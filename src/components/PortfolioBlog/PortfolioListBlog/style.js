@@ -65,6 +65,11 @@ export const PortfolioImg = styled.div`
   display: flex;
   width: 200px;
   height: 200px;
+
+  @media ${TABLET_959} {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const PortfolioImgUrl = styled.img`
@@ -77,6 +82,11 @@ export const TextBlog = styled.div`
   flex-direction: column;
   position: relative;
   margin-left: 20px;
+  justify-content: center;
+
+  @media ${MOBILE_660} {
+    align-items: center;
+  }
 `;
 
 export const TextBlogValue = styled.div`
@@ -88,6 +98,10 @@ export const TextBlogValue = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
+
+  @media ${MOBILE_660} {
+    text-align: center;
+  }
 `;
 
 export const TextBlogHeader = styled.div`
@@ -108,8 +122,6 @@ export const TextBlogWrapper = styled.div`
 
   @media ${TABLET_959} {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 `;
 

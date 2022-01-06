@@ -17,11 +17,14 @@ import {
   propsPortfolioListBlog,
 } from "../components/common/constants";
 
+import ProgressBar from "../components/common/ProgressBar";
+
 import { AppWrapper } from "./style";
 
 const App = () => {
   return (
     <Router>
+      <ProgressBar />
       <AppWrapper>
         <HeaderConteiner />
         <Switch>

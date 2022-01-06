@@ -4,7 +4,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #000;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -12,6 +12,7 @@ body {
 /* Основная ширина полосы прокрутки. */
 body::-webkit-scrollbar {
   width: 16px;
+  -webkit-appearance: none;
 }
 
 /* Цвет дорожки, по которой двигается бегунок прокрутки. */
@@ -34,6 +35,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
