@@ -35,6 +35,7 @@ const ProgressBar = () => {
           document.documentElement.clientHeight) /
         4;
       let per = ((windowScroll / windowHeight) * 100).toFixed(0);
+      console.log(111, per);
 
       if (per <= 100) {
         progressTop.style.width = per + "%";
@@ -54,13 +55,13 @@ const ProgressBar = () => {
         progressBottom.style.width = per - 200 + "%";
         progressLeft.style.height = "0%";
       }
-      if (300 < per < 400) {
+      if (300 < per && per < 400) {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
         progressLeft.style.height = per - 300 + "%";
       }
-      if (per === 400) {
+      if (per >= 400) {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
