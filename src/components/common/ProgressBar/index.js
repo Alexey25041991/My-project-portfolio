@@ -34,31 +34,31 @@ const ProgressBar = () => {
         (document.documentElement.scrollHeight -
           document.documentElement.clientHeight) /
         4;
-      let per = (windowScroll / windowHeight) * 100;
+      let per = ((windowScroll / windowHeight) * 100).toFixed(0);
 
       if (per <= 100) {
-        progressTop.style.width = per.toFixed(0) + "%";
+        progressTop.style.width = per + "%";
         progressRight.style.height = "0%";
         progressBottom.style.width = "0%";
         progressLeft.style.height = "0%";
       }
       if (100 < per && per <= 200) {
         progressTop.style.width = "100%";
-        progressRight.style.height = per.toFixed(0) - 100 + "%";
+        progressRight.style.height = per - 100 + "%";
         progressBottom.style.width = "0%";
         progressLeft.style.height = "0%";
       }
       if (200 < per && per <= 300) {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
-        progressBottom.style.width = per.toFixed(0) - 200 + "%";
+        progressBottom.style.width = per - 200 + "%";
         progressLeft.style.height = "0%";
       }
-      if (300 < per && per <= 400) {
+      if (300 < per) {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
-        progressLeft.style.height = per.toFixed(0) - 295 + "%";
+        progressLeft.style.height = per - 300 + "%";
       }
     };
 
