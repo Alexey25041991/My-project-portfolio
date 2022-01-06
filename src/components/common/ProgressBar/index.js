@@ -59,7 +59,7 @@ const ProgressBar = () => {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
-        progressLeft.style.height = per - 290 + "%";
+        progressLeft.style.height = per - 280 + "%";
       }
     };
 
