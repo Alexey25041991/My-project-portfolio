@@ -54,7 +54,13 @@ const ProgressBar = () => {
         progressBottom.style.width = per - 200 + "%";
         progressLeft.style.height = "0%";
       }
-      if (300 < per && per <= 400) {
+      if (300 < per && per <= 395) {
+        progressTop.style.width = "100%";
+        progressRight.style.height = "100%";
+        progressBottom.style.width = "100%";
+        progressLeft.style.height = per - 300 + "%";
+      }
+      if (395 < per && per <= 400) {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
