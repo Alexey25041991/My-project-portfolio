@@ -35,7 +35,6 @@ const ProgressBar = () => {
           document.documentElement.clientHeight) /
         4;
       let per = ((windowScroll / windowHeight) * 100).toFixed(0);
-      console.log(111, per);
 
       if (per <= 100) {
         progressTop.style.width = per + "%";
