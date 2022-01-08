@@ -41,12 +41,6 @@ const ProgressBar = () => {
         document.documentElement.clientHeight;
       let scrollPer = ((windowScroll / windowHeightPer) * 100).toFixed(0);
 
-      console.log("windowScroll", windowScroll);
-      console.log("pageYOffset", window.pageYOffset);
-      console.log("windowHeight", windowHeightPer);
-      console.log("scrollHeight", document.documentElement.scrollHeight);
-      console.log("clientHeight", document.documentElement.clientHeight);
-
       if (per <= 100) {
         progressTop.style.width = per + "%";
         progressRight.style.height = "0%";
