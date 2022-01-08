@@ -70,7 +70,7 @@ const ProgressBar = () => {
       //   progressBottom.style.width = "0%";
       //   progressLeft.style.height = "0%";
       // }
-      if (200 < per && per <= 300) {
+      if (200 <= per && per <= 300) {
         progressTop.style.width = "100%";
         // progressRight.style.height = "100%";
         progressBottom.style.width = per - 200 + "%";
@@ -88,7 +88,7 @@ const ProgressBar = () => {
       //   progressBottom.style.width = "100%";
       //   progressLeft.style.height = per - 280 + "%";
       // }
-      if (300 < per && per <= 400) {
+      if (300 <= per && per <= 400) {
         setPreValue(per - 300 + "%");
         progressTop.style.width = "100%";
         // progressRight.style.height = "100%";
