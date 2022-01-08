@@ -95,12 +95,12 @@ const ProgressBar = () => {
         progressBottom.style.width = "100%";
         progressLeft.style.height = per - 300 + "%";
       }
-      // if (per === 400) {
-      //   progressTop.style.width = "100%";
-      //   progressRight.style.height = "100%";
-      //   progressBottom.style.width = "100%";
-      //   progressLeft.style.height = "120%";
-      // }
+      if (scrollPer <= 97) {
+        progressTop.style.width = "100%";
+        progressRight.style.height = "100%";
+        progressBottom.style.width = "100%";
+        progressLeft.style.height = "100%";
+      }
     };
 
     productsHref && document.addEventListener("scroll", progressBar);
