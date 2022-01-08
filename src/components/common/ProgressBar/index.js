@@ -37,12 +37,12 @@ const ProgressBar = () => {
         (document.documentElement.scrollHeight -
           document.documentElement.clientHeight) /
         4;
-      let per = ((windowScroll / windowHeight) * 100).toFixed(0);
+      let per = (windowScroll / windowHeight) * 100;
 
       let windowHeightPer =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
-      let scrollPer = ((windowScroll / windowHeightPer) * 100).toFixed(0);
+      let scrollPer = (windowScroll / windowHeightPer) * 100;
       setScrollPerValue(scrollPer);
 
       console.log("windowScroll", windowScroll);
