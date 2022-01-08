@@ -1,10 +1,12 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 import "./style.css";
 
 import { getMobileOperatingSystem, isAndroid, isIos } from "../utils";
 
 const ProgressBar = () => {
+  const [preValue, setPreValue] = useState(0);
+
   function getProductsHref() {
     let userAgent = getMobileOperatingSystem();
 
@@ -66,18 +68,19 @@ const ProgressBar = () => {
       //   progressBottom.style.width = "100%";
       //   progressLeft.style.height = per - 280 + "%";
       // }
-      if (300 < per && per < 400) {
+      if (300 < per && per <= 400) {
+        setPreValue(per - 300 + "%");
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
         progressLeft.style.height = per - 300 + "%";
       }
-      if (per === 400) {
-        progressTop.style.width = "100%";
-        progressRight.style.height = "100%";
-        progressBottom.style.width = "100%";
-        progressLeft.style.height = "120%";
-      }
+      // if (per === 400) {
+      //   progressTop.style.width = "100%";
+      //   progressRight.style.height = "100%";
+      //   progressBottom.style.width = "100%";
+      //   progressLeft.style.height = "120%";
+      // }
     };
 
     productsHref && document.addEventListener("scroll", progressBar);
@@ -90,7 +93,7 @@ const ProgressBar = () => {
       <div className="progress-top"></div>
       <div className="progress-right"></div>
       <div className="progress-bottom"></div>
-      <div className="progress-left"></div>
+      <div className="progress-left">{preValue}</div>
     </>
   );
 };
