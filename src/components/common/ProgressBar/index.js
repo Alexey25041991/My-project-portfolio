@@ -6,6 +6,7 @@ import { getMobileOperatingSystem, isAndroid, isIos } from "../utils";
 
 const ProgressBar = () => {
   const [preValue, setPreValue] = useState(0);
+  const [scrollPerValue, setScrollPerValue] = useState(0);
 
   function getProductsHref() {
     let userAgent = getMobileOperatingSystem();
@@ -31,12 +32,24 @@ const ProgressBar = () => {
       const progressLeft = document.querySelector(".progress-left");
 
       let windowScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
+        window.pageYOffset || document.documentElement.scrollTop;
       let windowHeight =
         (document.documentElement.scrollHeight -
           document.documentElement.clientHeight) /
         4;
       let per = ((windowScroll / windowHeight) * 100).toFixed(0);
+
+      let windowHeightPer =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      let scrollPer = ((windowScroll / windowHeightPer) * 100).toFixed(0);
+      setScrollPerValue(scrollPer);
+
+      console.log("windowScroll", windowScroll);
+      console.log("pageYOffset", window.pageYOffset);
+      console.log("windowHeight", windowHeightPer);
+      console.log("scrollHeight", document.documentElement.scrollHeight);
+      console.log("clientHeight", document.documentElement.clientHeight);
 
       if (per <= 100) {
         progressTop.style.width = per + "%";
@@ -44,15 +57,15 @@ const ProgressBar = () => {
         progressBottom.style.width = "0%";
         progressLeft.style.height = "0%";
       }
-      if (100 < per && per <= 200) {
-        progressTop.style.width = "100%";
-        progressRight.style.height = per - 100 + "%";
-        progressBottom.style.width = "0%";
-        progressLeft.style.height = "0%";
-      }
+      // if (100 < per && per <= 200) {
+      //   progressTop.style.width = "100%";
+      //   progressRight.style.height = per - 100 + "%";
+      //   progressBottom.style.width = "0%";
+      //   progressLeft.style.height = "0%";
+      // }
       if (200 < per && per <= 300) {
         progressTop.style.width = "100%";
-        progressRight.style.height = "100%";
+        // progressRight.style.height = "100%";
         progressBottom.style.width = per - 200 + "%";
         progressLeft.style.height = "0%";
       }
@@ -71,7 +84,7 @@ const ProgressBar = () => {
       if (300 < per && per <= 400) {
         setPreValue(per - 300 + "%");
         progressTop.style.width = "100%";
-        progressRight.style.height = "100%";
+        // progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
         progressLeft.style.height = per - 300 + "%";
       }
@@ -90,7 +103,7 @@ const ProgressBar = () => {
   });
   return (
     <>
-      <div className="progress-top"></div>
+      <div className="progress-top">{scrollPerValue}</div>
       <div className="progress-right"></div>
       <div className="progress-bottom"></div>
       <div className="progress-left">{preValue}</div>
