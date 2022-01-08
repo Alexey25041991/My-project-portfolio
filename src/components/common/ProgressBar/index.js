@@ -7,6 +7,7 @@ import { getMobileOperatingSystem, isAndroid, isIos } from "../utils";
 const ProgressBar = () => {
   const [preValue, setPreValue] = useState(0);
   const [scrollPerValue, setScrollPerValue] = useState(0);
+  const [topAppValue, setTopAppValue] = useState(0);
 
   function getProductsHref() {
     let userAgent = getMobileOperatingSystem();
@@ -31,18 +32,24 @@ const ProgressBar = () => {
       const progressBottom = document.querySelector(".progress-bottom");
       const progressLeft = document.querySelector(".progress-left");
 
+      const boxApp = document
+        .querySelector("[data-app]")
+        .getBoundingClientRect();
+      const topApp = boxApp.top;
+      setTopAppValue(topApp);
+
       let windowScroll =
         window.pageYOffset || document.documentElement.scrollTop;
       let windowHeight =
         (document.documentElement.scrollHeight -
           document.documentElement.clientHeight) /
         4;
-      let per = (windowScroll / windowHeight) * 100;
+      let per = ((windowScroll / windowHeight) * 100).toFixed(0);
 
       let windowHeightPer =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
-      let scrollPer = (windowScroll / windowHeightPer) * 100;
+      let scrollPer = ((windowScroll / windowHeightPer) * 100).toFixed(0);
       setScrollPerValue(scrollPer);
 
       console.log("windowScroll", windowScroll);
@@ -103,7 +110,15 @@ const ProgressBar = () => {
   });
   return (
     <>
-      <div className="progress-top">{scrollPerValue}</div>
+      <div className="progress-top">{`${
+        scrollPerValue +
+        " / " +
+        topAppValue +
+        " scrollHeight " +
+        document.documentElement.scrollHeight +
+        " clientHeight " +
+        document.documentElement.clientHeight
+      }`}</div>
       <div className="progress-right"></div>
       <div className="progress-bottom"></div>
       <div className="progress-left">{preValue}</div>

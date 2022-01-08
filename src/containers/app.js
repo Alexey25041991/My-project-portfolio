@@ -25,7 +25,7 @@ const App = () => {
   return (
     <Router>
       <ProgressBar />
-      <AppWrapper>
+      <AppWrapper data-app>
         <HeaderConteiner />
         <Switch>
           <Route path="/" exact component={ContentConteiner} />
