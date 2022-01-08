@@ -95,7 +95,7 @@ const ProgressBar = () => {
         progressBottom.style.width = "100%";
         progressLeft.style.height = per - 300 + "%";
       }
-      if (scrollPer <= 97) {
+      if (97 <= scrollPer) {
         progressTop.style.width = "100%";
         progressRight.style.height = "100%";
         progressBottom.style.width = "100%";
