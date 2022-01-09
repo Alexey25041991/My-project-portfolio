@@ -18,6 +18,7 @@ import {
 } from "../components/common/constants";
 
 import ProgressBar from "../components/common/ProgressBar";
+import ScrollTop from "../components/common/ScrollTop";
 
 import { AppWrapper } from "./style";
 
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <Router>
       <ProgressBar />
+      <ScrollTop />
       <AppWrapper>
         <HeaderConteiner />
         <Switch>
