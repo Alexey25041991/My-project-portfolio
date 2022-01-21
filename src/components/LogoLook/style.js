@@ -7,6 +7,7 @@ export const Logo = styled.div`
   align-items: center;
   vertical-align: top;
   padding-top: 12px;
+  letter-spacing: 5px;
 
   @media ${MOBILE_660} {
     padding: 10px 20px;
@@ -19,38 +20,19 @@ export const Logo = styled.div`
 `;
 
 export const LogoSign = styled.div`
-  color: white;
+  color: #ff8560;
   line-height: 30px;
   font-size: 25px;
   font-family: "Exo 2", sans-serif;
-  font-weight: 800;
-  margin-right: 14px;
+  // font-weight: 800;
   white-space: nowrap;
+  text-transform: uppercase;
+  text-shadow: -1px 0 1px white, 0 -1px 1px white, 0 1px 1px white,
+    1px 0 1px white, 0 0 8px white, 0 0 8px white, 0 0 8px white,
+    2px 2px 3px black;
   @media ${MOBILE_480} {
     line-height: 24px;
     font-size: 19px;
     margin-right: 8px;
   }
-`;
-
-export const LogoCoder = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
-`;
-
-export const LogoCoderLabel = styled(LogoSign)`
-  vertical-align: top;
-  font-weight: bold;
-`;
-
-export const LogoCoderText = styled.div`
-  color: white;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 400;
-  padding-top: 4px;
-  display: block;
-  font-family: "Exo 2", sans-serif;
-  white-space: nowrap;
 `;
