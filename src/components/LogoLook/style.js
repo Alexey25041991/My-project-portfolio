@@ -7,7 +7,7 @@ export const Logo = styled.div`
   align-items: center;
   vertical-align: top;
   padding-top: 12px;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 
   @media ${MOBILE_660} {
     padding: 10px 20px;
@@ -23,25 +23,26 @@ export const LogoSign = styled.div`
   display: flex;
   align-items: center;
   color: #ff8560;
-  line-height: 28px;
-  font-size: 25px;
+  line-height: 52px;
+  font-size: 38px;
   font-family: "Exo 2", sans-serif;
   // font-weight: 800;
   white-space: nowrap;
-  margin-left: 20px;
+  // margin-left: 20px;
   text-transform: uppercase;
-  text-shadow: -1px 0 1px white, 0 -1px 1px white, 0 1px 1px white,
-    1px 0 1px white, 0 0 8px white, 0 0 8px white, 0 0 8px white,
-    2px 2px 3px black;
+  // text-shadow: -1px 0 1px white, 0 -1px 1px white, 0 1px 1px white,
+  //   1px 0 1px white, 0 0 8px white, 0 0 8px white, 0 0 8px white,
+  //   2px 2px 3px black;
+  text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white,
+    3px 3px 6px rgba(0, 0, 0, 0.5);
 
   @media ${MOBILE_660} {
     margin-left: 0;
   }
 
   @media ${MOBILE_480} {
-    line-height: 24px;
-    font-size: 19px;
-    margin-right: 8px;
+    font-size: 32px;
+    // margin-right: 8px;
   }
 `;
 
