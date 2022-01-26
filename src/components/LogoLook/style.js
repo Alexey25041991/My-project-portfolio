@@ -20,19 +20,33 @@ export const Logo = styled.div`
 `;
 
 export const LogoSign = styled.div`
+  display: flex;
+  align-items: center;
   color: #ff8560;
-  line-height: 30px;
+  line-height: 28px;
   font-size: 25px;
   font-family: "Exo 2", sans-serif;
   // font-weight: 800;
   white-space: nowrap;
+  margin-left: 20px;
   text-transform: uppercase;
   text-shadow: -1px 0 1px white, 0 -1px 1px white, 0 1px 1px white,
     1px 0 1px white, 0 0 8px white, 0 0 8px white, 0 0 8px white,
     2px 2px 3px black;
+
+  @media ${MOBILE_660} {
+    margin-left: 0;
+  }
+
   @media ${MOBILE_480} {
     line-height: 24px;
     font-size: 19px;
     margin-right: 8px;
   }
+`;
+
+export const LaykoWayWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 6px;
 `;
