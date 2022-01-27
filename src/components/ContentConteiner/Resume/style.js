@@ -107,6 +107,7 @@ export const ResumeValue = styled.div`
 
   @media ${MOBILE_660} {
     width: 100%;
+    text-align: center;
   }
 `;
 

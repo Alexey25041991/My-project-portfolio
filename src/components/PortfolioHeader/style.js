@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MOBILE_660 } from "../common/media";
 
 export const PortfolioHeaderText = styled.div`
   margin-top: 10px;
@@ -51,6 +52,10 @@ export const PortfolioText = styled.div`
   color: #fff;
   font-size: 14px;
   font-family: "Exo 2", sans-serif;
+
+  @media ${MOBILE_660} {
+    text-align: center;
+  }
 `;
 
 export const PortfolioData = styled.div`
@@ -62,6 +67,10 @@ export const PortfolioData = styled.div`
   font-family: "Exo 2", sans-serif;
   margin-bottom: 12px;
   line-height: 22px;
+
+  @media ${MOBILE_660} {
+    justify-content: center;
+  }
 `;
 
 export const PortfolioDataLink = styled.a`

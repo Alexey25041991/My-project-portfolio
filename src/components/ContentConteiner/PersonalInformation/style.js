@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TABLET_959 } from "../../common/media";
+import { TABLET_959, MOBILE_660 } from "../../common/media";
 
 import myIconWebdev from "../../common/icon/webdev.png";
 
@@ -27,6 +27,10 @@ export const PersonalText = styled.div`
   color: #000;
   font-size: 14px;
   line-height: 20px;
+
+  @media ${MOBILE_660} {
+    text-align: center;
+  }
 `;
 
 export const PersonalSection = styled.div`

@@ -19,6 +19,7 @@ import {
   HhWrapper,
   FooterHh,
   ButtonWrapper,
+  LogoLookWrapper,
 } from "./style.js";
 
 import { ReactComponent as FooterСlockIcon } from "../common/icon/TermIcon.svg";
@@ -41,7 +42,9 @@ const FooterConteiner = () => {
       <PageConteiner footer>
         <FooterCustom>
           <HeaderTopWrapper>
-            <LogoLook />
+            <LogoLookWrapper>
+              <LogoLook />
+            </LogoLookWrapper>
             <ButtonWrapper>
               <Button
                 title="Заказать сайт"

@@ -72,6 +72,12 @@ export const ButtonWrapper = styled.div`
   }
 `;
 
+export const LogoLookWrapper = styled.div`
+  @media ${MOBILE_660} {
+    display: none;
+  }
+`;
+
 export const Label = styled.div`
   text-transform: uppercase;
   display: flex;

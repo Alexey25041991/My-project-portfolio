@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TABLET_959 } from "../../common/media";
+import { TABLET_959, MOBILE_660 } from "../../common/media";
 
 import myIconService from "../../common/icon/service.png";
 
@@ -16,6 +16,11 @@ export const ServicesText = styled.p`
   color: #000;
   font-size: 14px;
   line-height: 20px;
+
+  @media ${MOBILE_660} {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const ServicesSection = styled.div`

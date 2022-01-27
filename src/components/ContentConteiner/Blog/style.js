@@ -63,6 +63,10 @@ export const BlogData = styled.div`
   padding: 12px 12px;
   position: relative;
   border-radius: 8px;
+
+  @media ${MOBILE_660} {
+    justify-content: center;
+  }
 `;
 
 export const BlogValue = styled.div`
@@ -88,6 +92,11 @@ export const BlogTitle = styled.span`
   font-size: 12px;
   line-height: 20px;
   font-family: "Exo 2", sans-serif;
+
+  @media ${MOBILE_660} {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const BlogText = styled.span`
@@ -100,4 +109,9 @@ export const BlogText = styled.span`
   height: 83px;
   font-size: 12px;
   margin-bottom: 10px;
+
+  @media ${MOBILE_660} {
+    width: 100%;
+    text-align: center;
+  }
 `;
