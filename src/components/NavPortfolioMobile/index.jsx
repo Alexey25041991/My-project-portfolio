@@ -13,7 +13,13 @@ import {
   Button,
   Label,
   MenuWrapper,
+  SettingWrapper,
+  ContainerWrapper,
+  ProfileWrapper,
 } from "./style";
+
+import { ReactComponent as SettingIcon } from "../common/icon/icon-header/setting.svg";
+import { ReactComponent as ProfileIcon } from "../common/icon/icon-header/profile.svg";
 
 const NavMenuLi = (propsList, setPortfoliosValue, setOpened, navMenuLink) =>
   propsList.map((item) => {
@@ -86,7 +92,28 @@ const NavPortfolioMobile = ({
       >
         <MenuWrapper header={header}>
           {children}
-          <MenuBurger opened={opened} handleClick={() => setOpened(!opened)} />
+          {header && (
+            <ContainerWrapper>
+              <MenuBurger
+                opened={opened}
+                handleClick={() => setOpened(!opened)}
+              />
+              <ContainerWrapper>
+                <ProfileWrapper>
+                  <ProfileIcon fill="white" />
+                </ProfileWrapper>
+                <SettingWrapper>
+                  <SettingIcon fill="white" />
+                </SettingWrapper>
+              </ContainerWrapper>
+            </ContainerWrapper>
+          )}
+          {!header && (
+            <MenuBurger
+              opened={opened}
+              handleClick={() => setOpened(!opened)}
+            />
+          )}
         </MenuWrapper>
         <HeaderMenu opened={opened}>
           <Ul>{MenuLi}</Ul>

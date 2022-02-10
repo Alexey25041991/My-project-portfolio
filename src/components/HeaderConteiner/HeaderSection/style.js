@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   TABLET_1024,
   TABLET_959,
@@ -13,6 +13,15 @@ import myIconBook from "../../common/icon/icon-header/books.png";
 import myIconPicture from "../../common/icon/icon-header/image.png";
 import myIconDay from "../../common/icon/icon-header/day.jpg";
 import myIconSun from "../../common/icon/icon-header/sun.png";
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export const HeaderSectionWrapper = styled.div`
   position: relative;
@@ -220,6 +229,20 @@ export const IconComp = styled.div`
     width: 94%;
     background-size: 100%;
     z-index: 0;
+  }
+`;
+
+export const SettingWrapper = styled.div`
+  display: flex;
+  width: 46px;
+  height: 46px;
+  margin-left: 76%;
+  margin-top: 6px;
+  cursor: pointer;
+  animation: ${spin} 10s linear infinite;
+
+  @media ${MOBILE_660} {
+    display: none;
   }
 `;
 

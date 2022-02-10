@@ -24,6 +24,7 @@ import {
   IconPicture,
   IconDay,
   IconSun,
+  SettingWrapper,
 } from "./style";
 
 import Modal from "../../Modal";
@@ -33,6 +34,7 @@ import { ReactComponent as RocketGetsiteIcon } from "../../common/icon/RocketIco
 import { ReactComponent as PhonesIcon } from "../../common/icon/PhonesIcon.svg";
 import { ReactComponent as EmailsIcon } from "../../common/icon/EmailsIcon.svg";
 import { ReactComponent as SkypeIcon } from "../../common/icon/SkypeHeaderIcon.svg";
+import { ReactComponent as SettingIcon } from "../../common/icon/icon-header/setting.svg";
 import Button from "../../common/Button";
 
 const HeaderSection = () => {
@@ -41,7 +43,11 @@ const HeaderSection = () => {
   return (
     <HeaderSectionWrapper>
       <HeaderSectionFon>
-        <IconComp />
+        <IconComp>
+          <SettingWrapper>
+            <SettingIcon fill="white" />
+          </SettingWrapper>
+        </IconComp>
         <IconMap />
         <Clock />
         <IconDay>

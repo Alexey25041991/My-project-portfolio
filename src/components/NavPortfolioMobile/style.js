@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { MOBILE_660 } from "../common/media";
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Overlay = styled.div`
   ${({ opened }) => (opened ? "" : "display: none;")};
@@ -46,11 +55,35 @@ export const HeaderMenu = styled.div`
 export const MenuWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   border-top: ${({ header }) => (header ? "none" : "2px solid #fff")};
   border-bottom: ${({ header }) => (header ? "2px solid #fff" : "none")};
   flex-direction: ${({ header }) => (header ? "row-reverse" : "row")};
   background-color: #464a53;
+`;
+
+export const SettingWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 26px;
+  cursor: pointer;
+  animation: ${spin} 10s linear infinite;
+`;
+
+export const ContainerWrapper = styled.div`
+  display: flex;
+  position: relative;
+  margin-right: 4px;
+`;
+
+export const ProfileWrapper = styled.div`
+  display: flex;
+  width: 32px;
+  margin-right: 20px;
+  cursor: pointer;
 `;
 
 export const Ul = styled.ul`
