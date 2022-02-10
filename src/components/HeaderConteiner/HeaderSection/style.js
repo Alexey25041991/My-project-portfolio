@@ -234,10 +234,10 @@ export const IconComp = styled.div`
 
 export const SettingWrapper = styled.div`
   display: flex;
-  width: 46px;
-  height: 46px;
+  width: 36px;
+  height: 36px;
   margin-left: 76%;
-  margin-top: 6px;
+  margin-top: 12px;
   cursor: pointer;
   animation: ${spin} 10s linear infinite;
 
