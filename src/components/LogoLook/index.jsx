@@ -1,8 +1,6 @@
 import React from "react";
 
 import { Logo, LogoSign, LaykoWayWrapper } from "./style";
-// import { ReactComponent as LaykoWay } from "../common/icon/LaykoWay.svg";
-// import { ReactComponent as LaykoWayLightIcon } from "../common/icon/LaykoWayDarkIcon.svg";
 import { ReactComponent as LaykoWayLightIcon } from "../common/icon/LaykoWayLightIcon.svg";
 
 const LogoLook = () => (
