@@ -243,7 +243,13 @@ export const SettingWrapper = styled.div`
   margin-left: 76%;
   margin-top: 12px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   animation: ${spin} 10s linear infinite;
+
+  &:active {
+    width: 40px;
+    height: 40px;
+  }
 
   @media ${MOBILE_660} {
     display: none;
