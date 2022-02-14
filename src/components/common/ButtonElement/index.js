@@ -4,6 +4,7 @@ import { ReactComponent as LangEnglishIcon } from "../icon/lang/gb.svg";
 
 const ButtonWrapper = styled.button`
   display: flex;
+  -webkit-tap-highlight-color: transparent;
   justify-content: center;
   align-items: center;
   margin: 0 auto;

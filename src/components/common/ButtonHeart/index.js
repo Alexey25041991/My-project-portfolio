@@ -8,6 +8,7 @@ const ButtonWrapper = styled.button`
   align-items: center;
   margin: 0 auto;
   margin-top: 10px;
+  -webkit-tap-highlight-color: transparent;
 
   position: relative;
 

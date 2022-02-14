@@ -124,6 +124,7 @@ export const PhonesConteiner = styled(HeaderSectionConteiner)`
 export const PhonesNumber = styled.a`
   display: flex;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
   color: white;
   font-size: 19px;
   font-weight: 700;
@@ -166,6 +167,7 @@ export const PhonesTextDivide = styled.div`
 export const PhonesText = styled.a`
   display: flex;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
   color: white;
   font-size: 19px;
   font-weight: 700;
@@ -193,6 +195,7 @@ export const Emails = styled(Phones)`
 export const ContactsText = styled(PhonesText)`
   font-size: 15px;
   margin-left: 10px;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export const Skype = styled(Phones)``;

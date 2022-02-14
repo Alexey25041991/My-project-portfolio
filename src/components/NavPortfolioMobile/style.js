@@ -70,6 +70,7 @@ export const SettingWrapper = styled.div`
   top: 0;
   width: 26px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   animation: ${spin} 10s linear infinite;
 `;
 
@@ -87,6 +88,7 @@ export const ProfileWrapper = styled.div`
   height: 32px;
   margin-right: 20px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export const Ul = styled.ul`

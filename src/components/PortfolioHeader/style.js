@@ -92,6 +92,7 @@ export const PortfolioDataLink = styled.a`
 
 export const LinkBreadcrumbs = styled.a`
   display: flex;
+  -webkit-tap-highlight-color: transparent;
   align-items: center;
   text-decoration: none;
   position: relative;

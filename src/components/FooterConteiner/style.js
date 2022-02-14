@@ -20,6 +20,7 @@ export const Link = styled.div`
 
 export const LabelText = styled.a`
   display: flex;
+  -webkit-tap-highlight-color: transparent;
   align-items: center;
   color: white;
   line-height: 24px;

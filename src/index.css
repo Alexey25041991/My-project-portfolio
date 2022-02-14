@@ -9,6 +9,14 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Основная ширина полосы прокрутки. */
 body::-webkit-scrollbar {
   width: 16px;

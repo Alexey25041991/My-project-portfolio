@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent;
   align-items: center;
   margin: 0 auto;
   margin-top: 20px;

@@ -169,6 +169,7 @@ export const PortfolioListData = styled.a`
 
 export const PortfolioListDataText = styled.a`
   display: flex;
+  -webkit-tap-highlight-color: transparent;
   overflow: hidden;
   text-decoration: none;
 `;
