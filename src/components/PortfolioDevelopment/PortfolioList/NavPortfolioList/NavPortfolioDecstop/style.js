@@ -34,6 +34,12 @@ export const PortfolioButtom = styled.button`
   margin-top: 20px;
   &:hover {
     background-color: #ff8560;
+    box-shadow 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform scale(1.03);
+  }
+  &:active {
+    box-shadow 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform scale(.98);
   }
   flex-grow: 1;
 `;

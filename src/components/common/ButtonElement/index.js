@@ -1,19 +1,20 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+
+import { ReactComponent as LangEnglishIcon } from "../icon/lang/gb.svg";
 
 const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: 20px;
-  width: 260px;
-  height: 44px;
+  margin-top: 16px;
+  width: 40px;
+  height: 40px;
   background-color: #2b3037;
   border-radius: 8px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   &:hover {
-    background-color: #ff8560;
     box-shadow 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
     transform scale(1.03);
   }
@@ -21,24 +22,6 @@ const ButtonWrapper = styled.button`
     box-shadow 0px 4px 8px rgba(darken(dodgerblue, 30%));
     transform scale(.98);
   }
-  ${({ toOrder }) =>
-    toOrder &&
-    css`
-      border: 2px solid white;
-      box-shadow: none;
-    `}
-  ${({ toOrderHeader }) =>
-    toOrderHeader &&
-    css`
-      width: 260px;
-      background-color: #ff8560;
-      box-shadow: none;
-      &:hover {
-        background-color: #fa5f1d;
-      }
-      border: 2px solid white;
-      margin-top: 0;
-    `}
 `;
 
 const Label = styled.div`
@@ -53,17 +36,14 @@ const Label = styled.div`
   margin-top: 5px;
 `;
 
-const Button = ({ children, title, toOrder, toOrderHeader, handleClick }) => {
+const ButtonElement = ({ children, title, handleClick }) => {
   return (
-    <ButtonWrapper
-      toOrder={toOrder}
-      toOrderHeader={toOrderHeader}
-      onClick={handleClick}
-    >
+    <ButtonWrapper onClick={handleClick}>
       {children}
+      <LangEnglishIcon />
       {title && <Label>{title}</Label>}
     </ButtonWrapper>
   );
 };
 
-export default Button;
+export default ButtonElement;

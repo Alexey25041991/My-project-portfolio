@@ -3,6 +3,8 @@ import { Popup } from "semantic-ui-react";
 
 import MenuBurger from "../MenuBurger";
 import ButtonLink from "../common/ButtonLink";
+import ButtonElement from "../common/ButtonElement";
+import ButtonHeart from "../common/ButtonHeart";
 import ThemeDarkLight from "../common/ThemeDarkLight";
 
 import {
@@ -104,10 +106,12 @@ const NavPortfolioMobile = ({
               <Popup
                 content={
                   <>
+                    <ButtonHeart />
                     <ThemeDarkLight
                       opened={opened}
                       handleClick={() => setOpened(!opened)}
                     />
+                    <ButtonElement />
                   </>
                 }
                 className="popupSetting"
