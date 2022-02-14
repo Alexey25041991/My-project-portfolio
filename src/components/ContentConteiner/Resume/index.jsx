@@ -93,14 +93,14 @@ const Resume = () => (
             работу.
           </ResumeValue>
         </ResumeOptions>
-        <ResumeOptions>
+        {/* <ResumeOptions>
           <ResumeStatus>КОНТАКТЫ:</ResumeStatus>
           <ResumeValue>
             Моб.: +7(977)270-09-30 / +7(977)270-09-30
             <br /> Skype: aleks10_0
             <br /> Почта: mazurenko-alexey@mail.ru
           </ResumeValue>
-        </ResumeOptions>
+        </ResumeOptions> */}
       </ResumeCustom>
     </PageConteiner>
   </PageWrapper>
