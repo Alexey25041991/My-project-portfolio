@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { Popup } from "semantic-ui-react";
 
 import MenuBurger from "../MenuBurger";
 import ButtonLink from "../common/ButtonLink";
+import ThemeDarkLight from "../common/ThemeDarkLight";
 
 import {
   Overlay,
@@ -17,6 +19,7 @@ import {
   ContainerWrapper,
   ProfileWrapper,
 } from "./style";
+import "./index.css";
 
 import { ReactComponent as SettingIcon } from "../common/icon/icon-header/setting.svg";
 import { ReactComponent as ProfileIcon } from "../common/icon/icon-header/profile.svg";
@@ -98,14 +101,29 @@ const NavPortfolioMobile = ({
                 opened={opened}
                 handleClick={() => setOpened(!opened)}
               />
-              <ContainerWrapper>
-                <ProfileWrapper>
-                  <ProfileIcon fill="white" />
-                </ProfileWrapper>
-                <SettingWrapper>
-                  <SettingIcon fill="white" />
-                </SettingWrapper>
-              </ContainerWrapper>
+              <Popup
+                content={
+                  <>
+                    <ThemeDarkLight
+                      opened={opened}
+                      handleClick={() => setOpened(!opened)}
+                    />
+                  </>
+                }
+                className="popupSetting"
+                on="click"
+                position="bottom center"
+                trigger={
+                  <ContainerWrapper>
+                    <ProfileWrapper>
+                      <ProfileIcon fill="white" />
+                    </ProfileWrapper>
+                    <SettingWrapper>
+                      <SettingIcon fill="white" />
+                    </SettingWrapper>
+                  </ContainerWrapper>
+                }
+              />
             </ContainerWrapper>
           )}
           {!header && (

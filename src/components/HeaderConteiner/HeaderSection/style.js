@@ -34,6 +34,7 @@ export const HeaderSectionWrapper = styled.div`
 
   @media ${TABLET_1024} {
     width: 100%;
+    min-height: 600px;
   }
 
   @media ${MOBILE_660} {

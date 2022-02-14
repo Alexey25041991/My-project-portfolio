@@ -67,7 +67,7 @@ export const SettingWrapper = styled.div`
   display: flex;
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 0;
   width: 26px;
   cursor: pointer;
   animation: ${spin} 10s linear infinite;
@@ -75,13 +75,16 @@ export const SettingWrapper = styled.div`
 
 export const ContainerWrapper = styled.div`
   display: flex;
+  align-items: center;
   position: relative;
+  height: 40px;
   margin-right: 4px;
 `;
 
 export const ProfileWrapper = styled.div`
   display: flex;
   width: 32px;
+  height: 32px;
   margin-right: 20px;
   cursor: pointer;
 `;
