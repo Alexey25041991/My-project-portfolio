@@ -30,8 +30,8 @@ const ButtonWrapper = styled.button`
     left: -1em;
     right: -1em;
     border-radius: 4em;
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2), inset 0 0 0px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.1s;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), inset 0 0 0px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s;
   }
 
   &:hover,
@@ -47,8 +47,8 @@ const ButtonWrapper = styled.button`
       box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
     }
     &::after {
-      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),
-        inset -3px 3px 1em rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.4),
+        inset -3px 3px 1em rgba(0, 0, 0, 0.4);
     }
   }
 `;
