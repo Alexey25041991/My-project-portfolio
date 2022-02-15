@@ -67,6 +67,7 @@ export const LabelTextValue = styled.div`
 
 export const ButtonWrapper = styled.div`
   display: flex;
+  padding-bottom: 8px;
 
   @media ${MOBILE_660} {
     justify-content: center;
@@ -129,8 +130,8 @@ export const FooterValue = styled.div`
 
 export const HeaderTopWrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 74px;
   width: 960px;
   margin: 0 auto;
   border-bottom: 1px solid #ffff;
