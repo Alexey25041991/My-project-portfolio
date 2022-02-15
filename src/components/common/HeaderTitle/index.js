@@ -34,7 +34,7 @@ const HeaderLabel = styled.div`
 const HeaderTitle = ({ children, title, dark }) => {
   return (
     <HeaderWrapper>
-      <div>{children}</div>
+      {children}
       {title && <HeaderLabel dark={dark}>{title}</HeaderLabel>}
     </HeaderWrapper>
   );
