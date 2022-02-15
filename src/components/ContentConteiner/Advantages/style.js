@@ -22,7 +22,7 @@ export const Li = styled.li`
   display: flex;
   vertical-align: top;
   width: 296px;
-  margin-right: 17px;
+  margin-right: 10px;
   margin-top: 40px;
 
   @media ${TABLET_959} {
