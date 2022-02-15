@@ -21,7 +21,6 @@ import {
   PortfolioListData,
   PortfolioListDataText,
 } from "./style.js";
-import "./index.css";
 
 import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
@@ -44,7 +43,7 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
         )
       : propsPortfolioList;
   return filterPropsPortfolioList?.map((item) => (
-    <Li key={item.id} className>
+    <Li key={item.id}>
       <TextBlogHeader>{item.textBlogHeader}</TextBlogHeader>
       <TextBlogWrapper>
         <PortfolioImg>

@@ -2,28 +2,8 @@ import React, { useState } from "react";
 
 import PortfolioHeader from "../../PortfolioHeader";
 
-import {
-  PortfolioCustom,
-  Ul,
-  Li,
-  SlickList,
-  SlickTrack,
-  PortfolioImg,
-  PortfolioImgUrl,
-  PortfolioData,
-  PortfolioDataValue,
-  PortfolioDataLabel,
-  PortfolioDataText,
-  PortfolioDataTime,
-  PortfolioName,
-  PortfolioNameList,
-  PortfolioListData,
-  PortfolioListDataText,
-} from "./style.js";
+import { PortfolioCustom, Ul, SlickList, SlickTrack } from "./style.js";
 import "./index.css";
-
-import { ReactComponent as PortfolioLabelIcon } from "../../common/icon/LabelIcon.svg";
-import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
 import { propsList } from "./constants";
 import {
@@ -33,6 +13,7 @@ import {
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
+import PortfolioValue from "../../common/PortfolioValue";
 
 import NavPortfolioList from "./NavPortfolioList";
 
@@ -44,38 +25,7 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
         )
       : propsPortfolioList;
   return filterPropsPortfolioList?.map((item) => (
-    <Li key={item.id}>
-      <PortfolioImg>
-        <PortfolioListData
-          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
-        >
-          <PortfolioImgUrl
-            src={item.icon}
-            width={item.widthIcon}
-            height={item.heightIcon}
-          />
-        </PortfolioListData>
-      </PortfolioImg>
-      <PortfolioData>
-        <PortfolioDataValue>
-          <PortfolioDataLabel>
-            <PortfolioLabelIcon />
-            <PortfolioDataText>{item.portfolioNameList}</PortfolioDataText>
-          </PortfolioDataLabel>
-          <PortfolioDataTime>
-            <PortfolioTimeIcon />
-            <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
-          </PortfolioDataTime>
-        </PortfolioDataValue>
-      </PortfolioData>
-      <PortfolioName>
-        <PortfolioListDataText
-          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
-        >
-          <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
-        </PortfolioListDataText>
-      </PortfolioName>
-    </Li>
+    <PortfolioValue data={item} portfolioList />
   ));
 };
 const PortfolioList = () => {

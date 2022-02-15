@@ -4,29 +4,15 @@ import Slider from "infinite-react-carousel";
 import {
   PortfolioCustom,
   Ul,
-  Li,
   ButtonL,
   ButtonR,
   SlickList,
   SlickTrack,
-  PortfolioImg,
-  PortfolioImgUrl,
-  PortfolioData,
-  PortfolioDataValue,
-  PortfolioDataLabel,
-  PortfolioDataText,
-  PortfolioDataTime,
-  PortfolioName,
-  PortfolioNameList,
-  PortfolioListData,
-  PortfolioListDataText,
 } from "./style.js";
 import "./index.css";
 
 import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioDarkIcon.svg";
 import { ReactComponent as KeyIcon } from "../../common/icon/KeyIcon.svg";
-import { ReactComponent as PortfolioLabelIcon } from "../../common/icon/LabelIcon.svg";
-import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
 import { propsPortfolioList } from "../../common/constants";
 
@@ -35,42 +21,10 @@ import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
 import ButtonLink from "../../common/ButtonLink";
+import PortfolioValue from "../../common/PortfolioValue";
 
 const getSlickList = (propsPortfolioList) =>
-  propsPortfolioList.map((item) => (
-    <Li key={item.id}>
-      <PortfolioImg>
-        <PortfolioListData
-          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
-        >
-          <PortfolioImgUrl
-            src={item.icon}
-            width={item.widthIcon}
-            height={item.heightIcon}
-          />
-        </PortfolioListData>
-        <PortfolioData>
-          <PortfolioDataValue>
-            <PortfolioDataLabel>
-              <PortfolioLabelIcon />
-              <PortfolioDataText>{item.portfolioNameList}</PortfolioDataText>
-            </PortfolioDataLabel>
-            <PortfolioDataTime>
-              <PortfolioTimeIcon />
-              <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
-            </PortfolioDataTime>
-          </PortfolioDataValue>
-        </PortfolioData>
-      </PortfolioImg>
-      <PortfolioName>
-        <PortfolioListDataText
-          href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}
-        >
-          <PortfolioNameList>{item.portfolioNameList}</PortfolioNameList>
-        </PortfolioListDataText>
-      </PortfolioName>
-    </Li>
-  ));
+  propsPortfolioList.map((item) => <PortfolioValue data={item} />);
 
 const screenWidth = window.screen.width;
 
