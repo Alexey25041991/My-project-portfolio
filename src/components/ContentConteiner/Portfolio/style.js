@@ -125,6 +125,7 @@ export const SlickTrack = styled.div`
 
 export const PortfolioImg = styled.div`
   display: flex;
+  flex-direction: column;
   background: url(${myIconBgport}) no-repeat;
   width: 328px;
   height: 359px;
@@ -141,19 +142,19 @@ export const PortfolioImgUrl = styled.img`
 export const PortfolioData = styled.div`
   display: flex;
   text-align: left;
-  margin-top: -46px;
-  padding: 0px 14px 0px 23px;
+  margin-top: 22px;
   margin-bottom: 15px;
+  margin-left: 28px;
   position: relative;
 `;
 
 export const PortfolioDataValue = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 4px 7px;
   background: #e7e9ea;
   color: #707980;
-  min-width: 277px;
+  min-width: 286px;
 `;
 
 export const PortfolioDataLabel = styled.div`

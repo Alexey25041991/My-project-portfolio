@@ -49,19 +49,19 @@ const getSlickList = (propsPortfolioList) =>
             height={item.heightIcon}
           />
         </PortfolioListData>
+        <PortfolioData>
+          <PortfolioDataValue>
+            <PortfolioDataLabel>
+              <PortfolioLabelIcon />
+              <PortfolioDataText>{item.portfolioNameList}</PortfolioDataText>
+            </PortfolioDataLabel>
+            <PortfolioDataTime>
+              <PortfolioTimeIcon />
+              <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
+            </PortfolioDataTime>
+          </PortfolioDataValue>
+        </PortfolioData>
       </PortfolioImg>
-      <PortfolioData>
-        <PortfolioDataValue>
-          <PortfolioDataLabel>
-            <PortfolioLabelIcon />
-            <PortfolioDataText>{item.portfolioNameList}</PortfolioDataText>
-          </PortfolioDataLabel>
-          <PortfolioDataTime>
-            <PortfolioTimeIcon />
-            <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
-          </PortfolioDataTime>
-        </PortfolioDataValue>
-      </PortfolioData>
       <PortfolioName>
         <PortfolioListDataText
           href={`/portfolio/${item.hrefNameList}/#portfolioHeader`}

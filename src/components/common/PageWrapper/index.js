@@ -19,7 +19,7 @@ const PageWrapper = styled.div`
     width: 100%;
     height: 22px;
     display: flex;
-    margin-top: -22px;
+    margin-top: -20px;
     position: absolute;
     z-index: 10;
   }

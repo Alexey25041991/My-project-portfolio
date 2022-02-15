@@ -75,6 +75,7 @@ export const PortfolioData = styled.div`
 export const PortfolioDataLink = styled.a`
   display: flex;
   cursor: pointer;
+  text-align: center;
   text-decoration: none;
   color: #fff;
   font-size: 14px;
