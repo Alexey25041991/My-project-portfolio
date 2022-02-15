@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, Fragment } from "react";
 import Slider from "infinite-react-carousel";
 
 import {
@@ -21,10 +21,14 @@ import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
 import ButtonLink from "../../common/ButtonLink";
-import PortfolioValue from "../../common/PortfolioValue";
+import PortfolioValueItem from "../../common/PortfolioValueItem";
 
 const getSlickList = (propsPortfolioList) =>
-  propsPortfolioList.map((item) => <PortfolioValue data={item} />);
+  propsPortfolioList.map((item) => (
+    <Fragment key={item.id}>
+      <PortfolioValueItem data={item} />
+    </Fragment>
+  ));
 
 const screenWidth = window.screen.width;
 

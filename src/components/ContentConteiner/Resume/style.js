@@ -9,7 +9,7 @@ export const Avatar = styled.div`
   height: 144px;
   border-radius: 50%;
   position: absolute;
-  right: 140px;
+  right: 112px;
 
   @media ${TABLET_959} {
     position: relative;

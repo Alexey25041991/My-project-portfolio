@@ -18,8 +18,8 @@ import {
 import { ReactComponent as PortfolioLabelIcon } from "../../common/icon/LabelIcon.svg";
 import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
 
-const PortfolioValue = ({ data, portfolioList }) => (
-  <Li key={data.id} portfolioList={portfolioList}>
+const PortfolioValueItem = ({ data, portfolioList }) => (
+  <Li portfolioList={portfolioList}>
     <PortfolioImg>
       <PortfolioListData
         href={`/portfolio/${data.hrefNameList}/#portfolioHeader`}
@@ -53,9 +53,9 @@ const PortfolioValue = ({ data, portfolioList }) => (
   </Li>
 );
 
-PortfolioValue.defaulyProps = {
+PortfolioValueItem.defaulyProps = {
   data: {},
   portfolioList: false,
 };
 
-export default PortfolioValue;
+export default PortfolioValueItem;

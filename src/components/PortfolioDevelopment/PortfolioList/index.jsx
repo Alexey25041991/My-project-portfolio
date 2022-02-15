@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 import PortfolioHeader from "../../PortfolioHeader";
 
@@ -13,7 +13,7 @@ import {
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
-import PortfolioValue from "../../common/PortfolioValue";
+import PortfolioValueItem from "../../common/PortfolioValueItem";
 
 import NavPortfolioList from "./NavPortfolioList";
 
@@ -25,7 +25,9 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
         )
       : propsPortfolioList;
   return filterPropsPortfolioList?.map((item) => (
-    <PortfolioValue data={item} portfolioList />
+    <Fragment key={item.id}>
+      <PortfolioValueItem data={item} portfolioList />
+    </Fragment>
   ));
 };
 const PortfolioList = () => {
