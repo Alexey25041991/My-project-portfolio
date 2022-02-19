@@ -11,12 +11,13 @@ import {
   FooterValue,
   Ul,
   Li,
+  Text,
   LabelText,
   LabelTextValue,
   HeaderTopWrapper,
   HeaderLogCoderText,
   FooterValueIt,
-  HhWrapper,
+  LinkWrapper,
   FooterHh,
   ButtonWrapper,
   LogoLookWrapper,
@@ -61,7 +62,7 @@ const FooterConteiner = () => {
                 <Link>
                   <FooterСlockIcon width="40px" height="40px" />
                   <Label>Ежедневно</Label>
-                  <LabelText>с 9:00 до 21:00</LabelText>
+                  <Text>с 9:00 до 21:00</Text>
                 </Link>
               </Li>
               <Li>
@@ -77,30 +78,28 @@ const FooterConteiner = () => {
                 </Link>
               </Li>
               <Li>
-                <Link>
+                <LinkWrapper href="mailto:mazurenko-alexey@mail.ru">
                   <FooterMailIcon />
                   <Label>E-mail</Label>
-                  <LabelText href="mailto:mazurenko-alexey@mail.ru">
-                    mazurenko-alexey@mail.ru
-                  </LabelText>
-                </Link>
+                  <LabelTextValue>mazurenko-alexey@mail.ru</LabelTextValue>
+                </LinkWrapper>
               </Li>
               <Li>
-                <Link>
+                <LinkWrapper href="skype:aleks10_0?chat">
                   <FooterSkypeIcon />
                   <Label>Skype</Label>
-                  <LabelText href="skype:aleks10_0?chat">aleks10_0</LabelText>
-                </Link>
+                  <LabelTextValue>aleks10_0</LabelTextValue>
+                </LinkWrapper>
               </Li>
               <Li>
-                <HhWrapper
+                <LinkWrapper
                   href="https://odintsovo.hh.ru/resume/4aec3036ff03a8254c0039ed1f33756c4c7653"
                   target="_blank"
                 >
                   <FooterHh>hh</FooterHh>
                   <Label>HeadHunter</Label>
                   <LabelTextValue>Мазуренко Алексей</LabelTextValue>
-                </HhWrapper>
+                </LinkWrapper>
               </Li>
             </Ul>
           </FooterValue>

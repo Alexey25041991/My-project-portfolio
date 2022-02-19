@@ -49,6 +49,7 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 
 const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
   const dataTime = portfolio ? "Портфолио" : "Заметки веб-разработчика";
+  console.log(111, item.portfolioText.split(". "));
   return (
     <PageWrapper dark id="portfolioHeader">
       <PageConteiner>
@@ -93,7 +94,9 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
               </PortfolioDataLink>
             </PortfolioData>
           )}
-          <PortfolioText>{item?.portfolioText}</PortfolioText>
+          {item?.portfolioText.split(". ").map((item) => (
+            <PortfolioText>{item}.</PortfolioText>
+          ))}
         </PortfolioHeaderText>
       </PageConteiner>
     </PageWrapper>

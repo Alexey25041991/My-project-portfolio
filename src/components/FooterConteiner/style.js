@@ -18,6 +18,21 @@ export const Link = styled.div`
   color: palevioletred;
 `;
 
+export const Text = styled.p`
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+  color: white;
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  position: relative;
+`;
+
 export const LabelText = styled.a`
   display: flex;
   -webkit-tap-highlight-color: transparent;
@@ -32,12 +47,16 @@ export const LabelText = styled.a`
   margin-top: 10px;
   position: relative;
 
+  &:hover {
+    color: white;
+  }
+
   &:hover:before {
     position: absolute;
     content: "";
     width: calc(100% + (1px * 2));
     height: 2px;
-    bottom: 0;
+    bottom: -6px;
     background: #fff;
   }
 `;
@@ -54,15 +73,6 @@ export const LabelTextValue = styled.div`
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   position: relative;
-
-  &:hover:before {
-    position: absolute;
-    content: "";
-    width: calc(100% + (1px * 2));
-    height: 2px;
-    bottom: 0;
-    background: #fff;
-  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -166,13 +176,22 @@ export const FooterValueIt = styled.div`
   padding: 35px 25px 0px 25px;
 `;
 
-export const HhWrapper = styled.a`
+export const LinkWrapper = styled.a`
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px 15px;
   color: palevioletred;
+  position: relative;
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% - (10px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #fff;
+  }
 `;
 
 export const FooterHh = styled.div`

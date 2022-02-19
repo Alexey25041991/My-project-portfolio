@@ -50,6 +50,7 @@ export const PortfolioDataText = styled.div`
 export const PortfolioText = styled.div`
   color: #fff;
   font-size: 14px;
+  line-height: 24px;
   font-family: "Exo 2", sans-serif;
 
   @media ${MOBILE_660} {
@@ -81,6 +82,11 @@ export const PortfolioDataLink = styled.a`
   font-size: 14px;
   line-height: 22px;
   position: relative;
+
+  &:hover {
+    color: #fff;
+  }
+
   &:hover:before {
     position: absolute;
     content: "";
