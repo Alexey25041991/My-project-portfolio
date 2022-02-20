@@ -122,6 +122,11 @@ export const Li = styled.li`
   vertical-align: top;
   text-align: center;
   margin-bottom: 16px;
+
+  @media ${MOBILE_660} {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const FooterValue = styled.div`

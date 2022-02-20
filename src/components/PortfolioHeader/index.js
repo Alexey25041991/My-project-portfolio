@@ -49,7 +49,6 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 
 const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
   const dataTime = portfolio ? "Портфолио" : "Заметки веб-разработчика";
-  console.log(111, item.portfolioText.split(". "));
   return (
     <PageWrapper dark id="portfolioHeader">
       <PageConteiner>
@@ -77,7 +76,6 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
               <span>{item?.technologies?.join(" / ")}</span>
             </PortfolioData>
           )}
-
           {item?.github && (
             <PortfolioData>
               <PortfolioDataTitle>Ссылка на github:</PortfolioDataTitle>

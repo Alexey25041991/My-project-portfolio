@@ -51,10 +51,12 @@ export const PortfolioText = styled.div`
   color: #fff;
   font-size: 14px;
   line-height: 24px;
+  text-indent: 20px;
   font-family: "Exo 2", sans-serif;
 
   @media ${MOBILE_660} {
     text-align: center;
+    text-indent: revert;
   }
 `;
 

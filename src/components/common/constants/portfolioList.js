@@ -24,7 +24,7 @@ export const propsPortfolioList = [
     technologies: ["React", "Redux", "HTML5", "JS", "CSS3"],
     github: "https://github.com/Alexey25041991/react-t-shirt-shop.git",
     portfolioText:
-      "Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров.",
+      "Создан сайт интернет-магазин. Каталог товаров, корзина, фильтр по размерам товаров",
   },
   {
     id: "2",

@@ -16,10 +16,12 @@ export const ServicesText = styled.p`
   color: #000;
   font-size: 14px;
   line-height: 20px;
+  text-indent: 20px;
 
   @media ${MOBILE_660} {
     width: 100%;
     text-align: center;
+    text-indent: revert;
   }
 `;
 

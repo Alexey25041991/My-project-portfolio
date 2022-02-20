@@ -24,12 +24,14 @@ export const PersonalCustom = styled.div`
 export const PersonalText = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
+  text-indent: 20px;
   color: #000;
   font-size: 14px;
   line-height: 20px;
 
   @media ${MOBILE_660} {
     text-align: center;
+    text-indent: revert;
   }
 `;
 
