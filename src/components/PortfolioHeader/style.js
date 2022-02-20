@@ -3,7 +3,7 @@ import { MOBILE_660 } from "../common/media";
 
 export const PortfolioHeaderText = styled.div`
   // margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 20px;
   margin-left: 20px;
   color: #fff;

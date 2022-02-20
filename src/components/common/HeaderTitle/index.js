@@ -5,7 +5,7 @@ const HeaderWrapper = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 
   @media ${MOBILE_660} {
     flex-direction: column;
