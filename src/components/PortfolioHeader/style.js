@@ -2,13 +2,20 @@ import styled from "styled-components";
 import { MOBILE_660 } from "../common/media";
 
 export const PortfolioHeaderText = styled.div`
-  margin-top: 10px;
+  // margin: 0 auto;
+  margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 20px;
   color: #fff;
   font-size: 14px;
   line-height: 20px;
   display: flex;
   flex-direction: column;
+  // max-width: 660px;
+
+  @media ${MOBILE_660} {
+    margin-left: 0;
+  }
 `;
 
 export const PortfolioHeaderBreadCrumbs = styled.div`
@@ -47,17 +54,39 @@ export const PortfolioDataText = styled.div`
   font-family: "Exo 2", sans-serif;
 `;
 
-export const PortfolioText = styled.div`
-  color: #fff;
-  font-size: 14px;
-  line-height: 24px;
-  text-indent: 20px;
-  font-family: "Exo 2", sans-serif;
+export const PortfolioTextWrapper = styled.div`
+  display: flex;
+  margin-top: 8px;
+  flex-direction: column;
 
   @media ${MOBILE_660} {
     text-align: center;
     text-indent: revert;
   }
+`;
+
+export const PortfolioText = styled.div`
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  text-indent: ${({ portfolioTextIndent }) =>
+    portfolioTextIndent ? "20px" : "revert"};
+  font-family: "Exo 2", sans-serif;
+
+  &:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  @media ${MOBILE_660} {
+    text-align: center;
+    text-indent: revert;
+  }
+`;
+
+export const PortfolioTextTitle = styled.h3`
+  color: #fff;
+  margin: 0 auto;
+  margin-bottom: 12px;
 `;
 
 export const PortfolioData = styled.div`

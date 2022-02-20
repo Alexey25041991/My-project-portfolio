@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Breadcrumbs } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
@@ -12,7 +12,9 @@ import {
   PortfolioDataText,
   PortfolioData,
   PortfolioDataLink,
+  PortfolioTextWrapper,
   PortfolioText,
+  PortfolioTextTitle,
   LinkBreadcrumbs,
 } from "./style";
 
@@ -48,7 +50,18 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 };
 
 const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
+  const [portfolioTextValue, setPortfolioTextValue] = useState([]);
   const dataTime = portfolio ? "Портфолио" : "Заметки веб-разработчика";
+
+  useEffect(() => {
+    const portfolioTextData = Array.from(
+      document?.querySelectorAll("[data-prp-header]")
+    );
+    const portfolioTextDataValue = portfolioTextData.filter(
+      (item) => item.clientHeight > 25
+    );
+    setPortfolioTextValue(portfolioTextDataValue.map((item) => item.innerText));
+  }, [setPortfolioTextValue]);
   return (
     <PageWrapper dark id="portfolioHeader">
       <PageConteiner>
@@ -92,9 +105,25 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
               </PortfolioDataLink>
             </PortfolioData>
           )}
-          {item?.portfolioText.split(". ").map((item) => (
-            <PortfolioText>{item}.</PortfolioText>
-          ))}
+          {item?.portfolioTextTitle && (
+            <PortfolioTextTitle>{item?.portfolioTextTitle}</PortfolioTextTitle>
+          )}
+          {item?.portfolioText && (
+            <PortfolioTextWrapper>
+              {item?.portfolioText.split("\n").map((item, index) => {
+                const portfolioTextIndent = portfolioTextValue.includes(item);
+                return (
+                  <PortfolioText
+                    key={index}
+                    data-prp-header
+                    portfolioTextIndent={portfolioTextIndent}
+                  >
+                    {item}
+                  </PortfolioText>
+                );
+              })}
+            </PortfolioTextWrapper>
+          )}
         </PortfolioHeaderText>
       </PageConteiner>
     </PageWrapper>
