@@ -77,6 +77,7 @@ export const HeaderSectionGetsite = styled.div`
 export const HeaderSectionConteiner = styled.div`
   display: flex;
   flex-direction: column;
+  z-index: 20;
 `;
 
 export const HeaderSectionLabel = styled.span`
@@ -136,6 +137,10 @@ export const PhonesNumber = styled.a`
   margin-right: 20px;
   cursor: pointer;
 
+  &:hover {
+    color: #fff;
+  }
+
   &:hover:before {
     position: absolute;
     content: "";
@@ -178,6 +183,10 @@ export const PhonesText = styled.a`
   position: relative;
   cursor: pointer;
 
+  &:hover {
+    color: #fff;
+  }
+
   &:hover:before {
     position: absolute;
     content: "";
@@ -185,6 +194,7 @@ export const PhonesText = styled.a`
     height: 2px;
     bottom: 0;
     background: #fff;
+    color: #fff;
   }
 `;
 
@@ -252,13 +262,8 @@ export const SettingWrapper = styled.div`
   -webkit-tap-highlight-color: transparent;
 
   &:hover {
-    width: 40px;
-    height: 40px;
     & svg {
-      fill="red";
-    }
-    &:svg {
-      fill="red";
+      fill: #ff8560;
     }
   }
 

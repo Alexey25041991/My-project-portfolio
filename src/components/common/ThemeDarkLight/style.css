@@ -1,4 +1,4 @@
-input {
+#themeDarkLight input {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0.75em;
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
@@ -14,12 +14,12 @@ input {
   -moz-appearance: none;
   appearance: none;
 }
-input:before,
-input:after {
+#themeDarkLight input:before,
+#themeDarkLight input:after {
   content: "";
   display: block;
 }
-input:before {
+#themeDarkLight input:before {
   background-color: #d7d7d7;
   border-radius: 50%;
   width: 1.2em;
@@ -27,7 +27,7 @@ input:before {
   transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
   z-index: 1;
 }
-input:after {
+#themeDarkLight input:after {
   background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% /
       50% 100%,
     repeating-linear-gradient(90deg, #bbb 0, #bbb, #bbb 20%, #999 20%, #999 40%)
@@ -44,20 +44,20 @@ input:after {
   height: 1em;
 }
 /* Checked */
-input:checked {
+#themeDarkLight input:checked {
   background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
-input:checked:before {
+#themeDarkLight input:checked:before {
   background-color: currentColor;
   transform: translateX(125%);
 }
-input:checked:after {
+#themeDarkLight input:checked:after {
   border-left-color: currentColor;
   transform: translateX(-2.5%) rotateY(180deg);
 }
 /* Other States */
-input:focus {
+#themeDarkLight input:focus {
   /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
   outline: 0;
 }

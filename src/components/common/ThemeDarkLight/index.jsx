@@ -4,7 +4,11 @@ import { ThemeDarkLightWrapper } from "./style";
 import "./style.css";
 
 const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => (
-  <ThemeDarkLightWrapper onClick={handleClick} positionStyle={positionStyle}>
+  <ThemeDarkLightWrapper
+    id="themeDarkLight"
+    onClick={handleClick}
+    positionStyle={positionStyle}
+  >
     <input type="checkbox" checked={opened} onChange={() => console.log("")} />
   </ThemeDarkLightWrapper>
 );
