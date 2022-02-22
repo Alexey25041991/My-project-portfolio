@@ -236,6 +236,12 @@ export const IconComp = styled.div`
   }
 `;
 
+export const SettingIconWrapper = styled.div`
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+  animation: ${spin} 10s linear infinite;
+`;
+
 export const SettingWrapper = styled.div`
   display: flex;
   width: 36px;
@@ -244,7 +250,6 @@ export const SettingWrapper = styled.div`
   margin-top: 12px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  animation: ${spin} 10s linear infinite;
 
   &:hover {
     width: 40px;

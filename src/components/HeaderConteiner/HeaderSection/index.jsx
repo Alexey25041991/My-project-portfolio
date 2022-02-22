@@ -25,6 +25,7 @@ import {
   IconDay,
   IconSun,
   SettingWrapper,
+  SettingIconWrapper,
 } from "./style";
 
 import Modal from "../../Modal";
@@ -59,7 +60,9 @@ const HeaderSection = () => {
             handleClickPopup={() => handleClickPopup()}
           >
             <SettingWrapper>
-              <SettingIcon fill="white" />
+              <SettingIconWrapper>
+                <SettingIcon fill="white" />
+              </SettingIconWrapper>
             </SettingWrapper>
           </PopupSetting>
         </IconComp>
