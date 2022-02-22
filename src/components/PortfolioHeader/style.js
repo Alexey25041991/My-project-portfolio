@@ -87,6 +87,10 @@ export const PortfolioTextTitle = styled.h3`
   color: #fff;
   margin: 0 auto;
   margin-bottom: 12px;
+
+  @media ${MOBILE_660} {
+    text-align: center;
+  }
 `;
 
 export const PortfolioData = styled.div`

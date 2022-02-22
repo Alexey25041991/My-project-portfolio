@@ -2,12 +2,15 @@ import styled from "styled-components";
 
 import { Icon } from "semantic-ui-react";
 
+import { MOBILE_660 } from "../media";
+
 const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  margin-top: 10px;
+  margin-right: ${({ positionStyle }) => (positionStyle ? "10px" : "0")};
+  margin-top: ${({ positionStyle }) => (positionStyle ? "0" : "10px")};
+
   -webkit-tap-highlight-color: transparent;
 
   position: relative;
@@ -52,6 +55,11 @@ const ButtonWrapper = styled.button`
         inset -3px 3px 1em rgba(0, 0, 0, 0.4);
     }
   }
+
+  @media ${MOBILE_660} {
+    margin: 0 auto;
+    margin-top: 10px;
+  }
 `;
 
 const Label = styled.div`
@@ -67,9 +75,9 @@ const Label = styled.div`
   margin-top: 30px;
 `;
 
-const ButtonHeart = ({ handleClick }) => {
+const ButtonHeart = ({ handleClick, positionStyle }) => {
   return (
-    <ButtonWrapper onClick={handleClick}>
+    <ButtonWrapper onClick={handleClick} positionStyle={positionStyle}>
       <Icon name="heart" color="red" size="large" />
       <Label>20</Label>
     </ButtonWrapper>

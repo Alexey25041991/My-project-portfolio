@@ -1,11 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Popup } from "semantic-ui-react";
 
 import MenuBurger from "../MenuBurger";
 import ButtonLink from "../common/ButtonLink";
-import ButtonElement from "../common/ButtonElement";
-import ButtonHeart from "../common/ButtonHeart";
-import ThemeDarkLight from "../common/ThemeDarkLight";
+import PopupSetting from "../common/PopupSetting";
 
 import {
   Overlay,
@@ -21,7 +18,6 @@ import {
   ContainerWrapper,
   ProfileWrapper,
 } from "./style";
-import "./index.css";
 
 import { ReactComponent as SettingIcon } from "../common/icon/icon-header/setting.svg";
 import { ReactComponent as ProfileIcon } from "../common/icon/icon-header/profile.svg";
@@ -103,31 +99,16 @@ const NavPortfolioMobile = ({
                 opened={opened}
                 handleClick={() => setOpened(!opened)}
               />
-              <Popup
-                content={
-                  <>
-                    <ButtonHeart />
-                    <ThemeDarkLight
-                      opened={opened}
-                      handleClick={() => setOpened(!opened)}
-                    />
-                    <ButtonElement />
-                  </>
-                }
-                className="popupSetting"
-                on="click"
-                position="bottom center"
-                trigger={
-                  <ContainerWrapper>
-                    <ProfileWrapper>
-                      <ProfileIcon fill="white" />
-                    </ProfileWrapper>
-                    <SettingWrapper>
-                      <SettingIcon fill="white" />
-                    </SettingWrapper>
-                  </ContainerWrapper>
-                }
-              />
+              <PopupSetting positionValue="bottom center">
+                <ContainerWrapper>
+                  <ProfileWrapper>
+                    <ProfileIcon fill="white" />
+                  </ProfileWrapper>
+                  <SettingWrapper>
+                    <SettingIcon fill="white" />
+                  </SettingWrapper>
+                </ContainerWrapper>
+              </PopupSetting>
             </ContainerWrapper>
           )}
           {!header && (

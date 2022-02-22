@@ -9,7 +9,7 @@ import Git from "../icon/icon-blog/Git.png";
 
 export const propsPortfolioBlogHome = {
   portfolioNameList: "Заметки веб-разработчика",
-  portfolioTextTitle: "Добро пожаловать на блог веб-разработчика!",
+  portfolioTextTitle: "Добро пожаловать на блог!",
   portfolioText:
     "Я наконец-то, решил сам для себя сделать площадку, чтобы делиться интересными новостями и примерами в мире front-end разработки",
 };

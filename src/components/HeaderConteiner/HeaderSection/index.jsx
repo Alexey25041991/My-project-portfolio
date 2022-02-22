@@ -35,18 +35,33 @@ import { ReactComponent as PhonesIcon } from "../../common/icon/PhonesIcon.svg";
 import { ReactComponent as EmailsIcon } from "../../common/icon/EmailsIcon.svg";
 import { ReactComponent as SkypeIcon } from "../../common/icon/SkypeHeaderIcon.svg";
 import { ReactComponent as SettingIcon } from "../../common/icon/icon-header/setting.svg";
+
 import Button from "../../common/Button";
+import PopupSetting from "../../common/PopupSetting";
+
+import { getwindowInnerWidth } from "../../common/utils/getwindowInnerWidth";
 
 const HeaderSection = () => {
   const [opened, setOpened] = useState(false);
+  const [positionValue, setPositionValue] = useState("top right");
+
+  const handleClickPopup = () => {
+    const positionValueWidth = getwindowInnerWidth() > 959;
+    setPositionValue(positionValueWidth ? "top right" : "right center");
+  };
 
   return (
     <HeaderSectionWrapper>
       <HeaderSectionFon>
         <IconComp>
-          <SettingWrapper>
-            <SettingIcon fill="white" />
-          </SettingWrapper>
+          <PopupSetting
+            positionValue={positionValue}
+            handleClickPopup={() => handleClickPopup()}
+          >
+            <SettingWrapper>
+              <SettingIcon fill="white" />
+            </SettingWrapper>
+          </PopupSetting>
         </IconComp>
         <IconMap />
         <Clock />

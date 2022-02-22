@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { MOBILE_660 } from "../media";
+
 import { ReactComponent as LangEnglishIcon } from "../icon/lang/gb.svg";
 
 const ButtonWrapper = styled.button`
@@ -7,8 +9,8 @@ const ButtonWrapper = styled.button`
   -webkit-tap-highlight-color: transparent;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  margin-top: 16px;
+  margin-left: ${({ positionStyle }) => (positionStyle ? "6px" : "0")};
+  margin-top: ${({ positionStyle }) => (positionStyle ? "0" : "16px")};
   width: 40px;
   height: 40px;
   background-color: #2b3037;
@@ -22,6 +24,11 @@ const ButtonWrapper = styled.button`
   &:active {
     box-shadow 0px 4px 8px rgba(darken(dodgerblue, 30%));
     transform scale(.98);
+  }
+
+  @media ${MOBILE_660} {
+    margin: 0 auto;
+    margin-top: 16px;
   }
 `;
 
@@ -37,9 +44,9 @@ const Label = styled.div`
   margin-top: 5px;
 `;
 
-const ButtonElement = ({ children, title, handleClick }) => {
+const ButtonElement = ({ children, title, handleClick, positionStyle }) => {
   return (
-    <ButtonWrapper onClick={handleClick}>
+    <ButtonWrapper onClick={handleClick} positionStyle={positionStyle}>
       {children}
       <LangEnglishIcon />
       {title && <Label>{title}</Label>}

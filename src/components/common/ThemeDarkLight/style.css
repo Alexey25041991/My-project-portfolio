@@ -1,12 +1,4 @@
 input {
-  display: block;
-  margin-bottom: 1.5em;
-}
-main {
-  padding: 2em 0 0 0;
-  text-align: center;
-}
-.l {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0.75em;
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
@@ -14,7 +6,7 @@ main {
   display: inline-flex;
   align-items: center;
   margin: auto;
-  padding: 0.15em;
+  padding: 0.15em !important;
   width: 3em;
   height: 1.5em;
   transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
@@ -22,12 +14,12 @@ main {
   -moz-appearance: none;
   appearance: none;
 }
-.l:before,
-.l:after {
+input:before,
+input:after {
   content: "";
   display: block;
 }
-.l:before {
+input:before {
   background-color: #d7d7d7;
   border-radius: 50%;
   width: 1.2em;
@@ -35,7 +27,7 @@ main {
   transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
   z-index: 1;
 }
-.l:after {
+input:after {
   background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% /
       50% 100%,
     repeating-linear-gradient(90deg, #bbb 0, #bbb, #bbb 20%, #999 20%, #999 40%)
@@ -52,20 +44,20 @@ main {
   height: 1em;
 }
 /* Checked */
-.l:checked {
+input:checked {
   background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
-.l:checked:before {
+input:checked:before {
   background-color: currentColor;
   transform: translateX(125%);
 }
-.l:checked:after {
+input:checked:after {
   border-left-color: currentColor;
   transform: translateX(-2.5%) rotateY(180deg);
 }
 /* Other States */
-.l:focus {
+input:focus {
   /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
   outline: 0;
 }

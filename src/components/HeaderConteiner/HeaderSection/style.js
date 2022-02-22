@@ -246,9 +246,15 @@ export const SettingWrapper = styled.div`
   -webkit-tap-highlight-color: transparent;
   animation: ${spin} 10s linear infinite;
 
-  &:active {
+  &:hover {
     width: 40px;
     height: 40px;
+    & svg {
+      fill="red";
+    }
+    &:svg {
+      fill="red";
+    }
   }
 
   @media ${MOBILE_660} {
