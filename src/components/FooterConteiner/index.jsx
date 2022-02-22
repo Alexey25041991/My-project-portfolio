@@ -34,12 +34,24 @@ import PageWrapper from "../common/PageWrapper";
 import PageConteiner from "../common/PageConteiner";
 import Button from "../common/Button";
 
+// import { getScrollWidth } from "../common/utils/getScrollWidth";
+
 const FooterConteiner = () => {
   const [opened, setOpened] = useState(false);
+  // const [scrollWidthValue, setScrollWidthValue] = useState(0);
+
+  const handleClickOpened = () => {
+    setOpened(!opened);
+    // setScrollWidthValue(getScrollWidth());
+  };
 
   return (
     <PageWrapper dark footer id="contacts">
-      <Modal opened={opened} onRequestClose={() => setOpened(false)} />
+      <Modal
+        opened={opened}
+        onRequestClose={() => setOpened(false)}
+        // scrollWidthValue={scrollWidthValue}
+      />
       <PageConteiner footer>
         <FooterCustom>
           <HeaderTopWrapper>
@@ -50,7 +62,7 @@ const FooterConteiner = () => {
               <Button
                 title="Заказать сайт"
                 toOrder
-                handleClick={() => setOpened(!opened)}
+                handleClick={() => handleClickOpened()}
               >
                 <OrderSiteIcon />
               </Button>

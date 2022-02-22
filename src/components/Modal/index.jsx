@@ -159,11 +159,15 @@ const Modal = ({ opened = false, onRequestClose }) => {
     }
   };
 
-  useEffect(() => {
-    opened
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "");
-  }, [opened]);
+  // useEffect(() => {
+  //   if (opened) {
+  //     document.body.style.overflow = "hidden";
+  //     document.body.style.marginRight = `${scrollWidthValue}px`;
+  //   } else {
+  //     document.body.style.overflow = "";
+  //     document.body.style.marginRight = "0";
+  //   }
+  // }, [opened, scrollWidthValue]);
 
   return (
     opened && (
