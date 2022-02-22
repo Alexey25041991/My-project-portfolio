@@ -154,6 +154,12 @@ export const ModalComponent = styled.div`
   @media ${TABLET_959} {
     width: 84%;
   }
+
+  @media ${MOBILE_660} {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
 `;
 
 export const ModalSectionWrapper = styled.div`
@@ -196,7 +202,7 @@ export const ModalSectionWrapper = styled.div`
   }
 
   @media ${MOBILE_660} {
-    max-height: calc(100vh - 220px);
+    max-height: calc(100vh - 90px);
   }
 `;
 

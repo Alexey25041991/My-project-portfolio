@@ -36,6 +36,8 @@ import {
 
 import { compact } from "lodash";
 
+import { getwindowInnerWidth } from "../common/utils/getwindowInnerWidth";
+
 import { ReactComponent as CloseOutline } from "../common/icon/CloseOutline.svg";
 import { ReactComponent as FooterMailIcon } from "../common/icon/MailDarkIcon.svg";
 import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
@@ -159,15 +161,18 @@ const Modal = ({ opened = false, onRequestClose }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (opened) {
-  //     document.body.style.overflow = "hidden";
-  //     document.body.style.marginRight = `${scrollWidthValue}px`;
-  //   } else {
-  //     document.body.style.overflow = "";
-  //     document.body.style.marginRight = "0";
-  //   }
-  // }, [opened, scrollWidthValue]);
+  useEffect(() => {
+    const positionValueWidth = getwindowInnerWidth() < 659;
+    if (positionValueWidth) {
+      if (opened) {
+        document.body.style.overflow = "hidden";
+        // document.body.style.marginRight = `${scrollWidthValue}px`;
+      } else {
+        document.body.style.overflow = "";
+        // document.body.style.marginRight = "0";
+      }
+    }
+  }, [opened]);
 
   return (
     opened && (
