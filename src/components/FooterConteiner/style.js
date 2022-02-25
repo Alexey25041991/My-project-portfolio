@@ -147,7 +147,7 @@ export const HeaderTopWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid #ffff;
   padding-bottom: 25px;
