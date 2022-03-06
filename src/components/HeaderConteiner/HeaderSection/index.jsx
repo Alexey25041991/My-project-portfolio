@@ -104,17 +104,15 @@ const HeaderSection = () => {
                 <PhonesNumber href="tel:+79772700930">
                   +7 (977) 270-09-30
                 </PhonesNumber>
-                <PhonesTextWrapper>
-                  <PhonesText href="https://t.me/amazurenk">
-                    Telegram
-                  </PhonesText>
-                  <PhonesTextDivide>,</PhonesTextDivide>
-                  <PhonesText href="https://api.whatsapp.com/send?phone=79772700930">
-                    Whatsapp
-                  </PhonesText>
-                </PhonesTextWrapper>
               </PhonesConteiner>
             </Phones>
+            <PhonesTextWrapper>
+              <PhonesText href="https://t.me/amazurenk">Telegram</PhonesText>
+              <PhonesTextDivide>{" / "}</PhonesTextDivide>
+              <PhonesText href="https://api.whatsapp.com/send?phone=79772700930">
+                Whatsapp
+              </PhonesText>
+            </PhonesTextWrapper>
             <HeaderSectionLabel>
               Звоните в удобное для Вас время!
             </HeaderSectionLabel>

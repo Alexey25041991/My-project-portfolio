@@ -78,6 +78,11 @@ export const HeaderSectionConteiner = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 20;
+
+  @media ${MOBILE_560} {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const HeaderSectionLabel = styled.span`
@@ -89,6 +94,10 @@ export const HeaderSectionLabel = styled.span`
   font-style: italic;
   line-height: 18px;
   white-space: nowrap;
+
+  @media ${MOBILE_560} {
+    text-align: center;
+  }
 `;
 
 export const HeaderSectionContacts = styled.div`
@@ -110,6 +119,8 @@ export const HeaderSectionContacts = styled.div`
 
   @media ${MOBILE_560} {
     position: initial;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -167,6 +178,7 @@ export const PhonesTextDivide = styled.div`
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
   font-family: "Exo 2", sans-serif;
   margin-right: 4px;
+  white-space: pre;
 `;
 
 export const PhonesText = styled.a`
@@ -200,6 +212,10 @@ export const PhonesText = styled.a`
 
 export const Emails = styled(Phones)`
   margin-bottom: 7px;
+
+  @media ${MOBILE_560} {
+    justify-content: center;
+  }
 `;
 
 export const ContactsText = styled(PhonesText)`
@@ -208,7 +224,11 @@ export const ContactsText = styled(PhonesText)`
   -webkit-tap-highlight-color: transparent;
 `;
 
-export const Skype = styled(Phones)``;
+export const Skype = styled(Phones)`
+  @media ${MOBILE_560} {
+    justify-content: center;
+  }
+`;
 
 export const HeaderSectionFon = styled.div`
   position: relitive;
