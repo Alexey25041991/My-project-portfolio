@@ -108,7 +108,7 @@ const HeaderSection = () => {
             </Phones>
             <PhonesTextWrapper>
               <PhonesText href="https://t.me/amazurenk">Telegram</PhonesText>
-              <PhonesTextDivide>{" / "}</PhonesTextDivide>
+              <PhonesTextDivide>/</PhonesTextDivide>
               <PhonesText href="https://api.whatsapp.com/send?phone=79772700930">
                 Whatsapp
               </PhonesText>

@@ -177,7 +177,8 @@ export const PhonesTextDivide = styled.div`
   text-decoration: none;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
   font-family: "Exo 2", sans-serif;
-  margin-right: 4px;
+  margin-right: 8px;
+  margin-left: 8px;
   white-space: pre;
 `;
 
