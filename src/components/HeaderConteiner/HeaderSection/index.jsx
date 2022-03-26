@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { observer } from "mobx-react";
 
 import {
   HeaderSectionWrapper,
@@ -31,6 +32,9 @@ import {
 import Modal from "../../Modal";
 import Clock from "./Clock";
 
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
 import { ReactComponent as RocketGetsiteIcon } from "../../common/icon/RocketIcon.svg";
 import { ReactComponent as PhonesIcon } from "../../common/icon/PhonesIcon.svg";
 import { ReactComponent as EmailsIcon } from "../../common/icon/EmailsIcon.svg";
@@ -41,18 +45,47 @@ import Button from "../../common/Button";
 import PopupSetting from "../../common/PopupSetting";
 
 import { getwindowInnerWidth } from "../../common/utils/getwindowInnerWidth";
+import { store } from "../../../store";
 
-const HeaderSection = () => {
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+const HeaderSection = observer(() => {
   const [opened, setOpened] = useState(false);
+  const [openToast, setOpenToast] = useState(false);
   const [positionValue, setPositionValue] = useState("top right");
+
+  const openToastValue = store.getOpenToast();
+
+  useEffect(() => {
+    setOpenToast(openToastValue);
+  }, [openToastValue]);
 
   const handleClickPopup = () => {
     const positionValueWidth = getwindowInnerWidth() > 959;
     setPositionValue(positionValueWidth ? "top right" : "right center");
   };
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenToast(false);
+  };
+
   return (
     <HeaderSectionWrapper>
+      <Snackbar open={openToast} autoHideDuration={10000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="info"
+          sx={{ width: "100%", fontSize: "14px" }}
+        >
+          Нажмите Ctrl+D для добавления в избранное!
+        </Alert>
+      </Snackbar>
       <HeaderSectionFon>
         <IconComp>
           <PopupSetting
@@ -131,6 +164,6 @@ const HeaderSection = () => {
       </HeaderContactWrapper>
     </HeaderSectionWrapper>
   );
-};
+});
 
 export default HeaderSection;

@@ -106,6 +106,12 @@ export const Header = styled.div`
   }
 `;
 
+export const HeaderText = styled.div`
+  text-align: center;
+  margin-left: 12px;
+  margin-right: 12px;
+`;
+
 export const IconClose = styled.div`
   display: flex;
   justify-content: center;

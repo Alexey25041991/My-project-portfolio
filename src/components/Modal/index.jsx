@@ -24,6 +24,7 @@ import {
   ContentWrapper,
   Overlay,
   Header,
+  HeaderText,
   IconClose,
   Content,
   ContentAnimation,
@@ -180,7 +181,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
         <ModalComponent data-close-modal>
           <Header>
             <FooterMailIcon width={24} height={24} fill="#2b3037" />
-            Вы готовы сделать заказ?
+            <HeaderText>Вы готовы сделать заказ?</HeaderText>
           </Header>
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
