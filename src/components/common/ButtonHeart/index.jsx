@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Icon } from "semantic-ui-react";
@@ -78,6 +78,7 @@ const Label = styled.div`
 `;
 
 const ButtonHeart = ({ positionStyle }) => {
+  const [counter, setСounter] = useState(20);
   const handleClickOpen = () => {
     store.setOpenToast(true);
   };
@@ -95,6 +96,8 @@ const ButtonHeart = ({ positionStyle }) => {
   const handleClick = () => {
     const url = window.document.location; //Адрес Вашего сайта
     const title = window.document.title; //Название Вашего сайта
+
+    setСounter(counter + 1);
 
     if (!MobileDetect()) {
       try {
@@ -135,7 +138,7 @@ const ButtonHeart = ({ positionStyle }) => {
     <>
       <ButtonWrapper onClick={handleClick} positionStyle={positionStyle}>
         <Icon name="heart" color="red" size="large" />
-        <Label>20</Label>
+        <Label>{counter}</Label>
       </ButtonWrapper>
     </>
   );

@@ -16,7 +16,6 @@ import { ReactComponent as BlogIcon } from "../../common/icon/BlogIcon.svg";
 import { ReactComponent as KeyIcon } from "../../common/icon/KeyIcon.svg";
 import { ReactComponent as BlogVisitorIcon } from "../../common/icon/VisitorIcon.svg";
 import { ReactComponent as BlogTimeIcon } from "../../common/icon/TimeIcon.svg";
-import { ReactComponent as BlogLikeIcon } from "../../common/icon/LikeIcon.svg";
 
 import CatCodes from "./CatCodes";
 
@@ -27,6 +26,7 @@ import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
 import ButtonLink from "../../common/ButtonLink";
+import ButtonLike from "../../common/ButtonLike";
 
 const Blog = () => (
   <PageWrapper id="blog">
@@ -48,10 +48,7 @@ const Blog = () => (
                 <BlogVisitorIcon />
                 <BlogValue>2970</BlogValue>
               </BlogDataValue>
-              <BlogDataValue>
-                <BlogLikeIcon />
-                <BlogValue>10</BlogValue>
-              </BlogDataValue>
+              <ButtonLike />
             </BlogData>
           </MyBlog>
           <BlogCat>

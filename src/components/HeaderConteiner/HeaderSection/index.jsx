@@ -77,7 +77,12 @@ const HeaderSection = observer(() => {
 
   return (
     <HeaderSectionWrapper>
-      <Snackbar open={openToast} autoHideDuration={10000} onClose={handleClose}>
+      <Snackbar
+        open={openToast}
+        autoHideDuration={10000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      >
         <Alert
           onClose={handleClose}
           severity="info"

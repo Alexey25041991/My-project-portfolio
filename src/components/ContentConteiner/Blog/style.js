@@ -56,6 +56,7 @@ export const BlogCat = styled.div`
 
 export const BlogData = styled.div`
   display: flex;
+  align-items: center;
   text-align: left;
   margin-top: 0px;
   background: #707980;
