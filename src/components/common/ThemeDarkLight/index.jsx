@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { ThemeDarkLightWrapper } from "./style";
 import "./style.css";
 import { store } from "../../../store";
 
 const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => {
-  store.setToggleTheme(opened);
+  useEffect(() => {
+    store.setToggleTheme(opened);
+  }, [opened]);
 
   return (
     <ThemeDarkLightWrapper
