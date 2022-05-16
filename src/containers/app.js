@@ -1,4 +1,7 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
+import { observer } from "mobx-react";
+import { store } from "../store";
 
 import HeaderConteiner from "../components/HeaderConteiner";
 import FooterConteiner from "../components/FooterConteiner";
@@ -22,38 +25,42 @@ import ScrollTop from "../components/common/ScrollTop";
 
 import { AppWrapper } from "./style";
 
-const App = () => {
+const App = observer(() => {
+  const theme = store.getToggleTheme();
+
   return (
     <Router>
-      <ProgressBar />
-      <ScrollTop />
-      <AppWrapper>
-        <HeaderConteiner />
-        <Switch>
-          <Route path="/" exact component={ContentConteiner} />
-          <Route path={`/portfolio`} exact component={PortfolioList} />
-          {propsPortfolioList.map((item) => (
-            <Route
-              key={item.id}
-              path={`/portfolio/${item.hrefNameList}`}
-              exact
-              render={() => <PortfolioValue key={item.id} item={item} />}
-            />
-          ))}
-          <Route path={`/blog`} exact component={PortfolioListBlog} />
-          {propsPortfolioListBlog.map((item) => (
-            <Route
-              key={item.id}
-              path={`/blog/${item.hrefNameList}`}
-              exact
-              render={() => <PortfolioValueBlog key={item.id} item={item} />}
-            />
-          ))}
-        </Switch>
-        <FooterConteiner />
-      </AppWrapper>
+      <ThemeProvider theme={theme}>
+        <ProgressBar />
+        <ScrollTop />
+        <AppWrapper>
+          <HeaderConteiner />
+          <Switch>
+            <Route path="/" exact component={ContentConteiner} />
+            <Route path={`/portfolio`} exact component={PortfolioList} />
+            {propsPortfolioList.map((item) => (
+              <Route
+                key={item.id}
+                path={`/portfolio/${item.hrefNameList}`}
+                exact
+                render={() => <PortfolioValue key={item.id} item={item} />}
+              />
+            ))}
+            <Route path={`/blog`} exact component={PortfolioListBlog} />
+            {propsPortfolioListBlog.map((item) => (
+              <Route
+                key={item.id}
+                path={`/blog/${item.hrefNameList}`}
+                exact
+                render={() => <PortfolioValueBlog key={item.id} item={item} />}
+              />
+            ))}
+          </Switch>
+          <FooterConteiner />
+        </AppWrapper>
+      </ThemeProvider>
     </Router>
   );
-};
+});
 
 export default App;

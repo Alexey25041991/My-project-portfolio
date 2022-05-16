@@ -132,7 +132,7 @@ export const PortfolioDataLink = styled.a`
   }
 `;
 
-export const LinkBreadcrumbs = styled.a`
+export const LinkBreadcrumbs = styled.div`
   display: flex;
   -webkit-tap-highlight-color: transparent;
   align-items: center;

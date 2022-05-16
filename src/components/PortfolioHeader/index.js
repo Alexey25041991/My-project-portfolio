@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { Breadcrumbs } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
@@ -31,14 +32,18 @@ const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
 
   return (
     <Breadcrumbs aria-label="breadcrumb" style={{ color: "#fff" }}>
-      <LinkBreadcrumbs href="/">
-        <HomeIcon style={{ color: "#fff", marginRight: "5px" }} />
-        <BreadcrumbsText>Главная</BreadcrumbsText>
-      </LinkBreadcrumbs>
-      {item.portfolioNameList !== text ? (
-        <LinkBreadcrumbs href={`${textTo}/#portfolioHeader`}>
-          <BreadcrumbsText>{textValue}</BreadcrumbsText>
+      <Link to="/">
+        <LinkBreadcrumbs>
+          <HomeIcon style={{ color: "#fff", marginRight: "5px" }} />
+          <BreadcrumbsText>Главная</BreadcrumbsText>
         </LinkBreadcrumbs>
+      </Link>
+      {item.portfolioNameList !== text ? (
+        <Link to={`${textTo}/#portfolioHeader`}>
+          <LinkBreadcrumbs>
+            <BreadcrumbsText>{textValue}</BreadcrumbsText>
+          </LinkBreadcrumbs>
+        </Link>
       ) : (
         <BreadcrumbsText>{textValue}</BreadcrumbsText>
       )}

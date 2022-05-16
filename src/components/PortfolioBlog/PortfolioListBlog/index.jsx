@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import PortfolioHeader from "../../PortfolioHeader";
 
@@ -47,14 +48,14 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
       <TextBlogHeader>{item.textBlogHeader}</TextBlogHeader>
       <TextBlogWrapper>
         <PortfolioImg>
-          <PortfolioListData
-            href={`/blog/${item.hrefNameList}/#portfolioHeader`}
-          >
-            <PortfolioImgUrl
-              src={item.icon}
-              width={item.widthIcon}
-              height={item.heightIcon}
-            />
+          <PortfolioListData>
+            <Link to={`/blog/${item.hrefNameList}/#portfolioHeader`}>
+              <PortfolioImgUrl
+                src={item.icon}
+                width={item.widthIcon}
+                height={item.heightIcon}
+              />
+            </Link>
           </PortfolioListData>
         </PortfolioImg>
         <TextBlog>
@@ -64,10 +65,10 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
           </PortfolioDataTime>
           <TextBlogValue>{item.portfolioText}</TextBlogValue>
           <PortfolioName>
-            <PortfolioListDataText
-              href={`/blog/${item.hrefNameList}/#portfolioHeader`}
-            >
-              <PortfolioNameList>Показать больше</PortfolioNameList>
+            <PortfolioListDataText>
+              <Link to={`/blog/${item.hrefNameList}/#portfolioHeader`}>
+                <PortfolioNameList>Показать больше</PortfolioNameList>
+              </Link>
             </PortfolioListDataText>
           </PortfolioName>
         </TextBlog>

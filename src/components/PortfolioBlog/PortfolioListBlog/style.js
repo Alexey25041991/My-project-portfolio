@@ -156,7 +156,7 @@ export const PortfolioNameList = styled.div`
   cursor: pointer;
 `;
 
-export const PortfolioListData = styled.a`
+export const PortfolioListData = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,7 +167,7 @@ export const PortfolioListData = styled.a`
   text-decoration: none;
 `;
 
-export const PortfolioListDataText = styled.a`
+export const PortfolioListDataText = styled.div`
   display: flex;
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;

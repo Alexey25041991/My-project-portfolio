@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   Li,
@@ -21,14 +22,14 @@ import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkI
 const PortfolioValueItem = ({ data, portfolioList }) => (
   <Li portfolioList={portfolioList}>
     <PortfolioImg>
-      <PortfolioListData
-        href={`/portfolio/${data.hrefNameList}/#portfolioHeader`}
-      >
-        <PortfolioImgUrl
-          src={data.icon}
-          width={data.widthIcon}
-          height={data.heightIcon}
-        />
+      <PortfolioListData>
+        <Link to={`/portfolio/${data.hrefNameList}/#portfolioHeader`}>
+          <PortfolioImgUrl
+            src={data.icon}
+            width={data.widthIcon}
+            height={data.heightIcon}
+          />
+        </Link>
       </PortfolioListData>
       <PortfolioData>
         <PortfolioDataValue>
@@ -44,10 +45,10 @@ const PortfolioValueItem = ({ data, portfolioList }) => (
       </PortfolioData>
     </PortfolioImg>
     <PortfolioName>
-      <PortfolioListDataText
-        href={`/portfolio/${data.hrefNameList}/#portfolioHeader`}
-      >
-        <PortfolioNameList>{data.portfolioNameList}</PortfolioNameList>
+      <PortfolioListDataText>
+        <Link to={`/portfolio/${data.hrefNameList}/#portfolioHeader`}>
+          <PortfolioNameList>{data.portfolioNameList}</PortfolioNameList>
+        </Link>
       </PortfolioListDataText>
     </PortfolioName>
   </Li>

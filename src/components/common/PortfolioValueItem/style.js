@@ -87,7 +87,7 @@ export const PortfolioNameList = styled.div`
   border-bottom: 1px dashed #000;
 `;
 
-export const PortfolioListData = styled.a`
+export const PortfolioListData = styled.div`
   display: flex;
   justify-content: center;
   width: 285px;
@@ -99,7 +99,7 @@ export const PortfolioListData = styled.a`
   text-decoration: none;
 `;
 
-export const PortfolioListDataText = styled.a`
+export const PortfolioListDataText = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;

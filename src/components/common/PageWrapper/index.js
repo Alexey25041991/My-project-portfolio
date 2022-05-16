@@ -23,6 +23,8 @@ const PageWrapper = styled.div`
     position: absolute;
     z-index: 10;
   }
+  // background-color: ${(props) => props.theme.color.background.primary};
+  background-color: ${({ theme }) => theme.color.background.primary};
 `;
 
 export default PageWrapper;
