@@ -9,7 +9,8 @@ import { PopupWrapper } from "./style";
 import "./style.css";
 
 const PopupSetting = ({ children, positionValue, handleClickPopup }) => {
-  const [opened, setOpened] = useState(false);
+  const [openedTheme, setOpenedTheme] = useState(false);
+  const [openedEnglish, setOpenedEnglish] = useState(false);
   const positionStyle = positionValue === "top right";
   return (
     <Popup
@@ -17,11 +18,15 @@ const PopupSetting = ({ children, positionValue, handleClickPopup }) => {
         <PopupWrapper positionStyle={positionStyle}>
           <ButtonHeart positionStyle={positionStyle} />
           <ThemeDarkLight
-            opened={opened}
-            handleClick={() => setOpened(!opened)}
+            opened={openedTheme}
+            handleClick={() => setOpenedTheme(!openedTheme)}
             positionStyle={positionStyle}
           />
-          <ButtonElement positionStyle={positionStyle} />
+          <ButtonElement
+            opened={openedEnglish}
+            handleClick={() => setOpenedEnglish(!openedEnglish)}
+            positionStyle={positionStyle}
+          />
         </PopupWrapper>
       }
       className="popupSetting"

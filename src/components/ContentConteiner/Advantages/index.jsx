@@ -1,4 +1,6 @@
 import React from "react";
+import { observer } from "mobx-react";
+import { store } from "../../../store";
 
 import {
   AdvantagesCustom,
@@ -11,8 +13,6 @@ import {
 } from "./style";
 
 import { ReactComponent as ScaleIcon } from "../../common/icon/ScaleIcon.svg";
-
-import { propsHeaderMenu } from "../../common/constants";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
@@ -29,17 +29,21 @@ const HeaderMenuLi = (propsHeaderMenu) =>
     </Li>
   ));
 
-const AdvantagesSection = () => (
-  <PageWrapper dark id="advantages">
-    <PageConteiner>
-      <HeaderTitle dark title="Преимущества">
-        <ScaleIcon width={28} height={28} fill="#ffff" />
-      </HeaderTitle>
-      <AdvantagesCustom>
-        <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
-      </AdvantagesCustom>
-    </PageConteiner>
-  </PageWrapper>
-);
+const AdvantagesSection = observer(() => {
+  const { propsHeaderMenu } = store.getToggleLang();
+
+  return (
+    <PageWrapper dark id="advantages">
+      <PageConteiner>
+        <HeaderTitle dark title="Преимущества">
+          <ScaleIcon width={28} height={28} fill="#ffff" />
+        </HeaderTitle>
+        <AdvantagesCustom>
+          <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
+        </AdvantagesCustom>
+      </PageConteiner>
+    </PageWrapper>
+  );
+});
 
 export default AdvantagesSection;

@@ -1,8 +1,12 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { MOBILE_660 } from "../media";
 
 import { ReactComponent as LangEnglishIcon } from "../icon/lang/gb.svg";
+import { ReactComponent as LangRussiaIcon } from "../icon/lang/ru.svg";
+
+import { store } from "../../../store";
 
 const ButtonWrapper = styled.button`
   display: flex;
@@ -32,24 +36,16 @@ const ButtonWrapper = styled.button`
   }
 `;
 
-const Label = styled.div`
-  color: white;
-  line-height: 17px;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Exo 2", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  margin-left: 12px;
-  margin-top: 5px;
-`;
+const ButtonElement = ({ opened, handleClick, positionStyle }) => {
+  const Icon = opened ? LangRussiaIcon : LangEnglishIcon;
 
-const ButtonElement = ({ children, title, handleClick, positionStyle }) => {
+  useEffect(() => {
+    store.setToggleLang(opened);
+  }, [opened]);
+
   return (
     <ButtonWrapper onClick={handleClick} positionStyle={positionStyle}>
-      {children}
-      <LangEnglishIcon />
-      {title && <Label>{title}</Label>}
+      <Icon />
     </ButtonWrapper>
   );
 };

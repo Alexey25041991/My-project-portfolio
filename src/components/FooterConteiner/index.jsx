@@ -116,9 +116,7 @@ const FooterConteiner = () => {
             </Ul>
           </FooterValue>
           <FooterValueIt>
-            <HeaderLogCoderText>
-              2017 - Веб-разработчик IT-WEB-MASTER
-            </HeaderLogCoderText>
+            <HeaderLogCoderText>C 2017 года It-разработчик</HeaderLogCoderText>
             <SocialIcons />
           </FooterValueIt>
         </FooterCustom>
