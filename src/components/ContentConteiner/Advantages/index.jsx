@@ -33,7 +33,7 @@ const AdvantagesSection = observer(() => {
   const { propsHeaderMenu } = store.getToggleLang();
 
   return (
-    <PageWrapper dark id="advantages">
+    <PageWrapper dark id="advantages" line="noHorizontal" header>
       <PageConteiner>
         <HeaderTitle dark title="Преимущества">
           <ScaleIcon width={28} height={28} fill="#ffff" />

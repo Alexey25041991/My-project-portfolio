@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import myIconWawe from "../icon/wawe.png";
 import myIconBgcont from "../icon/bgcont.png";
-import myIconWawew from "../icon/wawew.png";
+import HorizontalLine from "../HorizontalLine";
 
-const PageWrapper = styled.div`
+const PageWrapperStyle = styled.div`
   display: flex;
   background: ${({ dark, footer = false }) =>
     dark && !footer
@@ -12,19 +12,34 @@ const PageWrapper = styled.div`
       : footer
       ? `#2b3037`
       : "none"};
-  &:before {
-    background: url(${({ dark }) => (dark ? myIconWawe : myIconWawew)}) top
-      center repeat-x;
-    content: "";
-    width: 100%;
-    height: 22px;
-    display: flex;
-    margin-top: -20px;
-    position: absolute;
-    z-index: 10;
-  }
+  ${({ dark, header }) =>
+    dark &&
+    header &&
+    css`
+      &:before {
+        background: url(${myIconWawe}) top center repeat-x;
+        content: "";
+        width: 100%;
+        height: 22px;
+        display: flex;
+        margin-top: -20px;
+        position: absolute;
+        z-index: 10;
+      }
+    `}
+  margin-top: ${({ line }) => (line === "noHorizontal" ? 0 : "-20px")};
   // background-color: ${(props) => props.theme.color.background.primary};
-  background-color: ${({ theme }) => theme.color.background.primary};
+  background-color: ${({ theme, footer }) =>
+    footer || theme.color.background.primary};
 `;
+
+const PageWrapper = ({ children, line, dark, header, footer }) => (
+  <>
+    {line !== "noHorizontal" && <HorizontalLine />}
+    <PageWrapperStyle line={line} dark={dark} header={header} footer={footer}>
+      {children}
+    </PageWrapperStyle>
+  </>
+);
 
 export default PageWrapper;

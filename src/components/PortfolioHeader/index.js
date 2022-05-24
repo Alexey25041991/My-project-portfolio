@@ -68,7 +68,7 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
     setPortfolioTextValue(portfolioTextDataValue.map((item) => item.innerText));
   }, [setPortfolioTextValue]);
   return (
-    <PageWrapper dark id="portfolioHeader">
+    <PageWrapper dark header id="portfolioHeader" line="noHorizontal">
       <PageConteiner>
         <PortfolioHeaderBreadCrumbs>
           {setPortfolioHeaderBreadCrumbs(item, portfolio)}
