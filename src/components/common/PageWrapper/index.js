@@ -33,10 +33,16 @@ const PageWrapperStyle = styled.div`
     footer || theme.color.background.primary};
 `;
 
-const PageWrapper = ({ children, line, dark, header, footer }) => (
+const PageWrapper = ({ children, line, dark, header, footer, id }) => (
   <>
     {line !== "noHorizontal" && <HorizontalLine />}
-    <PageWrapperStyle line={line} dark={dark} header={header} footer={footer}>
+    <PageWrapperStyle
+      line={line}
+      dark={dark}
+      header={header}
+      footer={footer}
+      id={id}
+    >
       {children}
     </PageWrapperStyle>
   </>
