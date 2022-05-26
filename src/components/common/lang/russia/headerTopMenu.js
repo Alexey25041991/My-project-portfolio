@@ -1,10 +1,10 @@
-import { ReactComponent as ResumeIcon } from "../icon/ResumeIcon.svg";
-import { ReactComponent as PortfolioIcon } from "../icon/PortfolioIcon.svg";
-import { ReactComponent as ServicesIcon } from "../icon/ServicesIcon.svg";
-import { ReactComponent as СooperationIcon } from "../icon/СooperationIcon.svg";
-import { ReactComponent as PersonIcon } from "../icon/PersonIcon.svg";
-import { ReactComponent as BlogIcon } from "../icon/BlogLightIcon.svg";
-import { ReactComponent as СontactsIcon } from "../icon/СontactsIcon.svg";
+import { ReactComponent as ResumeIcon } from "../../icon/ResumeIcon.svg";
+import { ReactComponent as PortfolioIcon } from "../../icon/PortfolioIcon.svg";
+import { ReactComponent as ServicesIcon } from "../../icon/ServicesIcon.svg";
+import { ReactComponent as СooperationIcon } from "../../icon/СooperationIcon.svg";
+import { ReactComponent as PersonIcon } from "../../icon/PersonIcon.svg";
+import { ReactComponent as BlogIcon } from "../../icon/BlogLightIcon.svg";
+import { ReactComponent as СontactsIcon } from "../../icon/СontactsIcon.svg";
 
 import styled from "styled-components/macro";
 
@@ -21,7 +21,7 @@ export const propsHeaderTopMenu = [
   {
     id: "0",
     label: "Дом",
-    value: "",
+    value: "house",
     icon: <LogoSign style={{ pointerEvents: "none" }}>{`${"< / >"}`}</LogoSign>,
   },
   {
@@ -44,20 +44,22 @@ export const propsHeaderTopMenu = [
   },
   {
     id: "4",
-    label: "Портфолио",
-    value: "portfolio",
-    icon: <PortfolioIcon />,
-  },
-  {
-    id: "5",
     label: "Сотрудничество",
     value: "cooperation",
     icon: <СooperationIcon />,
   },
   {
+    id: "5",
+    label: "Портфолио",
+    value: "portfolio",
+    href: "/portfolio",
+    icon: <PortfolioIcon />,
+  },
+  {
     id: "6",
     label: "Блог",
     value: "blog",
+    href: "/blog",
     icon: <BlogIcon />,
   },
   {

@@ -7,6 +7,7 @@ class Store {
   opendToast = false;
   theme = LIGHT_THEME;
   langText = RUSSIAN_LANGUAGE;
+  routeLink = "";
 
   constructor() {
     makeAutoObservable(this);
@@ -34,6 +35,14 @@ class Store {
 
   getToggleLang() {
     return this.langText;
+  }
+
+  setRouteLink(route) {
+    this.routeLink = route;
+  }
+
+  getRouteLink() {
+    return this.routeLink;
   }
 }
 

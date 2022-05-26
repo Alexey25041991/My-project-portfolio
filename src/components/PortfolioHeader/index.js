@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { store } from "../../store";
+
 import { Breadcrumbs } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 
@@ -24,6 +26,8 @@ import { ReactComponent as PortfolioTimeIcon } from "../common/icon/TimeIcon.svg
 import PageWrapper from "../common/PageWrapper";
 import PageConteiner from "../common/PageConteiner";
 import HeaderTitle from "../common/HeaderTitle";
+
+import { IS_SSR } from "../common/constants";
 
 const setPortfolioHeaderBreadCrumbs = (item, portfolio) => {
   const text = portfolio ? "Портфолио" : "Заметки веб-разработчика";
@@ -66,6 +70,12 @@ const PortfolioHeaderBlog = ({ item, portfolio = false }) => {
       (item) => item.clientHeight > 25
     );
     setPortfolioTextValue(portfolioTextDataValue.map((item) => item.innerText));
+
+    const route = IS_SSR && window?.location?.pathname.slice(1);
+    store.setRouteLink(route);
+
+    const element = document?.getElementById("portfolioHeader");
+    window.scrollTo(0, element?.scrollHeight);
   }, [setPortfolioTextValue]);
   return (
     <PageWrapper dark header id="portfolioHeader" line="noHorizontal">

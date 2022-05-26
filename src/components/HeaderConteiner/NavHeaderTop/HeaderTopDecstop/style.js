@@ -42,25 +42,44 @@ export const Li = styled.li`
   & :hover {
     cursor: pointer;
   }
-
-  position: relative;
-  & :hover:before {
-    position: absolute;
-    content: "";
-    width: calc(100% + (1px * 2));
-    height: 2px;
-    bottom: 0px;
-    background: #ff8560;
-  }
 `;
 
-export const Link = styled.a`
+export const LinkA = styled.a`
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px 8px;
   color: palevioletred;
+
+  position: relative;
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% - (1px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #ff8560;
+  }
+`;
+
+export const LinkDiv = styled.div`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 8px;
+  color: palevioletred;
+
+  position: relative;
+  &:hover:before {
+    position: absolute;
+    content: "";
+    width: calc(100% - (1px * 2));
+    height: 2px;
+    bottom: 0;
+    background: #ff8560;
+  }
 `;
 
 export const Label = styled.span`
