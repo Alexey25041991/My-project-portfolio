@@ -7,12 +7,19 @@ import {
 } from "../../common/media";
 
 import myIconComp from "../../common/icon/icon-header/comp.png";
+import myIconCompn from "../../common/icon/icon-header/compn.png";
 import myIconMap from "../../common/icon/icon-header/map.png";
+import myIconMapn from "../../common/icon/icon-header/mapn.png";
 import myIconWindow from "../../common/icon/icon-header/window.png";
+import myIconWindown from "../../common/icon/icon-header/windown.png";
 import myIconBook from "../../common/icon/icon-header/books.png";
+import myIconBookn from "../../common/icon/icon-header/booksn.png";
 import myIconPicture from "../../common/icon/icon-header/image.png";
+import myIconPicturen from "../../common/icon/icon-header/imagen.png";
 import myIconDay from "../../common/icon/icon-header/day.jpg";
+import myIconNight from "../../common/icon/icon-header/night.jpg";
 import myIconSun from "../../common/icon/icon-header/sun.png";
+import myIconMoon from "../../common/icon/icon-header/moon.png";
 
 const spin = keyframes`
   0% {
@@ -247,7 +254,9 @@ export const HeaderSectionFon = styled.div`
 `;
 
 export const IconComp = styled.div`
-  background: url(${myIconComp}) 100% 100% no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconComp : myIconCompn})
+    100% 100% no-repeat;
   display: flex;
   width: 697px;
   height: 321px;
@@ -294,7 +303,9 @@ export const SettingWrapper = styled.div`
 `;
 
 export const IconMap = styled.div`
-  background: url(${myIconMap}) no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconMap : myIconMapn})
+    no-repeat;
   display: flex;
   width: 183px;
   height: 140px;
@@ -304,7 +315,9 @@ export const IconMap = styled.div`
 `;
 
 export const IconBook = styled.div`
-  background: url(${myIconBook}) no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconBook : myIconBookn})
+    no-repeat;
   display: flex;
   width: 212px;
   height: 96px;
@@ -322,7 +335,9 @@ export const IconBook = styled.div`
 `;
 
 export const IconPicture = styled.div`
-  background: url(${myIconPicture}) no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconPicture : myIconPicturen})
+    no-repeat;
   display: flex;
   width: 233px;
   height: 107px;
@@ -332,7 +347,9 @@ export const IconPicture = styled.div`
 `;
 
 export const IconWindow = styled.div`
-  background: url(${myIconWindow}) no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconWindow : myIconWindown})
+    no-repeat;
   display: flex;
   width: 247px;
   height: 307px;
@@ -342,7 +359,9 @@ export const IconWindow = styled.div`
 `;
 
 export const IconDay = styled.div`
-  background: url(${myIconDay}) 0px 12px no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconDay : myIconNight})
+    0px 12px no-repeat;
   transition: none !important;
   width: 245px;
   height: 307px;
@@ -361,7 +380,9 @@ export const IconDay = styled.div`
 `;
 
 export const IconSun = styled.div`
-  background: url(${myIconSun}) no-repeat;
+  background: url(${({ theme }) =>
+      theme.name === "light" ? myIconSun : myIconMoon})
+    no-repeat;
   width: 91px;
   height: 94px;
   display: block;

@@ -9,6 +9,8 @@ const BASIC = {
 };
 
 const BACKGROUND = {
+  primaryHeaderWrapper: "SlateGrey",
+  primaryPageWrapper: "#FFFFFF",
   primary: "#FFFFFF",
   secondary: "#F1F2F4",
   tertiary: "#E2E5E9",

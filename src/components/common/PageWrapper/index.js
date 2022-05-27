@@ -30,7 +30,7 @@ const PageWrapperStyle = styled.div`
   margin-top: ${({ line }) => (line === "noHorizontal" ? 0 : "-20px")};
   // background-color: ${(props) => props.theme.color.background.primary};
   background-color: ${({ theme, footer }) =>
-    footer || theme.color.background.primary};
+    footer || theme.color.background.primaryPageWrapper};
 `;
 
 const PageWrapper = ({ children, line, dark, header, footer, id }) => (
