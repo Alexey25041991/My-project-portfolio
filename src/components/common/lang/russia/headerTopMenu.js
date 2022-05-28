@@ -21,7 +21,7 @@ export const propsHeaderTopMenu = [
   {
     id: "0",
     label: "Дом",
-    value: "house",
+    value: "",
     icon: <LogoSign style={{ pointerEvents: "none" }}>{`${"< / >"}`}</LogoSign>,
   },
   {
