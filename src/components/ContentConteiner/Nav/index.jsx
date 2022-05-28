@@ -3,14 +3,34 @@ import React, { useLayoutEffect, useState } from "react";
 import { observer } from "mobx-react";
 import { store } from "../../../store";
 
-import Tooltip from "@material-ui/core/Tooltip";
+import Tooltip from "@mui/material/Tooltip";
 
 import { NavWrapper, Ul, Li, Link } from "./style";
 
 const NavLi = (propsHeaderTopMenu) =>
   propsHeaderTopMenu.map((item) => (
     <Li key={item.id}>
-      <Tooltip arrow title={item.label} placement="right">
+      <Tooltip
+        componentsProps={{
+          tooltip: {
+            sx: {
+              color: "#fff",
+              backgroundColor: "#ff8560b3",
+              boxShadow: "0 0 18px #ff8560e0",
+              fontSize: "1em",
+            },
+          },
+          arrow: {
+            sx: {
+              color: "#ff8560b3",
+              boxShadow: "0 0 18px #ff8560e0",
+            },
+          },
+        }}
+        arrow
+        title={item.label}
+        placement="right"
+      >
         <Link href={`${"/#" + item.value}`}>{item.icon}</Link>
       </Tooltip>
     </Li>
