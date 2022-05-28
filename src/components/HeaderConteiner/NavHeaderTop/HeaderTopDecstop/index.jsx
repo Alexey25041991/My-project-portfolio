@@ -6,6 +6,8 @@ import { store } from "../../../../store";
 import { Link } from "react-router-dom";
 import LogoLook from "../../../LogoLook";
 
+// import anime from "animejs/lib/anime.es.js";
+
 import {
   HeaderTopWrapper,
   HeaderMenu,
@@ -16,11 +18,34 @@ import {
   Label,
 } from "./style";
 
+// const handleAnimation = (element) => {
+//   anime({
+//     targets: document.body,
+//     translateY: [element?.offsetTop - element?.offsetHeight, 0],
+//     easing: "easeInOutQuad",
+//     duration: 3000,
+//   });
+// };
+
 const HeaderMenuLi = (arrPropsList) => {
   const scrollToBottom = (id) => {
     const element = document?.getElementById(id);
+
+    // handleAnimation(element);
+
     window.scrollTo(0, document.body?.scrollHeight - element?.scrollHeight);
   };
+
+  // useLayoutEffect(() => {
+  //   const handleScroll = () => {
+  //     document.body.style.overflow = document.body?.scrollHeight;
+  //   };
+
+  //   document.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     document.removeEventListener("scroll", handleScroll);
+  //   };
+  // });
 
   return arrPropsList.map((item) => (
     <Li key={item.id}>
