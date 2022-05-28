@@ -52,14 +52,14 @@ export const propsHeaderTopMenu = [
     id: "5",
     label: "Portfolio",
     value: "portfolio",
-    href: "/portfolio",
+    href: "portfolio",
     icon: <PortfolioIcon />,
   },
   {
     id: "6",
     label: "Blog",
     value: "blog",
-    href: "/blog",
+    href: "blog",
     icon: <BlogIcon />,
   },
   {
