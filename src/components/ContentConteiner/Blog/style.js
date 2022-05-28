@@ -85,7 +85,6 @@ export const BlogTitle = styled.span`
   overflow: hidden;
   text-transform: uppercase;
   font-weight: bold;
-  color: #000;
   text-decoration: none;
   font-size: 12px;
   line-height: 20px;
@@ -96,7 +95,6 @@ export const BlogTitle = styled.span`
 export const BlogText = styled.span`
   text-align: left;
   overflow: hidden;
-  color: #000;
   text-decoration: none;
   line-height: 20px;
   font-family: "Exo 2", sans-serif;

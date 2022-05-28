@@ -13,7 +13,6 @@ export const ServicesCustom = styled.div`
 export const ServicesText = styled.p`
   margin-top: 17px;
   margin-bottom: 0;
-  color: #000;
   font-size: 14px;
   line-height: 20px;
   text-indent: 20px;

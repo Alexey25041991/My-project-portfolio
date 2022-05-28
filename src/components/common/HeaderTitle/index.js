@@ -13,7 +13,7 @@ const HeaderWrapper = styled.h1`
 `;
 
 const HeaderLabel = styled.div`
-  color: ${({ dark }) => (dark ? "white" : "#2b2a29")};
+  color: ${({ theme, dark }) => (dark ? "white" : theme.color.text.primary)};
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;

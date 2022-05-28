@@ -4,7 +4,6 @@ import { TABLET_959, MOBILE_660 } from "../../common/media";
 import myIconWebdev from "../../common/icon/webdev.png";
 
 export const PersonalHeaderCustom = styled.h4`
-  color: #2b2a29;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
@@ -25,7 +24,6 @@ export const PersonalText = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   text-indent: 20px;
-  color: #000;
   font-size: 14px;
   line-height: 20px;
 

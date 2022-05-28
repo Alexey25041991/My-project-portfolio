@@ -15,7 +15,7 @@ export const NavWrapper = styled.div`
   border: 4px solid #fff;
   border-radius: 8px;
   text-align: center;
-  padding-top: 13px;
+  padding-top: 10px;
   z-index: 50;
 
   @media ${TABLET_1120} {
@@ -33,7 +33,7 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   position: relative;
 
   & :hover {

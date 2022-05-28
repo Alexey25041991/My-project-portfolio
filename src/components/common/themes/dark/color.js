@@ -25,7 +25,8 @@ const BACKGROUND = {
 };
 
 const TEXT = {
-  primary: "#E2E5E9",
+  primary: "#FFFFFF",
+  primaryText: "#E2E5E9",
   secondary: "#8A96A8",
   tertiary: "#4C5767",
   inversion: "#1A1E23",

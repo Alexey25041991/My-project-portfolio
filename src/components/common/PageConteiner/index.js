@@ -3,6 +3,7 @@ import { TABLET_959 } from "../../common/media";
 
 const PageConteiner = styled.div`
   display: flex;
+  color: ${({ theme }) => theme.color.text.primary};
   flex-direction: ${({ blog }) => (blog ? "none" : "column")};
   width: 960px;
   margin: 0 auto;
