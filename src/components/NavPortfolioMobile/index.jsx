@@ -59,7 +59,7 @@ const HeaderMenuLi = (propsList, setOpened, header, routeLink) => {
   const routeLinkPortfolio = routeLink.startsWith("portfolio");
   const arrPropsList =
     routeLinkBlog || routeLinkPortfolio
-      ? propsListValue.slice(-3)
+      ? propsListValue.slice(-3).filter((i) => !routeLink.startsWith(i.href))
       : propsListValue;
 
   const scrollToBottom = (id) => {
@@ -76,7 +76,7 @@ const HeaderMenuLi = (propsList, setOpened, header, routeLink) => {
         </Link>
       )}
       {item.href && (
-        <LinkHref to={item.href}>
+        <LinkHref to={`${"/" + item.href}`}>
           <LinkDiv>
             {item.icon}
             <Label style={{ pointerEvents: "none" }}>{item.label}</Label>

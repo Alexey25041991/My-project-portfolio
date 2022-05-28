@@ -31,7 +31,7 @@ const HeaderMenuLi = (arrPropsList) => {
         </LinkA>
       )}
       {item.href && (
-        <Link to={item.href}>
+        <Link to={`${"/" + item.href}`}>
           <LinkDiv>
             {item.icon}
             <Label style={{ pointerEvents: "none" }}>{item.label}</Label>
@@ -55,7 +55,7 @@ const HeaderTopDecstop = observer(({ propsList }) => {
   const routeLinkPortfolio = routeLink.startsWith("portfolio");
   const arrPropsList =
     routeLinkBlog || routeLinkPortfolio
-      ? propsListDecstop.slice(-3)
+      ? propsListDecstop.slice(-3).filter((i) => !routeLink.startsWith(i.href))
       : propsListDecstop;
   return (
     <>
