@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import PortfolioHeader from "../../PortfolioHeader";
 
@@ -23,7 +26,8 @@ import {
   PortfolioListDataText,
 } from "./style.js";
 
-import { ReactComponent as PortfolioTimeIcon } from "../../common/icon/TimeDarkIcon.svg";
+import { ReactComponent as TimeDarkIcon } from "../../common/icon/TimeDarkIcon.svg";
+import { ReactComponent as TimeIcon } from "../../common/icon/TimeIcon.svg";
 
 import { propsList } from "./constants";
 import {
@@ -36,13 +40,16 @@ import PageConteiner from "../../common/PageConteiner";
 
 import NavPortfolioList from "./NavPortfolioList";
 
-const getSlickList = (propsPortfolioList, portfoliosValue) => {
+const getSlickList = (propsPortfolioList, portfoliosValue, name) => {
   const filterPropsPortfolioList =
     portfoliosValue !== propsList[0].value
       ? propsPortfolioList.filter((item) =>
           item.technologies.includes(portfoliosValue)
         )
       : propsPortfolioList;
+
+  const Icon = name === "light" ? TimeDarkIcon : TimeIcon;
+
   return filterPropsPortfolioList?.map((item) => (
     <Li key={item.id}>
       <TextBlogHeader>{item.textBlogHeader}</TextBlogHeader>
@@ -60,7 +67,7 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
         </PortfolioImg>
         <TextBlog>
           <PortfolioDataTime>
-            <PortfolioTimeIcon />
+            <Icon />
             <PortfolioDataText>{item.portfolioDataTime}</PortfolioDataText>
           </PortfolioDataTime>
           <TextBlogValue>{item.portfolioText}</TextBlogValue>
@@ -76,8 +83,9 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
     </Li>
   ));
 };
-const PortfolioListBlog = () => {
+const PortfolioListBlog = observer(() => {
   const [portfoliosValue, setPortfoliosValue] = useState(propsList[0].value);
+  const { name } = store.getToggleTheme();
 
   return (
     <>
@@ -88,7 +96,7 @@ const PortfolioListBlog = () => {
             <Ul>
               <SlickList>
                 <SlickTrack>
-                  {getSlickList(propsPortfolioListBlog, portfoliosValue)}
+                  {getSlickList(propsPortfolioListBlog, portfoliosValue, name)}
                 </SlickTrack>
               </SlickList>
             </Ul>
@@ -101,6 +109,6 @@ const PortfolioListBlog = () => {
       </PageWrapper>
     </>
   );
-};
+});
 
 export default PortfolioListBlog;

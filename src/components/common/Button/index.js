@@ -9,7 +9,7 @@ const ButtonWrapper = styled.button`
   margin-top: 20px;
   width: 260px;
   height: 44px;
-  background-color: #2b3037;
+  background-color: ${({ theme }) => theme.color.background.button};
   border-radius: 8px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;

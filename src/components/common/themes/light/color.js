@@ -11,6 +11,8 @@ const BASIC = {
 const BACKGROUND = {
   primaryHeaderWrapper: "SlateGrey",
   primaryPageWrapper: "#FFFFFF",
+  button: "#2b3037",
+  buttonTeg: "#65696f",
   primary: "#FFFFFF",
   secondary: "#F1F2F4",
   tertiary: "#E2E5E9",
@@ -32,6 +34,7 @@ const TEXT = {
   inversion: "#FFFFFF",
   staticWhite: "#FFFFFF",
   staticBlack: "#2B313B",
+  data: "#707980",
 };
 
 const STATUS = {

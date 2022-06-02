@@ -1,4 +1,7 @@
 import React from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import {
   PersonalHeaderCustom,
@@ -11,37 +14,49 @@ import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 
-const PersonalInformation = () => (
-  <PageWrapper id="person">
-    <PageConteiner>
-      <HeaderTitle title="Сайт веб-разработчика" />
-      <PersonalCustom>
-        <PersonalHeaderCustom>подробнее обо мне</PersonalHeaderCustom>
-        <PersonalText>
-          На моем сайте <b>веб-разработчика</b> в портфолио представлены
-          проекты, которые я разработал в сотрудничестве с веб-студиями так и
-          для частных клиентов, а также несколько личных проектов. Основная
-          масса проектов содержит индивидуальные функции предназначенные для
-          реализации особенностей работы веб-сайта.
-        </PersonalText>
-        <PersonalSection>
+import { ReactComponent as PersonIcon } from "../../common/icon/PersonIcon.svg";
+
+const PersonalInformation = observer(() => {
+  const { name } = store.getToggleTheme();
+  return (
+    <PageWrapper id="person">
+      <PageConteiner>
+        <HeaderTitle title="Сайт веб-разработчика">
+          <PersonIcon
+            width={28}
+            height={28}
+            fill={name === "light" ? "#000" : "#fff"}
+          />
+        </HeaderTitle>
+        <PersonalCustom>
+          <PersonalHeaderCustom>подробнее обо мне</PersonalHeaderCustom>
           <PersonalText>
-            Помимо созданных сайтов в портфолио, мной также разработаны
-            различные калькуляторы, сложные формы обратной связи, многоуровневое
-            меню, слайдера изображений, отзывов и тд., исправлений различных
-            ошибок на сайтах, оптимизация загрузки сайта, наполнение сайта до
-            15000 товаров, материалом (текстовой информацией) и многое другое...
+            На моем сайте <b>веб-разработчика</b> в портфолио представлены
+            проекты, которые я разработал в сотрудничестве с веб-студиями так и
+            для частных клиентов, а также несколько личных проектов. Основная
+            масса проектов содержит индивидуальные функции предназначенные для
+            реализации особенностей работы веб-сайта.
           </PersonalText>
-          <PersonalText>
-            В моем портфолио веб-разработчика указано название сайта, ссылка на
-            сайт, цель сайта и описание выполненной работы. Если потребуется
-            могу предоставить доказательства на то что это я делал все сайты с
-            моего портфолио.
-          </PersonalText>
-        </PersonalSection>
-      </PersonalCustom>
-    </PageConteiner>
-  </PageWrapper>
-);
+          <PersonalSection>
+            <PersonalText>
+              Помимо созданных сайтов в портфолио, мной также разработаны
+              различные калькуляторы, сложные формы обратной связи,
+              многоуровневое меню, слайдера изображений, отзывов и тд.,
+              исправлений различных ошибок на сайтах, оптимизация загрузки
+              сайта, наполнение сайта до 15000 товаров, материалом (текстовой
+              информацией) и многое другое...
+            </PersonalText>
+            <PersonalText>
+              В моем портфолио веб-разработчика указано название сайта, ссылка
+              на сайт, цель сайта и описание выполненной работы. Если
+              потребуется могу предоставить доказательства на то что это я делал
+              все сайты с моего портфолио.
+            </PersonalText>
+          </PersonalSection>
+        </PersonalCustom>
+      </PageConteiner>
+    </PageWrapper>
+  );
+});
 
 export default PersonalInformation;

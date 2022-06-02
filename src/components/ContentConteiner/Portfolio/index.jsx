@@ -1,5 +1,8 @@
 import React, { useRef, Fragment } from "react";
 import Slider from "infinite-react-carousel";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import {
   PortfolioCustom,
@@ -11,7 +14,8 @@ import {
 } from "./style.js";
 import "./index.css";
 
-import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioDarkIcon.svg";
+import { ReactComponent as PortfolioDarkIcon } from "../../common/icon/PortfolioDarkIcon.svg";
+import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioIcon.svg";
 import { ReactComponent as KeyIcon } from "../../common/icon/KeyIcon.svg";
 
 import { propsPortfolioList } from "../../common/constants";
@@ -67,7 +71,10 @@ const settings = {
   centerPadding: centerPaddingValue(slidesToShowValue),
 };
 
-const Portfolio = () => {
+const Portfolio = observer(() => {
+  const { name } = store.getToggleTheme();
+  const Icon = name === "light" ? PortfolioDarkIcon : PortfolioIcon;
+
   const sliderRef = useRef();
   const gotoNext = () => {
     sliderRef.current.slickNext();
@@ -80,7 +87,7 @@ const Portfolio = () => {
     <PageWrapper id="portfolio">
       <PageConteiner>
         <HeaderTitle title="Недавно разработаны">
-          <PortfolioIcon />
+          <Icon />
         </HeaderTitle>
         <PortfolioCustom>
           <Ul>
@@ -103,6 +110,6 @@ const Portfolio = () => {
       </PageConteiner>
     </PageWrapper>
   );
-};
+});
 
 export default Portfolio;

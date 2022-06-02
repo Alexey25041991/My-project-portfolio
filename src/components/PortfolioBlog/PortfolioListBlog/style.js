@@ -126,7 +126,7 @@ export const TextBlogWrapper = styled.div`
 `;
 
 export const PortfolioDataText = styled.div`
-  color: #707980;
+  color: ${({ theme }) => theme.color.text.data};
   font-size: 14px;
   font-weight: 700;
   font-family: "Exo 2", sans-serif;
@@ -151,8 +151,8 @@ export const PortfolioName = styled.div`
 
 export const PortfolioNameList = styled.div`
   font-size: 14px;
-  border-bottom: 1px dashed #000;
-  color: #000;
+  border-bottom: 1px dashed ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.color.text.primary};
   cursor: pointer;
 `;
 

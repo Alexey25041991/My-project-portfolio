@@ -1,4 +1,7 @@
 import React, { useLayoutEffect, useState } from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../../../../store";
 
 import {
   PortfolioHeaderValue,
@@ -16,7 +19,13 @@ import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
-const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
+const getButtonList = (
+  propsList,
+  setPortfoliosValue,
+  handleClick,
+  open,
+  name
+) => {
   return propsList.map((item) => (
     <List
       sx={{ width: "100%", maxWidth: 360, bgcolor: "inherit" }}
@@ -31,10 +40,11 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
             onClick={() => setPortfoliosValue(item?.value)}
             sx={{
               color: "white",
-              backgroundColor: "#65696f",
+              backgroundColor: `${name === "light" ? "#65696f" : "#9C9C9C"}`,
               borderRadius: "8px",
               boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
               "&:hover": {
+                backgroundColor: "#708090cf",
                 color: "#ff8560",
                 "& .MuiListItemIcon-root": {
                   color: "#ff8560",
@@ -53,12 +63,12 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
             onClick={handleClick}
             sx={{
               color: "white",
-              backgroundColor: "#65696f",
+              backgroundColor: `${name === "light" ? "#65696f" : "#9C9C9C"}`,
               borderRadius: "8px",
               boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
               margin: "8px 0",
               "&:hover": {
-                backgroundColor: "#1976d214",
+                backgroundColor: "#708090cf",
                 color: "#ff8560",
                 "& .MuiListItemIcon-root": {
                   color: "#ff8560",
@@ -79,12 +89,14 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
                     sx={{
                       pl: 4,
                       color: "white",
-                      backgroundColor: "#65696f",
+                      backgroundColor: `${
+                        name === "light" ? "#65696f" : "#9C9C9C"
+                      }`,
                       borderRadius: "8px",
                       boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
                       margin: "8px 0",
                       "&:hover": {
-                        backgroundColor: "#1976d214",
+                        backgroundColor: "#708090cf",
                         color: "#ff8560",
                         "& .MuiListItemIcon-root": {
                           color: "#ff8560",
@@ -104,7 +116,7 @@ const getButtonList = (propsList, setPortfoliosValue, handleClick, open) => {
   ));
 };
 
-const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
+const NavPortfolioDecstop = observer(({ propsList, setPortfoliosValue }) => {
   const [handleScrollNav, setHandleScrollNav] = useState(false);
   const [handleScrollFilter, setHandleScrollFilter] = useState(false);
   const [handleHeightFilter, setHandleHeightFilter] = useState(312);
@@ -112,6 +124,8 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
   const [handleFilterInvisible, setHandleFilterInvisible] = useState(false);
   const [handleTopNav, setHandleTopNav] = useState(0);
   const [open, setOpen] = useState(false);
+
+  const { name } = store.getToggleTheme();
 
   const handleClick = () => {
     setOpen(!open);
@@ -183,10 +197,10 @@ const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
         data-portfolio-height
       >
         <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
-        {getButtonList(propsList, setPortfoliosValue, handleClick, open)}
+        {getButtonList(propsList, setPortfoliosValue, handleClick, open, name)}
       </PortfolioHeaderValue>
     </PortfolioHeaderValueWrapper>
   );
-};
+});
 
 export default NavPortfolioDecstop;

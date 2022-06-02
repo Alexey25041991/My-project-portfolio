@@ -42,7 +42,7 @@ export const PortfolioData = styled.div`
   text-align: left;
   margin-top: 22px;
   margin-bottom: 15px;
-  margin-left: 28px;
+  margin-left: ${({ theme }) => (theme.name === "dark" ? "22px" : "28px")};
   position: relative;
 `;
 
@@ -82,9 +82,9 @@ export const PortfolioName = styled.div`
 
 export const PortfolioNameList = styled.div`
   font-size: 14px;
-  color: #000;
+  color: ${({ theme }) => theme.color.text.primary};
   cursor: pointer;
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed ${({ theme }) => theme.color.text.primary};
 `;
 
 export const PortfolioListData = styled.div`

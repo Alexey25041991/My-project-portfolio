@@ -18,7 +18,7 @@ export const PortfolioButtom = styled.button`
   justify-content: center;
   align-items: center;
   height: 40px;
-  background-color: #2b3037;
+  background-color: ${({ theme }) => theme.color.background.button};
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(37, 101, 167, 0.47);
   color: white;

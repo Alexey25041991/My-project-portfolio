@@ -12,7 +12,7 @@ export const PortfolioHeaderValueWrapper = styled.div`
 
 export const PortfolioTagText = styled.div`
   margin-bottom: 12px;
-  color: #000000;
+  color: ${({ theme }) => theme.color.text.primary};
   font-size: 14px;
   font-weight: 700;
   font-family: "Exo 2", sans-serif;

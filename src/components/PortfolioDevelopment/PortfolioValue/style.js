@@ -85,7 +85,7 @@ export const Projectwindow = styled.a`
   top: 72px;
   display: block;
   width: 100%;
-  height: 655px;
+  height: 650px;
   overflow: auto;
   border-radius: 0 0 0 10px;
   cursor: pointer;
