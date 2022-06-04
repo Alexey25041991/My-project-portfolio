@@ -5,11 +5,12 @@ const ButtonWrapper = styled.button`
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
   align-items: center;
-  margin: 0 auto;
+  margin: ${({ modal }) => (modal ? "0" : "0 auto")};
   margin-top: 20px;
-  width: 260px;
+  width: ${({ modal }) => (modal ? "200px" : "260px")};
   height: 44px;
-  background-color: ${({ theme }) => theme.color.background.button};
+  background-color: ${({ theme, modal }) =>
+    modal ? "#6a6f7c" : theme.color.background.button};
   border-radius: 8px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -54,12 +55,20 @@ const Label = styled.div`
   margin-top: 5px;
 `;
 
-const Button = ({ children, title, toOrder, toOrderHeader, handleClick }) => {
+const Button = ({
+  children,
+  title,
+  toOrder,
+  toOrderHeader,
+  modal,
+  handleClick,
+}) => {
   return (
     <ButtonWrapper
       toOrder={toOrder}
       toOrderHeader={toOrderHeader}
       onClick={handleClick}
+      modal={modal}
     >
       {children}
       {title && <Label>{title}</Label>}

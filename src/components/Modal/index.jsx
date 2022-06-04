@@ -15,12 +15,9 @@ import {
   MenuItem,
   Select,
   FormControl,
-  makeStyles,
-  createStyles,
   Radio,
   RadioGroup,
   FormControlLabel,
-  Button,
 } from "@material-ui/core";
 
 import {
@@ -48,6 +45,8 @@ import { getwindowInnerWidth } from "../common/utils/getwindowInnerWidth";
 import { ReactComponent as CloseOutline } from "../common/icon/CloseOutline.svg";
 import { ReactComponent as FooterMailIcon } from "../common/icon/MailDarkIcon.svg";
 import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
+
+import Button from "../common/Button";
 
 const TextTitleRadio = styled.div`
   font-weight: 400;
@@ -131,14 +130,6 @@ const CssFormControl = styled(FormControl)({
   },
 });
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    button: {
-      marginTop: "20px !important",
-    },
-  })
-);
-
 const maskPhone = [
   "+",
   "7",
@@ -219,8 +210,6 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
   const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
   };
-
-  const classes = useStyles();
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -477,15 +466,8 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
               </ContentText>
             </ModalSection>
             <Footer>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                className={classes.button}
-                startIcon={<OrderSiteIcon width={24} height={24} />}
-                onClick={() => console.log("Отправить")}
-              >
-                Отправить
+              <Button title="Отправить" toOrder modal handleClick={handleClose}>
+                <OrderSiteIcon />
               </Button>
               <ContentAnimation>
                 <ModalAnimation
