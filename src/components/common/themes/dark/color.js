@@ -12,6 +12,7 @@ const BACKGROUND = {
   primaryHeaderWrapper: "#2b3037",
   // primaryPageWrapper: "#A9A9A9",
   primaryPageWrapper: "#464a53eb",
+  modal: "#6a6f7c",
   button: "#9C9C9C",
   buttonTeg: "#9C9C9C",
   primary: "#1A1E23",

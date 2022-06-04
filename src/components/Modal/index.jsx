@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { observer } from "mobx-react";
+import styled from "styled-components";
+
+import { store } from "../../store";
 
 import MaskedInput from "react-text-mask";
 import emailMask from "text-mask-addons/dist/emailMask";
@@ -11,7 +15,6 @@ import {
   MenuItem,
   Select,
   FormControl,
-  FormLabel,
   makeStyles,
   createStyles,
   Radio,
@@ -27,6 +30,7 @@ import {
   HeaderText,
   IconClose,
   Content,
+  ContentRadio,
   ContentAnimation,
   Footer,
   ModalComponent,
@@ -35,6 +39,8 @@ import {
   ContentText,
 } from "./style";
 
+import "./style.css";
+
 import { compact } from "lodash";
 
 import { getwindowInnerWidth } from "../common/utils/getwindowInnerWidth";
@@ -42,24 +48,91 @@ import { getwindowInnerWidth } from "../common/utils/getwindowInnerWidth";
 import { ReactComponent as CloseOutline } from "../common/icon/CloseOutline.svg";
 import { ReactComponent as FooterMailIcon } from "../common/icon/MailDarkIcon.svg";
 import { ReactComponent as OrderSiteIcon } from "../common/icon/RocketIcon.svg";
-import { red } from "@material-ui/core/colors";
+
+const TextTitleRadio = styled.div`
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  letter-spacing: 0.008em;
+  color: ${({ theme }) => theme.color.text.primary};
+`;
+
+const CssTextField = styled(TextField)({
+  marginTop: 10,
+  marginBottom: 10,
+  minWidth: 120,
+  backgroundColor: "#fff",
+  borderRadius: "8px",
+  "& label": {
+    color: "#626F84",
+  },
+  "& label.MuiFormLabel-filled": {
+    marginTop: "10px",
+  },
+  "& label.Mui-focused": {
+    color: "#626F84",
+    paddingTop: "10px",
+  },
+  "& label.MuiFormLabel-filled.Mui-focused": {
+    marginTop: "0",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "#ff8560",
+  },
+  "& .MuiOutlinedInput-root": {
+    borderRadius: "8px",
+    "& fieldset": {
+      borderColor: "#2B313B",
+    },
+    "&:hover fieldset": {
+      borderColor: "#ff8560",
+      borderWidth: "2px",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#ff8560",
+    },
+  },
+});
+
+const CssFormControl = styled(FormControl)({
+  marginTop: 10,
+  marginBottom: 10,
+  minWidth: 120,
+  backgroundColor: "#fff",
+  borderRadius: "8px",
+  "& label": {
+    color: "#626F84",
+  },
+  "& label.MuiFormLabel-filled": {
+    marginTop: "10px",
+  },
+  "& label.Mui-focused": {
+    color: "#626F84",
+    paddingTop: "10px",
+  },
+  "& label.MuiFormLabel-filled.Mui-focused": {
+    marginTop: "0",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "#ff8560",
+  },
+  "& .MuiOutlinedInput-root": {
+    borderRadius: "8px",
+    "& fieldset": {
+      borderColor: "#2B313B",
+    },
+    "&:hover fieldset": {
+      borderColor: "#ff8560",
+      borderWidth: "2px",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#ff8560",
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) =>
   createStyles({
-    formControl: {
-      marginTop: 10,
-      marginBottom: 10,
-      minWidth: 120,
-    },
-    textField: {
-      marginTop: 10,
-      marginBottom: 10,
-      minWidth: 120,
-    },
-    radio: {
-      // backgroundColor: '#ff8560',
-      color: red,
-    },
     button: {
       marginTop: "20px !important",
     },
@@ -119,7 +192,7 @@ const TextMaskEMail = React.forwardRef((props, ref) => {
   );
 });
 
-const Modal = ({ opened = false, onRequestClose }) => {
+const Modal = observer(({ opened = false, onRequestClose }) => {
   const [valueName, setValueName] = useState("");
   const [valuePhone, setValuePhone] = useState("");
   const [valueMail, setValueMail] = useState("");
@@ -140,6 +213,8 @@ const Modal = ({ opened = false, onRequestClose }) => {
     setAnimationProjectDescription(projectDescription);
     setAnimationWork(profileValueInterest);
   }, [valueName, valuePhone, valueMail, valueDescriptionProject]);
+
+  const { name } = store.getToggleTheme();
 
   const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
@@ -180,7 +255,11 @@ const Modal = ({ opened = false, onRequestClose }) => {
       <Overlay data-close-border opened={opened} onClick={handleOverlayClick}>
         <ModalComponent data-close-modal>
           <Header>
-            <FooterMailIcon width={24} height={24} fill="#2b3037" />
+            <FooterMailIcon
+              width={24}
+              height={24}
+              fill={name === "light" ? "#2b3037" : "#fff"}
+            />
             <HeaderText>Вы готовы сделать заказ?</HeaderText>
           </Header>
           <IconClose onClick={handleClose}>
@@ -189,24 +268,22 @@ const Modal = ({ opened = false, onRequestClose }) => {
           <ModalSectionWrapper>
             <ModalSection>
               <ContentWrapper>
-                <Content>
-                  <TextField
+                <Content top>
+                  <CssTextField
                     id="standard-basic"
                     label="Представьтесь, пожалуйста *"
                     placeholder="Ф.И.О."
                     fullWidth
-                    className={classes.textField}
                     value={valueName}
                     onChange={(e) => {
                       setValueName(e.target.value);
                     }}
                   />
 
-                  <TextField
+                  <CssTextField
                     id="maskExample"
                     label="Контактный телефон *"
                     fullWidth
-                    className={classes.textField}
                     margin="normal"
                     InputProps={{
                       inputComponent: TextMaskPhone,
@@ -216,11 +293,7 @@ const Modal = ({ opened = false, onRequestClose }) => {
                   />
                 </Content>
                 <Content>
-                  <FormControl
-                    variant="outlined"
-                    fullWidth
-                    className={classes.formControl}
-                  >
+                  <CssFormControl variant="outlined" fullWidth>
                     <InputLabel id="demo-simple-select-label">
                       Выберите услугу *
                     </InputLabel>
@@ -257,12 +330,11 @@ const Modal = ({ opened = false, onRequestClose }) => {
                         Другое(указать в описании)
                       </MenuItem>
                     </Select>
-                  </FormControl>
-                  <TextField
+                  </CssFormControl>
+                  <CssTextField
                     id="maskExample"
                     label="Ваш e-mail *"
                     fullWidth
-                    className={classes.textField}
                     margin="normal"
                     InputProps={{
                       inputComponent: TextMaskEMail,
@@ -275,9 +347,9 @@ const Modal = ({ opened = false, onRequestClose }) => {
                 </Content>
               </ContentWrapper>
               <ContentWrapper>
-                <Content>
+                <ContentRadio>
                   <FormControl component="fieldset">
-                    <FormLabel component="legend">Срок на разработку</FormLabel>
+                    <TextTitleRadio>Срок на разработку</TextTitleRadio>
                     <RadioGroup
                       row
                       aria-label="position"
@@ -288,27 +360,60 @@ const Modal = ({ opened = false, onRequestClose }) => {
                     >
                       <FormControlLabel
                         value="wait"
-                        control={<Radio color="primary" />}
+                        control={
+                          <Radio
+                            sx={{
+                              color: `${name === "light" ? "#2B313B" : "#fff"}`,
+                              "&.Mui-checked": {
+                                color: `${
+                                  name === "light" ? "#2B313B" : "#fff"
+                                }`,
+                              },
+                            }}
+                          />
+                        }
                         label="Я не спешу"
                       />
                       <FormControlLabel
                         value="urgently"
-                        control={<Radio color="primary" />}
+                        control={
+                          <Radio
+                            sx={{
+                              color: `${name === "light" ? "#2B313B" : "#fff"}`,
+                              "&.Mui-checked": {
+                                color: `${
+                                  name === "light" ? "#2B313B" : "#fff"
+                                }`,
+                              },
+                            }}
+                          />
+                        }
                         label="Cрочно"
                       />
                       <FormControlLabel
                         value="yesterday"
-                        control={<Radio color="primary" />}
+                        control={
+                          <Radio
+                            sx={{
+                              color: `${name === "light" ? "#2B313B" : "#fff"}`,
+                              "&.Mui-checked": {
+                                color: `${
+                                  name === "light" ? "#2B313B" : "#fff"
+                                }`,
+                              },
+                            }}
+                          />
+                        }
                         label="Вчера"
                       />
                     </RadioGroup>
                   </FormControl>
-                </Content>
-                <Content>
+                </ContentRadio>
+                <ContentRadio>
                   <FormControl component="fieldset">
-                    <FormLabel component="legend">
+                    <TextTitleRadio>
                       Есть ли у вас техническое задание?
-                    </FormLabel>
+                    </TextTitleRadio>
                     <RadioGroup
                       row
                       aria-label="position"
@@ -319,23 +424,44 @@ const Modal = ({ opened = false, onRequestClose }) => {
                     >
                       <FormControlLabel
                         value="valueNot"
-                        control={<Radio color="primary" />}
-                        className={classes.radio}
+                        control={
+                          <Radio
+                            sx={{
+                              color: `${name === "light" ? "#2B313B" : "#fff"}`,
+                              "&.Mui-checked": {
+                                color: `${
+                                  name === "light" ? "#2B313B" : "#fff"
+                                }`,
+                              },
+                            }}
+                          />
+                        }
                         label="Нет"
                       />
                       <FormControlLabel
                         value="valueYes"
-                        control={<Radio color="primary" />}
+                        control={
+                          <Radio
+                            sx={{
+                              color: `${name === "light" ? "#2B313B" : "#fff"}`,
+                              "&.Mui-checked": {
+                                color: `${
+                                  name === "light" ? "#2B313B" : "#fff"
+                                }`,
+                              },
+                            }}
+                          />
+                        }
                         label="Да"
                       />
                     </RadioGroup>
                   </FormControl>
-                </Content>
+                </ContentRadio>
               </ContentWrapper>
             </ModalSection>
             <ModalSection>
               <ContentText>
-                <TextField
+                <CssTextField
                   id="outlined-textarea"
                   label="Описание проекта, требования, особые пожелания, бюджет*"
                   placeholder="Введите текст"
@@ -375,6 +501,6 @@ const Modal = ({ opened = false, onRequestClose }) => {
       </Overlay>
     )
   );
-};
+});
 
 export default Modal;

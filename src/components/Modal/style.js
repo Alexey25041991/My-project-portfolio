@@ -26,7 +26,7 @@ export const ContentWrapper = styled.div`
 export const Content = styled.div`
   white-space: pre-wrap;
   padding: ${PADDING};
-  color: inherit;
+  color: ${({ theme }) => theme.color.text.primary};
   font-family: Inter;
   font-size: 15px;
   font-weight: 400;
@@ -35,7 +35,16 @@ export const Content = styled.div`
 
   @media ${TABLET_959} {
     padding: 0;
-    padding-top: 8px;
+    padding-top: ${({ top }) => (top ? "16px" : "8px")};
+  }
+`;
+
+export const ContentRadio = styled(Content)`
+  padding: 0 24px 0 24px;
+
+  @media ${TABLET_959} {
+    padding: 0;
+    padding-top: ${({ top }) => (top ? "16px" : "8px")};
   }
 `;
 
@@ -54,7 +63,7 @@ export const ContentAnimation = styled.div`
 export const ContentText = styled.div`
   white-space: pre-wrap;
   overflow-y: auto;
-  padding: 5px ${PADDING} ${PADDING} ${PADDING};
+  padding: ${PADDING} ${PADDING} ${PADDING} ${PADDING};
   color: inherit;
   font-family: Inter;
   font-size: 15px;
@@ -91,7 +100,7 @@ export const Header = styled.div`
   justify-content: center;
   white-space: pre-wrap;
   margin-bottom: ${HEADER_MARGIN_BOTTOM};
-  color: #000;
+  color: ${({ theme }) => theme.color.text.primary};
   font-family: Inter;
   font-size: 20px;
   font-weight: 600;
@@ -132,11 +141,12 @@ export const IconClose = styled.div`
     bottom: -6px;
     right: -6px;
     border-radius: 50%;
-    background-color: rgba(98, 108, 119, 0.25);
+    background-color: ${({ theme }) =>
+      theme.name === "light" ? "rgba(98, 108, 119, 0.25)" : "#d4d4d559"};
   }
 
   & svg {
-    fill: #7b7e86;
+    fill: ${({ theme }) => (theme.name === "light" ? "#7b7e86" : "#fff")};
   }
 
   &:hover svg {
@@ -152,7 +162,7 @@ export const ModalComponent = styled.div`
   outline: 0;
 
   width: 824px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.color.background.modal};
   box-shadow: 0px 1.2px 18px rgba(0, 0, 0, 0.08),
     0px 6.4px 29px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
@@ -175,9 +185,10 @@ export const ModalSectionWrapper = styled.div`
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 84vh;
+  max-height: calc(100vh - 120px);
 
-  margin-bottom: 8px;
+  background-color: #d4d4d559;
+  border-radius: 0 0 8px 8px;
 
   /* Основная ширина полосы прокрутки. */
   ::-webkit-scrollbar {
@@ -209,8 +220,9 @@ export const ModalSectionWrapper = styled.div`
   }
 
   @media ${MOBILE_660} {
-    max-height: calc(100vh - 90px);
+    max-height: calc(100vh - 85px);
     padding-bottom: 220px;
+    border-radius: 0;
   }
 `;
 
