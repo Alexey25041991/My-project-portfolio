@@ -37,6 +37,7 @@ const App = observer(() => {
           openToastValue={getOpenToastModal}
           severity="success"
           text="Сообщение отправлено!"
+          timer={6000}
         />
         <ProgressBar />
         <ScrollTop />

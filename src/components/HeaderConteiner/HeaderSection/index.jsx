@@ -62,6 +62,7 @@ const HeaderSection = observer(() => {
         openToastValue={openToastValue}
         severity="info"
         text="Нажмите Ctrl+D для добавления в избранное!"
+        timer={10000}
       />
       <HeaderSectionFon>
         <IconComp>

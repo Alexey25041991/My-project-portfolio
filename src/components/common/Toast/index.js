@@ -7,7 +7,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const Toast = ({ openToastValue, severity, text }) => {
+const Toast = ({ openToastValue, severity, text, timer }) => {
   const [openToast, setOpenToast] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Toast = ({ openToastValue, severity, text }) => {
   return (
     <Snackbar
       open={openToast}
-      autoHideDuration={10000}
+      autoHideDuration={timer}
       onClose={handleClose}
       anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
     >
