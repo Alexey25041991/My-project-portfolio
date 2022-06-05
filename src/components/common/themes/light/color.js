@@ -6,6 +6,7 @@ const BASIC = {
   press: "#083F91",
   disable: "#C4CAD4",
   primaryLight: "#6EA5F7",
+  borderModal: "#464a53",
 };
 
 const BACKGROUND = {

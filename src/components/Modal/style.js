@@ -99,15 +99,15 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   white-space: pre-wrap;
-  margin-bottom: ${HEADER_MARGIN_BOTTOM};
   color: ${({ theme }) => theme.color.text.primary};
   font-family: Inter;
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
   text-transform: uppercase;
+  border-bottom: 2px solid ${({ theme }) => theme.color.basic.borderModal};
 
-  padding: 20px 24px 0px 24px;
+  padding: 20px 24px 20px 24px;
 
   @media ${MOBILE_560} {
     flex-direction: column;
