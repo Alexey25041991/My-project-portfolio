@@ -205,6 +205,12 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
     setAnimationWork(profileValueInterest);
   }, [valueName, valuePhone, valueMail, valueDescriptionProject]);
 
+  useEffect(() => {
+    if (opened) {
+      store.setOpenToastModal(false);
+    }
+  }, [opened]);
+
   const { name } = store.getToggleTheme();
 
   const handleChangePhone = (event) => {
@@ -214,6 +220,11 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
   const handleClose = (e) => {
     e.stopPropagation();
     onRequestClose && onRequestClose();
+  };
+
+  const handleCloseButton = () => {
+    store.setOpenToastModal(true);
+    onRequestClose();
   };
 
   const handleOverlayClick = (e) => {
@@ -466,7 +477,12 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
               </ContentText>
             </ModalSection>
             <Footer>
-              <Button title="Отправить" toOrder modal handleClick={handleClose}>
+              <Button
+                title="Отправить"
+                toOrder
+                modal
+                handleClick={handleCloseButton}
+              >
                 <OrderSiteIcon />
               </Button>
               <ContentAnimation>

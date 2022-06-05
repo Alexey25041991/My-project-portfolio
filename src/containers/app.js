@@ -22,15 +22,22 @@ import {
 
 import ProgressBar from "../components/common/ProgressBar";
 import ScrollTop from "../components/common/ScrollTop";
+import Toast from "../components/common/Toast";
 
 import { AppWrapper } from "./style";
 
 const App = observer(() => {
   const theme = store.getToggleTheme();
+  const getOpenToastModal = store.getOpenToastModal();
 
   return (
     <Router>
       <ThemeProvider theme={theme}>
+        <Toast
+          openToastValue={getOpenToastModal}
+          severity="success"
+          text="Сообщение отправлено!"
+        />
         <ProgressBar />
         <ScrollTop />
         <AppWrapper>

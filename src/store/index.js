@@ -5,6 +5,7 @@ import { RUSSIAN_LANGUAGE, ENGLISH_LANGUAGE } from "../components/common/lang";
 
 class Store {
   opendToast = false;
+  opendToastModal = false;
   theme = LIGHT_THEME;
   langText = RUSSIAN_LANGUAGE;
   routeLink = "";
@@ -19,6 +20,14 @@ class Store {
 
   getOpenToast() {
     return this.opendToast;
+  }
+
+  setOpenToastModal(open) {
+    this.opendToastModal = open;
+  }
+
+  getOpenToastModal() {
+    return this.opendToastModal;
   }
 
   setToggleTheme(themeDark) {
