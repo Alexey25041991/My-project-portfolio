@@ -79,13 +79,13 @@ const Label = styled.div`
 
 const ButtonHeart = ({ positionStyle }) => {
   const [counter, setСounter] = useState(20);
-  const handleClickOpen = () => {
-    store.setOpenToast(true);
-  };
+  // const handleClickOpen = () => {
+  //   store.setOpenToast(true);
+  // };
 
   // Функция для определения "мобильности" браузера
   function MobileDetect() {
-    var UA = navigator.userAgent.toLowerCase();
+    let UA = navigator.userAgent.toLowerCase();
     return /android|webos|iris|bolt|mobile|iphone|ipad|ipod|iemobile|blackberry|windows phone|opera mobi|opera mini/i.test(
       UA
     )
@@ -99,6 +99,8 @@ const ButtonHeart = ({ positionStyle }) => {
 
     setСounter(counter + 1);
 
+    store.setOpenToast(true);
+
     if (!MobileDetect()) {
       try {
         window.external.AddFavorite(url, title);
@@ -106,7 +108,8 @@ const ButtonHeart = ({ positionStyle }) => {
         try {
           window.sidebar.addPanel(title, url, "");
         } catch (e) {
-          handleClickOpen();
+          // handleClickOpen();
+          console.log("");
         }
       }
     }

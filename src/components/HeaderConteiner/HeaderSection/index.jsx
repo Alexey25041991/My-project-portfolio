@@ -42,6 +42,8 @@ import Button from "../../common/Button";
 import PopupSetting from "../../common/PopupSetting";
 import Toast from "../../common/Toast";
 
+import { getMobile } from "../../common/utils";
+
 import { getwindowInnerWidth } from "../../common/utils/getwindowInnerWidth";
 import { store } from "../../../store";
 
@@ -56,12 +58,16 @@ const HeaderSection = observer(() => {
     setPositionValue(positionValueWidth ? "top right" : "right center");
   };
 
+  const textToast = getMobile()
+    ? "Спасибо за оценку!"
+    : "Спасибо за оценку! Нажмите Ctrl+D для добавления в избранное!";
+
   return (
     <HeaderSectionWrapper>
       <Toast
         openToastValue={openToastValue}
         severity="info"
-        text="Нажмите Ctrl+D для добавления в избранное!"
+        text={textToast}
         timer={10000}
       />
       <HeaderSectionFon>
