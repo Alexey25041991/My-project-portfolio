@@ -19,7 +19,7 @@ export const getDayTime = () => {
   // текущее время
   const timesHouse = date.getHours() * 60 + date.getMinutes();
 
-  const dayTime = sunriseStr < timesHouse < sunsetStr;
+  const dayTime = sunriseStr < timesHouse && timesHouse < sunsetStr;
 
   return dayTime;
 };
