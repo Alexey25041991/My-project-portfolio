@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { observer } from "mobx-react";
 import { store } from "../store";
@@ -13,7 +13,7 @@ import PortfolioListBlog from "../components/PortfolioBlog/PortfolioListBlog";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// import { observer } from 'mobx-react-lite';
+import { getDayTime } from "../components/common/utils";
 
 import {
   propsPortfolioList,
@@ -29,6 +29,12 @@ import { AppWrapper } from "./style";
 const App = observer(() => {
   const theme = store.getToggleTheme();
   const getOpenToastModal = store.getOpenToastModal();
+
+  const dayTime = getDayTime();
+
+  useEffect(() => {
+    store.setToggleTheme(!dayTime);
+  }, [dayTime]);
 
   return (
     <Router>

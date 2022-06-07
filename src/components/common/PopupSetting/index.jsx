@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Popup } from "semantic-ui-react";
 
 import ButtonElement from "../ButtonElement";
 import ButtonHeart from "../ButtonHeart";
 import ThemeDarkLight from "../ThemeDarkLight";
+
+import { getDayTime } from "../../common/utils";
 
 import { PopupWrapper } from "./style";
 import "./style.css";
@@ -12,6 +14,13 @@ const PopupSetting = ({ children, positionValue, handleClickPopup }) => {
   const [openedTheme, setOpenedTheme] = useState(false);
   const [openedEnglish, setOpenedEnglish] = useState(false);
   const positionStyle = positionValue === "top right";
+
+  const dayTime = getDayTime();
+
+  useEffect(() => {
+    setOpenedTheme(!dayTime);
+  }, [dayTime]);
+
   return (
     <Popup
       content={

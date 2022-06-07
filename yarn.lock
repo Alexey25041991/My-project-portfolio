@@ -11922,6 +11922,11 @@ stylis@^4.0.3:
   resolved "https://registry.npmjs.org/stylis/-/stylis-4.0.10.tgz"
   integrity sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg==
 
+suncalc@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/suncalc/-/suncalc-1.9.0.tgz#26212353fae61edb287c2d558fc4932ecf0e1532"
+  integrity sha512-vMJ8Byp1uIPoj+wb9c1AdK4jpkSKVAywgHX0lqY7zt6+EWRRC3Z+0Ucfjy/0yxTVO1hwwchZe4uoFNqrIC24+A==
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
