@@ -15,11 +15,10 @@ const PopupSetting = ({ children, positionValue, handleClickPopup }) => {
   const [openedEnglish, setOpenedEnglish] = useState(false);
   const positionStyle = positionValue === "top right";
 
-  const dayTime = getDayTime();
-
   useEffect(() => {
+    const dayTime = getDayTime();
     setOpenedTheme(!dayTime);
-  }, [dayTime]);
+  }, []);
 
   return (
     <Popup
