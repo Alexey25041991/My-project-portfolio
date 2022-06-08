@@ -30,10 +30,12 @@ const App = observer(() => {
   const theme = store.getToggleTheme();
   const getOpenToastModal = store.getOpenToastModal();
 
+  const min10 = 600000;
+  const dayTime = getDayTime();
+
   useEffect(() => {
-    const dayTime = getDayTime();
-    store.setToggleTheme(!dayTime);
-  }, []);
+    setInterval(() => store.setToggleTheme(!dayTime), min10);
+  }, [dayTime]);
 
   return (
     <Router>
