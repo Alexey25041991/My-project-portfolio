@@ -1,4 +1,7 @@
 import React from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import {
   ServiseListCustom,
@@ -15,38 +18,29 @@ import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 
-const ServiseList = () => (
-  <PageWrapper dark>
-    <PageConteiner>
-      <HeaderTitle dark title="Перечень услуг">
-        <ServiseListIcon />
-      </HeaderTitle>
-      <ServiseListCustom>
-        <ServiseListOptions>
-          <Ul>
-            <LiFir>
-              Помощь в составлении технического задания для сайта и пр..
-            </LiFir>
-            <Li>Разработка проекта с нуля и поддержка его после.</Li>
-            <Li>
-              Наполнение сайта Вашим контентом: товарами интернет-магазина,
-              текстовой информацией, графической информации.
-            </Li>
-            <Li>
-              Установка, доработка дополнительного функционала: форум,
-              фотогалерея, интернет-магазин, слайдер, карта сайта, формы для
-              связи и т.д.
-            </Li>
-            <LiLas>
-              Оптимизация сайта: скорость загрузки, оптимизация сайта для лучшей
-              индексации поисковыми системами: HTML и CSS валидация,
-              корректировка кода и пр..
-            </LiLas>
-          </Ul>
-        </ServiseListOptions>
-      </ServiseListCustom>
-    </PageConteiner>
-  </PageWrapper>
-);
+const ServiseList = observer(() => {
+  const { servise } = store.getToggleLang();
+
+  return (
+    <PageWrapper dark>
+      <PageConteiner>
+        <HeaderTitle dark title={servise.title}>
+          <ServiseListIcon />
+        </HeaderTitle>
+        <ServiseListCustom>
+          <ServiseListOptions>
+            <Ul>
+              <LiFir>{servise.text1}</LiFir>
+              <Li>{servise.text2}</Li>
+              <Li>{servise.text3}</Li>
+              <Li>{servise.text4}</Li>
+              <LiLas>{servise.text5}</LiLas>
+            </Ul>
+          </ServiseListOptions>
+        </ServiseListCustom>
+      </PageConteiner>
+    </PageWrapper>
+  );
+});
 
 export default ServiseList;

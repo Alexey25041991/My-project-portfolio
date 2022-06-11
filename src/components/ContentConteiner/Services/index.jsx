@@ -13,36 +13,22 @@ import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 
 const Services = observer(() => {
+  const { cooperation } = store.getToggleLang();
   const { name } = store.getToggleTheme();
   const Icon = name === "light" ? ServicesDarkIcon : ServicesIcon;
 
   return (
     <PageWrapper id="services">
       <PageConteiner>
-        <HeaderTitle title="Услуги и сотрудничество">
+        <HeaderTitle title={cooperation.title}>
           <Icon />
         </HeaderTitle>
         <ServicesCustom>
           <ServicesSection>
-            <ServicesText>
-              Предлагаю профессиональные услуги высокого качества в создании
-              сайтов, веб разработке, оптимизации, дизайне, создании фирменного
-              стиля и др. услуг, а также консалтинг в сфере веб-технологий на
-              взаимовыгодных условиях.
-            </ServicesText>
-            <ServicesText>
-              На сайте цен нет — каждый сайт или логотип индивидуальный и цены
-              могут кардинально отличатся. С радостью отвечу на все Ваши
-              вопросы, постараюсь сделать прикидки по ценам на создание сайта и
-              другие работы.
-            </ServicesText>
-            <ServicesText>
-              Я открыт для любых предложений на предмет сотрудничества по
-              разработке.
-            </ServicesText>
-            <ServicesText>
-              Вы получите именно тот сайт который хотели!
-            </ServicesText>
+            <ServicesText>{cooperation.text1}</ServicesText>
+            <ServicesText>{cooperation.text2}</ServicesText>
+            <ServicesText>{cooperation.text3}</ServicesText>
+            <ServicesText>{cooperation.text4}</ServicesText>
           </ServicesSection>
         </ServicesCustom>
       </PageConteiner>
