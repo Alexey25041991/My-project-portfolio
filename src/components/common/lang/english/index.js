@@ -1,8 +1,17 @@
-import { propsHeaderMenu } from "./advantages";
+import { propsAdvantages, advantagesText } from "./advantages";
 import { propsHeaderTopMenu } from "./headerTopMenu";
+import { headerHaus } from "./headerHaus";
+import { toast } from "./toast";
+import { personal } from "./personal";
+import { resume } from "./resume";
 
 export const ENGLISH_LANGUAGE = {
   propsHeaderTopMenu,
-  propsHeaderMenu,
+  propsAdvantages,
+  advantagesText,
+  headerHaus,
+  personal,
+  resume,
+  toast,
   name: "english",
 };

@@ -7,7 +7,9 @@ import { ReactComponent as SupportIcon } from "../../icon/SupportIcon.svg";
 
 import { dataYear } from "../../../common/constants";
 
-export const propsHeaderMenu = [
+export const advantagesText = "Advantages";
+
+export const propsAdvantages = [
   {
     id: "1",
     title: "Current prices for creating a website",

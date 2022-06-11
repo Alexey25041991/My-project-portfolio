@@ -1,4 +1,7 @@
 import React, { Fragment } from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import {
   ResumeCustom,
@@ -35,65 +38,58 @@ const ResumeSkillsLabelValue = (title, numberValue, id) => (
   </Fragment>
 );
 
-const Resume = () => (
-  <PageWrapper dark id="resume">
-    <PageConteiner>
-      <HeaderTitle dark title="Резюме">
-        <ResumeIcon />
-      </HeaderTitle>
-      <ResumeCustom>
-        <ResumeOptionsWrapper>
-          <ResumeStatusWrapper>
-            <ResumeOptions>
-              <ResumeStatus>Статус:</ResumeStatus>
-              <ResumeValue>Веб-разработчик</ResumeValue>
-            </ResumeOptions>
-            <ResumeOptions>
-              <ResumeStatus>Ф.И.О.:</ResumeStatus>
-              <ResumeValue>Мазуренко Алексей Анатольевич</ResumeValue>
-            </ResumeOptions>
-            <ResumeOptions>
-              <ResumeStatus>СПЕЦИАЛИЗАЦИЯ:</ResumeStatus>
-              <ResumeValue>Программирование, разработка.</ResumeValue>
-            </ResumeOptions>
-          </ResumeStatusWrapper>
-          <Avatar />
-        </ResumeOptionsWrapper>
-        <ResumeOptions>
-          <ResumeStatus>Навыки:</ResumeStatus>
-          <ResumeSkills>
-            {propsPortfolioResume.map((item) =>
-              ResumeSkillsLabelValue(item.title, item.numberValue, item.id)
-            )}
-          </ResumeSkills>
-        </ResumeOptions>
-        <ResumeOptions>
-          <ResumeStatus>ОПЫТ РАБОТЫ:</ResumeStatus>
-          <ResumeValue>
-            Созданием сайтов, версткой и прочее занимаюсь с 2017 года по наст.
-            время.
-          </ResumeValue>
-        </ResumeOptions>
-        <ResumeOptions>
-          <ResumeStatus>ОБРАЗОВАНИЕ:</ResumeStatus>
-          <ResumeValue>
-            2008–2012, Московский государственный строительный университет,
-            институт фундаментального образования, Математика (бакалавр).
-            <br />
-            2012–2014, Московский государственный строительный университет,
-            институт фундаментального образования, Математика (магистр).
-          </ResumeValue>
-        </ResumeOptions>
-        <ResumeOptions>
-          <ResumeStatus>ДЕЛОВЫЕ И ЛИЧНЫЕ КАЧЕСТВА:</ResumeStatus>
-          <ResumeValue>
-            Собранный и уверенный в своих силах, творчески подхожу к выполнению
-            работы. Самодисциплина и способность работать в команде. Всегда
-            нахожусь на связи, заинтересован в выполнении быстро и качественно
-            работу.
-          </ResumeValue>
-        </ResumeOptions>
-        {/* <ResumeOptions>
+const Resume = observer(() => {
+  const { resume } = store.getToggleLang();
+
+  return (
+    <PageWrapper dark id="resume">
+      <PageConteiner>
+        <HeaderTitle dark title={resume.title}>
+          <ResumeIcon />
+        </HeaderTitle>
+        <ResumeCustom>
+          <ResumeOptionsWrapper>
+            <ResumeStatusWrapper>
+              <ResumeOptions>
+                <ResumeStatus>{resume.headerStatus}</ResumeStatus>
+                <ResumeValue>{resume.status}</ResumeValue>
+              </ResumeOptions>
+              <ResumeOptions>
+                <ResumeStatus>{resume.headerFIO}</ResumeStatus>
+                <ResumeValue>{resume.FIO}</ResumeValue>
+              </ResumeOptions>
+              <ResumeOptions>
+                <ResumeStatus>{resume.headerSpecialization}</ResumeStatus>
+                <ResumeValue>{resume.specialization}</ResumeValue>
+              </ResumeOptions>
+            </ResumeStatusWrapper>
+            <Avatar />
+          </ResumeOptionsWrapper>
+          <ResumeOptions>
+            <ResumeStatus>{resume.headerSkills}</ResumeStatus>
+            <ResumeSkills>
+              {propsPortfolioResume.map((item) =>
+                ResumeSkillsLabelValue(item.title, item.numberValue, item.id)
+              )}
+            </ResumeSkills>
+          </ResumeOptions>
+          <ResumeOptions>
+            <ResumeStatus>{resume.headerWorkExperience}</ResumeStatus>
+            <ResumeValue>{resume.workExperience}</ResumeValue>
+          </ResumeOptions>
+          <ResumeOptions>
+            <ResumeStatus>{resume.headerEducation}</ResumeStatus>
+            <ResumeValue>
+              {resume.education1}
+              <br />
+              {resume.education2}
+            </ResumeValue>
+          </ResumeOptions>
+          <ResumeOptions>
+            <ResumeStatus>{resume.headerQuality}</ResumeStatus>
+            <ResumeValue>{resume.quality}</ResumeValue>
+          </ResumeOptions>
+          {/* <ResumeOptions>
           <ResumeStatus>КОНТАКТЫ:</ResumeStatus>
           <ResumeValue>
             Моб.: +7(977)270-09-30 / +7(977)270-09-30
@@ -101,9 +97,10 @@ const Resume = () => (
             <br /> Почта: mazurenko-alexey@mail.ru
           </ResumeValue>
         </ResumeOptions> */}
-      </ResumeCustom>
-    </PageConteiner>
-  </PageWrapper>
-);
+        </ResumeCustom>
+      </PageConteiner>
+    </PageWrapper>
+  );
+});
 
 export default Resume;

@@ -51,6 +51,7 @@ const HeaderSection = observer(() => {
   const [opened, setOpened] = useState(false);
   const [positionValue, setPositionValue] = useState("top right");
 
+  const { headerHaus, toast } = store.getToggleLang();
   const openToastValue = store.getOpenToast();
 
   const handleClickPopup = () => {
@@ -58,9 +59,7 @@ const HeaderSection = observer(() => {
     setPositionValue(positionValueWidth ? "top right" : "right center");
   };
 
-  const textToast = getMobile()
-    ? "Спасибо за оценку!"
-    : "Спасибо за оценку! Нажмите Ctrl+D для добавления в избранное!";
+  const textToast = getMobile() ? toast.mobileText : toast.desktopText;
 
   return (
     <HeaderSectionWrapper>
@@ -97,7 +96,7 @@ const HeaderSection = observer(() => {
         <HeaderSectionGetsite>
           <HeaderSectionConteiner>
             <Button
-              title="Заказать сайт"
+              title={headerHaus.buttonText}
               toOrderHeader
               handleClick={() => setOpened(!opened)}
             >
@@ -105,7 +104,7 @@ const HeaderSection = observer(() => {
             </Button>
             <Modal opened={opened} onRequestClose={() => setOpened(false)} />
             <HeaderSectionLabel>
-              Заполните форму заказа, и я свяжусь с Вами
+              {headerHaus.buttonTextAddition}
             </HeaderSectionLabel>
           </HeaderSectionConteiner>
         </HeaderSectionGetsite>
@@ -130,9 +129,7 @@ const HeaderSection = observer(() => {
                 Whatsapp
               </PhonesText>
             </PhonesTextWrapper>
-            <HeaderSectionLabel>
-              Звоните в удобное для Вас время!
-            </HeaderSectionLabel>
+            <HeaderSectionLabel>{headerHaus.callText}</HeaderSectionLabel>
             <Emails>
               <EmailsIcon />
               <ContactsText href="mailto:mazurenko-alexey@mail.ru">

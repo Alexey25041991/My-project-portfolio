@@ -18,8 +18,8 @@ import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 
-const HeaderMenuLi = (propsHeaderMenu) =>
-  propsHeaderMenu.map((item) => (
+const HeaderMenuLi = (propsAdvantages) =>
+  propsAdvantages.map((item) => (
     <Li key={item.id}>
       <Span>{item.icon}</Span>
       <Link>
@@ -30,16 +30,16 @@ const HeaderMenuLi = (propsHeaderMenu) =>
   ));
 
 const AdvantagesSection = observer(() => {
-  const { propsHeaderMenu } = store.getToggleLang();
+  const { propsAdvantages, advantagesText } = store.getToggleLang();
 
   return (
     <PageWrapper dark id="advantages" line="noHorizontal" header>
       <PageConteiner>
-        <HeaderTitle dark title="Преимущества">
+        <HeaderTitle dark title={advantagesText}>
           <ScaleIcon width={28} height={28} fill="#ffff" />
         </HeaderTitle>
         <AdvantagesCustom>
-          <Ul>{HeaderMenuLi(propsHeaderMenu)}</Ul>
+          <Ul>{HeaderMenuLi(propsAdvantages)}</Ul>
         </AdvantagesCustom>
       </PageConteiner>
     </PageWrapper>

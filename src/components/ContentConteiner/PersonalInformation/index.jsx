@@ -18,10 +18,11 @@ import { ReactComponent as PersonIcon } from "../../common/icon/PersonIcon.svg";
 
 const PersonalInformation = observer(() => {
   const { name } = store.getToggleTheme();
+  const { personal } = store.getToggleLang();
   return (
     <PageWrapper id="person">
       <PageConteiner>
-        <HeaderTitle title="Сайт веб-разработчика">
+        <HeaderTitle title={personal.title}>
           <PersonIcon
             width={28}
             height={28}
@@ -29,29 +30,11 @@ const PersonalInformation = observer(() => {
           />
         </HeaderTitle>
         <PersonalCustom>
-          <PersonalHeaderCustom>подробнее обо мне</PersonalHeaderCustom>
-          <PersonalText>
-            На моем сайте <b>веб-разработчика</b> в портфолио представлены
-            проекты, которые я разработал в сотрудничестве с веб-студиями так и
-            для частных клиентов, а также несколько личных проектов. Основная
-            масса проектов содержит индивидуальные функции предназначенные для
-            реализации особенностей работы веб-сайта.
-          </PersonalText>
+          <PersonalHeaderCustom>{personal.titleText}</PersonalHeaderCustom>
+          <PersonalText>{personal.text1}</PersonalText>
           <PersonalSection>
-            <PersonalText>
-              Помимо созданных сайтов в портфолио, мной также разработаны
-              различные калькуляторы, сложные формы обратной связи,
-              многоуровневое меню, слайдера изображений, отзывов и тд.,
-              исправлений различных ошибок на сайтах, оптимизация загрузки
-              сайта, наполнение сайта до 15000 товаров, материалом (текстовой
-              информацией) и многое другое...
-            </PersonalText>
-            <PersonalText>
-              В моем портфолио веб-разработчика указано название сайта, ссылка
-              на сайт, цель сайта и описание выполненной работы. Если
-              потребуется могу предоставить доказательства на то что это я делал
-              все сайты с моего портфолио.
-            </PersonalText>
+            <PersonalText>{personal.text2}</PersonalText>
+            <PersonalText>{personal.text3}</PersonalText>
           </PersonalSection>
         </PersonalCustom>
       </PageConteiner>

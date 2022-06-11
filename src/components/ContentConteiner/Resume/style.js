@@ -103,6 +103,7 @@ export const ResumeValue = styled.div`
   @media ${TABLET_959} {
     justify-content: center;
     margin: 0 auto;
+    text-align: center;
   }
 
   @media ${MOBILE_660} {
