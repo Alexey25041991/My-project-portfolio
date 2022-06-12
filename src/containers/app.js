@@ -15,8 +15,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { getDayTime } from "../components/common/utils";
 
-import { propsPortfolioListBlog } from "../components/common/constants";
-
 import ProgressBar from "../components/common/ProgressBar";
 import ScrollTop from "../components/common/ScrollTop";
 import Toast from "../components/common/Toast";
@@ -24,7 +22,7 @@ import Toast from "../components/common/Toast";
 import { AppWrapper } from "./style";
 
 const App = observer(() => {
-  const { propsPortfolioList } = store.getToggleLang();
+  const { propsPortfolioList, propsPortfolioListBlog } = store.getToggleLang();
   const theme = store.getToggleTheme();
   const getOpenToastModal = store.getOpenToastModal();
 

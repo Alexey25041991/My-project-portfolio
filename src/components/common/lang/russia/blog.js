@@ -1,25 +1,24 @@
-import JavaScript from "../icon/icon-blog/JavaScript.png";
-import React from "../icon/icon-blog/React.png";
-import NextJs from "../icon/icon-blog/NextJs.png";
-import TypeScript from "../icon/icon-blog/TypeScript.png";
-import ReactNative from "../icon/icon-blog/ReactNative.jpeg";
-import NodeJs from "../icon/icon-blog/NodeJs.png";
-import Redux from "../icon/icon-blog/Redux.png";
-import Git from "../icon/icon-blog/Git.png";
+import JavaScript from "../../../common/icon/icon-blog/JavaScript.png";
+import React from "../../../common/icon/icon-blog/React.png";
+import NextJs from "../../../common/icon/icon-blog/NextJs.png";
+import TypeScript from "../../../common/icon/icon-blog/TypeScript.png";
+import ReactNative from "../../../common/icon/icon-blog/ReactNative.jpeg";
+import NodeJs from "../../../common/icon/icon-blog/NodeJs.png";
+import Redux from "../../../common/icon/icon-blog/Redux.png";
+import Git from "../../../common/icon/icon-blog/Git.png";
 
-export const propsPortfolioBlogHome = {
+export const blog = {
+  title: "Мой блог",
+  buttonText: "Открыть блог",
+  blogTitle:
+    "Площадка, c интересными новостями и примерами в мире It разработки",
+  blogText:
+    "Здесь можно узнать для себя что-то новое или повторить. Также здесь я для себя собрал что-то личное, для собственного развития, поделится какой-то личной информацией.",
+  blogDataTime: "08.01.2020",
   portfolioNameList: "Заметки веб-разработчика",
   portfolioTextTitle: "Добро пожаловать на блог!",
   portfolioText:
     "Я наконец-то, решил сам для себя сделать площадку, чтобы делиться интересными новостями и примерами в мире front-end разработки",
-};
-
-export const propsSlickList = {
-  BlogTitle:
-    "Площадка, c интересными новостями и примерами в мире It разработки",
-  BlogText:
-    "Здесь можно узнать для себя что-то новое или повторить. Также здесь я для себя собрал что-то личное, для собственного развития, поделится какой-то личной информацией.",
-  BlogDataTime: "08.01.2020",
 };
 
 export const propsPortfolioListBlog = [
@@ -142,12 +141,3 @@ export const propsPortfolioListBlog = [
     textBlogHeader: "Git",
   },
 ];
-
-export const PAGES_PORTFOLIO = {
-  PORTFOLIO_HOME: "PORTFOLIO_HOME",
-  NAMES1: "names1",
-  NAMES2: "names2",
-  NAMES3: "names3",
-  NAMES4: "names4",
-  NAMES5: "names5",
-};

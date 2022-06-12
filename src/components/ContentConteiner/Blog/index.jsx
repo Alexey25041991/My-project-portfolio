@@ -23,8 +23,6 @@ import { ReactComponent as BlogTimeIcon } from "../../common/icon/TimeIcon.svg";
 
 import CatCodes from "./CatCodes";
 
-import { propsSlickList } from "../../common/constants";
-
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
@@ -33,24 +31,25 @@ import ButtonLink from "../../common/ButtonLink";
 import ButtonLike from "../../common/ButtonLike";
 
 const Blog = observer(() => {
+  const { blog } = store.getToggleLang();
   const { name } = store.getToggleTheme();
   const Icon = name === "light" ? BlogDarkIcon : BlogIcon;
 
   return (
     <PageWrapper id="blog">
       <PageConteiner>
-        <HeaderTitle title="Мой Блог">
+        <HeaderTitle title={blog.title}>
           <Icon />
         </HeaderTitle>
         <BlogCustom>
           <MyBlogSection>
             <MyBlog>
-              <BlogTitle>{propsSlickList.BlogTitle}</BlogTitle>
-              <BlogText>{propsSlickList.BlogText}</BlogText>
+              <BlogTitle>{blog.blogTitle}</BlogTitle>
+              <BlogText>{blog.blogText}</BlogText>
               <BlogData>
                 <BlogDataValue>
                   <BlogTimeIcon />
-                  <BlogValue>{propsSlickList.BlogDataTime}</BlogValue>
+                  <BlogValue>{blog.blogDataTime}</BlogValue>
                 </BlogDataValue>
                 <BlogDataValue>
                   <BlogVisitorIcon />
@@ -64,7 +63,7 @@ const Blog = observer(() => {
             </BlogCat>
           </MyBlogSection>
           <ButtonLink navMenuLink="blog">
-            <Button title="Открыть блок">
+            <Button title={blog.buttonText}>
               <KeyIcon />
             </Button>
           </ButtonLink>

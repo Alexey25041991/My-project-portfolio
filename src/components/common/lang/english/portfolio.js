@@ -3,9 +3,6 @@ import PortfolioImgUrl1 from "../../../common/icon/icon-blog/PortfolioImgUrl.png
 export const portfolio = {
   title: "Newly developed",
   buttonText: "Open portfolio",
-};
-
-export const propsPortfolioListHome = {
   portfolioNameList: "Portfolio",
   portfolioTextTitle: "Welcome to portfolio!",
   portfolioText:

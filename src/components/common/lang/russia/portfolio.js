@@ -4,9 +4,6 @@ import PortfolioImgUrl1 from "../../../common/icon/icon-blog/PortfolioImgUrl.png
 export const portfolio = {
   title: "Недавно разработаны",
   buttonText: "Открыть портфолио",
-};
-
-export const propsPortfolioListHome = {
   portfolioNameList: "Портфолио",
   portfolioTextTitle: "Добро пожаловать в портфолио!",
   portfolioText:

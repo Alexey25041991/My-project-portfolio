@@ -30,10 +30,6 @@ import { ReactComponent as TimeDarkIcon } from "../../common/icon/TimeDarkIcon.s
 import { ReactComponent as TimeIcon } from "../../common/icon/TimeIcon.svg";
 
 import { propsList } from "./constants";
-import {
-  propsPortfolioListBlog,
-  propsPortfolioBlogHome,
-} from "../../common/constants";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
@@ -83,13 +79,16 @@ const getSlickList = (propsPortfolioList, portfoliosValue, name) => {
     </Li>
   ));
 };
+
 const PortfolioListBlog = observer(() => {
   const [portfoliosValue, setPortfoliosValue] = useState(propsList[0].value);
+
+  const { blog, propsPortfolioListBlog } = store.getToggleLang();
   const { name } = store.getToggleTheme();
 
   return (
     <>
-      <PortfolioHeader item={propsPortfolioBlogHome} />
+      <PortfolioHeader item={blog} />
       <PageWrapper>
         <PageConteiner blog>
           <PortfolioCustom data-select-container>

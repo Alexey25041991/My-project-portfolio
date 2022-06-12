@@ -31,12 +31,12 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
 };
 
 const PortfolioList = observer(() => {
-  const { propsPortfolioListHome, propsPortfolioList } = store.getToggleLang();
+  const { portfolio, propsPortfolioList } = store.getToggleLang();
   const [portfoliosValue, setPortfoliosValue] = useState(propsList[0].value);
 
   return (
     <>
-      <PortfolioHeader item={propsPortfolioListHome} portfolio />
+      <PortfolioHeader item={portfolio} portfolio />
       <PageWrapper>
         <PageConteiner>
           <NavPortfolioList

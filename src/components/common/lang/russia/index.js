@@ -7,14 +7,11 @@ import { resume } from "./resume";
 import { cooperation } from "./cooperation";
 import { servise } from "./servise";
 import { portfolioHeader } from "./portfolioHeader";
-import {
-  propsPortfolioListHome,
-  propsPortfolioList,
-  portfolio,
-} from "./portfolio";
+import { propsPortfolioList, portfolio } from "./portfolio";
+import { propsPortfolioListBlog, blog } from "./blog";
 
 export const RUSSIAN_LANGUAGE = {
-  propsPortfolioListHome,
+  propsPortfolioListBlog,
   propsPortfolioList,
   propsHeaderTopMenu,
   propsAdvantages,
@@ -27,5 +24,6 @@ export const RUSSIAN_LANGUAGE = {
   servise,
   resume,
   toast,
+  blog,
   name: "russia",
 };
