@@ -1,5 +1,10 @@
-import PortfolioImgUrl1 from "../icon/icon-blog/PortfolioImgUrl.png";
+import PortfolioImgUrl1 from "../../../common/icon/icon-blog/PortfolioImgUrl.png";
 // import webdev from './icon/webdev.png';
+
+export const portfolio = {
+  title: "Недавно разработаны",
+  buttonText: "Открыть портфолио",
+};
 
 export const propsPortfolioListHome = {
   portfolioNameList: "Портфолио",
@@ -82,12 +87,3 @@ export const propsPortfolioList = [
     portfolioText: "Интернет магазин5",
   },
 ];
-
-export const PAGES_PORTFOLIO = {
-  PORTFOLIO_HOME: "PORTFOLIO_HOME",
-  NAMES1: "names1",
-  NAMES2: "names2",
-  NAMES3: "names3",
-  NAMES4: "names4",
-  NAMES5: "names5",
-};

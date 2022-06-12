@@ -1,4 +1,7 @@
 import React, { useState, Fragment } from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import PortfolioHeader from "../../PortfolioHeader";
 
@@ -6,10 +9,6 @@ import { PortfolioCustom, Ul, SlickList, SlickTrack } from "./style.js";
 import "./index.css";
 
 import { propsList } from "./constants";
-import {
-  propsPortfolioList,
-  propsPortfolioListHome,
-} from "../../common/constants";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
@@ -30,7 +29,9 @@ const getSlickList = (propsPortfolioList, portfoliosValue) => {
     </Fragment>
   ));
 };
-const PortfolioList = () => {
+
+const PortfolioList = observer(() => {
+  const { propsPortfolioListHome, propsPortfolioList } = store.getToggleLang();
   const [portfoliosValue, setPortfoliosValue] = useState(propsList[0].value);
 
   return (
@@ -55,6 +56,6 @@ const PortfolioList = () => {
       </PageWrapper>
     </>
   );
-};
+});
 
 export default PortfolioList;

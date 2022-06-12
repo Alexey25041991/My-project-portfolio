@@ -1,4 +1,3 @@
-export * from "./portfolioList";
 export * from "./portfolioBlog";
 
 export { IS_WINDOW } from "./typeWindow";

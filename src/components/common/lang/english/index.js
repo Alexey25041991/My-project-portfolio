@@ -6,13 +6,23 @@ import { personal } from "./personal";
 import { resume } from "./resume";
 import { cooperation } from "./cooperation";
 import { servise } from "./servise";
+import { portfolioHeader } from "./portfolioHeader";
+import {
+  propsPortfolioListHome,
+  propsPortfolioList,
+  portfolio,
+} from "./portfolio";
 
 export const ENGLISH_LANGUAGE = {
+  propsPortfolioListHome,
+  propsPortfolioList,
   propsHeaderTopMenu,
   propsAdvantages,
+  portfolioHeader,
   advantagesText,
   cooperation,
   headerHaus,
+  portfolio,
   personal,
   servise,
   resume,

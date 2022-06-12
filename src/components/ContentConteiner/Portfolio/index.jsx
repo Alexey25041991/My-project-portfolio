@@ -18,7 +18,7 @@ import { ReactComponent as PortfolioDarkIcon } from "../../common/icon/Portfolio
 import { ReactComponent as PortfolioIcon } from "../../common/icon/PortfolioIcon.svg";
 import { ReactComponent as KeyIcon } from "../../common/icon/KeyIcon.svg";
 
-import { propsPortfolioList } from "../../common/constants";
+import { RUSSIAN_LANGUAGE } from "../../common/lang";
 
 import PageWrapper from "../../common/PageWrapper";
 import PageConteiner from "../../common/PageConteiner";
@@ -47,9 +47,11 @@ const slidesToScreenWidth = (screenWidth) => {
 };
 
 const slidesToShowValue =
-  propsPortfolioList?.length < 3 ? propsPortfolioList.length : 3;
+  RUSSIAN_LANGUAGE.propsPortfolioList?.length < 3
+    ? RUSSIAN_LANGUAGE.propsPortfolioList.length
+    : 3;
 
-const centerModeValue = propsPortfolioList?.length < 3;
+const centerModeValue = RUSSIAN_LANGUAGE.propsPortfolioList?.length < 3;
 
 const centerPaddingValue = (slidesToShowValue) => {
   if (slidesToShowValue === 1) return 330;
@@ -72,6 +74,7 @@ const settings = {
 };
 
 const Portfolio = observer(() => {
+  const { portfolio, propsPortfolioList } = store.getToggleLang();
   const { name } = store.getToggleTheme();
   const Icon = name === "light" ? PortfolioDarkIcon : PortfolioIcon;
 
@@ -86,7 +89,7 @@ const Portfolio = observer(() => {
   return (
     <PageWrapper id="portfolio">
       <PageConteiner>
-        <HeaderTitle title="Недавно разработаны">
+        <HeaderTitle title={portfolio.title}>
           <Icon />
         </HeaderTitle>
         <PortfolioCustom>
@@ -102,7 +105,7 @@ const Portfolio = observer(() => {
             {propsPortfolioList?.length > 3 && <ButtonR onClick={gotoNext} />}
           </Ul>
           <ButtonLink navMenuLink="portfolio">
-            <Button title="Открыть портфолио">
+            <Button title={portfolio.buttonText}>
               <KeyIcon />
             </Button>
           </ButtonLink>
