@@ -9,6 +9,7 @@ import { servise } from "./servise";
 import { portfolioHeader } from "./portfolioHeader";
 import { propsPortfolioList, portfolio } from "./portfolio";
 import { propsPortfolioListBlog, blog } from "./blog";
+import { order } from "./order";
 
 export const RUSSIAN_LANGUAGE = {
   propsPortfolioListBlog,
@@ -24,6 +25,7 @@ export const RUSSIAN_LANGUAGE = {
   servise,
   resume,
   toast,
+  order,
   blog,
   name: "russia",
 };

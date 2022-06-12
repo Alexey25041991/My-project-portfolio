@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../../store";
 
 import Modal from "../../Modal";
 
@@ -15,8 +18,10 @@ import PageConteiner from "../../common/PageConteiner";
 import HeaderTitle from "../../common/HeaderTitle";
 import Button from "../../common/Button";
 
-const OrderSite = () => {
+const OrderSite = observer(() => {
+  const { order } = store.getToggleLang();
   const [opened, setOpened] = useState(false);
+
   return (
     <PageWrapper dark id="cooperation">
       <Modal opened={opened} onRequestClose={() => setOpened(false)} />
@@ -25,11 +30,7 @@ const OrderSite = () => {
           <OrderSiteLabel>
             {`${"< "}`}
             <ReactRotatingText
-              items={[
-                "Нужен крутой сайт?",
-                "Ищите разработчика?",
-                "Нужна хорошая поддержка?",
-              ]}
+              items={order.orderItems}
               pause={5000}
               emptyPause={1000}
               typingInterval={60}
@@ -40,14 +41,9 @@ const OrderSite = () => {
           </OrderSiteLabel>
         </HeaderTitle>
         <OrderSiteCustom>
-          <OrderSiteText>
-            Заполните форму точной информацией о Вашем заказе, далее я свяжусь с
-            вами по указанным контактам в форме и мы детально обсудим
-            техническое задание, сроки, условия оплаты и отвечу на все
-            интересующие Вас вопросы.
-          </OrderSiteText>
+          <OrderSiteText>{order.text}</OrderSiteText>
           <Button
-            title="Заказать сайт"
+            title={order.buttonText}
             toOrder
             handleClick={() => setOpened(!opened)}
           >
@@ -57,6 +53,6 @@ const OrderSite = () => {
       </PageConteiner>
     </PageWrapper>
   );
-};
+});
 
 export default OrderSite;
