@@ -22,7 +22,11 @@ import Toast from "../components/common/Toast";
 import { AppWrapper } from "./style";
 
 const App = observer(() => {
-  const { propsPortfolioList, propsPortfolioListBlog } = store.getToggleLang();
+  const {
+    propsPortfolioList,
+    propsPortfolioListBlog,
+    toast,
+  } = store.getToggleLang();
   const theme = store.getToggleTheme();
   const getOpenToastModal = store.getOpenToastModal();
 
@@ -37,7 +41,7 @@ const App = observer(() => {
         <Toast
           openToastValue={getOpenToastModal}
           severity="success"
-          text="Сообщение отправлено!"
+          text={toast.messageText}
           timer={6000}
         />
         <ProgressBar />

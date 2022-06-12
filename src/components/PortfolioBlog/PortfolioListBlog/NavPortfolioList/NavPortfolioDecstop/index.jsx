@@ -196,7 +196,7 @@ const NavPortfolioDecstop = observer(({ propsList, setPortfoliosValue }) => {
         handleTopNav={handleTopNav}
         data-portfolio-height
       >
-        <PortfolioTagText>ПОПУЛЯРНЫЕ ТЕГИ</PortfolioTagText>
+        <PortfolioTagText>Популярные теги</PortfolioTagText>
         {getButtonList(propsList, setPortfoliosValue, handleClick, open, name)}
       </PortfolioHeaderValue>
     </PortfolioHeaderValueWrapper>

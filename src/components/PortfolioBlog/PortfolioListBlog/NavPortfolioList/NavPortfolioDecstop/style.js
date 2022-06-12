@@ -16,6 +16,7 @@ export const PortfolioTagText = styled.div`
   font-size: 14px;
   font-weight: 700;
   font-family: "Exo 2", sans-serif;
+  text-transform: uppercase;
 `;
 
 export const PortfolioHeaderValue = styled.div`
