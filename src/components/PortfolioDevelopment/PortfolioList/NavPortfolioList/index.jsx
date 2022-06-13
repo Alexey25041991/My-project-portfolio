@@ -16,7 +16,7 @@ const HeaderLabel = styled.span`
   text-transform: uppercase;
 `;
 
-const NavPortfolioList = ({ propsList, setPortfoliosValue }) => {
+const NavPortfolioList = ({ propsList, setPortfoliosValue, textFilter }) => {
   return (
     <>
       <NavPortfolioDecstop
@@ -28,7 +28,7 @@ const NavPortfolioList = ({ propsList, setPortfoliosValue }) => {
         setPortfoliosValue={setPortfoliosValue}
         navMenuLink="portfolio"
       >
-        <HeaderLabel>Фильтр проектов</HeaderLabel>
+        <HeaderLabel>{textFilter}</HeaderLabel>
       </NavPortfolioMobile>
     </>
   );

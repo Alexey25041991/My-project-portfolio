@@ -28,8 +28,16 @@ import {
 import { ReactComponent as SettingIcon } from "../common/icon/icon-header/setting.svg";
 import { ReactComponent as ProfileIcon } from "../common/icon/icon-header/profile.svg";
 
-const NavMenuLi = (propsList, setPortfoliosValue, setOpened, navMenuLink) =>
+const NavMenuLi = (
+  propsList,
+  setPortfoliosValue,
+  setOpened,
+  navMenuLink,
+  all
+) =>
   propsList.map((item) => {
+    const portfolioButtonText =
+      item.value === "All" ? all : item.portfolioButtonText;
     const handleClick = (itemValue) => {
       setPortfoliosValue(itemValue);
       setOpened(false);
@@ -41,14 +49,20 @@ const NavMenuLi = (propsList, setPortfoliosValue, setOpened, navMenuLink) =>
             <ButtonLink navMenuLink={navMenuLink}>
               <Button>
                 <Label style={{ pointerEvents: "none" }}>
-                  {item.portfolioButtonText}
+                  {portfolioButtonText}
                 </Label>
               </Button>
             </ButtonLink>
           </Li>
         )}
         {item.id === "JS" &&
-          NavMenuLi(item.value, setPortfoliosValue, setOpened, navMenuLink)}
+          NavMenuLi(
+            item.value,
+            setPortfoliosValue,
+            setOpened,
+            navMenuLink,
+            all
+          )}
       </Fragment>
     );
   });
@@ -98,6 +112,7 @@ const NavPortfolioMobile = observer(
     const [opened, setOpened] = useState(false);
 
     const routeLink = store.getRouteLink();
+    const { blog } = store.getToggleLang();
 
     const onBlur = (e) => {
       if (!e.currentTarget.contains(e.relatedTarget)) {
@@ -113,7 +128,13 @@ const NavPortfolioMobile = observer(
 
     const MenuLi = header
       ? HeaderMenuLi(propsList, setOpened, header, routeLink)
-      : NavMenuLi(propsList, setPortfoliosValue, setOpened, navMenuLink);
+      : NavMenuLi(
+          propsList,
+          setPortfoliosValue,
+          setOpened,
+          navMenuLink,
+          blog.all
+        );
 
     return (
       <>

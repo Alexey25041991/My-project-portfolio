@@ -42,6 +42,7 @@ const PortfolioList = observer(() => {
           <NavPortfolioList
             propsList={propsList}
             setPortfoliosValue={setPortfoliosValue}
+            textFilter={portfolio.filter}
           />
           <PortfolioCustom>
             <Ul>

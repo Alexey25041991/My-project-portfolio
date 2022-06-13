@@ -24,96 +24,101 @@ const getButtonList = (
   setPortfoliosValue,
   handleClick,
   open,
-  name
+  name,
+  all
 ) => {
-  return propsList.map((item) => (
-    <List
-      sx={{ width: "100%", maxWidth: 360, bgcolor: "inherit" }}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      key={item.id}
-      color="red"
-    >
-      {item.id !== "JS" && (
-        <ButtonLink navMenuLink="blog">
-          <ListItemButton
-            onClick={() => setPortfoliosValue(item?.value)}
-            sx={{
-              color: "white",
-              backgroundColor: `${name === "light" ? "#65696f" : "#9C9C9C"}`,
-              borderRadius: "8px",
-              boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
-              "&:hover": {
-                backgroundColor: "#708090cf",
-                color: "#ff8560",
-                "& .MuiListItemIcon-root": {
+  return propsList.map((item) => {
+    const portfolioButtonText =
+      item.value === "All" ? all : item.portfolioButtonText;
+    return (
+      <List
+        sx={{ width: "100%", maxWidth: 360, bgcolor: "inherit" }}
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+        key={item.id}
+        color="red"
+      >
+        {item.id !== "JS" && (
+          <ButtonLink navMenuLink="blog">
+            <ListItemButton
+              onClick={() => setPortfoliosValue(item?.value)}
+              sx={{
+                color: "white",
+                backgroundColor: `${name === "light" ? "#65696f" : "#9C9C9C"}`,
+                borderRadius: "8px",
+                boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+                "&:hover": {
+                  backgroundColor: "#708090cf",
                   color: "#ff8560",
+                  "& .MuiListItemIcon-root": {
+                    color: "#ff8560",
+                  },
                 },
-              },
-            }}
-          >
-            <ListItemText primary={item.portfolioButtonText} />
-          </ListItemButton>
-        </ButtonLink>
-      )}
+              }}
+            >
+              <ListItemText primary={portfolioButtonText} />
+            </ListItemButton>
+          </ButtonLink>
+        )}
 
-      {item.id === "JS" && (
-        <>
-          <ListItemButton
-            onClick={handleClick}
-            sx={{
-              color: "white",
-              backgroundColor: `${name === "light" ? "#65696f" : "#9C9C9C"}`,
-              borderRadius: "8px",
-              boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
-              margin: "8px 0",
-              "&:hover": {
-                backgroundColor: "#708090cf",
-                color: "#ff8560",
-                "& .MuiListItemIcon-root": {
+        {item.id === "JS" && (
+          <>
+            <ListItemButton
+              onClick={handleClick}
+              sx={{
+                color: "white",
+                backgroundColor: `${name === "light" ? "#65696f" : "#9C9C9C"}`,
+                borderRadius: "8px",
+                boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+                margin: "8px 0",
+                "&:hover": {
+                  backgroundColor: "#708090cf",
                   color: "#ff8560",
+                  "& .MuiListItemIcon-root": {
+                    color: "#ff8560",
+                  },
                 },
-              },
-            }}
-          >
-            <ListItemText primary={item.portfolioButtonText} />
-            {open ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          {item.value.map((itemJS) => (
-            <Collapse key={itemJS.id} in={open} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ButtonLink navMenuLink="blog">
-                  <ListItemButton
-                    // sx={{ pl: 4 }}
-                    onClick={() => setPortfoliosValue(itemJS?.value)}
-                    sx={{
-                      pl: 4,
-                      color: "white",
-                      backgroundColor: `${
-                        name === "light" ? "#65696f" : "#9C9C9C"
-                      }`,
-                      borderRadius: "8px",
-                      boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
-                      margin: "8px 0",
-                      "&:hover": {
-                        backgroundColor: "#708090cf",
-                        color: "#ff8560",
-                        "& .MuiListItemIcon-root": {
+              }}
+            >
+              <ListItemText primary={item.portfolioButtonText} />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            {item.value.map((itemJS) => (
+              <Collapse key={itemJS.id} in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ButtonLink navMenuLink="blog">
+                    <ListItemButton
+                      // sx={{ pl: 4 }}
+                      onClick={() => setPortfoliosValue(itemJS?.value)}
+                      sx={{
+                        pl: 4,
+                        color: "white",
+                        backgroundColor: `${
+                          name === "light" ? "#65696f" : "#9C9C9C"
+                        }`,
+                        borderRadius: "8px",
+                        boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.1)",
+                        margin: "8px 0",
+                        "&:hover": {
+                          backgroundColor: "#708090cf",
                           color: "#ff8560",
+                          "& .MuiListItemIcon-root": {
+                            color: "#ff8560",
+                          },
                         },
-                      },
-                    }}
-                  >
-                    <ListItemText primary={itemJS.value} />
-                  </ListItemButton>
-                </ButtonLink>
-              </List>
-            </Collapse>
-          ))}
-        </>
-      )}
-    </List>
-  ));
+                      }}
+                    >
+                      <ListItemText primary={itemJS.value} />
+                    </ListItemButton>
+                  </ButtonLink>
+                </List>
+              </Collapse>
+            ))}
+          </>
+        )}
+      </List>
+    );
+  });
 };
 
 const NavPortfolioDecstop = observer(({ propsList, setPortfoliosValue }) => {
@@ -126,6 +131,7 @@ const NavPortfolioDecstop = observer(({ propsList, setPortfoliosValue }) => {
   const [open, setOpen] = useState(false);
 
   const { name } = store.getToggleTheme();
+  const { blog } = store.getToggleLang();
 
   const handleClick = () => {
     setOpen(!open);
@@ -196,8 +202,15 @@ const NavPortfolioDecstop = observer(({ propsList, setPortfoliosValue }) => {
         handleTopNav={handleTopNav}
         data-portfolio-height
       >
-        <PortfolioTagText>Популярные теги</PortfolioTagText>
-        {getButtonList(propsList, setPortfoliosValue, handleClick, open, name)}
+        <PortfolioTagText>{blog.blogTitleTag}</PortfolioTagText>
+        {getButtonList(
+          propsList,
+          setPortfoliosValue,
+          handleClick,
+          open,
+          name,
+          blog.all
+        )}
       </PortfolioHeaderValue>
     </PortfolioHeaderValueWrapper>
   );

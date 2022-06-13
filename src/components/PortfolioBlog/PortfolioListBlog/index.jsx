@@ -103,6 +103,7 @@ const PortfolioListBlog = observer(() => {
           <NavPortfolioList
             propsList={propsList}
             setPortfoliosValue={setPortfoliosValue}
+            textFilter={blog.filter}
           />
         </PageConteiner>
       </PageWrapper>

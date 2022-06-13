@@ -19,6 +19,9 @@ export const blog = {
   portfolioTextTitle: "Welcome to the blog!",
   portfolioText:
     "I finally decided to make a platform for myself to share interesting news and examples in the world of front-end development",
+  blogTitleTag: "Popular tags",
+  all: "All",
+  filter: "Note filter",
 };
 
 export const propsPortfolioListBlog = [

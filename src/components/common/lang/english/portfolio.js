@@ -7,6 +7,7 @@ export const portfolio = {
   portfolioTextTitle: "Welcome to portfolio!",
   portfolioText:
     "The portfolio contains projects that I have developed in collaboration with web studios and for private clients, as well as several personal projects.\nMost of the projects contain individual functions designed to implement the features of the website.\nMy web developer portfolio indicates the name of the site, the link to the site, the purpose of the site and a description of the work performed.",
+  filter: "Project filter",
 };
 
 export const propsPortfolioList = [
