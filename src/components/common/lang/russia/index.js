@@ -10,6 +10,7 @@ import { portfolioHeader } from "./portfolioHeader";
 import { propsPortfolioList, portfolio } from "./portfolio";
 import { propsPortfolioListBlog, blog } from "./blog";
 import { order } from "./order";
+import { footer } from "./footer";
 
 export const RUSSIAN_LANGUAGE = {
   propsPortfolioListBlog,
@@ -24,6 +25,7 @@ export const RUSSIAN_LANGUAGE = {
   personal,
   servise,
   resume,
+  footer,
   toast,
   order,
   blog,

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
+
+import { store } from "../../store";
 
 import LogoLook from "../LogoLook";
 import Modal from "../Modal";
@@ -36,9 +39,11 @@ import Button from "../common/Button";
 
 // import { getScrollWidth } from "../common/utils/getScrollWidth";
 
-const FooterConteiner = () => {
+const FooterConteiner = observer(() => {
   const [opened, setOpened] = useState(false);
   // const [scrollWidthValue, setScrollWidthValue] = useState(0);
+
+  const { footer } = store.getToggleLang();
 
   const handleClickOpened = () => {
     setOpened(!opened);
@@ -60,7 +65,7 @@ const FooterConteiner = () => {
             </LogoLookWrapper>
             <ButtonWrapper>
               <Button
-                title="Заказать сайт"
+                title={footer.buttonText}
                 toOrder
                 handleClick={() => handleClickOpened()}
               >
@@ -73,14 +78,14 @@ const FooterConteiner = () => {
               <Li>
                 <Link>
                   <FooterСlockIcon width="40px" height="40px" />
-                  <Label>Ежедневно</Label>
-                  <Text>с 9:00 до 21:00</Text>
+                  <Label>{footer.clock}</Label>
+                  <Text>9:00 - 21:00</Text>
                 </Link>
               </Li>
               <Li>
                 <Link>
                   <FooterTelephoneIcon />
-                  <Label>Телефон</Label>
+                  <Label>{footer.telephone}</Label>
                   <LabelText href="tel:+79998121975">
                     +7 (999) 812-19-75
                   </LabelText>
@@ -110,19 +115,19 @@ const FooterConteiner = () => {
                 >
                   <FooterHh>hh</FooterHh>
                   <Label>HeadHunter</Label>
-                  <LabelTextValue>Мазуренко Алексей</LabelTextValue>
+                  <LabelTextValue>{footer.headHunter}</LabelTextValue>
                 </LinkWrapper>
               </Li>
             </Ul>
           </FooterValue>
           <FooterValueIt>
-            <HeaderLogCoderText>C 2017 года It-разработчик</HeaderLogCoderText>
+            <HeaderLogCoderText>{footer.text}</HeaderLogCoderText>
             <SocialIcons />
           </FooterValueIt>
         </FooterCustom>
       </PageConteiner>
     </PageWrapper>
   );
-};
+});
 
 export default FooterConteiner;
