@@ -16,19 +16,20 @@ const HeaderLabel = styled.span`
   text-transform: uppercase;
 `;
 
-const NavPortfolioList = ({ propsList, setPortfoliosValue, textFilter }) => {
+const NavPortfolioList = ({ propsList, setPortfoliosValue, portfolio }) => {
   return (
     <>
       <NavPortfolioDecstop
         propsList={propsList}
         setPortfoliosValue={setPortfoliosValue}
+        all={portfolio.all}
       />
       <NavPortfolioMobile
         propsList={propsList}
         setPortfoliosValue={setPortfoliosValue}
         navMenuLink="portfolio"
       >
-        <HeaderLabel>{textFilter}</HeaderLabel>
+        <HeaderLabel>{portfolio.filter}</HeaderLabel>
       </NavPortfolioMobile>
     </>
   );

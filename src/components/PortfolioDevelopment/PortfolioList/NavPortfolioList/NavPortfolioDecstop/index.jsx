@@ -6,17 +6,21 @@ import {
   PortfolioButtomText,
 } from "./style";
 
-const NavPortfolioDecstop = ({ propsList, setPortfoliosValue }) => {
+const NavPortfolioDecstop = ({ propsList, setPortfoliosValue, all }) => {
   return (
     <PortfolioHeaderValue>
-      {propsList.map((item) => (
-        <PortfolioButtom
-          key={item.id}
-          onClick={() => setPortfoliosValue(item?.value)}
-        >
-          <PortfolioButtomText>{item.portfolioButtonText}</PortfolioButtomText>
-        </PortfolioButtom>
-      ))}
+      {propsList.map((item) => {
+        const portfolioButtonText =
+          item.value === "All" ? all : item.portfolioButtonText;
+        return (
+          <PortfolioButtom
+            key={item.id}
+            onClick={() => setPortfoliosValue(item?.value)}
+          >
+            <PortfolioButtomText>{portfolioButtonText}</PortfolioButtomText>
+          </PortfolioButtom>
+        );
+      })}
     </PortfolioHeaderValue>
   );
 };
