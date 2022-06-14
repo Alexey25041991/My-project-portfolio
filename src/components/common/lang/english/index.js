@@ -11,6 +11,7 @@ import { propsPortfolioList, portfolio } from "./portfolio";
 import { propsPortfolioListBlog, blog } from "./blog";
 import { order } from "./order";
 import { footer } from "./footer";
+import { modal } from "./modal";
 
 export const ENGLISH_LANGUAGE = {
   propsPortfolioListBlog,
@@ -28,6 +29,7 @@ export const ENGLISH_LANGUAGE = {
   footer,
   toast,
   order,
+  modal,
   blog,
   name: "english",
 };

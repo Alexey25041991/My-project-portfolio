@@ -1,5 +1,5 @@
-import React from 'react';
-import './style.scss';
+import React from "react";
+import "./style.scss";
 // import {
 //   Logo,
 //   LogoSign,
@@ -77,20 +77,20 @@ const Character = ({ animation, armPath }) => {
 // Left arm component
 const ArmLeft = ({ animation, armPath }) => (
   <svg className="arm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
-    {animation === 'typing' && <path className="arm-typing-left" d={armPath} />}
-    {animation === 'stressed' && (
+    {animation === "typing" && <path className="arm-typing-left" d={armPath} />}
+    {animation === "stressed" && (
       <path className="arm-typing-left" d={armPath} />
     )}
-    {animation === 'waiting' && (
+    {animation === "waiting" && (
       <path d="M175.27,152.06s55.19,87.24-65.77,74.44" />
     )}
-    {animation === 'thinking' && (
+    {animation === "thinking" && (
       <path d="M175.93,152.78s-10.18,82-36.43,103.72" />
     )}
-    {animation === 'passive' && (
+    {animation === "passive" && (
       <path d="M175.93,152.78s-10.18,82-36.43,103.72" />
     )}
-    {animation === 'sleeping' && (
+    {animation === "sleeping" && (
       <path d="M175.93,152.78s-10.18,82-36.43,103.72" />
     )}
   </svg>
@@ -99,25 +99,25 @@ const ArmLeft = ({ animation, armPath }) => (
 // Right arm component
 const ArmRight = ({ animation, armPath }) => (
   <svg className="arm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
-    {animation === 'typing' && (
+    {animation === "typing" && (
       <path className="arm-typing-right" d={armPath} />
     )}
-    {animation === 'stressed' && (
+    {animation === "stressed" && (
       <path className="arm-typing-right" d={armPath} />
     )}
-    {animation === 'waiting' && (
+    {animation === "waiting" && (
       <path d="M207.26,171.26s45.19,85-75.76,72.24" />
     )}
-    {animation === 'thinking' && (
+    {animation === "thinking" && (
       <path
         className="arm-thinking-right"
         d="M207.48,172.34s-76,114.16-93-9.84"
       />
     )}
-    {animation === 'passive' && (
+    {animation === "passive" && (
       <path d="M207.93,172c.57-.48,11.3,86.45-23.43,112.52" />
     )}
-    {animation === 'sleeping' && (
+    {animation === "sleeping" && (
       <path d="M207.93,172c.57-.48,11.3,86.45-23.43,112.52" />
     )}
   </svg>
@@ -165,8 +165,8 @@ class ModalAnimation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      animation: 'sleeping',
-      armPath: 'M 207 171',
+      animation: "sleeping",
+      armPath: "M 207 171",
       frequency: 3,
       amplitude: 0.1,
       xstart: 207,
@@ -192,26 +192,26 @@ class ModalAnimation extends React.Component {
 
     if (animationWork !== prevProps.animationWork) {
       if (animationWork) {
-        this.setAnimation('waiting');
-      } else this.setAnimation('passive');
+        this.setAnimation("waiting");
+      } else this.setAnimation("passive");
     }
 
     if (animationProjectDescription !== prevProps.animationProjectDescription) {
       if (animationProjectDescription && animationWork) {
-        this.setAnimation('thinking');
+        this.setAnimation("thinking");
       } else if (animationWork) {
-        this.setAnimation('waiting');
-      } else this.setAnimation('passive');
+        this.setAnimation("waiting");
+      } else this.setAnimation("passive");
     }
 
     if (valueRadioTerm !== prevProps.valueRadioTerm) {
-      if (valueRadioTerm === 'urgently' && animationWork) {
-        this.setAnimation('typing');
-      } else if (valueRadioTerm === 'yesterday' && animationWork) {
-        this.setAnimation('stressed');
+      if (valueRadioTerm === "urgently" && animationWork) {
+        this.setAnimation("typing");
+      } else if (valueRadioTerm === "yesterday" && animationWork) {
+        this.setAnimation("stressed");
       } else if (animationWork) {
-        this.setAnimation('waiting');
-      } else this.setAnimation('passive');
+        this.setAnimation("waiting");
+      } else this.setAnimation("passive");
     }
   }
 
@@ -244,7 +244,7 @@ class ModalAnimation extends React.Component {
 
   loop() {
     const { offset, animation, fps } = this.state;
-    if (animation !== 'typing' && animation !== 'stressed') {
+    if (animation !== "typing" && animation !== "stressed") {
       clearTimeout(this.loopRef);
       return;
     }
@@ -262,7 +262,7 @@ class ModalAnimation extends React.Component {
       animation: newAnimation,
       fps: speed || 60,
     });
-    if (newAnimation === 'typing' || newAnimation === 'stressed') {
+    if (newAnimation === "typing" || newAnimation === "stressed") {
       clearTimeout(this.loopRef);
       requestAnimationFrame(this.loop);
     }
@@ -278,6 +278,7 @@ class ModalAnimation extends React.Component {
 
   render() {
     const { frequency, amplitude, animation } = this.state;
+    const { money, cooperation } = this.props;
     return (
       <div className="app">
         <div className="wrapper">
@@ -293,10 +294,10 @@ class ModalAnimation extends React.Component {
           <Table />
           <Computer animation={this.state.animation} />
         </div>
-        {animation === 'stressed' && (
+        {animation === "stressed" && (
           <div className="sliders">
             <div className="conditions">
-              <div className="conditionsText">Деньги</div>
+              <div className="conditionsText">{money}</div>
               <input
                 type="range"
                 step="0.01"
@@ -308,7 +309,7 @@ class ModalAnimation extends React.Component {
               />
             </div>
             <div className="conditions">
-              <div className="conditionsText">Сотрудничество</div>
+              <div className="conditionsText">{cooperation}</div>
               <input
                 type="range"
                 step="0.01"

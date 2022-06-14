@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { store } from "../../store";
 
 import MaskedInput from "react-text-mask";
-import emailMask from "text-mask-addons/dist/emailMask";
 
 import ModalAnimation from "../ModalAnimation";
 
@@ -162,21 +161,6 @@ const TextMaskPhone = React.forwardRef((props, ref) => {
       {...other}
       ref={inputRef}
       mask={maskPhone}
-      placeholder="Введите номер телефона"
-      placeholderChar={"\u2000"}
-      showMask={false}
-    />
-  );
-});
-
-const TextMaskEMail = React.forwardRef((props, ref) => {
-  const { inputRef, ...other } = props;
-  return (
-    <MaskedInput
-      {...other}
-      ref={inputRef}
-      mask={emailMask}
-      placeholder="Введите Ваш e-mail"
       placeholderChar={"\u2000"}
       showMask={false}
     />
@@ -212,6 +196,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
   }, [opened]);
 
   const { name } = store.getToggleTheme();
+  const { modal } = store.getToggleLang();
 
   const handleChangePhone = (event) => {
     setValuePhone(event.target.value);
@@ -260,7 +245,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
               height={24}
               fill={name === "light" ? "#2b3037" : "#fff"}
             />
-            <HeaderText>Вы готовы сделать заказ?</HeaderText>
+            <HeaderText>{modal.title}</HeaderText>
           </Header>
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
@@ -271,8 +256,8 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                 <Content top>
                   <CssTextField
                     id="standard-basic"
-                    label="Представьтесь, пожалуйста *"
-                    placeholder="Ф.И.О."
+                    label={modal.fullName}
+                    placeholder={modal.fullNameLabel}
                     fullWidth
                     value={valueName}
                     onChange={(e) => {
@@ -282,7 +267,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
 
                   <CssTextField
                     id="maskExample"
-                    label="Контактный телефон *"
+                    label={modal.phone}
                     fullWidth
                     margin="normal"
                     InputProps={{
@@ -295,11 +280,11 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                 <Content>
                   <CssFormControl variant="outlined" fullWidth>
                     <InputLabel id="demo-simple-select-label">
-                      Выберите услугу *
+                      {modal.services}
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
-                      label="Выберите услугу *"
+                      label={modal.services}
                       id="demo-simple-select"
                       value={valueService}
                       onChange={(e) => {
@@ -307,41 +292,40 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                       }}
                     >
                       <MenuItem value="">
-                        <em>Выберите...</em>
+                        <em>{modal.servicesNull}</em>
                       </MenuItem>
-                      <MenuItem value={"HtmlLayout"}>Html верстка</MenuItem>
+                      <MenuItem value={"HtmlLayout"}>
+                        {modal.services1}
+                      </MenuItem>
                       <MenuItem value={"Development-scratch"}>
-                        Разработка с нуля
+                        {modal.services2}
                       </MenuItem>
                       <MenuItem value={"FinalizationProject"}>
-                        Доработка проекта
+                        {modal.services3}
                       </MenuItem>
                       <MenuItem value={"ModuleDevelopment"}>
-                        Разработка модуля
+                        {modal.services4}
                       </MenuItem>
                       <MenuItem value={"IndividualProject"}>
-                        Индивидуальный проект
+                        {modal.services5}
                       </MenuItem>
                       <MenuItem value={"SiteFilling"}>
-                        Наполнение сайта
+                        {modal.services6}
                       </MenuItem>
-                      <MenuItem value={"SiteSupport"}>Поддержка сайта</MenuItem>
-                      <MenuItem value={"Other"}>
-                        Другое(указать в описании)
+                      <MenuItem value={"SiteSupport"}>
+                        {modal.services7}
                       </MenuItem>
+                      <MenuItem value={"Other"}>{modal.services8}</MenuItem>
                     </Select>
                   </CssFormControl>
                   <CssTextField
                     id="maskExample"
-                    label="Ваш e-mail *"
+                    label={modal.mail}
                     fullWidth
                     margin="normal"
-                    InputProps={{
-                      inputComponent: TextMaskEMail,
-                      value: valueMail.textmask,
-                      onChange: (e) => {
-                        setValueMail(e.target.value);
-                      },
+                    value={valueMail.textmask}
+                    onChange={(e) => {
+                      setValueMail(e.target.value);
                     }}
                   />
                 </Content>
@@ -349,7 +333,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
               <ContentWrapper>
                 <ContentRadio>
                   <FormControl component="fieldset">
-                    <TextTitleRadio>Срок на разработку</TextTitleRadio>
+                    <TextTitleRadio>{modal.time}</TextTitleRadio>
                     <RadioGroup
                       row
                       aria-label="position"
@@ -372,7 +356,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                             }}
                           />
                         }
-                        label="Я не спешу"
+                        label={modal.timeValue1}
                       />
                       <FormControlLabel
                         value="urgently"
@@ -388,7 +372,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                             }}
                           />
                         }
-                        label="Cрочно"
+                        label={modal.timeValue2}
                       />
                       <FormControlLabel
                         value="yesterday"
@@ -404,16 +388,14 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                             }}
                           />
                         }
-                        label="Вчера"
+                        label={modal.timeValue3}
                       />
                     </RadioGroup>
                   </FormControl>
                 </ContentRadio>
                 <ContentRadio>
                   <FormControl component="fieldset">
-                    <TextTitleRadio>
-                      Есть ли у вас техническое задание?
-                    </TextTitleRadio>
+                    <TextTitleRadio>{modal.exercise}</TextTitleRadio>
                     <RadioGroup
                       row
                       aria-label="position"
@@ -436,7 +418,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                             }}
                           />
                         }
-                        label="Нет"
+                        label={modal.exerciseValue1}
                       />
                       <FormControlLabel
                         value="valueYes"
@@ -452,7 +434,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                             }}
                           />
                         }
-                        label="Да"
+                        label={modal.exerciseValue2}
                       />
                     </RadioGroup>
                   </FormControl>
@@ -463,8 +445,8 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
               <ContentText>
                 <CssTextField
                   id="outlined-textarea"
-                  label="Описание проекта, требования, особые пожелания, бюджет*"
-                  placeholder="Введите текст"
+                  label={modal.textLabel}
+                  placeholder={modal.text}
                   multiline
                   fullWidth
                   rows={4}
@@ -478,7 +460,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
             </ModalSection>
             <Footer>
               <Button
-                title="Отправить"
+                title={modal.buttonText}
                 toOrder
                 modal
                 handleClick={handleCloseButton}
@@ -491,6 +473,8 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                   animationProjectDescription={animationProjectDescription}
                   valueRadioTerm={valueRadioTerm}
                   valueRadioTZ={valueRadioTZ}
+                  money={modal.money}
+                  cooperation={modal.cooperation}
                 />
               </ContentAnimation>
             </Footer>
