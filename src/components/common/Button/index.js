@@ -65,6 +65,7 @@ const Button = ({
 }) => {
   return (
     <ButtonWrapper
+      type="submit"
       toOrder={toOrder}
       toOrderHeader={toOrderHeader}
       onClick={handleClick}

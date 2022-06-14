@@ -178,7 +178,7 @@ export const ModalComponent = styled.div`
   }
 `;
 
-export const ModalSectionWrapper = styled.div`
+export const ModalSectionWrapper = styled.form`
   display: flex;
   justify-content: space-between;
   flex-direction: column;

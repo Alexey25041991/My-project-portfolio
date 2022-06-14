@@ -250,12 +250,13 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
           </IconClose>
-          <ModalSectionWrapper>
+          <ModalSectionWrapper action="mail.php" method="POST">
             <ModalSection>
               <ContentWrapper>
                 <Content top>
                   <CssTextField
                     id="standard-basic"
+                    name="user_name"
                     label={modal.fullName}
                     placeholder={modal.fullNameLabel}
                     fullWidth
@@ -267,6 +268,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
 
                   <CssTextField
                     id="maskExample"
+                    name="user_phone"
                     label={modal.phone}
                     fullWidth
                     margin="normal"
@@ -320,6 +322,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
                   </CssFormControl>
                   <CssTextField
                     id="maskExample"
+                    name="user_email"
                     label={modal.mail}
                     fullWidth
                     margin="normal"
