@@ -29,11 +29,13 @@ const App = observer(() => {
   } = store.getToggleLang();
   const theme = store.getToggleTheme();
   const getOpenToastModal = store.getOpenToastModal();
+  const time = store.getTime();
+
+  const dayTime = getDayTime(time);
 
   useEffect(() => {
-    const dayTime = getDayTime();
     store.setToggleTheme(!dayTime);
-  }, []);
+  }, [dayTime]);
 
   return (
     <Router>

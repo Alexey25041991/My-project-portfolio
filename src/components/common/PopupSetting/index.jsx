@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Popup } from "semantic-ui-react";
+import { observer } from "mobx-react";
+import { store } from "../../../store";
 
 import ButtonElement from "../ButtonElement";
 import ButtonHeart from "../ButtonHeart";
@@ -10,41 +12,44 @@ import { getDayTime } from "../../common/utils";
 import { PopupWrapper } from "./style";
 import "./style.css";
 
-const PopupSetting = ({ children, positionValue, handleClickPopup }) => {
-  const [openedTheme, setOpenedTheme] = useState(false);
-  const [openedEnglish, setOpenedEnglish] = useState(false);
-  const positionStyle = positionValue === "top right";
+const PopupSetting = observer(
+  ({ children, positionValue, handleClickPopup }) => {
+    const [openedTheme, setOpenedTheme] = useState(false);
+    const [openedEnglish, setOpenedEnglish] = useState(false);
+    const positionStyle = positionValue === "top right";
 
-  useEffect(() => {
-    const dayTime = getDayTime();
-    setOpenedTheme(!dayTime);
-  }, []);
+    const time = store.getTime();
+    const dayTime = getDayTime(time);
+    useEffect(() => {
+      setOpenedTheme(!dayTime);
+    }, [dayTime]);
 
-  return (
-    <Popup
-      content={
-        <PopupWrapper positionStyle={positionStyle}>
-          <ButtonHeart positionStyle={positionStyle} />
-          <ThemeDarkLight
-            opened={openedTheme}
-            handleClick={() => setOpenedTheme(!openedTheme)}
-            positionStyle={positionStyle}
-          />
-          <ButtonElement
-            opened={openedEnglish}
-            handleClick={() => setOpenedEnglish(!openedEnglish)}
-            positionStyle={positionStyle}
-          />
-        </PopupWrapper>
-      }
-      className="popupSetting"
-      on="click"
-      position={positionValue}
-      trigger={children}
-      onMount={handleClickPopup}
-    />
-  );
-};
+    return (
+      <Popup
+        content={
+          <PopupWrapper positionStyle={positionStyle}>
+            <ButtonHeart positionStyle={positionStyle} />
+            <ThemeDarkLight
+              opened={openedTheme}
+              handleClick={() => setOpenedTheme(!openedTheme)}
+              positionStyle={positionStyle}
+            />
+            <ButtonElement
+              opened={openedEnglish}
+              handleClick={() => setOpenedEnglish(!openedEnglish)}
+              positionStyle={positionStyle}
+            />
+          </PopupWrapper>
+        }
+        className="popupSetting"
+        on="click"
+        position={positionValue}
+        trigger={children}
+        onMount={handleClickPopup}
+      />
+    );
+  }
+);
 
 PopupSetting.defaultProps = {
   handleClickPopup: () => {},

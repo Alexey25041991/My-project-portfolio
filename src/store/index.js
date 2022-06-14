@@ -9,6 +9,7 @@ class Store {
   theme = LIGHT_THEME;
   langText = RUSSIAN_LANGUAGE;
   routeLink = "";
+  time = { hourValue: 0, minValue: 0 };
 
   constructor() {
     makeAutoObservable(this);
@@ -52,6 +53,14 @@ class Store {
 
   getRouteLink() {
     return this.routeLink;
+  }
+
+  setTime(timeValue) {
+    this.time = timeValue;
+  }
+
+  getTime() {
+    return this.time;
   }
 }
 

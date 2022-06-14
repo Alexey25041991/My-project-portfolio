@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { store } from "../../../../store";
 
 import { ClockWrapper, Hour, Min, Sec } from "./style";
 
@@ -14,6 +15,10 @@ const Clock = () => {
     setMin(day.getMinutes() * deg);
     setSec(day.getSeconds() * deg);
   });
+
+  useEffect(() => {
+    store.setTime({ hourValue: hour / 30, minValue: min / deg });
+  }, [hour, min]);
 
   return (
     <ClockWrapper>
