@@ -358,15 +358,20 @@ export const IconWindow = styled.div`
   position: relative;
 `;
 
+export const WindowWrapper = styled.div`
+  display: flex;
+  position: relative;
+`;
+
 export const IconDay = styled.div`
   background: url(${({ theme }) =>
       theme.name === "light" ? myIconDay : myIconNight})
-    0px 12px no-repeat;
+    50% 50% no-repeat;
   transition: none !important;
   width: 245px;
   height: 307px;
   position: absolute;
-  top: 45px;
+  // top: 45px;
   left: 0px;
   overflow: hidden;
 

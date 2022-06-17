@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { observer } from "mobx-react";
 
 import {
@@ -27,6 +27,7 @@ import {
   IconSun,
   SettingWrapper,
   SettingIconWrapper,
+  WindowWrapper,
 } from "./style";
 
 import Modal from "../../Modal";
@@ -61,6 +62,28 @@ const HeaderSection = observer(() => {
 
   const textToast = getMobile() ? toast.mobileText : toast.desktopText;
 
+  useLayoutEffect(() => {
+    const portfolioTextData = Array.from(
+      document?.querySelectorAll("[data-parallax]")
+    );
+
+    const parallax = (e) => {
+      const speedDay = portfolioTextData[0].getAttribute("data-parallax");
+      const biasXDay = (e.clientX * speedDay) / 1000;
+      portfolioTextData[0].style.backgroundPosition = `${-biasXDay}px 12px`;
+
+      const speedSun = portfolioTextData[1].getAttribute("data-parallax");
+      const biasXSun = (e.clientX * speedSun) / 1000;
+      const biasYSun = (e.clientY * speedSun) / 1000;
+      portfolioTextData[1].style.transform = `translateX(${-biasXSun}px) translateY(${-biasYSun}px)`;
+    };
+
+    document.addEventListener("mousemove", parallax);
+    return () => {
+      document.removeEventListener("mousemove", parallax);
+    };
+  });
+
   return (
     <HeaderSectionWrapper>
       <Toast
@@ -84,10 +107,11 @@ const HeaderSection = observer(() => {
         </IconComp>
         <IconMap />
         <Clock />
-        <IconDay>
+        <WindowWrapper>
           <IconWindow />
-          <IconSun />
-        </IconDay>
+          <IconDay data-parallax="80" />
+          <IconSun data-parallax="20" />
+        </WindowWrapper>
         <IconBook />
         <IconPicture />
       </HeaderSectionFon>
