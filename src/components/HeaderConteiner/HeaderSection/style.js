@@ -351,7 +351,7 @@ export const IconWindow = styled.div`
       theme.name === "light" ? myIconWindow : myIconWindown})
     no-repeat;
   display: flex;
-  width: 247px;
+  width: 248px;
   height: 307px;
   margin-left: -1px;
   z-index: 5;
@@ -361,6 +361,14 @@ export const IconWindow = styled.div`
 export const WindowWrapper = styled.div`
   display: flex;
   position: relative;
+
+  @media ${TABLET_1024} {
+    left: 20px;
+  }
+
+  @media ${TABLET_959} {
+    display: none;
+  }
 `;
 
 export const IconDay = styled.div`
@@ -374,14 +382,6 @@ export const IconDay = styled.div`
   // top: 45px;
   left: 0px;
   overflow: hidden;
-
-  @media ${TABLET_1024} {
-    left: 20px;
-  }
-
-  @media ${TABLET_959} {
-    display: none;
-  }
 `;
 
 export const IconSun = styled.div`
