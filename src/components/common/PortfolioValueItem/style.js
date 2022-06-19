@@ -10,15 +10,30 @@ export const Li = styled.li`
   width: 322px !important;
   text-align: center;
   margin-left: -8px;
-  margin-bottom: ${({ portfolioList }) => (portfolioList ? "30px" : "auto")};
+  margin-bottom: auto;
   &:last-child {
     margin-bottom: auto;
   }
+
+  perspective: 1000px;
+  transform-style: preserve-3d;
 
   @media ${TABLET_768} {
     width: 100% important;
     justify-content: center;
   }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const WrapperPortfolioImg = styled.div`
+  display: flex;
+
+  transition: transform 0.2s;
+  transform: rotateX(0);
 `;
 
 export const PortfolioImg = styled.div`
@@ -78,6 +93,7 @@ export const PortfolioName = styled.div`
   & :hover {
     font-size: 18px;
   }
+  margin-bottom: 30px;
 `;
 
 export const PortfolioNameList = styled.div`
