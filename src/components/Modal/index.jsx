@@ -250,7 +250,7 @@ const Modal = observer(({ opened = false, onRequestClose }) => {
           <IconClose onClick={handleClose}>
             <CloseOutline width={24} height={24} />
           </IconClose>
-          <ModalSectionWrapper action="http://mail.php" method="POST">
+          <ModalSectionWrapper action="https://mail.php" method="POST">
             <ModalSection>
               <ContentWrapper>
                 <Content top>

@@ -32,6 +32,7 @@ import {
 
 import Modal from "../../Modal";
 import Clock from "./Clock";
+import Window from "./Window";
 
 import { ReactComponent as RocketGetsiteIcon } from "../../common/icon/RocketIcon.svg";
 import { ReactComponent as PhonesIcon } from "../../common/icon/PhonesIcon.svg";
@@ -106,6 +107,7 @@ const HeaderSection = observer(() => {
           </PopupSetting>
         </IconComp>
         <IconMap />
+        {/* <Window /> */}
         <Clock />
         <WindowWrapper>
           <IconWindow />
