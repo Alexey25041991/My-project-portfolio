@@ -1,26 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { store } from "../../../../store";
 
 // import { ClockWrapper, Hour, Min, Sec } from "./style";
 import "./style.css";
 
-const Window = () => {
-  // const sunMoon = document.
-  // const [hour, setHour] = useState(0);
-  // const [min, setMin] = useState(0);
-  // const [sec, setSec] = useState(0);
-  // const deg = 6;
+const Window = ({ theme }) => {
+  useEffect(() => {
+    console.log(111);
+  }, [theme]);
 
-  // setInterval(() => {
-  //   let day = new Date();
-  //   setHour(day.getHours() * 30);
-  //   setMin(day.getMinutes() * deg);
-  //   setSec(day.getSeconds() * deg);
-  // });
+  // function checkClass() {
+  //   if ($(heavenlyBody).hasClass('sun')) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+  // var heavenlyBody = $('.heavenly-body');
+  // $(heavenlyBody).addClass('sun');
 
-  // useEffect(() => {
-  //   store.setTime({ hourValue: hour / 30, minValue: min / deg });
-  // }, [hour, min]);
+  // function sunToMoon() {
+  //   if (checkClass()) {
+  //     $(heavenlyBody).removeClass('sun');
+  //     $(heavenlyBody).addClass('moon');
+  //   } else {
+  //     $(heavenlyBody).removeClass('moon');
+  //     $(heavenlyBody).addClass('sun');
+  //   }
+  // }
+
+  // var timer = setTimeout(function tick() {
+  //   sunToMoon();
+  //   timer = setTimeout(tick, 4000);
+  // }, 4000);
 
   return (
     <div className="window-scene">

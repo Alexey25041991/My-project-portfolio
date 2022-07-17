@@ -55,6 +55,7 @@ const HeaderSection = observer(() => {
 
   const { headerHaus, toast } = store.getToggleLang();
   const openToastValue = store.getOpenToast();
+  const { name } = store.getToggleTheme();
 
   const handleClickPopup = () => {
     const positionValueWidth = getwindowInnerWidth() > 959;
@@ -107,7 +108,7 @@ const HeaderSection = observer(() => {
           </PopupSetting>
         </IconComp>
         <IconMap />
-        {/* <Window /> */}
+        <Window theme={name} />
         <Clock />
         <WindowWrapper>
           <IconWindow />
