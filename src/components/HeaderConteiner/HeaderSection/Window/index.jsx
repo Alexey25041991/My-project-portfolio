@@ -1,13 +1,149 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import { store } from "../../../../store";
 
-// import { ClockWrapper, Hour, Min, Sec } from "./style";
+import { getDayTime } from "../../../common/utils";
+// import { observer } from "mobx-react";
+// import { store } from "../../../../store";
+
+import { HeavenlyBody } from "./style";
 import "./style.css";
 
-const Window = ({ theme }) => {
+const Window = ({ theme, time, checkedTheme }) => {
+  const [animationClikTeme, setAnimationClikTeme] = useState(false);
+  const [timeLeftSunMoon, setTimeLeftSunMoon] = useState(0);
+  const [percentRemainingSunMoon, setPercentRemainingSunMoon] = useState(0);
+  // const [leftWindowSunMoon, setLeftWindowSunMoon] = useState(-60);
+  const [leftRotateWindowSunMoon, setLeftRotateWindowSunMoon] = useState(-60);
+
+  // проверка что день
+  const dayTime = getDayTime(time).dayTime;
+  // восход в секунадх
+  const sunriseStr = getDayTime(time).sunriseStr * 60;
+  // закат в секундах
+  const sunsetStr = getDayTime(time).sunsetStr * 60;
+  // текущее время в секундах
+  const timesHouse = getDayTime(time).timesHouse * 60;
+
+  // сколько процентов осталось до захода солнца от дна
+  const percentRemainingSunValue = Math.round(
+    ((sunsetStr - timesHouse) * 100) / (sunsetStr - sunriseStr)
+  );
+
+  // сколько времени осталось до захода солца в секундах
+  const timesSunsetStr = Math.abs(sunsetStr - timesHouse);
+
+  // констатнта для добавления расчтета сикунда анимации для определения продолжительности (пока вынуждено так для учета времени если перевалило за 24:00)
+  const timeDeltaMoon = Math.abs(86400 - sunsetStr);
+  // сколько времени осталось до захода луны
+  const timesMoon =
+    timesHouse <= sunriseStr
+      ? Math.abs(sunriseStr - timesHouse)
+      : Math.abs(86400 - timesHouse + sunriseStr);
+  // 86400 - timesHouse + sunriseStr
+  // сколько процентов осталось до захода луны
+  const percentRemainingMoonValue = Math.round(
+    (timesMoon * 100) / (sunriseStr + timeDeltaMoon)
+  );
+
+  // сколько в процентах пути прошло солце и луна
+  const lenghtLeftSunMoon = 100 - percentRemainingSunMoon;
+
   useEffect(() => {
-    console.log(111);
-  }, [theme]);
+    // checkedTheme нужно менять !checkedTheme и checkedTheme и тогда движение по кнопки работает
+    // setAnimationClikTeme(!checkedTheme);
+
+    // store.setCheckedTheme(!animationClikTeme);
+    // setTimeout(() => {
+    //   setAnimationClikTeme(!checkedTheme);
+    // }, 400);
+    // if (checkedTheme === true) {
+    //   store.setCheckedTheme(animationClikTeme);
+    // } else {
+    //   store.setCheckedTheme(!animationClikTeme);
+    // }
+    // store.setCheckedTheme(animationClikTeme);
+    // store.setCheckedTheme(!animationClikTeme);
+    // setAnimationClikTeme(checkedTheme);
+
+    // setAnimationClikTeme(!checkedTheme);
+    setAnimationClikTeme(!checkedTheme);
+    console.log("11111theme", checkedTheme);
+  }, [checkedTheme]);
+
+  // useEffect(() => {
+  //   setAnimationClikTeme(!animationClikTeme);
+  // }, [animationClikTeme]);
+
+  // useEffect(() => {
+  //   console.log("theme", theme, dayTime, timeLeftSunMoon);
+  //   const day =
+  //     (dayTime && theme === "light") ||
+  //     (dayTime === false && theme !== "light");
+  //   console.log("day", day);
+  //   setAnimationClikTeme(!animationClikTeme);
+  // }, [theme]);
+
+  useEffect(() => {
+    if (dayTime) {
+      setTimeLeftSunMoon(timesSunsetStr);
+      setPercentRemainingSunMoon(percentRemainingSunValue);
+    } else {
+      setTimeLeftSunMoon(timesMoon);
+      setPercentRemainingSunMoon(percentRemainingMoonValue);
+    }
+
+    // ширина окна
+    const windowView = document?.querySelector(".window-view");
+    if (windowView) {
+      // const windowViewWidth = windowView.offsetWidth;
+      // расположение солнца или луны от левого края окна по горизонтали
+      // 25 половина солнца и луны
+      // setLeftWindowSunMoon(
+      //   Math.abs(
+      //     windowViewWidth -
+      //       Math.round((windowViewWidth * percentRemainingSunMoon) / 100) -
+      //       25
+      //   )
+      // );
+
+      // расположение солнца или луны в градусах от левого края окна
+      // длина пройденного пути в грудах = 120 по ширине окна
+      // расчет сколько крадусов прошел от левого края в соотношения процентов ко времени половины дня (так как значение должно быть отрицательно и уменьшатся от -60 в первую половину дня и потом до 60)
+      if (lenghtLeftSunMoon <= 50) {
+        const leftRotate = Math.round((60 * lenghtLeftSunMoon) / 50) - 60;
+        setLeftRotateWindowSunMoon(leftRotate);
+      } else {
+        const leftRotate = Math.abs(
+          60 - Math.round((60 * lenghtLeftSunMoon) / 50)
+        );
+        setLeftRotateWindowSunMoon(leftRotate);
+      }
+    }
+  }, [
+    percentRemainingMoonValue,
+    percentRemainingSunMoon,
+    percentRemainingSunValue,
+    timesMoon,
+    timesSunsetStr,
+    dayTime,
+    lenghtLeftSunMoon,
+  ]);
+
+  // const heavenlyBody = document?.querySelector(".heavenly-body");
+  // const heavenlyBody = document?.querySelector("[data-heavenly-body]");
+  // useEffect(() => {
+  // console.log(111, theme, heavenlyBody);
+  // if (theme === "light") {
+  //   if (heavenlyBody) {
+  //     heavenlyBody.classList.remove("sun");
+  //     heavenlyBody.classList.add("moon");
+  //   }
+  // } else {
+  //   heavenlyBody.classList.remove("moon");
+  //   heavenlyBody.classList.add("sun");
+  // }
+  //   setAnimation(!animation);
+  // }, [theme]);
 
   // function checkClass() {
   //   if ($(heavenlyBody).hasClass('sun')) {
@@ -38,7 +174,27 @@ const Window = ({ theme }) => {
     <div className="window-scene">
       <div className="window">
         <div className="window-view">
-          <div className="heavenly-body"></div>
+          {/* <div className="heavenly-body"></div> */}
+          <HeavenlyBody
+            data-heavenly-body
+            animationClikTeme={animationClikTeme}
+            theme={theme}
+            timeLeftSunMoon={timeLeftSunMoon}
+            // leftWindowSunMoon={leftWindowSunMoon}
+            leftRotateWindowSunMoon={leftRotateWindowSunMoon}
+          />
+          {/* {drawSunMoon(
+            animationClikTeme,
+            theme,
+            timeLeftSunMoon,
+            leftRotateWindowSunMoon
+          )} */}
+
+          {/* <div className="container">
+            <div className="sun"></div>
+            <div className="moon"></div>
+          </div> */}
+
           <div className="cloud cloud-1"></div>
           <div className="cloud cloud-2"></div>
           <div className="cloud cloud-3"></div>

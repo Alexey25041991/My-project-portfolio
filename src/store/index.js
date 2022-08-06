@@ -10,6 +10,7 @@ class Store {
   langText = RUSSIAN_LANGUAGE;
   routeLink = "";
   time = { hourValue: 0, minValue: 0 };
+  toggleTheme = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -37,6 +38,14 @@ class Store {
 
   getToggleTheme() {
     return this.theme;
+  }
+
+  setCheckedTheme(checkedTheme) {
+    this.toggleTheme = checkedTheme;
+  }
+
+  getCheckedTheme() {
+    return this.toggleTheme;
   }
 
   setToggleLang(LangEnglish) {

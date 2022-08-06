@@ -1,88 +1,87 @@
-import styled from "styled-components";
-import { TABLET_959, MOBILE_660 } from "../../../common/media";
+import styled, { css, keyframes } from "styled-components";
+// import { TABLET_959, MOBILE_660 } from "../../../common/media";
 
-import myIconClock from "./icon/clock.png";
-import myIconJs from "./icon/js.png";
+const heavenlyBodyMoveClik = (leftRotateWindowSunMoon) => keyframes`
+  from {
+    transform: rotate(${leftRotateWindowSunMoon}deg);
+  }
+  to {
+    transform: rotate(${360 + leftRotateWindowSunMoon}deg);
+  }
+}`;
 
-export const ClockWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url(${myIconClock}), url(${myIconJs}),
-    radial-gradient(
-      circle,
-      rgb(37, 73, 90) 0%,
-      rgb(25, 48, 60) 11%,
-      rgba(9, 25, 33, 1) 38%
-    );
-  background-size: cover;
-  border-radius: 50%;
-  display: flex;
-  width: 118px;
-  height: 118px;
+const heavenlyBodyMove = (leftRotateWindowSunMoon) => keyframes`
+  from {
+    transform: rotate(${leftRotateWindowSunMoon}deg);
+  }
+  to {
+    transform: rotate(60deg);
+  }
+}`;
+
+// const heavenlyBodyMove = (leftWindowSunMoon) => keyframes`
+//   from {
+//     top: 55px;
+//     left: ${leftWindowSunMoon.leftWindowSunMoon}px;
+//   }
+//   15% {
+//     top: 45px;
+//   }
+//   33% {
+//     top: 30px;
+//   }
+//   40% {
+//     top: 25px;
+//   }
+//   50% {
+//     top: 20px;
+//   }
+//   60 {
+//     top: 25px;
+//   }
+//   66% {
+//     top: 30px;
+//   }
+//   85% {
+//     top: 45px;
+//   }
+//   to {
+//     top: 55px;
+//     left: 270px;
+//   }
+// `;
+
+export const HeavenlyBody = styled.div`
   position: absolute;
-  top: 114px;
-  left: 287px;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    z-index: 999;
-  }
-  @media ${TABLET_959} {
-    position: initial;
-  }
-  @media ${MOBILE_660} {
-    display: none;
-  }
-`;
-
-export const Hour = styled.div`
-  position: absolute;
+  left: 86px;
   width: 50px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  position: absolute;
   border-radius: 50%;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 3px;
-    height: 32px;
-    background-color: #ffc600;
-    z-index: 10;
-    border-radius: 6px 6px 0 0;
-  }
-`;
 
-export const Min = styled(Hour)`
-  width: 60px;
-  height: 60px;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 38px;
-    background-color: #fff;
-    z-index: 11;
-    border-radius: 6px 6px 0 0;
-  }
-`;
+  animation-duration: ${(props) =>
+    props.animationClikTeme ? "4s" : props.timeLeftSunMoon + "s"};
+  animation-name: ${(props) =>
+    props.animationClikTeme
+      ? heavenlyBodyMoveClik(props.leftRotateWindowSunMoon)
+      : heavenlyBodyMove(props.leftRotateWindowSunMoon)};
+  animation-timing-function: linear;
+  animation-iteration-count: ${(props) =>
+    props.animationClikTeme ? "1" : "infinite"};
 
-export const Sec = styled(Hour)`
-  width: 72px;
-  height: 72px;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 50px;
-    background-color: #fff;
-    z-index: 12;
-    border-radius: 6px 6px 0 0;
-  }
+  // в случае переключение темы
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+
+  background: #fff;
+  box-shadow: 0 0 10px 2px #fff;
+
+  transform-origin: 50% 400%;
+  margin-top: 5%;
+
+  ${({ theme }) =>
+    theme === "light" &&
+    css`
+      background: #fff82f;
+      box-shadow: 0 0 10px 2px #fff82f;
+    `}
 `;

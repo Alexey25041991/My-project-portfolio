@@ -20,14 +20,14 @@ import {
   Skype,
   IconComp,
   IconMap,
-  IconWindow,
+  // IconWindow,
   IconBook,
   IconPicture,
-  IconDay,
-  IconSun,
+  // IconDay,
+  // IconSun,
   SettingWrapper,
   SettingIconWrapper,
-  WindowWrapper,
+  // WindowWrapper,
 } from "./style";
 
 import Modal from "../../Modal";
@@ -56,6 +56,8 @@ const HeaderSection = observer(() => {
   const { headerHaus, toast } = store.getToggleLang();
   const openToastValue = store.getOpenToast();
   const { name } = store.getToggleTheme();
+  const time = store.getTime();
+  const checkedTheme = store.getCheckedTheme();
 
   const handleClickPopup = () => {
     const positionValueWidth = getwindowInnerWidth() > 959;
@@ -65,25 +67,22 @@ const HeaderSection = observer(() => {
   const textToast = getMobile() ? toast.mobileText : toast.desktopText;
 
   useLayoutEffect(() => {
-    const portfolioTextData = Array.from(
-      document?.querySelectorAll("[data-parallax]")
-    );
-
-    const parallax = (e) => {
-      const speedDay = portfolioTextData[0].getAttribute("data-parallax");
-      const biasXDay = (e.clientX * speedDay) / 1000;
-      portfolioTextData[0].style.backgroundPosition = `${-biasXDay}px 12px`;
-
-      const speedSun = portfolioTextData[1].getAttribute("data-parallax");
-      const biasXSun = (e.clientX * speedSun) / 1000;
-      const biasYSun = (e.clientY * speedSun) / 1000;
-      portfolioTextData[1].style.transform = `translateX(${-biasXSun}px) translateY(${-biasYSun}px)`;
-    };
-
-    document.addEventListener("mousemove", parallax);
-    return () => {
-      document.removeEventListener("mousemove", parallax);
-    };
+    // const portfolioTextData = Array.from(
+    //   document?.querySelectorAll("[data-parallax]")
+    // );
+    // const parallax = (e) => {
+    //   const speedDay = portfolioTextData[0].getAttribute("data-parallax");
+    //   const biasXDay = (e.clientX * speedDay) / 1000;
+    //   portfolioTextData[0].style.backgroundPosition = `${-biasXDay}px 12px`;
+    //   const speedSun = portfolioTextData[1].getAttribute("data-parallax");
+    //   const biasXSun = (e.clientX * speedSun) / 1000;
+    //   const biasYSun = (e.clientY * speedSun) / 1000;
+    //   portfolioTextData[1].style.transform = `translateX(${-biasXSun}px) translateY(${-biasYSun}px)`;
+    // };
+    // document.addEventListener("mousemove", parallax);
+    // return () => {
+    //   document.removeEventListener("mousemove", parallax);
+    // };
   });
 
   return (
@@ -108,13 +107,13 @@ const HeaderSection = observer(() => {
           </PopupSetting>
         </IconComp>
         <IconMap />
-        <Window theme={name} />
+        <Window theme={name} time={time} checkedTheme={checkedTheme} />
         <Clock />
-        <WindowWrapper>
+        {/* <WindowWrapper>
           <IconWindow />
           <IconDay data-parallax="80" />
           <IconSun data-parallax="20" />
-        </WindowWrapper>
+        </WindowWrapper> */}
         <IconBook />
         <IconPicture />
       </HeaderSectionFon>

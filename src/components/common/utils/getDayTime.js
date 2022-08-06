@@ -6,20 +6,29 @@ export const getDayTime = (time) => {
   const coordinatesLongitude = 37.6156;
 
   const date = new Date();
-  const times = SunCalc.getTimes(
+  const sunTimes = SunCalc.getTimes(
     date,
     coordinatesLatitude,
     coordinatesLongitude
   );
 
+  // const mounTimes = SunCalc.getMounTimes(
+  //   date,
+  //   coordinatesLatitude,
+  //   coordinatesLongitude
+  // );
+
   // восход в минутах
-  const sunriseStr = times.sunrise.getHours() * 60 + times.sunrise.getMinutes();
+  const sunriseStr =
+    sunTimes.sunrise.getHours() * 60 + sunTimes.sunrise.getMinutes();
+
   // закат в минутах
-  const sunsetStr = times.sunset.getHours() * 60 + times.sunset.getMinutes();
+  const sunsetStr =
+    sunTimes.sunset.getHours() * 60 + sunTimes.sunset.getMinutes();
   // текущее время
   const timesHouse = time.hourValue * 60 + time.minValue;
 
   const dayTime = sunriseStr < timesHouse && timesHouse < sunsetStr;
 
-  return dayTime;
+  return { sunriseStr, sunsetStr, timesHouse, dayTime };
 };

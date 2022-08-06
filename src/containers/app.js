@@ -31,7 +31,7 @@ const App = observer(() => {
   const getOpenToastModal = store.getOpenToastModal();
   const time = store.getTime();
 
-  const dayTime = getDayTime(time);
+  const dayTime = getDayTime(time).dayTime;
 
   useEffect(() => {
     store.setToggleTheme(!dayTime);

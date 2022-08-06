@@ -19,10 +19,15 @@ const PopupSetting = observer(
     const positionStyle = positionValue === "top right";
 
     const time = store.getTime();
-    const dayTime = getDayTime(time);
+    const dayTime = getDayTime(time).dayTime;
     useEffect(() => {
       setOpenedTheme(!dayTime);
     }, [dayTime]);
+
+    const handleClickTheme = () => {
+      setOpenedTheme(!openedTheme);
+      store.setCheckedTheme(!openedTheme);
+    };
 
     return (
       <Popup
@@ -31,7 +36,7 @@ const PopupSetting = observer(
             <ButtonHeart positionStyle={positionStyle} />
             <ThemeDarkLight
               opened={openedTheme}
-              handleClick={() => setOpenedTheme(!openedTheme)}
+              handleClick={handleClickTheme}
               positionStyle={positionStyle}
             />
             <ButtonElement
