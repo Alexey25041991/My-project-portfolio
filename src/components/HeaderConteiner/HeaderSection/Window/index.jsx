@@ -5,11 +5,12 @@ import { getDayTime } from "../../../common/utils";
 // import { observer } from "mobx-react";
 // import { store } from "../../../../store";
 
-import { HeavenlyBody } from "./style";
+import { HeavenlyBody, HeavenlyBodyClikTeme } from "./style";
 import "./style.css";
 
 const Window = ({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
+  const [animationCheckedTheme, setAnimationCheckedTheme] = useState(true);
   const [timeLeftSunMoon, setTimeLeftSunMoon] = useState(0);
   const [percentRemainingSunMoon, setPercentRemainingSunMoon] = useState(0);
   // const [leftWindowSunMoon, setLeftWindowSunMoon] = useState(-60);
@@ -49,30 +50,13 @@ const Window = ({ theme, time, checkedTheme }) => {
   const lenghtLeftSunMoon = 100 - percentRemainingSunMoon;
 
   useEffect(() => {
-    // checkedTheme нужно менять !checkedTheme и checkedTheme и тогда движение по кнопки работает
-    // setAnimationClikTeme(!checkedTheme);
-
-    // store.setCheckedTheme(!animationClikTeme);
-    // setTimeout(() => {
-    //   setAnimationClikTeme(!checkedTheme);
-    // }, 400);
-    // if (checkedTheme === true) {
-    //   store.setCheckedTheme(animationClikTeme);
-    // } else {
-    //   store.setCheckedTheme(!animationClikTeme);
-    // }
-    // store.setCheckedTheme(animationClikTeme);
-    // store.setCheckedTheme(!animationClikTeme);
-    // setAnimationClikTeme(checkedTheme);
-
-    // setAnimationClikTeme(!checkedTheme);
-    setAnimationClikTeme(!checkedTheme);
-    console.log("11111theme", checkedTheme);
+    setAnimationCheckedTheme(checkedTheme);
+    setAnimationClikTeme(true);
   }, [checkedTheme]);
 
-  // useEffect(() => {
-  //   setAnimationClikTeme(!animationClikTeme);
-  // }, [animationClikTeme]);
+  useEffect(() => {
+    setAnimationClikTeme(false);
+  }, []);
 
   // useEffect(() => {
   //   console.log("theme", theme, dayTime, timeLeftSunMoon);
@@ -174,21 +158,23 @@ const Window = ({ theme, time, checkedTheme }) => {
     <div className="window-scene">
       <div className="window">
         <div className="window-view">
-          {/* <div className="heavenly-body"></div> */}
-          <HeavenlyBody
-            data-heavenly-body
-            animationClikTeme={animationClikTeme}
-            theme={theme}
-            timeLeftSunMoon={timeLeftSunMoon}
-            // leftWindowSunMoon={leftWindowSunMoon}
-            leftRotateWindowSunMoon={leftRotateWindowSunMoon}
-          />
-          {/* {drawSunMoon(
-            animationClikTeme,
-            theme,
-            timeLeftSunMoon,
-            leftRotateWindowSunMoon
-          )} */}
+          {animationClikTeme && (
+            <HeavenlyBodyClikTeme
+              data-heavenly-body
+              animationCheckedTheme={animationCheckedTheme}
+              theme={theme}
+              timeLeftSunMoon={timeLeftSunMoon}
+              leftRotateWindowSunMoon={leftRotateWindowSunMoon}
+            />
+          )}
+          {!animationClikTeme && (
+            <HeavenlyBody
+              data-heavenly-body
+              theme={theme}
+              timeLeftSunMoon={timeLeftSunMoon}
+              leftRotateWindowSunMoon={leftRotateWindowSunMoon}
+            />
+          )}
 
           {/* <div className="container">
             <div className="sun"></div>

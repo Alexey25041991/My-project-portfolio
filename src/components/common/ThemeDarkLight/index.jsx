@@ -17,7 +17,7 @@ const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => {
     >
       <input
         type="checkbox"
-        checked={!opened}
+        defaultChecked={!opened}
         onChange={() => console.log("")}
       />
     </ThemeDarkLightWrapper>
