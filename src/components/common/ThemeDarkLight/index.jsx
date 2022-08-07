@@ -10,15 +10,12 @@ const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => {
   }, [opened]);
 
   return (
-    <ThemeDarkLightWrapper
-      id="themeDarkLight"
-      onClick={handleClick}
-      positionStyle={positionStyle}
-    >
+    <ThemeDarkLightWrapper id="themeDarkLight" positionStyle={positionStyle}>
       <input
         type="checkbox"
         defaultChecked={!opened}
-        onChange={() => store.setCheckedTheme(opened)}
+        onClick={handleClick}
+        // onChange={() => store.setCheckedTheme(!opened)}
       />
     </ThemeDarkLightWrapper>
   );
