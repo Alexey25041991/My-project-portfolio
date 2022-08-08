@@ -38,6 +38,7 @@ const PopupSetting = observer(
               opened={openedTheme}
               handleClick={handleClickTheme}
               positionStyle={positionStyle}
+              dayTime={dayTime}
             />
             <ButtonElement
               opened={openedEnglish}

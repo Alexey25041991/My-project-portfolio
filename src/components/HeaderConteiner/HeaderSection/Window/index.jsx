@@ -5,7 +5,14 @@ import { getDayTime } from "../../../common/utils";
 // import { observer } from "mobx-react";
 // import { store } from "../../../../store";
 
-import { HeavenlyBody, HeavenlyBodyClikTeme } from "./style";
+import {
+  HeavenlyBody,
+  HeavenlyBodyClikTeme,
+  WindowLightLeft,
+  WindowLightRight,
+  WindowLightLeftClikTeme,
+  WindowLightRightClikTeme,
+} from "./style";
 import "./style.css";
 
 const Window = ({ theme, time, checkedTheme }) => {
@@ -15,6 +22,7 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [percentRemainingSunMoon, setPercentRemainingSunMoon] = useState(0);
   // const [leftWindowSunMoon, setLeftWindowSunMoon] = useState(-60);
   const [leftRotateWindowSunMoon, setLeftRotateWindowSunMoon] = useState(-60);
+  const [lightOffOpacity, setLightOffOpacity] = useState(0);
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -48,6 +56,11 @@ const Window = ({ theme, time, checkedTheme }) => {
 
   // сколько в процентах пути прошло солце и луна
   const lenghtLeftSunMoon = 100 - percentRemainingSunMoon;
+
+  // сколько прошло солце или луна
+  const lightOff = Math.round((lenghtLeftSunMoon * 120) / 100);
+  // сколько прошло солце или луна от полного круга 360deg в прроцентах (всего 33%)
+  const lightOffPercent = Math.round((lightOff * 100) / 360);
 
   useEffect(() => {
     setAnimationCheckedTheme(checkedTheme);
@@ -96,11 +109,25 @@ const Window = ({ theme, time, checkedTheme }) => {
       if (lenghtLeftSunMoon <= 50) {
         const leftRotate = Math.round((60 * lenghtLeftSunMoon) / 50) - 60;
         setLeftRotateWindowSunMoon(leftRotate);
+        //какую яркость задать от пройденного процента по кругу 360deg для 1
+        if (theme === "light") {
+          setLightOffOpacity(lenghtLeftSunMoon / 50);
+        } else {
+          // для 0.3
+          setLightOffOpacity((lenghtLeftSunMoon * 0.3) / 50);
+        }
       } else {
         const leftRotate = Math.abs(
           60 - Math.round((60 * lenghtLeftSunMoon) / 50)
         );
         setLeftRotateWindowSunMoon(leftRotate);
+        //какую яркость задать от пройденного процента по кругу 360deg для 1
+        if (theme === "light") {
+          setLightOffOpacity(2 - lenghtLeftSunMoon / 50);
+        } else {
+          // для 0.3
+          setLightOffOpacity(0.6 - (lenghtLeftSunMoon * 0.3) / 50);
+        }
       }
     }
   }, [
@@ -110,6 +137,7 @@ const Window = ({ theme, time, checkedTheme }) => {
     timesMoon,
     timesSunsetStr,
     dayTime,
+    theme,
     lenghtLeftSunMoon,
   ]);
 
@@ -163,7 +191,6 @@ const Window = ({ theme, time, checkedTheme }) => {
               data-heavenly-body
               animationCheckedTheme={animationCheckedTheme}
               theme={theme}
-              timeLeftSunMoon={timeLeftSunMoon}
               leftRotateWindowSunMoon={leftRotateWindowSunMoon}
             />
           )}
@@ -204,8 +231,41 @@ const Window = ({ theme, time, checkedTheme }) => {
         <div className="window-frame"></div>
         <div className="window-sill"></div>
       </div>
-      <div className="window-light window-light-left"></div>
-      <div className="window-light window-light-right"></div>
+
+      {animationClikTeme && (
+        <>
+          <WindowLightLeftClikTeme
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffPercent={lightOffPercent}
+            lightOffOpacity={lightOffOpacity}
+          />
+          <WindowLightRightClikTeme
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffPercent={lightOffPercent}
+            lightOffOpacity={lightOffOpacity}
+          />
+        </>
+      )}
+
+      {!animationClikTeme && (
+        <>
+          <WindowLightLeft
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffPercent={lightOffPercent}
+            lightOffOpacity={lightOffOpacity}
+            timeLeftSunMoon={timeLeftSunMoon}
+          />
+          <WindowLightRight
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffPercent={lightOffPercent}
+            lightOffOpacity={lightOffOpacity}
+            timeLeftSunMoon={timeLeftSunMoon}
+          />
+        </>
+      )}
+
+      {/* <div className="window-light window-light-left"></div>
+      <div className="window-light window-light-right"></div> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { ThemeDarkLightWrapper } from "./style";
 import "./style.css";
 import { store } from "../../../store";
 
-const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => {
+const ThemeDarkLight = ({ opened, handleClick, positionStyle, dayTime }) => {
   useEffect(() => {
     store.setToggleTheme(opened);
   }, [opened]);
@@ -15,7 +15,7 @@ const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => {
         type="checkbox"
         defaultChecked={!opened}
         onClick={handleClick}
-        // onChange={() => store.setCheckedTheme(!opened)}
+        onChange={() => store.setCheckedTheme(dayTime ? !opened : opened)}
       />
     </ThemeDarkLightWrapper>
   );
