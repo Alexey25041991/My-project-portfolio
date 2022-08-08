@@ -52,14 +52,14 @@ const heavenlyBodyMove = (leftRotateWindowSunMoon) => keyframes`
   }
 `;
 
-const lightOff = (lightOffPercent, lightOffOpacity) => keyframes`
-  ${lightOffPercent}% {
+const lightOff = (lightOffOpacity) => keyframes`
+  100% {
     opacity: ${lightOffOpacity};
   }
 `;
 
-const lightOffSun = (lightOffPercent, lightOffOpacity) => keyframes`
-  ${lightOffPercent}% {
+const lightOffSun = (lightOffOpacity) => keyframes`
+  from { 
     opacity: ${lightOffOpacity};
   }
   33% {
@@ -68,13 +68,13 @@ const lightOffSun = (lightOffPercent, lightOffOpacity) => keyframes`
   70% {
     opacity: 0;
   }
-  ${lightOffPercent}% {
+  to {
     opacity: ${lightOffOpacity};
   }
 `;
 
-const lightOffMoon = (lightOffPercent, lightOffOpacity) => keyframes`
-  ${lightOffPercent}% {
+const lightOffMoon = (lightOffOpacity) => keyframes`
+  from {
     opacity: ${lightOffOpacity};
   }
   33% {
@@ -83,7 +83,7 @@ const lightOffMoon = (lightOffPercent, lightOffOpacity) => keyframes`
   70% {
     opacity: 0;
   }
-  ${lightOffPercent}% {
+  to {
     opacity: ${lightOffOpacity};
   }
 `;
@@ -206,8 +206,8 @@ export const WindowLightClikTeme = styled.div`
   z-index: 1;
   animation-name: ${(props) =>
     props.animationCheckedTheme
-      ? lightOffMoon(props.lightOffPercent, props.lightOffOpacity)
-      : lightOffSun(props.lightOffPercent, props.lightOffOpacity)};
+      ? lightOffMoon(props.lightOffOpacity)
+      : lightOffSun(props.lightOffOpacity)};
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -244,8 +244,7 @@ export const WindowLight = styled.div`
   width: 135px;
   height: 395px;
   z-index: 1;
-  animation-name: ${(props) =>
-    lightOff(props.lightOffPercent, props.lightOffOpacity)};
+  animation-name: ${(props) => lightOff(props.lightOffOpacity)};
   animation-duration: ${(props) => props.timeLeftSunMoon};
   animation-timing-function: linear;
   animation-iteration-count: infinite;

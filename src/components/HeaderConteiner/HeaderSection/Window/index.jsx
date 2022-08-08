@@ -58,9 +58,9 @@ const Window = ({ theme, time, checkedTheme }) => {
   const lenghtLeftSunMoon = 100 - percentRemainingSunMoon;
 
   // сколько прошло солце или луна
-  const lightOff = Math.round((lenghtLeftSunMoon * 120) / 100);
+  // const lightOff = Math.round((lenghtLeftSunMoon * 120) / 100);
   // сколько прошло солце или луна от полного круга 360deg в прроцентах (всего 33%)
-  const lightOffPercent = Math.round((lightOff * 100) / 360);
+  // const lightOffPercent = Math.round((lightOff * 100) / 360);
 
   useEffect(() => {
     setAnimationCheckedTheme(checkedTheme);
@@ -236,12 +236,10 @@ const Window = ({ theme, time, checkedTheme }) => {
         <>
           <WindowLightLeftClikTeme
             animationCheckedTheme={animationCheckedTheme}
-            lightOffPercent={lightOffPercent}
             lightOffOpacity={lightOffOpacity}
           />
           <WindowLightRightClikTeme
             animationCheckedTheme={animationCheckedTheme}
-            lightOffPercent={lightOffPercent}
             lightOffOpacity={lightOffOpacity}
           />
         </>
@@ -251,13 +249,11 @@ const Window = ({ theme, time, checkedTheme }) => {
         <>
           <WindowLightLeft
             animationCheckedTheme={animationCheckedTheme}
-            lightOffPercent={lightOffPercent}
             lightOffOpacity={lightOffOpacity}
             timeLeftSunMoon={timeLeftSunMoon}
           />
           <WindowLightRight
             animationCheckedTheme={animationCheckedTheme}
-            lightOffPercent={lightOffPercent}
             lightOffOpacity={lightOffOpacity}
             timeLeftSunMoon={timeLeftSunMoon}
           />
