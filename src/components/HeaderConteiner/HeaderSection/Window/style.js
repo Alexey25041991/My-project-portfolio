@@ -58,9 +58,9 @@ const lightOff = (lightOffOpacity) => keyframes`
   }
 `;
 
-const lightOffSun = (lightOffOpacity) => keyframes`
+const lightOffSun = (lightOffOpacitySun, lightOffOpacityMoon) => keyframes`
   from { 
-    opacity: ${lightOffOpacity};
+    opacity: ${lightOffOpacityMoon};
   }
   33% {
     opacity: 0;
@@ -69,13 +69,13 @@ const lightOffSun = (lightOffOpacity) => keyframes`
     opacity: 0;
   }
   to {
-    opacity: ${lightOffOpacity};
+    opacity: ${lightOffOpacitySun};
   }
 `;
 
-const lightOffMoon = (lightOffOpacity) => keyframes`
+const lightOffMoon = (lightOffOpacitySun, lightOffOpacityMoon) => keyframes`
   from {
-    opacity: ${lightOffOpacity};
+    opacity: ${lightOffOpacitySun};
   }
   33% {
     opacity: 0;
@@ -84,7 +84,7 @@ const lightOffMoon = (lightOffOpacity) => keyframes`
     opacity: 0;
   }
   to {
-    opacity: ${lightOffOpacity};
+    opacity: ${lightOffOpacityMoon};
   }
 `;
 
@@ -206,8 +206,8 @@ export const WindowLightClikTeme = styled.div`
   z-index: 1;
   animation-name: ${(props) =>
     props.animationCheckedTheme
-      ? lightOffMoon(props.lightOffOpacity)
-      : lightOffSun(props.lightOffOpacity)};
+      ? lightOffMoon(props.lightOffOpacitySun, props.lightOffOpacityMoon)
+      : lightOffSun(props.lightOffOpacitySun, props.lightOffOpacityMoon)};
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: 1;

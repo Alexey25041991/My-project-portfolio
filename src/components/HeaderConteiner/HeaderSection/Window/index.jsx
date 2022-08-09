@@ -22,7 +22,8 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [percentRemainingSunMoon, setPercentRemainingSunMoon] = useState(0);
   // const [leftWindowSunMoon, setLeftWindowSunMoon] = useState(-60);
   const [leftRotateWindowSunMoon, setLeftRotateWindowSunMoon] = useState(-60);
-  const [lightOffOpacity, setLightOffOpacity] = useState(0);
+  const [lightOffOpacitySun, setLightOffOpacitySun] = useState(0);
+  const [lightOffOpacityMoon, setLightOffOpacityMoon] = useState(0);
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -61,6 +62,8 @@ const Window = ({ theme, time, checkedTheme }) => {
   // const lightOff = Math.round((lenghtLeftSunMoon * 120) / 100);
   // сколько прошло солце или луна от полного круга 360deg в прроцентах (всего 33%)
   // const lightOffPercent = Math.round((lightOff * 100) / 360);
+  const lightOffOpacity =
+    theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
 
   useEffect(() => {
     setAnimationCheckedTheme(checkedTheme);
@@ -111,10 +114,10 @@ const Window = ({ theme, time, checkedTheme }) => {
         setLeftRotateWindowSunMoon(leftRotate);
         //какую яркость задать от пройденного процента по кругу 360deg для 1
         if (theme === "light") {
-          setLightOffOpacity(lenghtLeftSunMoon / 50);
+          setLightOffOpacitySun(lenghtLeftSunMoon / 50);
         } else {
           // для 0.3
-          setLightOffOpacity((lenghtLeftSunMoon * 0.3) / 50);
+          setLightOffOpacityMoon((lenghtLeftSunMoon * 0.3) / 50);
         }
       } else {
         const leftRotate = Math.abs(
@@ -123,10 +126,10 @@ const Window = ({ theme, time, checkedTheme }) => {
         setLeftRotateWindowSunMoon(leftRotate);
         //какую яркость задать от пройденного процента по кругу 360deg для 1
         if (theme === "light") {
-          setLightOffOpacity(2 - lenghtLeftSunMoon / 50);
+          setLightOffOpacitySun(2 - lenghtLeftSunMoon / 50);
         } else {
           // для 0.3
-          setLightOffOpacity(0.6 - (lenghtLeftSunMoon * 0.3) / 50);
+          setLightOffOpacityMoon(0.6 - (lenghtLeftSunMoon * 0.3) / 50);
         }
       }
     }
@@ -236,11 +239,13 @@ const Window = ({ theme, time, checkedTheme }) => {
         <>
           <WindowLightLeftClikTeme
             animationCheckedTheme={animationCheckedTheme}
-            lightOffOpacity={lightOffOpacity}
+            lightOffOpacitySun={lightOffOpacitySun}
+            lightOffOpacityMoon={lightOffOpacityMoon}
           />
           <WindowLightRightClikTeme
             animationCheckedTheme={animationCheckedTheme}
-            lightOffOpacity={lightOffOpacity}
+            lightOffOpacitySun={lightOffOpacitySun}
+            lightOffOpacityMoon={lightOffOpacityMoon}
           />
         </>
       )}
