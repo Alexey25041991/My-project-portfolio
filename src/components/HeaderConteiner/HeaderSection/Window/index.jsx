@@ -116,8 +116,8 @@ const Window = ({ theme, time, checkedTheme }) => {
         if (theme === "light") {
           setLightOffOpacitySun(lenghtLeftSunMoon / 50);
         } else {
-          // для 0.3
-          setLightOffOpacityMoon((lenghtLeftSunMoon * 0.3) / 50);
+          // для 0.5
+          setLightOffOpacityMoon((lenghtLeftSunMoon * 0.5) / 50);
         }
       } else {
         const leftRotate = Math.abs(
@@ -128,8 +128,8 @@ const Window = ({ theme, time, checkedTheme }) => {
         if (theme === "light") {
           setLightOffOpacitySun(2 - lenghtLeftSunMoon / 50);
         } else {
-          // для 0.3
-          setLightOffOpacityMoon(0.6 - (lenghtLeftSunMoon * 0.3) / 50);
+          // для 0.5
+          setLightOffOpacityMoon(1 - (lenghtLeftSunMoon * 0.5) / 50);
         }
       }
     }
