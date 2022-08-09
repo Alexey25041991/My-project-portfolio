@@ -4,42 +4,42 @@ import styled, { css, keyframes } from "styled-components";
 const heavenlyBodyMoveClikSun = (leftRotateWindowSunMoon) => keyframes`
   from {
     transform: rotate(${leftRotateWindowSunMoon}deg);
-    background: #fff82f;
-    box-shadow: 0 0 10px 2px #fff82f;
-  }
-  25% {
-    background: #fff82f;
-    box-shadow: 0 0 10px 2px #fff82f;
-  }
-  50% {
     background: #fff;
     box-shadow: 0 0 10px 2px #fff;
+  }
+  25% {
+    background: #fff;
+    box-shadow: 0 0 10px 2px #fff;
+  }
+  50% {
+    background: #fff82f;
+    box-shadow: 0 0 10px 2px #fff82f;
   }
   to {
     transform: rotate(${360 + leftRotateWindowSunMoon}deg);
-    background: #fff;
-    box-shadow: 0 0 10px 2px #fff;
+    background: #fff82f;
+    box-shadow: 0 0 10px 2px #fff82f;
   }
 `;
 
 const heavenlyBodyMoveClikMoon = (leftRotateWindowSunMoon) => keyframes`
   from {
     transform: rotate(${leftRotateWindowSunMoon}deg);
-    background: #fff;
-    box-shadow: 0 0 10px 2px #fff;
-  }
-  25% {
-    background: #fff;
-    box-shadow: 0 0 10px 2px #fff;
-  }
-  50% {
     background: #fff82f;
     box-shadow: 0 0 10px 2px #fff82f;
+  }
+  25% {
+    background: #fff82f;
+    box-shadow: 0 0 10px 2px #fff82f;
+  }
+  50% {
+    background: #fff;
+    box-shadow: 0 0 10px 2px #fff;
   }
   to {
     transform: rotate(${360 + leftRotateWindowSunMoon}deg);
-    background: #fff82f;
-    box-shadow: 0 0 10px 2px #fff82f;
+    background: #fff;
+    box-shadow: 0 0 10px 2px #fff;
   }
 `;
 
