@@ -66,9 +66,11 @@ const Window = ({ theme, time, checkedTheme }) => {
     theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
 
   useEffect(() => {
-    setAnimationCheckedTheme(checkedTheme);
+    dayTime
+      ? setAnimationCheckedTheme(checkedTheme)
+      : setAnimationCheckedTheme(!checkedTheme);
     setAnimationClikTeme(true);
-  }, [checkedTheme]);
+  }, [checkedTheme, dayTime]);
 
   useEffect(() => {
     setAnimationClikTeme(false);
