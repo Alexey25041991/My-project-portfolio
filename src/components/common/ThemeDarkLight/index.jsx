@@ -6,8 +6,8 @@ import { store } from "../../../store";
 
 const ThemeDarkLight = ({ opened, handleClick, positionStyle, dayTime }) => {
   useEffect(() => {
-    store.setToggleTheme(opened);
-  }, [opened]);
+    store.setToggleTheme(dayTime ? opened : !opened);
+  }, [opened, dayTime]);
 
   return (
     <ThemeDarkLightWrapper id="themeDarkLight" positionStyle={positionStyle}>

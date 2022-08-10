@@ -12,6 +12,8 @@ import {
   WindowLightRight,
   WindowLightLeftClikTeme,
   WindowLightRightClikTeme,
+  WindowHotspot,
+  WindowHotspotClikTeme,
 } from "./style";
 import "./style.css";
 
@@ -66,11 +68,9 @@ const Window = ({ theme, time, checkedTheme }) => {
     theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
 
   useEffect(() => {
-    dayTime
-      ? setAnimationCheckedTheme(checkedTheme)
-      : setAnimationCheckedTheme(!checkedTheme);
+    setAnimationCheckedTheme(checkedTheme);
     setAnimationClikTeme(true);
-  }, [checkedTheme, dayTime]);
+  }, [checkedTheme]);
 
   useEffect(() => {
     setAnimationClikTeme(false);
@@ -232,7 +232,20 @@ const Window = ({ theme, time, checkedTheme }) => {
           <div className="tree tree-small tree-small-2"></div>
           <div className="tree tree-long"></div>
         </div>
-        <div className="window-hotspot"></div>
+        {/* <div className="window-hotspot"></div> */}
+        {animationClikTeme && (
+          <WindowHotspotClikTeme
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffOpacitySun={lightOffOpacitySun}
+            lightOffOpacityMoon={lightOffOpacityMoon}
+          />
+        )}
+        {!animationClikTeme && (
+          <WindowHotspot
+            lightOffOpacity={lightOffOpacity}
+            timeLeftSunMoon={timeLeftSunMoon}
+          />
+        )}
         <div className="window-frame"></div>
         <div className="window-sill"></div>
       </div>
@@ -255,12 +268,10 @@ const Window = ({ theme, time, checkedTheme }) => {
       {!animationClikTeme && (
         <>
           <WindowLightLeft
-            animationCheckedTheme={animationCheckedTheme}
             lightOffOpacity={lightOffOpacity}
             timeLeftSunMoon={timeLeftSunMoon}
           />
           <WindowLightRight
-            animationCheckedTheme={animationCheckedTheme}
             lightOffOpacity={lightOffOpacity}
             timeLeftSunMoon={timeLeftSunMoon}
           />

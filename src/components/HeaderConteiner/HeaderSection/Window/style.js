@@ -245,7 +245,7 @@ export const WindowLight = styled.div`
   height: 395px;
   z-index: 1;
   animation-name: ${(props) => lightOff(props.lightOffOpacity)};
-  animation-duration: ${(props) => props.timeLeftSunMoon};
+  animation-duration: ${(props) => props.timeLeftSunMoon + "s"};
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
@@ -269,4 +269,63 @@ export const WindowLightRight = styled(WindowLight)`
     rgba(255, 255, 255, 0) 10%,
     rgba(255, 255, 255, 0.5)
   );
+`;
+
+export const WindowHotspotClikTeme = styled.div`
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+  width: 220px;
+  height: 300px;
+  background: transparent;
+  background-image: linear-gradient(
+    to right top,
+    transparent 60%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.1) 70%,
+    transparent 70%,
+    transparent 73%,
+    rgba(255, 255, 255, 0.1) 73%,
+    rgba(255, 255, 255, 0.1) 76%,
+    transparent 76%
+  );
+  animation-name: ${(props) =>
+    props.animationCheckedTheme
+      ? lightOffMoon(props.lightOffOpacitySun, props.lightOffOpacityMoon)
+      : lightOffSun(props.lightOffOpacitySun, props.lightOffOpacityMoon)};
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  // в случае переключение темы
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+`;
+
+export const WindowHotspot = styled.div`
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+  width: 220px;
+  height: 300px;
+  background: transparent;
+  background-image: linear-gradient(
+    to right top,
+    transparent 60%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.1) 70%,
+    transparent 70%,
+    transparent 73%,
+    rgba(255, 255, 255, 0.1) 73%,
+    rgba(255, 255, 255, 0.1) 76%,
+    transparent 76%
+  );
+  animation-name: ${(props) => lightOff(props.lightOffOpacity)};
+  animation-duration: ${(props) => props.timeLeftSunMoon + "s"};
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 `;
