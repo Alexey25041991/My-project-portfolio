@@ -7,13 +7,10 @@ import { getDayTime } from "../../../common/utils";
 
 import {
   HeavenlyBody,
-  HeavenlyBodyClikTeme,
   WindowLightLeft,
   WindowLightRight,
-  WindowLightLeftClikTeme,
-  WindowLightRightClikTeme,
   WindowHotspot,
-  WindowHotspotClikTeme,
+  WindowView,
 } from "./style";
 import "./style.css";
 
@@ -95,7 +92,7 @@ const Window = ({ theme, time, checkedTheme }) => {
     }
 
     // ширина окна
-    const windowView = document?.querySelector(".window-view");
+    const windowView = document?.querySelector("[data-window-view]");
     if (windowView) {
       // const windowViewWidth = windowView.offsetWidth;
       // расположение солнца или луны от левого края окна по горизонтали
@@ -118,8 +115,8 @@ const Window = ({ theme, time, checkedTheme }) => {
         if (theme === "light") {
           setLightOffOpacitySun(lenghtLeftSunMoon / 50);
         } else {
-          // для 0.5
-          setLightOffOpacityMoon((lenghtLeftSunMoon * 0.5) / 50);
+          // для 0.4
+          setLightOffOpacityMoon((lenghtLeftSunMoon * 0.4) / 50);
         }
       } else {
         const leftRotate = Math.abs(
@@ -130,8 +127,8 @@ const Window = ({ theme, time, checkedTheme }) => {
         if (theme === "light") {
           setLightOffOpacitySun(2 - lenghtLeftSunMoon / 50);
         } else {
-          // для 0.5
-          setLightOffOpacityMoon(1 - (lenghtLeftSunMoon * 0.5) / 50);
+          // для 0.4
+          setLightOffOpacityMoon(0.8 - (lenghtLeftSunMoon * 0.4) / 50);
         }
       }
     }
@@ -190,23 +187,15 @@ const Window = ({ theme, time, checkedTheme }) => {
   return (
     <div className="window-scene">
       <div className="window">
-        <div className="window-view">
-          {animationClikTeme && (
-            <HeavenlyBodyClikTeme
-              data-heavenly-body
-              animationCheckedTheme={animationCheckedTheme}
-              theme={theme}
-              leftRotateWindowSunMoon={leftRotateWindowSunMoon}
-            />
-          )}
-          {!animationClikTeme && (
-            <HeavenlyBody
-              data-heavenly-body
-              theme={theme}
-              timeLeftSunMoon={timeLeftSunMoon}
-              leftRotateWindowSunMoon={leftRotateWindowSunMoon}
-            />
-          )}
+        <WindowView data-window-view>
+          <HeavenlyBody
+            data-heavenly-body
+            theme={theme}
+            timeLeftSunMoon={timeLeftSunMoon}
+            leftRotateWindowSunMoon={leftRotateWindowSunMoon}
+            animationClikTeme={animationClikTeme}
+            animationCheckedTheme={animationCheckedTheme}
+          />
 
           {/* <div className="container">
             <div className="sun"></div>
@@ -231,52 +220,36 @@ const Window = ({ theme, time, checkedTheme }) => {
           <div className="tree tree-small tree-small-1"></div>
           <div className="tree tree-small tree-small-2"></div>
           <div className="tree tree-long"></div>
-        </div>
+        </WindowView>
         {/* <div className="window-hotspot"></div> */}
-        {animationClikTeme && (
-          <WindowHotspotClikTeme
-            animationCheckedTheme={animationCheckedTheme}
-            lightOffOpacitySun={lightOffOpacitySun}
-            lightOffOpacityMoon={lightOffOpacityMoon}
-          />
-        )}
-        {!animationClikTeme && (
-          <WindowHotspot
-            lightOffOpacity={lightOffOpacity}
-            timeLeftSunMoon={timeLeftSunMoon}
-          />
-        )}
+        <WindowHotspot
+          lightOffOpacity={lightOffOpacity}
+          timeLeftSunMoon={timeLeftSunMoon}
+          animationCheckedTheme={animationCheckedTheme}
+          lightOffOpacitySun={lightOffOpacitySun}
+          lightOffOpacityMoon={lightOffOpacityMoon}
+          animationClikTeme={animationClikTeme}
+        />
         <div className="window-frame"></div>
         <div className="window-sill"></div>
       </div>
 
-      {animationClikTeme && (
-        <>
-          <WindowLightLeftClikTeme
-            animationCheckedTheme={animationCheckedTheme}
-            lightOffOpacitySun={lightOffOpacitySun}
-            lightOffOpacityMoon={lightOffOpacityMoon}
-          />
-          <WindowLightRightClikTeme
-            animationCheckedTheme={animationCheckedTheme}
-            lightOffOpacitySun={lightOffOpacitySun}
-            lightOffOpacityMoon={lightOffOpacityMoon}
-          />
-        </>
-      )}
-
-      {!animationClikTeme && (
-        <>
-          <WindowLightLeft
-            lightOffOpacity={lightOffOpacity}
-            timeLeftSunMoon={timeLeftSunMoon}
-          />
-          <WindowLightRight
-            lightOffOpacity={lightOffOpacity}
-            timeLeftSunMoon={timeLeftSunMoon}
-          />
-        </>
-      )}
+      <WindowLightLeft
+        lightOffOpacity={lightOffOpacity}
+        timeLeftSunMoon={timeLeftSunMoon}
+        animationCheckedTheme={animationCheckedTheme}
+        lightOffOpacitySun={lightOffOpacitySun}
+        lightOffOpacityMoon={lightOffOpacityMoon}
+        animationClikTeme={animationClikTeme}
+      />
+      <WindowLightRight
+        lightOffOpacity={lightOffOpacity}
+        timeLeftSunMoon={timeLeftSunMoon}
+        animationCheckedTheme={animationCheckedTheme}
+        lightOffOpacitySun={lightOffOpacitySun}
+        lightOffOpacityMoon={lightOffOpacityMoon}
+        animationClikTeme={animationClikTeme}
+      />
 
       {/* <div className="window-light window-light-left"></div>
       <div className="window-light window-light-right"></div> */}

@@ -26,7 +26,8 @@ const PopupSetting = observer(
 
     const handleClickTheme = () => {
       setOpenedTheme(!openedTheme);
-      store.setCheckedTheme(!openedTheme);
+      store.setCheckedTheme(dayTime ? !openedTheme : openedTheme);
+      store.setToggleTheme(!openedTheme);
     };
 
     return (
@@ -38,7 +39,6 @@ const PopupSetting = observer(
               opened={openedTheme}
               handleClick={handleClickTheme}
               positionStyle={positionStyle}
-              dayTime={dayTime}
             />
             <ButtonElement
               opened={openedEnglish}

@@ -1,22 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { ThemeDarkLightWrapper } from "./style";
-import "./style.css";
-import { store } from "../../../store";
+import { ThemeDarkLightWrapper, ThemeDarkLightChecked } from "./style";
 
-const ThemeDarkLight = ({ opened, handleClick, positionStyle, dayTime }) => {
-  useEffect(() => {
-    store.setToggleTheme(dayTime ? opened : !opened);
-  }, [opened, dayTime]);
-
+const ThemeDarkLight = ({ opened, handleClick, positionStyle }) => {
   return (
     <ThemeDarkLightWrapper id="themeDarkLight" positionStyle={positionStyle}>
-      <input
-        type="checkbox"
-        defaultChecked={!opened}
-        onClick={handleClick}
-        onChange={() => store.setCheckedTheme(dayTime ? !opened : opened)}
-      />
+      <ThemeDarkLightChecked opened={opened} onClick={handleClick} />
     </ThemeDarkLightWrapper>
   );
 };

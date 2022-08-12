@@ -53,7 +53,10 @@ const heavenlyBodyMove = (leftRotateWindowSunMoon) => keyframes`
 `;
 
 const lightOff = (lightOffOpacity) => keyframes`
-  100% {
+  from { 
+    opacity: ${lightOffOpacity};
+  }
+  to {
     opacity: ${lightOffOpacity};
   }
 `;
@@ -145,10 +148,21 @@ export const HeavenlyBody = styled.div`
   height: 50px;
   border-radius: 50%;
 
-  animation-duration: ${(props) => props.timeLeftSunMoon + "s"};
-  animation-name: ${(props) => heavenlyBodyMove(props.leftRotateWindowSunMoon)};
+  animation-duration: ${(props) =>
+    props.animationClikTeme ? "4s" : props.timeLeftSunMoon + "s"};
+  ${(props) =>
+    props.animationClikTeme
+      ? css`
+          animation-name: ${props.animationCheckedTheme
+            ? heavenlyBodyMoveClikMoon(props.leftRotateWindowSunMoon)
+            : heavenlyBodyMoveClikSun(props.leftRotateWindowSunMoon)};
+        `
+      : css`
+          animation-name: ${heavenlyBodyMove(props.leftRotateWindowSunMoon)};
+        `};
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: ${(props) =>
+    props.animationClikTeme ? 1 : "infinite"};
 
   // в случае переключение темы
   animation-fill-mode: forwards;
@@ -168,87 +182,31 @@ export const HeavenlyBody = styled.div`
     `}
 `;
 
-export const HeavenlyBodyClikTeme = styled.div`
-  position: absolute;
-  left: 86px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-
-  animation-duration: 4s;
-  animation-name: ${(props) =>
-    props.animationCheckedTheme
-      ? heavenlyBodyMoveClikMoon(props.leftRotateWindowSunMoon)
-      : heavenlyBodyMoveClikSun(props.leftRotateWindowSunMoon)};
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-
-  // в случае переключение темы
-  animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-in-out;
-
-  transform-origin: 50% 400%;
-  margin-top: 5%;
-
-  ${({ theme }) =>
-    theme === "light" &&
-    css`
-      background: #fff82f;
-      box-shadow: 0 0 10px 2px #fff82f;
-    `}
-`;
-
-export const WindowLightClikTeme = styled.div`
-  position: absolute;
-  top: 11px;
-  width: 135px;
-  height: 395px;
-  z-index: 1;
-  animation-name: ${(props) =>
-    props.animationCheckedTheme
-      ? lightOffMoon(props.lightOffOpacitySun, props.lightOffOpacityMoon)
-      : lightOffSun(props.lightOffOpacitySun, props.lightOffOpacityMoon)};
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  // в случае переключение темы
-  animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-in-out;
-`;
-
-export const WindowLightLeftClikTeme = styled(WindowLightClikTeme)`
-  left: -72px;
-  transform: rotate(20deg);
-  background-image: linear-gradient(
-    20deg,
-    rgba(255, 255, 255, 0) 10%,
-    rgba(255, 255, 255, 0.5)
-  );
-`;
-
-export const WindowLightRightClikTeme = styled(WindowLightClikTeme)`
-  left: 198px;
-  transform: rotate(-20deg);
-  background-image: linear-gradient(
-    -20deg,
-    rgba(255, 255, 255, 0) 10%,
-    rgba(255, 255, 255, 0.5)
-  );
-`;
-
 export const WindowLight = styled.div`
   position: absolute;
   top: 11px;
   width: 135px;
   height: 395px;
   z-index: 1;
-  animation-name: ${(props) => lightOff(props.lightOffOpacity)};
-  animation-duration: ${(props) => props.timeLeftSunMoon + "s"};
+  ${(props) =>
+    props.animationClikTeme
+      ? css`
+          animation-name: ${props.animationCheckedTheme
+            ? lightOffMoon(props.lightOffOpacitySun, props.lightOffOpacityMoon)
+            : lightOffSun(props.lightOffOpacitySun, props.lightOffOpacityMoon)};
+        `
+      : css`
+          animation-name: ${lightOff(props.lightOffOpacity)};
+        `};
+  animation-duration: ${(props) =>
+    props.animationClikTeme ? "4s" : props.timeLeftSunMoon + "s"};
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: ${(props) =>
+    props.animationClikTeme ? 1 : "infinite"};
   animation-fill-mode: forwards;
+
+  // в случае переключение темы
+  -webkit-animation-timing-function: ease-in-out;
 `;
 
 export const WindowLightLeft = styled(WindowLight)`
@@ -271,39 +229,6 @@ export const WindowLightRight = styled(WindowLight)`
   );
 `;
 
-export const WindowHotspotClikTeme = styled.div`
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  z-index: 2;
-  width: 220px;
-  height: 300px;
-  background: transparent;
-  background-image: linear-gradient(
-    to right top,
-    transparent 60%,
-    rgba(255, 255, 255, 0.1) 60%,
-    rgba(255, 255, 255, 0.1) 70%,
-    transparent 70%,
-    transparent 73%,
-    rgba(255, 255, 255, 0.1) 73%,
-    rgba(255, 255, 255, 0.1) 76%,
-    transparent 76%
-  );
-  animation-name: ${(props) =>
-    props.animationCheckedTheme
-      ? lightOffMoon(props.lightOffOpacitySun, props.lightOffOpacityMoon)
-      : lightOffSun(props.lightOffOpacitySun, props.lightOffOpacityMoon)};
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  // в случае переключение темы
-  animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-in-out;
-`;
-
 export const WindowHotspot = styled.div`
   position: absolute;
   left: 20px;
@@ -323,8 +248,49 @@ export const WindowHotspot = styled.div`
     rgba(255, 255, 255, 0.1) 76%,
     transparent 76%
   );
-  animation-name: ${(props) => lightOff(props.lightOffOpacity)};
-  animation-duration: ${(props) => props.timeLeftSunMoon + "s"};
+  ${(props) =>
+    props.animationClikTeme
+      ? css`
+          animation-name: ${props.animationCheckedTheme
+            ? lightOffMoon(props.lightOffOpacitySun, props.lightOffOpacityMoon)
+            : lightOffSun(props.lightOffOpacitySun, props.lightOffOpacityMoon)};
+        `
+      : css`
+          animation-name: ${lightOff(props.lightOffOpacity)};
+        `};
+  animation-duration: ${(props) =>
+    props.animationClikTeme ? "4s" : props.timeLeftSunMoon + "s"};
+  animation-timing-function: linear;
+  ${(props) => (props.animationClikTeme ? 1 : "infinite")};
+  animation-fill-mode: forwards;
+`;
+
+const dayToNight = keyframes`
+  from {
+    background: #0c2233;
+  }
+  25% {
+    background: #88bef5;
+  }
+  75% {
+    background: #0c2233;
+  }
+  to {
+    background: #0c2233;
+  }
+`;
+
+export const WindowView = styled.div`
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 222px;
+  height: 300px;
+  background: #88bef5;
+  z-index: 1;
+  overflow: hidden;
+  animation-name: ${dayToNight};
+  animation-duration: 8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
