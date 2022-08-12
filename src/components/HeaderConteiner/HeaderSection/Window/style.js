@@ -261,22 +261,59 @@ export const WindowHotspot = styled.div`
   animation-duration: ${(props) =>
     props.animationClikTeme ? "4s" : props.timeLeftSunMoon + "s"};
   animation-timing-function: linear;
-  ${(props) => (props.animationClikTeme ? 1 : "infinite")};
+  animation-iteration-count: ${(props) =>
+    props.animationClikTeme ? 1 : "infinite"};
   animation-fill-mode: forwards;
 `;
 
-const dayToNight = keyframes`
+const dayToNight = (dayToNightColor) => keyframes`
   from {
-    background: #0c2233;
+    background: ${dayToNightColor};
   }
-  25% {
+  to {
+    background: ${dayToNightColor};
+  }
+`;
+
+const dayToNightSun = keyframes`
+  from { 
     background: #88bef5;
   }
-  75% {
+  16% {
+    background: #88bef5;
+  }
+  33% {
+    background: #88bef5;
+  }
+  70% {
+    background: #0c2233;
+  }
+  85% {
     background: #0c2233;
   }
   to {
     background: #0c2233;
+  }
+`;
+
+const dayToNightMoon = keyframes`
+  from { 
+    background: #0c2233;
+  }
+  16% {
+    background: #0c2233;
+  }
+  33% {
+    background: #0c2233;
+  }
+  70% {
+    background: #88bef5;
+  }
+  85% {
+    background: #88bef5;
+  }
+  to {
+    background: #88bef5;
   }
 `;
 
@@ -289,9 +326,20 @@ export const WindowView = styled.div`
   background: #88bef5;
   z-index: 1;
   overflow: hidden;
-  animation-name: ${dayToNight};
-  animation-duration: 8s;
+  ${(props) =>
+    props.animationClikTeme
+      ? css`
+          animation-name: ${props.animationCheckedTheme
+            ? dayToNightSun
+            : dayToNightMoon};
+        `
+      : css`
+          animation-name: ${dayToNight(props.dayToNightColor)}};
+        `};
+  animation-duration: ${(props) =>
+    props.animationClikTeme ? "4s" : props.timeLeftSunMoon + "s"};
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: ${(props) =>
+    props.animationClikTeme ? 1 : "infinite"};
   animation-fill-mode: forwards;
 `;

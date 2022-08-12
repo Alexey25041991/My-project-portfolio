@@ -63,6 +63,7 @@ const Window = ({ theme, time, checkedTheme }) => {
   // const lightOffPercent = Math.round((lightOff * 100) / 360);
   const lightOffOpacity =
     theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
+  const dayToNightColor = theme === "light" ? "#88bef5" : "#0c2233";
 
   useEffect(() => {
     setAnimationCheckedTheme(checkedTheme);
@@ -187,7 +188,13 @@ const Window = ({ theme, time, checkedTheme }) => {
   return (
     <div className="window-scene">
       <div className="window">
-        <WindowView data-window-view>
+        <WindowView
+          data-window-view
+          dayToNightColor={dayToNightColor}
+          timeLeftSunMoon={timeLeftSunMoon}
+          animationCheckedTheme={animationCheckedTheme}
+          animationClikTeme={animationClikTeme}
+        >
           <HeavenlyBody
             data-heavenly-body
             theme={theme}
