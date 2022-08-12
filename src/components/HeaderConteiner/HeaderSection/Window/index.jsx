@@ -152,6 +152,7 @@ const Window = ({ theme, time, checkedTheme }) => {
     lenghtLeftSunMoon,
     lightOffOpacitySun,
     lightOffOpacityMoon,
+    animationCheckedTheme,
   ]);
 
   // const heavenlyBody = document?.querySelector(".heavenly-body");
