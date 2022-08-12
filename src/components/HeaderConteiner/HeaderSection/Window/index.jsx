@@ -23,6 +23,8 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [leftRotateWindowSunMoon, setLeftRotateWindowSunMoon] = useState(-60);
   const [lightOffOpacitySun, setLightOffOpacitySun] = useState(0);
   const [lightOffOpacityMoon, setLightOffOpacityMoon] = useState(0);
+  const [lightOffOpacity, setLightOffOpacity] = useState(0);
+  const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -61,9 +63,6 @@ const Window = ({ theme, time, checkedTheme }) => {
   // const lightOff = Math.round((lenghtLeftSunMoon * 120) / 100);
   // сколько прошло солце или луна от полного круга 360deg в прроцентах (всего 33%)
   // const lightOffPercent = Math.round((lightOff * 100) / 360);
-  const lightOffOpacity =
-    theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
-  const dayToNightColor = theme === "light" ? "#88bef5" : "#0c2233";
 
   useEffect(() => {
     setAnimationCheckedTheme(checkedTheme);
@@ -87,10 +86,19 @@ const Window = ({ theme, time, checkedTheme }) => {
     if (dayTime) {
       setTimeLeftSunMoon(timesSunsetStr);
       setPercentRemainingSunMoon(percentRemainingSunValue);
+      setAnimationCheckedTheme(animationCheckedTheme);
     } else {
       setTimeLeftSunMoon(timesMoon);
       setPercentRemainingSunMoon(percentRemainingMoonValue);
+      setAnimationCheckedTheme(!animationCheckedTheme);
     }
+
+    const lightOffOpacityValue =
+      theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
+    setLightOffOpacity(lightOffOpacityValue);
+
+    const dayToNightColorValue = theme === "light" ? "#88bef5" : "#0c2233";
+    setDayToNightColor(dayToNightColorValue);
 
     // ширина окна
     const windowView = document?.querySelector("[data-window-view]");
@@ -142,6 +150,8 @@ const Window = ({ theme, time, checkedTheme }) => {
     dayTime,
     theme,
     lenghtLeftSunMoon,
+    lightOffOpacitySun,
+    lightOffOpacityMoon,
   ]);
 
   // const heavenlyBody = document?.querySelector(".heavenly-body");
