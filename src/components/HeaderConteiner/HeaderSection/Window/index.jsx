@@ -65,9 +65,9 @@ const Window = ({ theme, time, checkedTheme }) => {
   // const lightOffPercent = Math.round((lightOff * 100) / 360);
 
   useEffect(() => {
-    setAnimationCheckedTheme(checkedTheme);
+    setAnimationCheckedTheme(dayTime ? checkedTheme : !checkedTheme);
     setAnimationClikTeme(true);
-  }, [checkedTheme]);
+  }, [checkedTheme, dayTime]);
 
   useEffect(() => {
     setAnimationClikTeme(false);
@@ -86,11 +86,9 @@ const Window = ({ theme, time, checkedTheme }) => {
     if (dayTime) {
       setTimeLeftSunMoon(timesSunsetStr);
       setPercentRemainingSunMoon(percentRemainingSunValue);
-      setAnimationCheckedTheme(animationCheckedTheme);
     } else {
       setTimeLeftSunMoon(timesMoon);
       setPercentRemainingSunMoon(percentRemainingMoonValue);
-      setAnimationCheckedTheme(!animationCheckedTheme);
     }
 
     const lightOffOpacityValue =
@@ -152,7 +150,6 @@ const Window = ({ theme, time, checkedTheme }) => {
     lenghtLeftSunMoon,
     lightOffOpacitySun,
     lightOffOpacityMoon,
-    animationCheckedTheme,
   ]);
 
   // const heavenlyBody = document?.querySelector(".heavenly-body");
@@ -215,11 +212,6 @@ const Window = ({ theme, time, checkedTheme }) => {
             animationCheckedTheme={animationCheckedTheme}
           />
 
-          {/* <div className="container">
-            <div className="sun"></div>
-            <div className="moon"></div>
-          </div> */}
-
           <div className="cloud cloud-1"></div>
           <div className="cloud cloud-2"></div>
           <div className="cloud cloud-3"></div>
@@ -239,7 +231,6 @@ const Window = ({ theme, time, checkedTheme }) => {
           <div className="tree tree-small tree-small-2"></div>
           <div className="tree tree-long"></div>
         </WindowView>
-        {/* <div className="window-hotspot"></div> */}
         <WindowHotspot
           lightOffOpacity={lightOffOpacity}
           timeLeftSunMoon={timeLeftSunMoon}
@@ -268,9 +259,6 @@ const Window = ({ theme, time, checkedTheme }) => {
         lightOffOpacityMoon={lightOffOpacityMoon}
         animationClikTeme={animationClikTeme}
       />
-
-      {/* <div className="window-light window-light-left"></div>
-      <div className="window-light window-light-right"></div> */}
     </div>
   );
 };
