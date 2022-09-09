@@ -11,8 +11,15 @@ import {
   WindowLightRight,
   WindowHotspot,
   WindowView,
+  Cloud1,
+  Cloud2,
+  Cloud3,
+  Cloud4,
+  Cloud5,
 } from "./style";
 import "./style.css";
+
+const cloudArr = [1, 2, 3, 4, 5];
 
 const Window = ({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
@@ -25,6 +32,8 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [lightOffOpacityMoon, setLightOffOpacityMoon] = useState(0);
   const [lightOffOpacity, setLightOffOpacity] = useState(0);
   const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
+
+  console.log(111, cloudArr);
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -211,12 +220,13 @@ const Window = ({ theme, time, checkedTheme }) => {
             animationClikTeme={animationClikTeme}
             animationCheckedTheme={animationCheckedTheme}
           />
-
-          <div className="cloud cloud-1"></div>
-          <div className="cloud cloud-2"></div>
-          <div className="cloud cloud-3"></div>
-          <div className="cloud cloud-4"></div>
-          <div className="cloud cloud-5"></div>
+          <>
+            <Cloud1 />
+            <Cloud2 />
+            <Cloud3 />
+            <Cloud4 />
+            <Cloud5 />
+          </>
           <div className="star star-1"></div>
           <div className="star star-2"></div>
           <div className="star star-3"></div>
