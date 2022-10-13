@@ -50,10 +50,10 @@ const PortfolioValueItem = ({ data, portfolioList }) => {
       return (cardItem.style.transform = "rotate(0)");
     };
 
-    dataPortfolioList[id].addEventListener("mousemove", srartRotate);
-    dataPortfolioList[id].addEventListener("mouseout", stopRotate);
+    dataPortfolioList[id]?.addEventListener("mousemove", srartRotate);
+    dataPortfolioList[id]?.addEventListener("mouseout", stopRotate);
     return () => {
-      dataPortfolioList[id].removeEventListener("mousemove", srartRotate);
+      dataPortfolioList[id]?.removeEventListener("mousemove", srartRotate);
     };
   });
 

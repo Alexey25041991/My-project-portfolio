@@ -19,7 +19,7 @@ import {
 } from "./style";
 import "./style.css";
 
-const cloudArr = [1, 2, 3, 4, 5];
+import Cloud from "./Сloud";
 
 const Window = ({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
@@ -32,8 +32,6 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [lightOffOpacityMoon, setLightOffOpacityMoon] = useState(0);
   const [lightOffOpacity, setLightOffOpacity] = useState(0);
   const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
-
-  console.log(111, cloudArr);
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -227,6 +225,7 @@ const Window = ({ theme, time, checkedTheme }) => {
             <Cloud4 />
             <Cloud5 />
           </>
+          <Cloud />
           <div className="star star-1"></div>
           <div className="star star-2"></div>
           <div className="star star-3"></div>
