@@ -1,6 +1,58 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
 // import { TABLET_1024, MOBILE_660 } from '../../../../common/media';
 
-export const HeaderTopWrapper = styled.div`
-  display: flex;
+const wind = (left) => keyframes`
+100% {
+  left: ${Number(left.left) + 300}px;
+}
+`;
+
+export const CloudWrapper = styled.div`
+  top: ${(props) => props.top}px;
+  left: ${({ left }) => left - 200}px;
+  margin: 0 auto;
+  position: absolute;
+  width: 80px;
+  border: 1px solid transparent;
+
+  // animation: ${wind} 8s linear infinite;
+  animation-name: ${(left) => wind(left)};
+
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: ${({ animationDuration }) => animationDuration}s;
+  // animation-delay: 0.8s;
+`;
+
+export const Puff = styled.div`
+  border-radius: 50%;
+  position: absolute;
+  background-image: linear-gradient(whitesmoke, darkslategrey);
+  background-size: auto 200px;
+  background-position: 50% 0%;
+  z-index: 100;
+`;
+
+export const PuffCloud = styled(Puff)`
+  width: 22px;
+  height: 22px;
+  top: ${({ top }) => top}px;
+  left: ${({ left }) => left}px;
+`;
+
+export const RainWrapper = styled.div`
+  width: 32px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  overflow: hidden;
+  z-index: 0;
+`;
+
+export const Rain = styled.div`
+  display: none;
+  width: 100%;
+  position: relative;
+  height: 100%;
 `;

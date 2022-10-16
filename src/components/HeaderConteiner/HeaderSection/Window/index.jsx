@@ -11,11 +11,6 @@ import {
   WindowLightRight,
   WindowHotspot,
   WindowView,
-  Cloud1,
-  Cloud2,
-  Cloud3,
-  Cloud4,
-  Cloud5,
 } from "./style";
 import "./style.css";
 
@@ -218,13 +213,6 @@ const Window = ({ theme, time, checkedTheme }) => {
             animationClikTeme={animationClikTeme}
             animationCheckedTheme={animationCheckedTheme}
           />
-          <>
-            <Cloud1 />
-            <Cloud2 />
-            <Cloud3 />
-            <Cloud4 />
-            <Cloud5 />
-          </>
           <Cloud />
           <div className="star star-1"></div>
           <div className="star star-2"></div>
