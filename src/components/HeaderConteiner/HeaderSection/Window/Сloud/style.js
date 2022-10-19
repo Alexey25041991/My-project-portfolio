@@ -2,9 +2,15 @@ import styled, { keyframes } from "styled-components";
 // import { TABLET_1024, MOBILE_660 } from '../../../../common/media';
 
 const wind = (left) => keyframes`
-100% {
-  left: ${Number(left.left) + 300}px;
-}
+  100% {
+    left: ${Number(left.left) + 300}px;
+  }
+`;
+
+const falling = keyframes`
+  100% {
+    margin-top: 400px;
+  }
 `;
 
 export const CloudWrapper = styled.div`
@@ -51,8 +57,23 @@ export const RainWrapper = styled.div`
 `;
 
 export const Rain = styled.div`
-  display: none;
+  // display: none;
   width: 100%;
   position: relative;
   height: 100%;
+`;
+
+export const Drop = styled.div`
+  width: 1px;
+  height: 80px;
+  left: ${({ left }) => left}px;
+  position: absolute;
+  // animation: ${falling} 1s linear infinite;
+  background: linear-gradient(transparent, #d3f4ff);
+
+  animation-name: ${falling};
+
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: ${({ animationDuration }) => animationDuration}s;
 `;
