@@ -18,7 +18,13 @@ const Cloud = observer(() => {
       left={item.left}
       animationDuration={item.animationDuration}
     >
-      <PuffCloud dropAmount={10} leftMin={14} leftMax={40} />
+      <PuffCloud
+        dropAmount={10}
+        min={14}
+        max={40}
+        fallTimeMin={8}
+        fallTimeMax={12}
+      />
       <WeatherRain
         dropAmount={20}
         leftMin={0}
