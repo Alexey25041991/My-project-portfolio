@@ -23,19 +23,3 @@ export const CloudWrapper = styled.div`
   animation-duration: ${({ animationDuration }) => animationDuration}s;
   // animation-delay: 0.8s;
 `;
-
-export const Puff = styled.div`
-  border-radius: 50%;
-  position: absolute;
-  background-image: linear-gradient(hsl(0deg 0% ${100}%), hsl(180deg 12% 50%));
-  background-size: auto 30px;
-  background-position: 50% 0%;
-  z-index: 100;
-`;
-
-export const PuffCloud = styled(Puff)`
-  width: 22px;
-  height: 22px;
-  top: ${({ top }) => top}px;
-  left: ${({ left }) => left}px;
-`;

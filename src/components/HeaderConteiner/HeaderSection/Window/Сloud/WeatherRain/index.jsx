@@ -22,9 +22,9 @@ const WeatherRain = observer(
             fallTimeMax
           ).map((itemDrop, i) => (
             <Drop
+              key={i}
               left={itemDrop.left}
               animationDuration={itemDrop.animationDuration / 18}
-              key={i}
             />
           ))}
         </Rain>

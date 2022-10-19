@@ -4,8 +4,9 @@ import { observer } from "mobx-react";
 // import { store } from '../../../../store';
 
 import WeatherRain from "./WeatherRain";
+import PuffCloud from "./PuffCloud";
 
-import { CloudWrapper, PuffCloud } from "./style";
+import { CloudWrapper } from "./style";
 // import "./style.css";
 import { getRandomArra } from "../../../../common/utils";
 
@@ -17,14 +18,7 @@ const Cloud = observer(() => {
       left={item.left}
       animationDuration={item.animationDuration}
     >
-      {getRandomArra(10, 14, 40).map((itemPuff, i) => (
-        <PuffCloud
-          key={i}
-          top={itemPuff.top}
-          left={itemPuff.left}
-          topCloud={item.top}
-        />
-      ))}
+      <PuffCloud dropAmount={10} leftMin={14} leftMax={40} />
       <WeatherRain
         dropAmount={20}
         leftMin={0}
