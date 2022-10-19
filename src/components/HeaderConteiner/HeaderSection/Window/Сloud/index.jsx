@@ -12,13 +12,18 @@ import { getRandomArra } from "../../../../common/utils";
 const Cloud = observer(() => {
   return getRandomArra(16, -80, 120, 26, 80).map((item, index) => (
     <CloudWrapper
+      key={index}
       top={item.top}
       left={item.left}
       animationDuration={item.animationDuration}
-      key={index}
     >
       {getRandomArra(10, 14, 40).map((itemPuff, i) => (
-        <PuffCloud top={itemPuff.top} left={itemPuff.left} key={i} />
+        <PuffCloud
+          key={i}
+          top={itemPuff.top}
+          left={itemPuff.left}
+          topCloud={item.top}
+        />
       ))}
       <WeatherRain
         dropAmount={20}
@@ -26,6 +31,7 @@ const Cloud = observer(() => {
         leftMax={32}
         fallTimeMin={10}
         fallTimeMax={20}
+        top={item.top}
       />
     </CloudWrapper>
   ));

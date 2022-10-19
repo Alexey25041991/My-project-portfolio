@@ -27,8 +27,8 @@ export const CloudWrapper = styled.div`
 export const Puff = styled.div`
   border-radius: 50%;
   position: absolute;
-  background-image: linear-gradient(whitesmoke, darkslategrey);
-  background-size: auto 200px;
+  background-image: linear-gradient(hsl(0deg 0% ${100}%), hsl(180deg 12% 50%));
+  background-size: auto 30px;
   background-position: 50% 0%;
   z-index: 100;
 `;

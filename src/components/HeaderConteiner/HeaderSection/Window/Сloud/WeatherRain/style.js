@@ -8,6 +8,7 @@ const falling = keyframes`
 `;
 
 export const RainWrapper = styled.div`
+  display: ${({ show }) => (show ? "flex" : "none")};
   width: 32px;
   height: 400px;
   margin-left: auto;
@@ -18,7 +19,6 @@ export const RainWrapper = styled.div`
 `;
 
 export const Rain = styled.div`
-  // display: none;
   width: 100%;
   position: relative;
   height: 100%;
