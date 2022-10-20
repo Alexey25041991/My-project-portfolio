@@ -24,7 +24,7 @@ const WeatherRain = observer(
             <Drop
               key={i}
               left={itemDrop.left}
-              animationDuration={itemDrop.animationDuration / 18}
+              animationDuration={itemDrop.animationDuration / 10}
             />
           ))}
         </Rain>
