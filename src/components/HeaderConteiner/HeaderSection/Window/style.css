@@ -72,7 +72,7 @@
     top: 55px;
     left: -60px;
   }
-  15 % {
+  15% {
     top: 45px;
   }
   33% {
@@ -84,7 +84,7 @@
   50% {
     top: 20px;
   }
-  60 {
+  60% {
     top: 25px;
   }
   66% {
@@ -154,6 +154,14 @@
   animation-iteration-count: infinite;
 } */
 
+.popupSetting {
+  background: #464a53 !important;
+}
+
+.popupSetting:before {
+  background: #464a53 !important;
+}
+
 .window-scene {
   position: relative;
   width: 260px;
@@ -166,7 +174,7 @@
   width: 260px;
   height: 340px;
   background: #fff;
-  //filter: drop-shadow(0 5px 0 #046896);
+  /* //filter: drop-shadow(0 5px 0 #046896); */
   z-index: 2;
 }
 
@@ -544,7 +552,7 @@
 }
 .container {
   height: 100%;
-  padding-top: 5%;
+  /* padding-top: 5%; */
   /* background: #000; */
   overflow: hidden;
   /* animation-name: backgr; */

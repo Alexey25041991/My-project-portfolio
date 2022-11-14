@@ -343,3 +343,84 @@ export const WindowView = styled.div`
     props.animationClikTeme ? 1 : "infinite"};
   animation-fill-mode: forwards;
 `;
+
+export const WeatherIconWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+  border-radius: 50%;
+`;
+
+export const WeatherConditionsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  width: 100%;
+`;
+
+export const WeatherConditionsText = styled.p`
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 0;
+  color: white;
+`;
+
+export const WeatherConditions = styled.input`
+  width: 100%;
+  background: linear-gradient(0.25turn, #88bef5, #2d3136);
+  border-radius: 20px;
+  margin: 10px;
+  -webkit-appearance: none;
+
+  ::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #ebf6ff;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+`;
+
+export const IconClose = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  right: calc(22px);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: ${({ theme }) =>
+      theme.name === "light" ? "rgba(98, 108, 119, 0.25)" : "#d4d4d559"};
+  }
+
+  & svg {
+    fill: ${({ theme }) => (theme.name === "light" ? "#7b7e86" : "#fff")};
+  }
+
+  &:hover svg {
+    fill: red;
+  }
+`;
+
+export const Title = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+`;

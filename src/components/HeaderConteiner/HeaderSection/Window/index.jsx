@@ -11,10 +11,23 @@ import {
   WindowLightRight,
   WindowHotspot,
   WindowView,
+  WeatherIconWrapper,
+  WeatherConditionsWrapper,
+  WeatherConditions,
+  WeatherConditionsText,
+  IconClose,
+  Title,
 } from "./style";
 import "./style.css";
 
 import Cloud from "./Сloud";
+// import WeatherIcon from "./WeatherIcon2";
+
+import { Popup } from "semantic-ui-react";
+
+import { ReactComponent as CloseOutline } from "../../../common/icon/CloseOutline.svg";
+import WeatherIconSunny from "./WeatherIcon/Sunny";
+import WeatherIconCloudy from "./WeatherIcon/Cloudy";
 
 const Window = ({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
@@ -27,6 +40,8 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [lightOffOpacityMoon, setLightOffOpacityMoon] = useState(0);
   const [lightOffOpacity, setLightOffOpacity] = useState(0);
   const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
+  const [weather, setWeather] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -195,40 +210,58 @@ const Window = ({ theme, time, checkedTheme }) => {
   //   timer = setTimeout(tick, 4000);
   // }, 4000);
 
+  const setConfig = (e) => {
+    const value = e.target.value;
+    setWeather(value);
+  };
+
   return (
-    <div className="window-scene">
-      <div className="window">
-        <WindowView
-          data-window-view
-          dayToNightColor={dayToNightColor}
-          timeLeftSunMoon={timeLeftSunMoon}
-          animationCheckedTheme={animationCheckedTheme}
-          animationClikTeme={animationClikTeme}
-        >
-          <HeavenlyBody
-            data-heavenly-body
-            theme={theme}
+    <div className="window-wrapper">
+      <div className="window-scene">
+        <div className="window">
+          <WindowView
+            data-window-view
+            dayToNightColor={dayToNightColor}
             timeLeftSunMoon={timeLeftSunMoon}
-            leftRotateWindowSunMoon={leftRotateWindowSunMoon}
-            animationClikTeme={animationClikTeme}
             animationCheckedTheme={animationCheckedTheme}
+            animationClikTeme={animationClikTeme}
+          >
+            <HeavenlyBody
+              data-heavenly-body
+              theme={theme}
+              timeLeftSunMoon={timeLeftSunMoon}
+              leftRotateWindowSunMoon={leftRotateWindowSunMoon}
+              animationClikTeme={animationClikTeme}
+              animationCheckedTheme={animationCheckedTheme}
+            />
+            <Cloud />
+            <div className="star star-1"></div>
+            <div className="star star-2"></div>
+            <div className="star star-3"></div>
+            <div className="star star-4"></div>
+            <div className="star star-5"></div>
+            <div className="star star-6"></div>
+            <div className="star star-7"></div>
+            <div className="ground-light"></div>
+            <div className="ground"></div>
+            <div className="tree tree-big"></div>
+            <div className="tree tree-small tree-small-1"></div>
+            <div className="tree tree-small tree-small-2"></div>
+            <div className="tree tree-long"></div>
+          </WindowView>
+          <WindowHotspot
+            lightOffOpacity={lightOffOpacity}
+            timeLeftSunMoon={timeLeftSunMoon}
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffOpacitySun={lightOffOpacitySun}
+            lightOffOpacityMoon={lightOffOpacityMoon}
+            animationClikTeme={animationClikTeme}
           />
-          <Cloud />
-          <div className="star star-1"></div>
-          <div className="star star-2"></div>
-          <div className="star star-3"></div>
-          <div className="star star-4"></div>
-          <div className="star star-5"></div>
-          <div className="star star-6"></div>
-          <div className="star star-7"></div>
-          <div className="ground-light"></div>
-          <div className="ground"></div>
-          <div className="tree tree-big"></div>
-          <div className="tree tree-small tree-small-1"></div>
-          <div className="tree tree-small tree-small-2"></div>
-          <div className="tree tree-long"></div>
-        </WindowView>
-        <WindowHotspot
+          <div className="window-frame"></div>
+          <div className="window-sill"></div>
+        </div>
+
+        <WindowLightLeft
           lightOffOpacity={lightOffOpacity}
           timeLeftSunMoon={timeLeftSunMoon}
           animationCheckedTheme={animationCheckedTheme}
@@ -236,26 +269,49 @@ const Window = ({ theme, time, checkedTheme }) => {
           lightOffOpacityMoon={lightOffOpacityMoon}
           animationClikTeme={animationClikTeme}
         />
-        <div className="window-frame"></div>
-        <div className="window-sill"></div>
+        <WindowLightRight
+          lightOffOpacity={lightOffOpacity}
+          timeLeftSunMoon={timeLeftSunMoon}
+          animationCheckedTheme={animationCheckedTheme}
+          lightOffOpacitySun={lightOffOpacitySun}
+          lightOffOpacityMoon={lightOffOpacityMoon}
+          animationClikTeme={animationClikTeme}
+        />
+        <Popup
+          content={
+            <WeatherConditionsWrapper>
+              <Title>
+                <WeatherConditionsText>Погодные условия</WeatherConditionsText>
+                <IconClose onClick={() => setIsOpen(!isOpen)}>
+                  <CloseOutline width={24} height={24} />
+                </IconClose>
+              </Title>
+              <WeatherConditions
+                type="range"
+                step="1"
+                name="weather"
+                value={weather}
+                onChange={setConfig}
+                min="0"
+                max="100"
+              />
+            </WeatherConditionsWrapper>
+          }
+          className="popupSetting"
+          on="click"
+          position="bottom left"
+          trigger={
+            <WeatherIconWrapper>
+              <WeatherIconCloudy />
+            </WeatherIconWrapper>
+          }
+          open={isOpen}
+          onOpen={() => setIsOpen(!isOpen)}
+          onClose={() => setIsOpen(!isOpen)}
+        />
+        {/* <WeatherIcon />
+        <WeatherIconSunny /> */}
       </div>
-
-      <WindowLightLeft
-        lightOffOpacity={lightOffOpacity}
-        timeLeftSunMoon={timeLeftSunMoon}
-        animationCheckedTheme={animationCheckedTheme}
-        lightOffOpacitySun={lightOffOpacitySun}
-        lightOffOpacityMoon={lightOffOpacityMoon}
-        animationClikTeme={animationClikTeme}
-      />
-      <WindowLightRight
-        lightOffOpacity={lightOffOpacity}
-        timeLeftSunMoon={timeLeftSunMoon}
-        animationCheckedTheme={animationCheckedTheme}
-        lightOffOpacitySun={lightOffOpacitySun}
-        lightOffOpacityMoon={lightOffOpacityMoon}
-        animationClikTeme={animationClikTeme}
-      />
     </div>
   );
 };
