@@ -614,9 +614,6 @@ const WeatherIcon1 = () => (
           height="45px"
           width="45px"
         >
-          <style type="text/css">
-            {/* .st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;} */}
-          </style>
           <g id="Wind_Sun">
             <g id="Sun_1_">
               <circle

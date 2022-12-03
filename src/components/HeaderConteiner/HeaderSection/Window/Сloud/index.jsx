@@ -11,7 +11,9 @@ import { CloudWrapper } from "./style";
 import { getRandomArra } from "../../../../common/utils";
 
 const Cloud = observer(() => {
-  return getRandomArra(16, -80, 120, 26, 80).map((item, index) => (
+  // const weatherValue = Number(weather);
+  // console.log(222, weatherValue);
+  return getRandomArra(20, -80, 120, 26, 80).map((item, index) => (
     <CloudWrapper
       key={index}
       top={item.top}

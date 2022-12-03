@@ -344,12 +344,26 @@ export const WindowView = styled.div`
   animation-fill-mode: forwards;
 `;
 
+const weatherIconBorder = keyframes`
+  from {
+    border-color: #ffff;
+  }
+  50% {
+    border-color: #2185d0;
+  }
+  to {
+    border-color: #ffff;
+  }
+`;
+
 export const WeatherIconWrapper = styled.div`
   display: flex;
   position: absolute;
   z-index: 1000;
-  bottom: 20px;
-  left: 20px;
+  bottom: 0px;
+  left: 0px;
+  border: solid 4px #ffff;
+  animation: ${weatherIconBorder} 10s linear infinite;
   cursor: pointer;
   background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
   border-radius: 50%;

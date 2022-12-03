@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 // import { store } from "../../../../store";
 
 import { getDayTime } from "../../../common/utils";
@@ -26,8 +26,16 @@ import Cloud from "./Сloud";
 import { Popup } from "semantic-ui-react";
 
 import { ReactComponent as CloseOutline } from "../../../common/icon/CloseOutline.svg";
-import WeatherIconSunny from "./WeatherIcon/Sunny";
-import WeatherIconCloudy from "./WeatherIcon/Cloudy";
+// import WeatherIconSunny from "./WeatherIcon/Sunny";
+// import WeatherIconCloudy from "./WeatherIcon/Cloudy";
+// import WeatherIconRainy from "./WeatherIcon/Rainy";
+// import WeatherIconCloudyWithSun from "./WeatherIcon/CloudyWithSun";
+// import WeatherIconCloudyWithLightning from "./WeatherIcon/CloudyWithLightning";
+// import WeatherIconCloudyWithMoon from "./WeatherIcon/CloudyWithMoon";
+// import WeatherIconCloudyWithRainAndLightning from "./WeatherIcon/CloudyWithRainAndLightning";
+// import WeatherIconClearNight from "./WeatherIcon/ClearNight";
+// import WeatherIconSunnyWithWind from "./WeatherIcon/SunnyWithWind";
+import WeatherIconSnowy from "./WeatherIcon/Snowy";
 
 const Window = ({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
@@ -40,7 +48,7 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [lightOffOpacityMoon, setLightOffOpacityMoon] = useState(0);
   const [lightOffOpacity, setLightOffOpacity] = useState(0);
   const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
-  const [weather, setWeather] = useState(0);
+  const [weather, setWeather] = useState(2);
   const [isOpen, setIsOpen] = useState(false);
 
   // проверка что день
@@ -210,10 +218,13 @@ const Window = ({ theme, time, checkedTheme }) => {
   //   timer = setTimeout(tick, 4000);
   // }, 4000);
 
-  const setConfig = (e) => {
-    const value = e.target.value;
-    setWeather(value);
-  };
+  const setConfig = useCallback(
+    (e) => {
+      const value = e.target.value;
+      setWeather(value);
+    },
+    [setWeather]
+  );
 
   return (
     <div className="window-wrapper">
@@ -234,7 +245,7 @@ const Window = ({ theme, time, checkedTheme }) => {
               animationClikTeme={animationClikTeme}
               animationCheckedTheme={animationCheckedTheme}
             />
-            <Cloud />
+            <Cloud weather={weather} />
             <div className="star star-1"></div>
             <div className="star star-2"></div>
             <div className="star star-3"></div>
@@ -302,7 +313,7 @@ const Window = ({ theme, time, checkedTheme }) => {
           position="bottom left"
           trigger={
             <WeatherIconWrapper>
-              <WeatherIconCloudy />
+              <WeatherIconSnowy />
             </WeatherIconWrapper>
           }
           open={isOpen}

@@ -6,6 +6,8 @@ import React from "react";
 // import { CloudWrapper } from "./style";
 import "./style.css";
 
+// https://codepen.io/WaelYasmina/pen/brgNYK
+
 const WeatherIconSunny = () => (
   <div class="containerSunny">
     <svg
