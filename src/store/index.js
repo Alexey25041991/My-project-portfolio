@@ -11,6 +11,7 @@ class Store {
   routeLink = "";
   time = { hourValue: 0, minValue: 0 };
   toggleTheme = false;
+  climateСontrol = "sunnyMoon";
 
   constructor() {
     makeAutoObservable(this);
@@ -70,6 +71,14 @@ class Store {
 
   getTime() {
     return this.time;
+  }
+
+  setClimateСontrol(climateСontrolValue) {
+    this.climateСontrol = climateСontrolValue;
+  }
+
+  getClimateСontrol() {
+    return this.climateСontrol;
   }
 }
 

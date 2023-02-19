@@ -19,7 +19,10 @@ export const PuffCloudPattern = styled.div`
   left: ${({ left }) => left}px;
   border-radius: 50%;
   position: absolute;
-  background-image: linear-gradient(hsl(0deg 0% ${100}%), hsl(180deg 12% 50%));
+  background-image: linear-gradient(
+    hsl(0deg 0% ${({ colorCloud }) => colorCloud}%),
+    hsl(180deg 50% ${({ colorBorder }) => colorBorder}%)
+  );
   background-size: auto 30px;
   background-position: 50% 0%;
   z-index: 100;

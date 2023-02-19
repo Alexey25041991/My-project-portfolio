@@ -8,7 +8,21 @@ import { getRandomArra, getRandomNumber } from "../../../../../common/utils";
 import { PuffCloudPattern } from "./style";
 
 const PuffCloud = observer(
-  ({ dropAmount, min, max, fallTimeMin, fallTimeMax }) => {
+  ({
+    dropAmount,
+    min,
+    max,
+    fallTimeMin,
+    fallTimeMax,
+    // nameClimateСontrol,
+    // top,
+    colorCloud,
+    colorBorder,
+  }) => {
+    console.log(112222, colorCloud, colorBorder);
+
+    // console.log("colorCloud", colorCloud);
+    // console.log("colorBorder", colorBorder);
     return getRandomArra(dropAmount, min, max, fallTimeMin, fallTimeMax).map(
       (itemPuff, i) => {
         const leftRandom = getRandomNumber(itemPuff.top, itemPuff.left);
@@ -21,6 +35,8 @@ const PuffCloud = observer(
             animationDuration={itemPuff.animationDuration}
             leftRandom={leftRandom}
             topRandom={topRandom}
+            colorCloud={colorCloud}
+            colorBorder={colorBorder}
           />
         );
       }

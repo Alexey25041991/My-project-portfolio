@@ -7,7 +7,7 @@ import React from "react";
 import "./style.css";
 
 const WeatherIconSnowy = () => (
-  <div class="containerSnowy">
+  <div className="containerSnowy">
     <svg
       version="1.1"
       id="Layer_1"
@@ -23,13 +23,19 @@ const WeatherIconSnowy = () => (
         <g id="White_cloud_7">
           <path
             id="XMLID_8_"
-            class="white"
+            className="white"
             d="M47.2,34.5H7.9c-4.3,0-7.9-3.5-7.9-7.9l0,0c0-4.3,3.5-7.9,7.9-7.9h39.4c4.3,0,7.9,3.5,7.9,7.9 v0C55.1,30.9,51.6,34.5,47.2,34.5z"
           />
-          <circle id="XMLID_5_" class="white" cx="17.4" cy="17.3" r="9.3" />
-          <circle id="XMLID_1_" class="white" cx="34.5" cy="15.6" r="15.6" />
+          <circle id="XMLID_5_" className="white" cx="17.4" cy="17.3" r="9.3" />
+          <circle
+            id="XMLID_1_"
+            className="white"
+            cx="34.5"
+            cy="15.6"
+            r="15.6"
+          />
         </g>
-        <circle class="white" cx="37" cy="43.5" r="3">
+        <circle className="white" cx="37" cy="43.5" r="3">
           <animateTransform
             attributeName="transform"
             attributeType="XML"
@@ -41,7 +47,7 @@ const WeatherIconSnowy = () => (
             calcMode="linear"
           ></animateTransform>
         </circle>
-        <circle class="white" cx="27" cy="43.5" r="3">
+        <circle className="white" cx="27" cy="43.5" r="3">
           <animateTransform
             attributeName="transform"
             attributeType="XML"
@@ -53,7 +59,7 @@ const WeatherIconSnowy = () => (
             calcMode="linear"
           ></animateTransform>
         </circle>
-        <circle class="white" cx="17" cy="43.5" r="3">
+        <circle className="white" cx="17" cy="43.5" r="3">
           <animateTransform
             attributeName="transform"
             attributeType="XML"

@@ -12,30 +12,22 @@ import {
   WindowHotspot,
   WindowView,
   WeatherIconWrapper,
-  WeatherConditionsWrapper,
-  WeatherConditions,
-  WeatherConditionsText,
-  IconClose,
-  Title,
+  // WeatherConditionsWrapper,
+  // WeatherConditions,
+  // WeatherConditionsText,
+  // IconClose,
+  // Title,
 } from "./style";
 import "./style.css";
 
+import ModalСlimateСontrol from "./ModalСlimateСontrol";
+
 import Cloud from "./Сloud";
-// import WeatherIcon from "./WeatherIcon2";
+import WeatherIcon from "./WeatherIcon";
 
-import { Popup } from "semantic-ui-react";
+// import { Popup } from "semantic-ui-react";
 
-import { ReactComponent as CloseOutline } from "../../../common/icon/CloseOutline.svg";
-// import WeatherIconSunny from "./WeatherIcon/Sunny";
-// import WeatherIconCloudy from "./WeatherIcon/Cloudy";
-// import WeatherIconRainy from "./WeatherIcon/Rainy";
-// import WeatherIconCloudyWithSun from "./WeatherIcon/CloudyWithSun";
-// import WeatherIconCloudyWithLightning from "./WeatherIcon/CloudyWithLightning";
-// import WeatherIconCloudyWithMoon from "./WeatherIcon/CloudyWithMoon";
-// import WeatherIconCloudyWithRainAndLightning from "./WeatherIcon/CloudyWithRainAndLightning";
-// import WeatherIconClearNight from "./WeatherIcon/ClearNight";
-// import WeatherIconSunnyWithWind from "./WeatherIcon/SunnyWithWind";
-import WeatherIconSnowy from "./WeatherIcon/Snowy";
+// import { ReactComponent as CloseOutline } from "../../../common/icon/CloseOutline.svg";
 
 const Window = ({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
@@ -49,7 +41,12 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [lightOffOpacity, setLightOffOpacity] = useState(0);
   const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
   const [weather, setWeather] = useState(2);
+  const [сlimateСontrol, setСlimateСontrol] = useState("sunnyMoon");
   const [isOpen, setIsOpen] = useState(false);
+
+  const winter = false;
+  console.log("сlimateСontrol", сlimateСontrol);
+  console.log("weather", weather);
 
   // проверка что день
   const dayTime = getDayTime(time).dayTime;
@@ -218,12 +215,51 @@ const Window = ({ theme, time, checkedTheme }) => {
   //   timer = setTimeout(tick, 4000);
   // }, 4000);
 
+  const seasonSummer = (weatherValue) => {
+    if (weatherValue <= 20) {
+      return setСlimateСontrol("sunnyMoon");
+    }
+    if (20 < weatherValue && weatherValue <= 40) {
+      return setСlimateСontrol("cloudyWithSunMoon");
+    }
+    if (40 < weatherValue && weatherValue <= 60) {
+      return setСlimateСontrol("cloudy");
+    }
+    if (60 < weatherValue && weatherValue <= 80) {
+      return setСlimateСontrol("rainy");
+    }
+    if (80 < weatherValue && weatherValue <= 100) {
+      return setСlimateСontrol("cloudyWithRainAndLightning");
+    }
+  };
+
+  const seasonWinter = (weatherValue) => {
+    if (weatherValue <= 25) {
+      return setСlimateСontrol("sunnyMoon");
+    }
+    if (25 < weatherValue && weatherValue <= 50) {
+      return setСlimateСontrol("cloudyWithSunMoon");
+    }
+    if (50 < weatherValue && weatherValue <= 75) {
+      return setСlimateСontrol("cloudy");
+    }
+    if (75 < weatherValue && weatherValue <= 100) {
+      return setСlimateСontrol("snowy");
+    }
+  };
+
   const setConfig = useCallback(
     (e) => {
-      const value = e.target.value;
+      const value = Number(e.target.value);
       setWeather(value);
+
+      if (winter) {
+        seasonWinter(value);
+      } else {
+        seasonSummer(value);
+      }
     },
-    [setWeather]
+    [winter]
   );
 
   return (
@@ -237,15 +273,18 @@ const Window = ({ theme, time, checkedTheme }) => {
             animationCheckedTheme={animationCheckedTheme}
             animationClikTeme={animationClikTeme}
           >
-            <HeavenlyBody
-              data-heavenly-body
-              theme={theme}
-              timeLeftSunMoon={timeLeftSunMoon}
-              leftRotateWindowSunMoon={leftRotateWindowSunMoon}
-              animationClikTeme={animationClikTeme}
-              animationCheckedTheme={animationCheckedTheme}
-            />
-            <Cloud weather={weather} />
+            {["sunnyMoon", "cloudyWithSunMoon"].includes(сlimateСontrol) && (
+              <HeavenlyBody
+                data-heavenly-body
+                theme={theme}
+                timeLeftSunMoon={timeLeftSunMoon}
+                leftRotateWindowSunMoon={leftRotateWindowSunMoon}
+                animationClikTeme={animationClikTeme}
+                animationCheckedTheme={animationCheckedTheme}
+              />
+            )}
+            {/* <Cloud weather={weather} /> */}
+            <Cloud сlimateСontrol={сlimateСontrol} />
             <div className="star star-1"></div>
             <div className="star star-2"></div>
             <div className="star star-3"></div>
@@ -260,7 +299,22 @@ const Window = ({ theme, time, checkedTheme }) => {
             <div className="tree tree-small tree-small-2"></div>
             <div className="tree tree-long"></div>
           </WindowView>
-          <WindowHotspot
+          {["sunnyMoon", "cloudyWithSunMoon"].includes(сlimateСontrol) && (
+            <WindowHotspot
+              lightOffOpacity={lightOffOpacity}
+              timeLeftSunMoon={timeLeftSunMoon}
+              animationCheckedTheme={animationCheckedTheme}
+              lightOffOpacitySun={lightOffOpacitySun}
+              lightOffOpacityMoon={lightOffOpacityMoon}
+              animationClikTeme={animationClikTeme}
+            />
+          )}
+          <div className="window-frame"></div>
+          <div className="window-sill"></div>
+        </div>
+
+        {["sunnyMoon", "cloudyWithSunMoon"].includes(сlimateСontrol) && (
+          <WindowLightLeft
             lightOffOpacity={lightOffOpacity}
             timeLeftSunMoon={timeLeftSunMoon}
             animationCheckedTheme={animationCheckedTheme}
@@ -268,27 +322,18 @@ const Window = ({ theme, time, checkedTheme }) => {
             lightOffOpacityMoon={lightOffOpacityMoon}
             animationClikTeme={animationClikTeme}
           />
-          <div className="window-frame"></div>
-          <div className="window-sill"></div>
-        </div>
-
-        <WindowLightLeft
-          lightOffOpacity={lightOffOpacity}
-          timeLeftSunMoon={timeLeftSunMoon}
-          animationCheckedTheme={animationCheckedTheme}
-          lightOffOpacitySun={lightOffOpacitySun}
-          lightOffOpacityMoon={lightOffOpacityMoon}
-          animationClikTeme={animationClikTeme}
-        />
-        <WindowLightRight
-          lightOffOpacity={lightOffOpacity}
-          timeLeftSunMoon={timeLeftSunMoon}
-          animationCheckedTheme={animationCheckedTheme}
-          lightOffOpacitySun={lightOffOpacitySun}
-          lightOffOpacityMoon={lightOffOpacityMoon}
-          animationClikTeme={animationClikTeme}
-        />
-        <Popup
+        )}
+        {["sunnyMoon", "cloudyWithSunMoon"].includes(сlimateСontrol) && (
+          <WindowLightRight
+            lightOffOpacity={lightOffOpacity}
+            timeLeftSunMoon={timeLeftSunMoon}
+            animationCheckedTheme={animationCheckedTheme}
+            lightOffOpacitySun={lightOffOpacitySun}
+            lightOffOpacityMoon={lightOffOpacityMoon}
+            animationClikTeme={animationClikTeme}
+          />
+        )}
+        {/* <Popup
           content={
             <WeatherConditionsWrapper>
               <Title>
@@ -313,12 +358,20 @@ const Window = ({ theme, time, checkedTheme }) => {
           position="bottom left"
           trigger={
             <WeatherIconWrapper>
-              <WeatherIconSnowy />
+              <WeatherIcon сlimateСontrol={сlimateСontrol} theme={theme} />
             </WeatherIconWrapper>
           }
           open={isOpen}
           onOpen={() => setIsOpen(!isOpen)}
           onClose={() => setIsOpen(!isOpen)}
+        /> */}
+        <WeatherIconWrapper onClick={() => setIsOpen(!isOpen)}>
+          <WeatherIcon сlimateСontrol={сlimateСontrol} theme={theme} />
+        </WeatherIconWrapper>
+        <ModalСlimateСontrol
+          opened={isOpen}
+          onRequestClose={() => setIsOpen(false)}
+          theme={theme}
         />
         {/* <WeatherIcon />
         <WeatherIconSunny /> */}

@@ -6,8 +6,8 @@ import React from "react";
 // import { CloudWrapper } from "./style";
 import "./style.css";
 
-const WeatherIconSunnyWithWind = () => (
-  <div class="containerSunnyWithWind">
+const WeatherIconCloudyWithSun = () => (
+  <div className="containerCloudyWithSun">
     <svg
       version="1.1"
       id="Layer_1"
@@ -15,58 +15,84 @@ const WeatherIconSunnyWithWind = () => (
       // xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      viewBox="0 0 45.1 47.6"
-      // style="enable-background:new 0 0 45.1 47.6;"
+      viewBox="0 0 61.7 42.8"
+      // style="enable-background:new 0 0 61.7 42.8;"
       // xml:space="preserve"
-      height="45px"
-      width="45px"
     >
-      <style type="text/css">
-        {/* .st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;} */}
-      </style>
-      <g id="Wind_Sun">
-        <g id="Sun_1_">
-          <circle id="XMLID_25_" class="yellow" cx="27.1" cy="18.1" r="8.9" />
+      <g id="Cloud_3">
+        <g id="White_cloud_3">
+          <path
+            id="XMLID_24_"
+            className="white"
+            d="M47.2,42.8H7.9c-4.3,0-7.9-3.5-7.9-7.9l0,0C0,30.5,3.5,27,7.9,27h39.4c4.3,0,7.9,3.5,7.9,7.9 v0C55.1,39.2,51.6,42.8,47.2,42.8z"
+          />
+          <circle
+            id="XMLID_23_"
+            className="white"
+            cx="17.4"
+            cy="25.5"
+            r="9.3"
+          />
+          <circle
+            id="XMLID_22_"
+            className="white"
+            cx="34.5"
+            cy="23.9"
+            r="15.6"
+          />
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            dur="6s"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            type="translate"
+            values="0;5;0"
+            calcMode="linear"
+          ></animateTransform>
+        </g>
+        <g id="Sun_3">
+          <circle id="XMLID_30_" className="yellow" cx="31.4" cy="18.5" r="9" />
           <g>
             <path
-              id="XMLID_21_"
-              class="yellow"
-              d="M27.2,6.5L27.2,6.5c-0.4,0-0.6-0.3-0.6-0.6V0.6c0-0.3,0.3-0.6,0.6-0.6l0.1,0 c0.3,0,0.6,0.3,0.6,0.6v5.4C27.7,6.2,27.5,6.5,27.2,6.5z"
+              id="XMLID_31_"
+              className="yellow"
+              d="M31.4,6.6L31.4,6.6c-0.4,0-0.6-0.3-0.6-0.6V0.6C30.8,0.3,31,0,31.3,0l0.1,0 C31.7,0,32,0.3,32,0.6v5.5C32,6.4,31.7,6.6,31.4,6.6z"
             />
             <path
-              id="XMLID_18_"
-              class="yellow"
-              d="M27.2,29.5L27.2,29.5c-0.4,0-0.6,0.3-0.6,0.6v5.4c0,0.3,0.3,0.6,0.6,0.6h0.1 c0.3,0,0.6-0.3,0.6-0.6v-5.4C27.7,29.8,27.5,29.5,27.2,29.5z"
+              id="XMLID_34_"
+              className="yellow"
+              d="M31.4,30.1L31.4,30.1c-0.4,0-0.6,0.3-0.6,0.6v5.5c0,0.3,0.3,0.6,0.6,0.6h0.1 c0.3,0,0.6-0.3,0.6-0.6v-5.5C32,30.4,31.7,30.1,31.4,30.1z"
             />
             <path
-              id="XMLID_17_"
-              class="yellow"
-              d="M15.6,18L15.6,18c0,0.4-0.3,0.6-0.6,0.6H9.7c-0.3,0-0.6-0.3-0.6-0.6V18c0-0.3,0.3-0.6,0.6-0.6 h5.4C15.4,17.4,15.6,17.7,15.6,18z"
+              id="XMLID_35_"
+              className="yellow"
+              d="M19.6,18.3L19.6,18.3c0,0.4-0.3,0.6-0.6,0.6h-5.5c-0.3,0-0.6-0.3-0.6-0.6v-0.1 c0-0.3,0.3-0.6,0.6-0.6H19C19.3,17.8,19.6,18,19.6,18.3z"
             />
             <path
-              id="XMLID_16_"
-              class="yellow"
-              d="M38.7,18L38.7,18c0,0.4,0.3,0.6,0.6,0.6h5.4c0.3,0,0.6-0.3,0.6-0.6V18c0-0.3-0.3-0.6-0.6-0.6 h-5.4C38.9,17.4,38.7,17.7,38.7,18z"
+              id="XMLID_33_"
+              className="yellow"
+              d="M43.1,18.3L43.1,18.3c0,0.4,0.3,0.6,0.6,0.6h5.5c0.3,0,0.6-0.3,0.6-0.6v-0.1 c0-0.3-0.3-0.6-0.6-0.6h-5.5C43.4,17.8,43.1,18,43.1,18.3z"
             />
             <path
-              id="XMLID_15_"
-              class="yellow"
-              d="M18.4,25.5L18.4,25.5c0.2,0.3,0.2,0.6,0,0.8l-4.1,3.5c-0.2,0.2-0.6,0.2-0.8-0.1l0,0 c-0.2-0.2-0.2-0.6,0.1-0.8l4.1-3.5C17.8,25.2,18.2,25.2,18.4,25.5z"
+              id="XMLID_37_"
+              className="yellow"
+              d="M22.4,26L22.4,26c0.3,0.3,0.2,0.7,0,0.9l-4.2,3.6c-0.2,0.2-0.6,0.2-0.8-0.1l-0.1-0.1 c-0.2-0.2-0.2-0.6,0.1-0.8l4.2-3.6C21.9,25.8,22.2,25.8,22.4,26z"
             />
             <path
-              id="XMLID_12_"
-              class="yellow"
-              d="M35.9,10.5L35.9,10.5c0.2,0.3,0.6,0.3,0.8,0.1l4.1-3.5C41,6.9,41,6.5,40.8,6.3l0,0 C40.6,6,40.2,6,40,6.2l-4.1,3.5C35.7,9.9,35.7,10.2,35.9,10.5z"
+              id="XMLID_36_"
+              className="yellow"
+              d="M40.3,10.7L40.3,10.7c0.3,0.3,0.6,0.3,0.8,0.1l4.2-3.6c0.2-0.2,0.3-0.6,0.1-0.8l-0.1-0.1 c-0.2-0.2-0.6-0.3-0.8-0.1l-4.2,3.6C40.1,10.1,40,10.5,40.3,10.7z"
             />
             <path
-              id="XMLID_11_"
-              class="yellow"
-              d="M18.4,10.5L18.4,10.5c0.2-0.3,0.2-0.6,0-0.8l-4.1-3.5C14.1,6,13.7,6,13.5,6.3l0,0 c-0.2,0.2-0.2,0.6,0.1,0.8l4.1,3.5C17.8,10.8,18.2,10.8,18.4,10.5z"
+              id="XMLID_39_"
+              className="yellow"
+              d="M22.4,10.8L22.4,10.8c0.3-0.3,0.2-0.7,0-0.9l-4.2-3.6c-0.2-0.2-0.6-0.2-0.8,0.1l-0.1,0.1 c-0.2,0.2-0.2,0.6,0.1,0.8l4.2,3.6C21.9,11,22.2,11,22.4,10.8z"
             />
             <path
-              id="XMLID_9_"
-              class="yellow"
-              d="M35.9,25.5L35.9,25.5c0.2-0.3,0.6-0.3,0.8-0.1l4.1,3.5c0.2,0.2,0.3,0.6,0.1,0.8l0,0 C40.6,30,40.2,30,40,29.8l-4.1-3.5C35.7,26.1,35.7,25.8,35.9,25.5z"
+              id="XMLID_38_"
+              className="yellow"
+              d="M40.3,26.1L40.3,26.1c0.3-0.3,0.6-0.3,0.8-0.1l4.2,3.6c0.2,0.2,0.3,0.6,0.1,0.8l-0.1,0.1 c-0.2,0.2-0.6,0.3-0.8,0.1l-4.2-3.6C40.1,26.7,40,26.3,40.3,26.1z"
             />
             <animate
               attributeType="CSS"
@@ -80,50 +106,43 @@ const WeatherIconSunnyWithWind = () => (
             />
           </g>
         </g>
-        <g id="Wind">
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          dur="2s"
+          keyTimes="0;1"
+          repeatCount="indefinite"
+          type="scale"
+          values="1;1"
+          calcMode="linear"
+        ></animateTransform>
+        <g id="Gray_cloud_3">
           <path
-            id="XMLID_27_"
-            class="st1"
-            d="M1.3,33.1h19.3c2.1,0,3.8-1.3,3.8-3v0v0c0-1.7-1.7-3-3.8-3h-2.1"
+            id="XMLID_20_"
+            className="gray"
+            d="M55.7,25.1H34.4c-3.3,0-6-2.7-6-6v0c0-3.3,2.7-6,6-6h21.3c3.3,0,6,2.7,6,6v0 C61.7,22.4,59,25.1,55.7,25.1z"
           />
-          <path
-            id="XMLID_40_"
-            class="st1"
-            d="M2.4,42.4h18.2c2,0,3.6,0.9,3.6,2.1l0,0v0c0,1.2-1.6,2.1-3.6,2.1h-2"
+          <circle
+            id="XMLID_19_"
+            className="gray"
+            cx="46.7"
+            cy="13.4"
+            r="10.7"
           />
-          <line
-            id="XMLID_28_"
-            class="st1"
-            x1="5.3"
-            y1="36.3"
-            x2="25.5"
-            y2="36.3"
-          />
-          <line id="XMLID_29_" class="st1" x1="0" y1="39.3" x2="27" y2="39.3" />
           <animateTransform
             attributeName="transform"
             attributeType="XML"
-            dur="1.5s"
-            keyTimes="0;1"
+            dur="6s"
+            keyTimes="0;0.5;1"
             repeatCount="indefinite"
             type="translate"
-            values="0;3"
+            values="0;-3;0"
             calcMode="linear"
           ></animateTransform>
-          <animate
-            attributeType="CSS"
-            attributeName="opacity"
-            // attributeType="XML"
-            dur="1.5s"
-            keyTimes="0;1"
-            repeatCount="indefinite"
-            values="0.3;0.9"
-            calcMode="linear"
-          />
         </g>
       </g>
     </svg>
   </div>
 );
 
-export default WeatherIconSunnyWithWind;
+export default WeatherIconCloudyWithSun;
