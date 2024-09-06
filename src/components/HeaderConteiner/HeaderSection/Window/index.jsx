@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 // import { store } from "../../../../store";
 
 import { getDayTime } from "../../../common/utils";
-// import { observer } from "mobx-react";
-// import { store } from "../../../../store";
+import { observer } from "mobx-react";
+import { store } from "../../../../store";
 
 import {
   HeavenlyBody,
@@ -29,7 +29,7 @@ import WeatherIcon from "./WeatherIcon";
 
 // import { ReactComponent as CloseOutline } from "../../../common/icon/CloseOutline.svg";
 
-const Window = ({ theme, time, checkedTheme }) => {
+const Window = observer(({ theme, time, checkedTheme }) => {
   const [animationClikTeme, setAnimationClikTeme] = useState(false);
   const [animationCheckedTheme, setAnimationCheckedTheme] = useState(true);
   const [timeLeftSunMoon, setTimeLeftSunMoon] = useState(0);
@@ -41,11 +41,10 @@ const Window = ({ theme, time, checkedTheme }) => {
   const [lightOffOpacity, setLightOffOpacity] = useState(0);
   const [dayToNightColor, setDayToNightColor] = useState("#0c2233");
   const [weather, setWeather] = useState(2);
-  const [сlimateСontrol, setСlimateСontrol] = useState("sunnyMoon");
+  // const [сlimateСontrol, setСlimateСontrol] = useState("sunnyMoon");
   const [isOpen, setIsOpen] = useState(false);
 
   const winter = false;
-  console.log("сlimateСontrol", сlimateСontrol);
   console.log("weather", weather);
 
   // проверка что день
@@ -56,6 +55,9 @@ const Window = ({ theme, time, checkedTheme }) => {
   const sunsetStr = getDayTime(time).sunsetStr * 60;
   // текущее время в секундах
   const timesHouse = getDayTime(time).timesHouse * 60;
+
+  const сlimateСontrol = store.getClimateСontrol();
+  console.log("сlimateСontrol", сlimateСontrol);
 
   // сколько процентов осталось до захода солнца от дна
   const percentRemainingSunValue = Math.round(
@@ -117,9 +119,6 @@ const Window = ({ theme, time, checkedTheme }) => {
       theme === "light" ? lightOffOpacitySun : lightOffOpacityMoon;
     setLightOffOpacity(lightOffOpacityValue);
 
-    const dayToNightColorValue = theme === "light" ? "#88bef5" : "#0c2233";
-    setDayToNightColor(dayToNightColorValue);
-
     // ширина окна
     const windowView = document?.querySelector("[data-window-view]");
     if (windowView) {
@@ -174,6 +173,28 @@ const Window = ({ theme, time, checkedTheme }) => {
     lightOffOpacityMoon,
   ]);
 
+  useEffect(() => {
+    if (сlimateСontrol === "rainy" && theme === "light") {
+      setDayToNightColor("rgb(29, 120, 147)");
+      setAnimationClikTeme(false);
+    } else if (
+      сlimateСontrol === "cloudyWithRainAndLightning" &&
+      theme === "light"
+    ) {
+      setDayToNightColor("rgb(0, 53, 71)");
+      setAnimationClikTeme(false);
+    } else if (сlimateСontrol === "cloudy" && theme === "light") {
+      setDayToNightColor("rgb(109, 177, 198)");
+      setAnimationClikTeme(false);
+    } else {
+      const dayToNightColorValue = theme === "light" ? "#88bef5" : "#0c2233";
+      setDayToNightColor(dayToNightColorValue);
+      setAnimationClikTeme(true);
+    }
+  }, [theme, сlimateСontrol, checkedTheme, setAnimationClikTeme]);
+
+  console.log(111, dayToNightColor, animationClikTeme);
+
   // const heavenlyBody = document?.querySelector(".heavenly-body");
   // const heavenlyBody = document?.querySelector("[data-heavenly-body]");
   // useEffect(() => {
@@ -215,52 +236,61 @@ const Window = ({ theme, time, checkedTheme }) => {
   //   timer = setTimeout(tick, 4000);
   // }, 4000);
 
-  const seasonSummer = (weatherValue) => {
-    if (weatherValue <= 20) {
-      return setСlimateСontrol("sunnyMoon");
-    }
-    if (20 < weatherValue && weatherValue <= 40) {
-      return setСlimateСontrol("cloudyWithSunMoon");
-    }
-    if (40 < weatherValue && weatherValue <= 60) {
-      return setСlimateСontrol("cloudy");
-    }
-    if (60 < weatherValue && weatherValue <= 80) {
-      return setСlimateСontrol("rainy");
-    }
-    if (80 < weatherValue && weatherValue <= 100) {
-      return setСlimateСontrol("cloudyWithRainAndLightning");
-    }
-  };
+  // const seasonSummer = (weatherValue) => {
+  //   if (weatherValue <= 20) {
+  //     store.setClimateСontrol("sunnyMoon");
+  //     // return setСlimateСontrol("sunnyMoon");
+  //   }
+  //   if (20 < weatherValue && weatherValue <= 40) {
+  //     store.setClimateСontrol("cloudyWithSunMoon");
+  //     // return setСlimateСontrol("cloudyWithSunMoon");
+  //   }
+  //   if (40 < weatherValue && weatherValue <= 60) {
+  //     store.setClimateСontrol("cloudy");
+  //     // return setСlimateСontrol("cloudy");
+  //   }
+  //   if (60 < weatherValue && weatherValue <= 80) {
+  //     store.setClimateСontrol("rainy");
+  //     // return setСlimateСontrol("rainy");
+  //   }
+  //   if (80 < weatherValue && weatherValue <= 100) {
+  //     store.setClimateСontrol("cloudyWithRainAndLightning");
+  //     // return setСlimateСontrol("cloudyWithRainAndLightning");
+  //   }
+  // };
 
-  const seasonWinter = (weatherValue) => {
-    if (weatherValue <= 25) {
-      return setСlimateСontrol("sunnyMoon");
-    }
-    if (25 < weatherValue && weatherValue <= 50) {
-      return setСlimateСontrol("cloudyWithSunMoon");
-    }
-    if (50 < weatherValue && weatherValue <= 75) {
-      return setСlimateСontrol("cloudy");
-    }
-    if (75 < weatherValue && weatherValue <= 100) {
-      return setСlimateСontrol("snowy");
-    }
-  };
+  // const seasonWinter = (weatherValue) => {
+  //   if (weatherValue <= 25) {
+  //     store.setClimateСontrol("sunnyMoon");
+  //     // return setСlimateСontrol("sunnyMoon");
+  //   }
+  //   if (25 < weatherValue && weatherValue <= 50) {
+  //     store.setClimateСontrol("cloudyWithSunMoon");
+  //     // return setСlimateСontrol("cloudyWithSunMoon");
+  //   }
+  //   if (50 < weatherValue && weatherValue <= 75) {
+  //     store.setClimateСontrol("cloudy");
+  //     // return setСlimateСontrol("cloudy");
+  //   }
+  //   if (75 < weatherValue && weatherValue <= 100) {
+  //     store.setClimateСontrol("snowy");
+  //     // return setСlimateСontrol("snowy");
+  //   }
+  // };
 
-  const setConfig = useCallback(
-    (e) => {
-      const value = Number(e.target.value);
-      setWeather(value);
+  // const setConfig = useCallback(
+  //   (e) => {
+  //     const value = Number(e.target.value);
+  //     setWeather(value);
 
-      if (winter) {
-        seasonWinter(value);
-      } else {
-        seasonSummer(value);
-      }
-    },
-    [winter]
-  );
+  //     if (winter) {
+  //       seasonWinter(value);
+  //     } else {
+  //       seasonSummer(value);
+  //     }
+  //   },
+  //   [winter]
+  // );
 
   return (
     <div className="window-wrapper">
@@ -371,6 +401,7 @@ const Window = ({ theme, time, checkedTheme }) => {
         <ModalСlimateСontrol
           opened={isOpen}
           onRequestClose={() => setIsOpen(false)}
+          сlimateСontrol={сlimateСontrol}
           theme={theme}
         />
         {/* <WeatherIcon />
@@ -378,6 +409,6 @@ const Window = ({ theme, time, checkedTheme }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Window;

@@ -349,7 +349,7 @@ const weatherIconBorder = keyframes`
     border-color: #ffff;
   }
   50% {
-    border-color: #2185d0;
+    border-color: #8cd9d9;
   }
   to {
     border-color: #ffff;

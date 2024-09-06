@@ -34,8 +34,8 @@ import { ReactComponent as FooterMailIcon } from "../../../../common/icon/MailDa
 import { CLIMATE_CONTROL } from "./constants";
 
 const ModalСlimateСontrol = observer(
-  ({ opened = false, onRequestClose, theme }) => {
-    const [isClimateСontro, setIsClimateСontrol] = useState("sunnyMoon");
+  ({ opened = false, onRequestClose, theme, сlimateСontrol }) => {
+    // const [isClimateСontro, setIsClimateСontrol] = useState("sunnyMoon");
 
     useEffect(() => {
       if (opened) {
@@ -43,9 +43,9 @@ const ModalСlimateСontrol = observer(
       }
     }, [opened]);
 
-    useEffect(() => {
-      store.setClimateСontrol(isClimateСontro);
-    }, [isClimateСontro]);
+    // useEffect(() => {
+    //   store.setClimateСontrol(isClimateСontro);
+    // }, [isClimateСontro]);
 
     const handleClose = (e) => {
       e.stopPropagation();
@@ -92,8 +92,9 @@ const ModalСlimateСontrol = observer(
               <ModalSection>
                 {CLIMATE_CONTROL.map((item) => (
                   <WeatherIconWrapper
+                    active={item === сlimateСontrol}
                     key={item}
-                    onClick={() => setIsClimateСontrol(item)}
+                    onClick={() => store.setClimateСontrol(item)}
                   >
                     <WeatherIcon сlimateСontrol={item} theme={theme} />
                   </WeatherIconWrapper>

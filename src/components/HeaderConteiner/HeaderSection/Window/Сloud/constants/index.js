@@ -14,7 +14,7 @@ export const propsClimateСontrol = [
   },
   {
     id: "cloudyWithSunMoon",
-    cloudAmount: 2,
+    cloudAmount: 4,
     minRandomTopAndLeft: 10,
     maxRandomTopAndLeft: 120,
     timeMinRandomMovements: 26,
@@ -27,7 +27,7 @@ export const propsClimateСontrol = [
   },
   {
     id: "cloudy",
-    cloudAmount: 2,
+    cloudAmount: 4,
     minRandomTopAndLeft: 10,
     maxRandomTopAndLeft: 120,
     timeMinRandomMovements: 26,
@@ -40,7 +40,7 @@ export const propsClimateСontrol = [
   },
   {
     id: "rainy",
-    cloudAmount: 2,
+    cloudAmount: 6,
     minRandomTopAndLeft: 30,
     maxRandomTopAndLeft: 120,
     timeMinRandomMovements: 26,
@@ -58,7 +58,7 @@ export const propsClimateСontrol = [
   },
   {
     id: "cloudyWithRainAndLightning",
-    cloudAmount: 2,
+    cloudAmount: 8,
     minRandomTopAndLeft: 50,
     maxRandomTopAndLeft: 120,
     timeMinRandomMovements: 26,
@@ -76,7 +76,7 @@ export const propsClimateСontrol = [
   },
   {
     id: "snowy",
-    cloudAmount: 2,
+    cloudAmount: 6,
     minRandomTopAndLeft: -80,
     maxRandomTopAndLeft: 120,
     timeMinRandomMovements: 26,
